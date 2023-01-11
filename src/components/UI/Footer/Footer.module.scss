@@ -1,0 +1,35 @@
+.footer{
+    width: 100%;
+    padding: 27px 0;
+    background: var(--text-color);
+
+    &__container{
+        justify-content: space-between;
+    }
+
+    &__text{
+        color: var(--white-color);
+        font-size: 13px;
+        line-height: 18px;
+    }
+
+    &__developed{
+        font-size: 13px;
+        line-height: 18px;
+        color: rgba(255, 255, 255, 0.4);
+
+        & > span {
+            font-family: 'Outfit';
+            font-weight: 800;
+            font-size: 17px;
+            line-height: 21px;
+            color: var(--white-color);
+        }
+    }
+
+    &__link{
+        font-size: 13px;
+        line-height: 18px;
+        color: var(--white-color);
+    }
+}
