@@ -1,60 +1,69 @@
 @font-face {
     font-family: "Outfit";
-    src: url("Outfit/Outfit-ExtraBold.ttf") format("truetype");
+    src: url("Outfit/Outfit-ExtraBold.woff") format("truetype");
     font-weight: 800;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: "Old Standard TT";
-    src: url("OldStandart/OldStandardTT-Bold.ttf") format("truetype");
+    src: url("OldStandart/OldStandardTT-Bold.woff") format("truetype");
     font-weight: 700;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: "Noto Sans";
-    src: url("NotoSans/NotoSans-Regular.ttf") format("truetype");
+    src: url("NotoSans/NotoSans-Regular.woff") format("truetype");
     font-weight: 400;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: "Noto Sans";
-    src: url("NotoSans/NotoSans-Medium.ttf") format("truetype");
+    src: url("NotoSans/NotoSans-Medium.woff") format("truetype");
     font-weight: 500;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: "Noto Sans";
-    src: url("NotoSans/NotoSans-SemiBold.ttf") format("truetype");
+    src: url("NotoSans/NotoSans-SemiBold.woff") format("truetype");
     font-weight: 600;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: "Noto Sans";
-    src: url("NotoSans/NotoSans-Bold.ttf") format("truetype");
+    src: url("NotoSans/NotoSans-Bold.woff") format("truetype");
     font-weight: 700;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: "Noto Sans";
-    src: url("NotoSans/NotoSans-ExtraBold.ttf") format("truetype");
+    src: url("NotoSans/NotoSans-ExtraBold.woff") format("truetype");
     font-weight: 800;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: "SF Pro Display";
-    src: url("SrProDisplay/SFPRODISPLAYMEDIUM.OTF") format("truetype");
+    src: url("SrProDisplay/SFPRODISPLAYMEDIUM.woff") format("truetype");
     font-weight: 500;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: "Times New Roman";
     src: url("TimesNewRoman/times.ttf") format("truetype");
+    font-display: swap;
 }

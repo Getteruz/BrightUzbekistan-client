@@ -28,11 +28,12 @@ const Aside = () => {
             <ul className={cls.aside__links}>
                 {
                     navlinks?.length > 0 && navlinks.map((options) => (
-                        <NavLink
-                            key={options.id}
-                            {...options}
-                            isActive={'/' + router.pathname.split('/')?.[1] === options.link}
-                        />
+                        <li key={options.id}>
+                            <NavLink
+                                {...options}
+                                isActive={'/' + router.pathname.split('/')?.[1] === options.link}
+                            />
+                        </li>
                     ))
                 }
             </ul>
@@ -43,11 +44,12 @@ const Aside = () => {
             >
                 {
                     projectLinks?.length > 0 && projectLinks.map((options) => (
-                        <NavLink
-                            key={options.id}
-                            {...options}
-                            isActive={'/' + router.pathname.split('/')?.[1] === options.link}
-                        />
+                        <li key={options.id}>
+                            <NavLink
+                                {...options}
+                                isActive={'/' + router.pathname.split('/')?.[1] === options.link}
+                            />
+                        </li>
                     ))
                 }
             </ul>

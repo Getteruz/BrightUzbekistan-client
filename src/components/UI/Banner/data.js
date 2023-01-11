@@ -54,21 +54,25 @@ export const contacts = [
     {
         id: 11,
         link: '/',
-        icon: LinkedinIcon
+        icon: LinkedinIcon,
+        ariaLabel: 'Bright Uzbekistan page on Linkedin',
     },
     {
         id: 12,
         link: '/',
-        icon: TwitterIcon
+        icon: TwitterIcon,
+        ariaLabel: 'Bright Uzbekistan page on Twitter',
     },
     {
         id: 13,
         link: '/',
-        icon: FacebookIcon
+        icon: FacebookIcon,
+        ariaLabel: 'Bright Uzbekistan page on Facebook',
     },
     {
         id: 14,
         link: '/',
-        icon: InstagramIcon
+        icon: InstagramIcon,
+        ariaLabel: 'Bright Uzbekistan page on Instagram',
     },
 ]

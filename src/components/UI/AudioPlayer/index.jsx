@@ -11,14 +11,15 @@ const AudioPlayer = ({src = ''}) => {
 
     return (
         <div className={cls.player}>
-            <button 
+            <button
+                aria-label='audio play and pause button' 
                 className={cls.player__button}
                 onClick={() => options?.paused ? options?.play() : options?.pause()}
             >
                 
             </button>
-            <div className={cls.player__info}>
-                <input 
+            <label className={cls.player__info}>
+                <input
                     className={cls.player__progress} 
                     type="range" 
                     step={1}
@@ -33,7 +34,7 @@ const AudioPlayer = ({src = ''}) => {
                     <span>/</span>
                     <span>{secondToTime(duration)}</span>
                 </span>
-            </div>
+            </label>
         </div>
     );
 }

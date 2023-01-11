@@ -6,7 +6,7 @@ const NewsCard = () => {
         <div className={cls.card}>
             <div className={cls.card__info}>
                 <time className={cls.card__info__time}><ClockIcon /> 09:41</time>
-                <h5 className={cls.card__info__category}>Экономика</h5>
+                <h4 className={cls.card__info__category}>Экономика</h4>
             </div>
             <h3 className={cls.card__title}>Хотите преумножить свой капитал, тогда спешите!</h3>
         </div>
