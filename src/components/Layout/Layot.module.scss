@@ -1,0 +1,27 @@
+.layout{
+    &__left__aside{
+        max-width: 403px;
+        width: 100%;
+    }
+
+    &__main{
+        flex-grow: 1;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &__wrapper{
+            display: flex;
+        }
+
+        &__aside{
+            max-width: 686px;
+            width: 100%;
+        }
+
+        &__content{
+            flex-grow: 1;
+        }
+    }
+}

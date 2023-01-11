@@ -3,15 +3,26 @@ import Container from "components/UI/Container";
 import Footer from "components/UI/Footer";
 import Banner from "components/UI/Banner";
 
+import cls from './Layot.module.scss'
+
 const Layout = ({ children }) => {
     return (
         <>
-            <Container style={{display: 'block'}}>
-                <div style={{display: 'flex', alignItems: 'flex-start'}}>
+            <Container className={cls.layout__container}>
+                <div className={cls.layout__left__aside}>
                     <Aside />
-                    {children}
                 </div>
-                <Banner />
+                <div className={cls.layout__main}>
+                    <div className={cls.layout__main__wrapper}>
+                        <div className={cls.layout__main__content}>
+                            {children}
+                        </div>
+                        <div className={cls.layout__main__aside}>
+
+                        </div>
+                    </div>
+                    <Banner />
+                </div>
             </Container>
             <Footer />
         </>

@@ -10,18 +10,19 @@ const Aside = () => {
     const router = useRouter()
 
     return (
-        <aside className={cls.aside}>
+        <aside className={cls.aside} id='leftAside'>
             <span className={cls.aside__city}>ТАШКЕНТ 2022</span>
 
             <Link href='/'>
-                <Image
-                    src='/logo.svg'
-                    width='0'
-                    height='0'
-                    alt='Bright Uzbekistan logo'
-                    priority='hight'
-                    className={cls.aside__logo}
-                />
+                <div className={cls.aside__logo}>
+                    <Image
+                        src='/logo.svg'
+                        layout='fill'
+                        objectFit='cover'
+                        alt='Bright Uzbekistan logo'
+                        priority='hight'
+                    />
+                </div>
             </Link>
 
             <ul className={cls.aside__links}>
@@ -36,9 +37,9 @@ const Aside = () => {
                 }
             </ul>
 
-            <ul 
+            <ul
                 className={cls.aside__links}
-                style={{flexGrow: 0}}
+                style={{ flexGrow: 0 }}
             >
                 {
                     projectLinks?.length > 0 && projectLinks.map((options) => (

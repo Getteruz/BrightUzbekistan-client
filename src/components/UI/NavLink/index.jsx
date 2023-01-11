@@ -11,12 +11,13 @@ const NavLink = ({
     icon
 }) => {
     return (
-        <Link
-            href={link}
-            className={`${cls.link} ${light ? cls.light__link : ''} ${isActive ? cls.active : ''}`}
-            style={activeColor ? {color: activeColor} : {}}
-        >
+        <Link href={link}>
+            <a 
+                className={`${cls.link} ${light ? cls.light__link : ''} ${isActive ? cls.active : ''}`}
+                style={activeColor ? {color: activeColor} : {}}
+            >
             {typeof icon === 'function' ? icon() : label}
+            </a>
         </Link>
     );
 }

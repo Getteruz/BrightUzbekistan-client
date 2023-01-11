@@ -109,3 +109,12 @@ export function PlayIcon() {
 export function PauseIcon() {
     return <></>
 }
+
+export function ClockIcon() {
+    return (
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 2.5H5V5H7.5V6H4V2.5Z" fill="#0B212B" />
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M10 5C10 7.76142 7.76142 10 5 10C2.23858 10 0 7.76142 0 5C0 2.23858 2.23858 0 5 0C7.76142 0 10 2.23858 10 5ZM9 5C9 7.20914 7.20914 9 5 9C2.79086 9 1 7.20914 1 5C1 2.79086 2.79086 1 5 1C7.20914 1 9 2.79086 9 5Z" fill="#0B212B" />
+        </svg>
+    )
+}

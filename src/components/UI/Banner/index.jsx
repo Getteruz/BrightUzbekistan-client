@@ -23,13 +23,14 @@ const Banner = () => {
                     <p className={cls.banner__text}>Скачайте наше мобильное приложение и следите за новостями!</p>
                 </div>
                 <div style={{position: 'relative'}}>
+                    <div  className={cls.banner__image}>
                     <Image 
-                        className={cls.banner__image}
                         src='/MobileApp.svg'
-                        width='0'
-                        height='0'
+                        layout='fill'
+                        objectFit='cover'
                         alt='Bright Uzbekistan Mobile App'
                     />
+                    </div>
                 </div>
             </Flex>
             <div className={cls.banner__footer}>

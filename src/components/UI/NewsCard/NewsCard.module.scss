@@ -1,0 +1,30 @@
+.card{
+    &__info{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 12px;
+        
+        & > *{
+            font-weight: 800;
+            font-size: 11px;
+            line-height: 15px;
+        }
+
+        &__time{
+            display: flex;
+            align-items: center;
+            gap: 4px;
+
+            & >svg{
+                transform: translateY(1px);
+            }
+        }
+    }
+
+    &__title{
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+    }
+}

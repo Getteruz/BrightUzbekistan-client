@@ -1,4 +1,6 @@
 import AudioCard from "components/UI/AudioCard";
+import NewsCard from "components/UI/NewsCard";
+import NewsImageCard from "components/UI/NewsImageCard";
 
 export default function Home() {
 
@@ -6,6 +8,8 @@ export default function Home() {
     <>
     <AudioCard />
     <AudioCard />
+    {/* <NewsCard /> */}
+    <NewsImageCard />
     </>
   )
 }

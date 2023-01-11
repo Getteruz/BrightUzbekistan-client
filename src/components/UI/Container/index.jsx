@@ -3,9 +3,8 @@ import styled from "@emotion/styled";
 const ContainerDiv = styled('div')`
     display: flex;
     width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 30px;
+    max-width: ${props => props.maxWidth || '1920px'};
+    margin: ${props => props.margin || '0 auto'};
 `
 
 const Container = ({ children, ...other }) => {

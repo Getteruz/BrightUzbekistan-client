@@ -1,0 +1,25 @@
+.card{
+    width: 100%;
+
+    &__title{
+        font-family: 'Old Standard TT';
+        font-weight: 700;
+        font-size: 56px;
+        line-height: 54px;
+        margin-bottom: 25px;
+    }
+
+    &__infoblock{
+        display: flex;
+        gap: 24px;
+        align-items: flex-start;
+    }
+
+    &__image{
+        position: relative;
+        width: 50%;
+        min-height: 196px;
+        height: auto;
+        // aspect-ratio: ;
+    }
+}
