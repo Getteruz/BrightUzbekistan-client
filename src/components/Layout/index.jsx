@@ -1,4 +1,5 @@
-import Aside from "components/UI/Aside";
+import LeftAside from "components/UI/LeftAside";
+import RightAside from "components/UI/RightAside";
 import Container from "components/UI/Container";
 import Footer from "components/UI/Footer";
 import Banner from "components/UI/Banner";
@@ -10,7 +11,7 @@ const Layout = ({ children }) => {
         <>
             <Container className={cls.layout__container}>
                 <div className={cls.layout__left__aside}>
-                    <Aside />
+                    <LeftAside />
                 </div>
                 <div className={cls.layout__main}>
                     <div className={cls.layout__main__wrapper}>
@@ -18,7 +19,7 @@ const Layout = ({ children }) => {
                             {children}
                         </div>
                         <div className={cls.layout__main__aside}>
-
+                            <RightAside />
                         </div>
                     </div>
                     <Banner />

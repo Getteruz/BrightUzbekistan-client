@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import NavLink from '../NavLink';
 
 import { navlinks, projectLinks } from './data';
-import cls from './Aside.module.scss'
+import cls from './LeftAside.module.scss'
 
 const Aside = () => {
     const router = useRouter()

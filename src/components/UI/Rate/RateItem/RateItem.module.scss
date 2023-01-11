@@ -1,0 +1,20 @@
+.item{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &__currency, &__diff{
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 18px;
+        text-transform: uppercase;
+    }
+}
+
+.up{
+    color: var(--gren-color);
+}
+
+.down{
+    color: var(--red-color);
+}
