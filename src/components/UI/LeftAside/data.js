@@ -65,7 +65,7 @@ export const projectLinks = [
     },
     {
         id: 11,
-        link: '/',
+        link: '/contact-us',
         label: 'Связатся с нами',
         activeColor: '',
         light: true

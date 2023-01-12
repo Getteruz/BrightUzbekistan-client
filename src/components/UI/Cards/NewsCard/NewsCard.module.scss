@@ -1,9 +1,13 @@
 .card{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    cursor: pointer;
+    
     &__info{
         display: flex;
         align-items: center;
         gap: 10px;
-        margin-bottom: 12px;
         
         & > *{
             font-weight: 800;
@@ -26,5 +30,10 @@
         font-weight: 700;
         font-size: 18px;
         line-height: 22px;
+    }
+
+    &__desc{
+        font-size: 13px;
+        line-height: 17px;
     }
 }

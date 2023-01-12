@@ -4,7 +4,7 @@ const settings = {
         title: "Bright Uzbekistan",
         description: "Bright Uzbekistan",
         social: {
-            graphic: "/logo.svg",
+            graphic: "/BrightUzbekistan.png",
             twitter: "@brightuzb",
         },
         type: "website",

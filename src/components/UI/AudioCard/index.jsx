@@ -3,7 +3,11 @@ import Flex from '../Flex';
 import { HeadSetIcon } from '../icons';
 import cls from './AudioCard.module.scss'
 
-const AudioCard = () => {
+const AudioCard = ({
+    title = '',
+    category = '',
+    src = ''
+}) => {
     return (
         <div className={cls.card}>
             <Flex gap='10'>
@@ -11,12 +15,10 @@ const AudioCard = () => {
                     <HeadSetIcon />
                     Аудио новости
                 </h5>
-                <h5 className={cls.card__category}>
-                    Спорт
-                </h5>
+                {category && <h5 className={cls.card__category}>{category}</h5>}
             </Flex>
-            <h4 className={cls.card__title}>Под обломками торгового центра в Денау найден второй погибший</h4>
-            <AudioPlayer src='/music.mp3' />
+            <h4 className={cls.card__title}>{title}</h4>
+            <AudioPlayer src={src} />
         </div>
     );
 }

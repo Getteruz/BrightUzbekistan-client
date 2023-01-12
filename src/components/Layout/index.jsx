@@ -15,12 +15,7 @@ const Layout = ({ children }) => {
                 </div>
                 <div className={cls.layout__main}>
                     <div className={cls.layout__main__wrapper}>
-                        <div className={cls.layout__main__content}>
-                            {children}
-                        </div>
-                        <div className={cls.layout__main__aside}>
-                            <RightAside />
-                        </div>
+                        {children}
                     </div>
                     <Banner />
                 </div>
