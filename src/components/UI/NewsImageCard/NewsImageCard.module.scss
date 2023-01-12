@@ -17,9 +17,21 @@
 
     &__image{
         position: relative;
-        width: 50%;
+        min-width: 50%;
+        max-width: 50%;
+        width: 100%;
         min-height: 196px;
         height: auto;
-        // aspect-ratio: ;
+        aspect-ratio: 84/49;
+    }
+}
+
+.column{
+    .card__infoblock{
+        flex-direction: column;
+    }
+    .card__image{
+        max-width: 100%;
+        aspect-ratio: 54/25;
     }
 }

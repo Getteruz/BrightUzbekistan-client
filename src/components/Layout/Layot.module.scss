@@ -21,6 +21,9 @@
         }
 
         &__content{
+            max-width: 821px;
+            min-width: 821px;
+            padding: 0 32px;
             flex-grow: 1;
         }
     }
