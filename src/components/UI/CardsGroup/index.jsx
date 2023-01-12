@@ -40,6 +40,7 @@ const CardsGroup = ({
                     {
                         items.length > 0 && items.map(item => 
                             <NewsCard 
+                                key={item.id}
                                 title={item.title}
                                 time={item.time}
                                 category={item.category}
