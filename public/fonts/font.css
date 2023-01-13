@@ -24,7 +24,7 @@
 
 @font-face {
     font-family: "Noto Sans";
-    src: url("NotoSans/NotoSans-Medium.woff") format("truetype");
+    src: url("NotoSans/noto-sans-condensed-medium.ttf") format("truetype");
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -40,7 +40,7 @@
 
 @font-face {
     font-family: "Noto Sans";
-    src: url("NotoSans/NotoSans-Bold.woff") format("truetype");
+    src: url("NotoSans/NotoSansDisplay-CondensedBold.ttf") format("truetype");
     font-weight: 700;
     font-style: normal;
     font-display: swap;
