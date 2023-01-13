@@ -34,10 +34,10 @@ const socialTags = ({
             name: "og:type",
             content: type,
         },
-        // {
-        //   name: 'og:url',
-        //   content: url,
-        // },
+        {
+          name: 'og:url',
+          content: (typeof window !== 'undefined' && window.location.href) || url,
+        },
         { name: "og:image", content: image },
         { name: "og:description", content: description },
         {

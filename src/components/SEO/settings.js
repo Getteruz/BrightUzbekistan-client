@@ -2,12 +2,12 @@ const settings = {
     meta: {
         url: "brightuzbekistan.uz",
         title: "Bright Uzbekistan",
-        description: "Bright Uzbekistan",
+        description: "Ozbekiston yangiliklari",
         social: {
-            graphic: "/BrightUzbekistan.png",
+            graphic: "https://bright-uzbekistan.vercel.app/BrightUzbekistan.png",
             twitter: "@brightuzb",
         },
-        type: "website",
+        type: "News site",
         keywords: "Bright Uzbekistan, ozbekiston yangiliklari, yangiliklar, tezkor yangiliklar",
     },
 };
