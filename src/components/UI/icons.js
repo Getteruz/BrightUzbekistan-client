@@ -100,14 +100,10 @@ export function HeadSetIcon() {
 
 export function PlayIcon() {
     return (
-        <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg data-is-play='true' width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M11.1992 6.36002L0.939219 12.2836L0.939219 0.436405L11.1992 6.36002Z" fill="#0B212B" />
         </svg>
     )
-}
-
-export function PauseIcon() {
-    return <></>
 }
 
 export function ClockIcon() {
@@ -169,5 +165,20 @@ export function CornerUpLeftIcon() {
         <svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M6.08513 7.81459L5.14436 8.75943L0.892578 4.52595L5.12606 0.27417L6.0709 1.21494L3.55322 3.74351L10.4236 3.72869C11.8964 3.72552 13.0929 4.91685 13.096 6.3896L13.1075 11.7229L11.7742 11.7258L11.7627 6.39248C11.7611 5.6561 11.1629 5.06044 10.4265 5.06202L3.33602 5.07731L6.08513 7.81459Z" fill="#0B212B" />
         </svg>
+    )
+}
+
+export function DownloadIcon() {
+    return (
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 1C7 0.447716 7.44772 0 8 0C8.55228 0 9 0.447715 9 1V8.15777L12.2428 4.91501L13.657 6.32922L8.00012 11.9861L2.34326 6.32922L3.75748 4.91501L7 8.15753V1Z" fill="#0B212B" />
+            <path d="M0 10H2V14H14V10H16V14C16 15.1046 15.1046 16 14 16H2C0.895431 16 0 15.1046 0 14V10Z" fill="#0B212B" />
+        </svg>
+    )
+}
+
+export function PauseIcon() {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11 22h-4v-20h4v20zm6-20h-4v20h4v-20z" /></svg>
     )
 }

@@ -1,8 +1,8 @@
 import useAudio from 'hooks/useAudio'
 import secondToTime from 'utils/secondToTime'
 import generateProgress from 'utils/customProgress'
-import cls from './AudioPlayer.module.scss'
 import { PauseIcon, PlayIcon } from '../icons'
+import cls from './AudioPlayer.module.scss'
 
 const AudioPlayer = ({src = ''}) => {
     const options = useAudio(src)
@@ -16,7 +16,7 @@ const AudioPlayer = ({src = ''}) => {
                 className={cls.player__button}
                 onClick={() => options?.paused ? options?.play() : options?.pause()}
             >
-                
+                {typeof window !== 'undefined' && !options.paused ? <PauseIcon /> : <PlayIcon />}
             </button>
             <label className={cls.player__info}>
                 <input

@@ -1,8 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import NavLink from '../NavLink';
-
+import NavLink from '../../NavLink';
 import { navlinks, projectLinks } from './data';
 import cls from './LeftAside.module.scss'
 

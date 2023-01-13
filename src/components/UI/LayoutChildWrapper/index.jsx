@@ -1,4 +1,4 @@
-import RightAside from '../RightAside';
+import RightAside from '../Aside/RightAside';
 import cls from './LayoutChildWrapper.module.scss';
 
 const LayoutChildWrapper = ({children, asideComponent}) => {

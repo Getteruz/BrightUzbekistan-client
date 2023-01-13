@@ -1,5 +1,4 @@
-import LeftAside from "components/UI/LeftAside";
-import RightAside from "components/UI/RightAside";
+import LeftAside from "components/UI/Aside/LeftAside";
 import Container from "components/UI/Container";
 import Footer from "components/UI/Footer";
 import Banner from "components/UI/Banner";

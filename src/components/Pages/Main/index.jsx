@@ -2,7 +2,7 @@ import CardsGroup from 'components/UI/CardsGroup';
 import Flex from 'components/UI/Flex';
 import LayoutChildWrapper from 'components/UI/LayoutChildWrapper';
 import Rate from 'components/UI/Rate';
-import Aside from './Aside';
+import Aside from 'components/UI/Aside/RightAside/Form';
 import { newsData } from './data';
 import cls from './Main.module.scss'
 

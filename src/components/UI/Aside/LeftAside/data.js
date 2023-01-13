@@ -7,49 +7,49 @@ export const navlinks = [
     },
     {
         id: 2,
-        link: '/world-news',
+        link: '/category/world-news',
         label: 'Новости мира',
         activeColor: ''
     },
     {
         id: 3,
-        link: '/uzbekistan-news',
+        link: '/category/uzbekistan-news',
         label: 'Узбекистан',
         activeColor: ''
     },
     {
         id: 4,
-        link: '/political-news',
+        link: '/category/political-news',
         label: 'Политика',
         activeColor: ''
     },
     {
         id: 5,
-        link: '/economic-news',
+        link: '/category/economic-news',
         label: 'Экономика',
         activeColor: ''
     },
     {
         id: 6,
-        link: '/business-news',
+        link: '/category/business-news',
         label: 'Бизнес',
         activeColor: ''
     },
     {
         id: 7,
-        link: '/society-news',
+        link: '/category/society-news',
         label: 'Общество',
         activeColor: ''
     },
     {
         id: 8,
-        link: '/sport-news',
+        link: '/category/sport-news',
         label: 'Спорт',
         activeColor: ''
     },
     {
         id: 9,
-        link: '/audio-news',
+        link: '/category/audio-news',
         label: 'Аудио новости',
         activeColor: ''
     },

@@ -19,7 +19,10 @@
         & > svg{
             width: 13px;
             height: 13px;
-            transform: translateX(2px);
+        }
+
+        & > svg[data-is-play="true"]{
+            transform: translateX(1px);
         }
     }
 

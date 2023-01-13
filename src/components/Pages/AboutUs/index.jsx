@@ -1,3 +1,4 @@
+import Aside from 'components/UI/Aside/RightAside/Ads';
 import GoToBack from 'components/UI/GoToBack';
 import LayoutChildWrapper from 'components/UI/LayoutChildWrapper';
 import ShareBanner from 'components/UI/ShareBanner';
@@ -8,7 +9,7 @@ const tags = ['# Узбекистан', '# Таможня', '# Шавкат Ми
 
 const AboutUs = () => {
     return (
-        <LayoutChildWrapper>
+        <LayoutChildWrapper asideComponent={<Aside />}>
             <GoToBack title='Последние новости' />
             <main className={cls.about}>
                 <div className={cls.about__image}>
