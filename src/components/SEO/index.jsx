@@ -27,7 +27,7 @@ const SEO = (props) => {
       <meta name="theme-color" content="#ffffff" />
 
       {socialTags(props).map(({ name, content }) => {
-        return <meta key={name} name={name} content={content} />;
+        return <meta key={name} property={name} content={content} />;
       })}
     </Head>
   );
