@@ -30,7 +30,7 @@ const Aside = () => {
                         <li key={options.id}>
                             <NavLink
                                 {...options}
-                                isActive={'/' + router.pathname.split('/')?.[1] === options.link}
+                                isActive={router.pathname.includes(options.link)}
                             />
                         </li>
                     ))
@@ -46,7 +46,7 @@ const Aside = () => {
                         <li key={options.id}>
                             <NavLink
                                 {...options}
-                                isActive={'/' + router.pathname.split('/')?.[1] === options.link}
+                                isActive={router.pathname.includes(options.link)}
                             />
                         </li>
                     ))
