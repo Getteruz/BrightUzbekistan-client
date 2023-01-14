@@ -13,7 +13,7 @@ const BusinessNews = ({
     return (
         <GroupWrapper withNavigation={withNavigation} button={button} category={category}>
             <Flex rowCount={2} gap='48' direction='row'>
-                {items?.slice(0,2)?.length > 0 && items.slice(0,2).map(item => <NewsBusinessCard  {...item}/>)}
+                {items?.slice(0,2)?.length > 0 && items.slice(0,2).map(item => <NewsBusinessCard key={item.id} {...item}/>)}
             </Flex>
             <NewsImageCard direction='column' {...items?.slice(2,3)?.[0]} reverse={true} />
             <NewsCardList items={items.slice(3,7) || []} desc={false} />
