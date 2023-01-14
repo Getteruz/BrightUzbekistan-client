@@ -4,7 +4,7 @@ const settings = {
         title: "Bright Uzbekistan",
         description: "Ozbekiston yangiliklari",
         social: {
-            graphic: "https://bright-uzbekistan.vercel.app/BrightUzbekistan.png",
+            graphic: "https://bright-uzbekistan.vercel.app/Images/BrightUzbekistan.png",
             twitter: "@brightuzb",
         },
         type: "website",

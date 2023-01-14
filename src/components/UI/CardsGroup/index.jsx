@@ -10,7 +10,7 @@ import WorldNews from "./WorldNews";
 const CardsGroup = ({news = {}}) => {
     if(news?.category?.toLowerCase() === 'мировые'){
         return <WorldNews {...news}/>
-    } else if(news?.category.toLowerCase() === 'узбекистан'){
+    } else if(news?.category?.toLowerCase() === 'узбекистан'){
         return <UzbekistanNews {...news}/>
     } else if(news?.category?.toLowerCase() === 'политика'){
         return <PoliticalNews {...news}/>
