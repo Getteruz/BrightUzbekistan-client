@@ -15,7 +15,7 @@ const Aside = () => {
             <Link href='/'>
                 <div className={cls.aside__logo}>
                     <Image
-                        src='/logo.svg'
+                        src='/svg/logo.svg'
                         layout='fill'
                         objectFit='cover'
                         alt='Bright Uzbekistan logo'

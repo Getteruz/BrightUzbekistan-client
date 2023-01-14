@@ -9,11 +9,12 @@ const NewsImageCard = ({
     time = '',
     category = '',
     direction = 'grid',
+    reverse = false
 }) => {
     return (
         <div className={`${cls.card} ${direction === 'column' ? cls.column : ''}`}>
             <h2 className={cls.card__title}>{title}</h2>
-            <div className={cls.card__infoblock}>
+            <div className={cls.card__infoblock} style={{display: 'flex', flexDirection: `${reverse ? 'column-reverse': ''}`}}>
                 {image && (
                     <div className={cls.card__image}>
                         <Image

@@ -4,18 +4,18 @@ import cls from './Navigation.module.scss'
 
 const regex = /[0-9](?![^1]*[0-9])/m
 
-const Navigation = ({title = '', btnLabel = '', link = '', btnColor = ''}) => {
+const Navigation = ({title = '', label = '', link = '', color = ''}) => {
     const style = {
-        borderColor: btnColor,
-        color: btnColor,
-        background: btnColor.replace(regex, 0.1)
+        borderColor: color,
+        color: color,
+        background: color.replace(regex, 0.1)
     }
     
     return (
         <div className={cls.navigation}>
             <div className={cls.navigation__icon}>
                 <Image 
-                    src='/globus.svg'
+                    src='/svg/globus.svg'
                     layout='fill'
                     objectFit='cover'
                     alt='Globus icon'
@@ -26,7 +26,7 @@ const Navigation = ({title = '', btnLabel = '', link = '', btnColor = ''}) => {
                 <span className={cls.navigation__info__subtitle}>Новости</span>
             </div>
             <Link href={link}>
-                <a className={cls.navigation__link} style={style}>{btnLabel}</a>
+                <a className={cls.navigation__link} style={style}>{label}</a>
             </Link>
         </div>
     );

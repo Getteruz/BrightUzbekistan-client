@@ -1,0 +1,10 @@
+.list{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px 48px;
+
+    & > *{
+        max-width: calc((100% - 48px) / 2);
+    }
+}

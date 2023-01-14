@@ -2,7 +2,7 @@ export const newsData = {
     last_news: {
         id: 0,
         withNavigation: false,
-        name: 'Последние новости',
+        category: 'Последние новости',
         items: [
             {
                 id: 1,
@@ -10,7 +10,7 @@ export const newsData = {
                 desc: 'Россиянка купила тур в бюджетный отель Египта за 39 тысяч рублей и рассказала о его плюсах...',
                 time: '9:41',
                 category: 'Политика',
-                image: '/Image.png',
+                image: '/Images/Image.webp',
                 mainCard: true
             },
             {
@@ -18,35 +18,38 @@ export const newsData = {
                 title: 'Хотите преумножить свой капитал, тогда спешите!',
                 desc: '',
                 time: '09:41',
-                category: 'Экономика'
+                category: 'Экономика',
+                image: '/Images/Image.webp',
             },
             {
                 id: 3,
                 title: '«Узбекистан: итоги и перспективы экономических реформ»',
                 desc: '',
                 time: '09:41',
-                category: 'Экономика'
+                category: 'Экономика',
+                image: '/Images/Image.webp',
             },
             {
                 id: 4,
                 title: 'За месяц темп роста экспорта  составил 201,4%',
                 desc: '',
                 time: '09:41',
-                category: 'Экономика'
+                category: 'Экономика',
+                image: '/Images/Image.webp',
             },
             {
                 id: 5,
                 title: '"Золотая акция" от АО "Узнацбанк" и Mastercard',
                 desc: '',
                 time: '09:41',
-                category: 'Экономика'
+                category: 'Экономика',
+                image: '/Images/Image.webp',
             },
         ]
     },
     world_news: {
         id: 6,
-        name: 'Мировые',
-        direction: 'reverse',
+        category: 'Мировые',
         button: {
             color: 'rgba(243, 80, 52, 1)',
             label: 'все мировые новости',
@@ -59,8 +62,7 @@ export const newsData = {
                 desc: 'У вас есть предложения для решения проблем в вашем районе? Регистрируйтесь по ссылке ниже, отправляйте ваши...',
                 time: '09:41',
                 category: 'Мир',
-                image: '/Image.png',
-                mainCard: true
+                image: '/Images/Asakabank.webp',
             },
             {
                 id: 7,
@@ -68,35 +70,37 @@ export const newsData = {
                 desc: '',
                 time: '9:41',
                 category: 'Мир',
+                image: '/Images/Asakabank.webp',
             },
             {
                 id: 8,
                 title: 'Россиян предупредили о критической уязвимости популярного браузера',
                 desc: '',
                 time: '09:41',
-                category: 'Мир'
+                category: 'Мир',
+                image: '/Images/Asakabank.webp',
             },
             {
                 id: 9,
                 title: 'Подтверждена 30-летняя теория об активных ядрах галактик',
                 desc: '',
                 time: '09:41',
-                category: 'Мир'
+                category: 'Мир',
+                image: '/Images/Asakabank.webp',
             },
             {
                 id: 10,
                 title: 'Блинкен предложил Лаврову провести встречу в Европе',
-                desc: '',
+                desc: 'У вас есть предложения для решения проблем в вашем районе? Регистрируйтесь по ссылке ниже, отправляйте ваши...',
                 time: '09:41',
-                category: 'Мир'
+                category: 'Мир',
+                image: '/Images/Asakabank.webp',
             },
         ]
     },
     uzbekistan_news: {
         id: 12,
-        name: 'Узбекистан',
-        mainCard: {direction: 'column'},
-        direction: 'reverse',
+        category: 'Узбекистан',
         button: {
             color: 'rgba(0, 102, 255, 1)',
             label: 'все новости Узбекистана',
@@ -104,47 +108,50 @@ export const newsData = {
         },
         items: [
             {
-                id: 13,
-                title: 'В Ташкенте в массиве «Спутник» снесут больше 400 двухэтажных домов',
-                desc: '18 февраля в столице президент встретился с активом Сергелийского и Янгихаётского районов.',
-                time: '9:41',
-                category: 'Узбекистан',
-                image: '/Image.png',
-                mainCard: true
-            },
-            {
                 id: 14,
                 title: 'Мирзиёев анонсировал ряд изменений в таможенной сфере',
                 desc: '',
                 time: '09:41',
-                category: 'Узбекистан'
+                category: 'Узбекистан',
+                image: '/Images/Mirziyayev.webp',
             },
             {
                 id: 15,
                 title: 'В МВД раскрыли число жертв ДТП на дорогах Узбекистана в 2021 году',
                 desc: '',
                 time: '09:41',
-                category: 'Узбекистан'
+                category: 'Узбекистан',
+                image: '/Images/Mirziyayev.webp',
             },
             {
                 id: 16,
                 title: 'Мирзиёев заявил, что узбекистанцы недовольны задержкой поставок автомобилей',
                 desc: '',
                 time: '09:41',
-                category: 'Узбекистан'
+                category: 'Узбекистан',
+                image: '/Images/Mirziyayev.webp',
             },
             {
                 id: 17,
                 title: 'Стало известно, сколько выходных дней будет у узбекистанцев на Навруз ',
                 desc: '',
                 time: '09:41',
-                category: 'Узбекистан'
+                category: 'Узбекистан',
+                image: '/Images/Mirziyayev.webp',
+            },
+            {
+                id: 13,
+                title: 'В Ташкенте в массиве «Спутник» снесут больше 400 двухэтажных домов',
+                desc: '18 февраля в столице президент встретился с активом Сергелийского и Янгихаётского районов.',
+                time: '9:41',
+                category: 'Узбекистан',
+                image: '/Images/Mirziyayev.webp',
             },
         ]
     },
     political_news: {
         id: 18,
-        name: 'ПОЛИТИКА',
+        category: 'ПОЛИТИКА',
         button: {
             color: 'rgba(255, 0, 229, 1)',
             label: 'все новости политики',
@@ -157,32 +164,27 @@ export const newsData = {
                 desc: '4 февраля 2022 года в Ташкенте продолжилась работа двадцать третьего пленарного заседания Сената Олий Мажлиса Республики Узбекистан.',
                 time: '9:41',
                 category: 'Политика',
-                mainCard: true
+                image: '/Images/prezident.webp',
             },
             {
                 id: 20,
                 desc: 'Президент Республики Узбекистан принял Премьер-министра Республики Казахстан',
                 time: '09:41',
                 category: 'Политика',
-                cardType: 'with-border',
-                image: '/Image.png',
-                withImage: true
+                image: '/Images/prezident.webp',
             },
             {
                 id: 21,
                 desc: 'Узбекистан – Турция: укрепляется межпарламентское сотрудничество',
                 time: '09:41',
                 category: 'Политика',
-                cardType: 'with-border',
-                image: '/Image.png',
-                withImage: true
-
+                image: '/Images/delegatsiya.webp',
             }
         ]
     },
     econimik_news: {
         id: 22,
-        name: 'Экономика',
+        category: 'Экономика',
         button: {
             color: 'rgba(181, 96, 17, 1)',
             label: 'все новости экономики',
@@ -195,42 +197,45 @@ export const newsData = {
                 desc: 'Оплата онлайн-услуг, шопинг в интернет-магазинах, физические покупки в любой точке земного шара - в современном мире все это стало возможным благодаря международным платежным системам.',
                 time: '9:41',
                 category: 'Экономика',
-                mainCard: true,
+                image: '/Images/prezident.webp',
             },
             {
                 id: 24,
                 title: 'Хотите преумножить свой капитал, тогда спешите!',
                 desc: '',
                 time: '09:41',
-                category: 'Экономика'
+                category: 'Экономика',
+                image: '/Images/prezident.webp',
             },
             {
                 id: 25,
                 title: '«Узбекистан: итоги и перспективы экономических реформ»',
                 desc: '',
                 time: '09:41',
-                category: 'Экономика'
+                category: 'Экономика',
+                image: '/Images/prezident.webp',
             },
             {
                 id: 26,
                 title: 'За месяц темп роста экспорта  составил 201,4%',
                 desc: '',
                 time: '09:41',
-                category: 'Экономика'
+                category: 'Экономика',
+                image: '/Images/prezident.webp',
             },
             {
                 id: 27,
                 title: '"Золотая акция" от АО "Узнацбанк" и Mastercard',
                 desc: '',
                 time: '09:41',
-                category: 'Экономика'
+                category: 'Экономика',
+                image: '/Images/prezident.webp',
             },
         ]
     },
     business_news: {
         id: 28,
-        name: 'Бизнес',
-        mainCard: {direction: 'column'},
+        category: 'Бизнес',
         button: {
             color: 'rgba(0, 175, 255, 1)',
             label: 'все новости бизнес направлении',
@@ -238,61 +243,66 @@ export const newsData = {
         },
         items: [
             {
-                id: 29,
-                title: 'Основатель и генеральный директор Tesla уже пять недель сокращает свою долю в компании.',
-                desc: 'В комментариях на странице некоторые блогеры уже предложили Маску помощь в продвижении каналов.',
-                time: '9:41',
-                category: 'Бизнес',
-                image: '/Image.png',
-                mainCard: true
-            },
-            {
                 id: 30,
                 title: 'Джефф Безос вложил 3 миллиарда долларов в создание противосмертоносного препарата',
                 desc: '',
                 time: '09:41',
-                category: 'Бизнес'
+                category: 'Бизнес',
+                image: '/Images/elonmask.webp',
             },
             {
                 id: 31,
                 title: 'Forbes назвал самых богатых россиян 2021 года',
                 desc: '',
                 time: '09:41',
-                category: 'Бизнес'
+                category: 'Бизнес',
+                image: '/Images/elonmask.webp',
+            },
+            {
+                id: 29,
+                title: 'Основатель и генеральный директор Tesla уже пять недель сокращает свою долю в компании.',
+                desc: 'В комментариях на странице некоторые блогеры уже предложили Маску помощь в продвижении каналов.',
+                time: '9:41',
+                category: 'Бизнес',
+                image: '/Images/elonmask.webp',
             },
             {
                 id: 32,
                 title: 'В Сырдарьинской области растут объемы инвестиций и экспорта',
                 desc: '',
                 time: '09:41',
-                category: 'Бизнес'
+                category: 'Бизнес',
+                image: '/Images/elonmask.webp',
             },
             {
                 id: 33,
                 title: 'Алишер Усманов продал свою долю в vk (бывшая группа mail.Ru)',
                 desc: '',
                 time: '09:41',
-                category: 'Бизнес'
+                category: 'Бизнес',
+                image: '/Images/elonmask.webp',
             },
             {
                 id: 46,
                 title: 'В Ташкенте проходит международный форум по межрегиональному сотрудничеству и укреплению деловой этики',
                 desc: '',
                 time: '09:41',
-                category: 'Бизнес'
+                category: 'Бизнес',
+                image: '/Images/elonmask.webp',
             },
             {
                 id: 47,
                 title: 'В общей сложности 33 молодым предпринимателям было выделено 16 миллиардов сумов. Выделено сумов и кредитных ресурсов на сумму 236,8 тыс. долларов США.',
                 desc: '',
                 time: '09:41',
-                category: 'Бизнес'
+                category: 'Бизнес',
+                image: '/Images/elonmask.webp',
             },
         ]
     },
     society_news: {
         id: 34,
-        name: 'Общество',
+        category: 'Общество',
         button: {
             color: 'rgba(158, 0, 255, 1)',
             label: 'все новости общество',
@@ -305,41 +315,45 @@ export const newsData = {
                 desc: 'В социальных сетях распространилось видео на котором можно увидеть, как мужчина оскорбил сотрудника органов внутренних дел.',
                 time: '9:41',
                 category: 'Общество',
+                image: '/Images/elonmask.webp',
             },
             {
                 id: 36,
                 title: 'Член террористической организации «Исламское государство» доставлен в Узбекистан',
                 desc: 'Уроженцы Хивы «Д.У.» (1969 г.р.) и его сын «Д.Х.» (1994 г.р.) в период пребывания на заработках на территории Российской Федерации с 2009 года по 2015 год посредством социальных сетей попали под влияние вербовщиков международных террористических организаций.',
                 time: '09:41',
-                category: 'Общество'
+                category: 'Общество',
+                image: '/Images/elonmask.webp',
             },
             {
                 id: 37,
                 title: 'В одном из вузов Ташкента строитель пытался спрыгнуть с пятого этажа из-за невыплаты зарплаты',
                 desc: 'В социальных сетях распространилась информация о том, что в Ташкентском государственном техническом университете строитель пытался спрыгнуть с пятого этажа учебного здания.',
                 time: '09:41',
-                category: 'Общество'
+                category: 'Общество',
+                image: '/Images/elonmask.webp',
             },
             {
                 id: 38,
                 title: 'ГУВД Ташкента просит оказать содействие в поисках жениха, который пропал в день свадьбы',
                 desc: 'Сотрудники органов внутренних дел ищут 25-летнего парня, который пропал в день своей свадьбы.',
                 time: '09:41',
-                category: 'Общество'
+                category: 'Общество',
+                image: '/Images/elonmask.webp',
             },
             {
                 id: 39,
                 title: 'В Коканде мужчина разбил головой стеклянную дверь и порезал себя куском стекла',
                 desc: 'В социальных сетях распространился видеоролик, на котором видно, как мужчина разрезал себе живот, сообщает Генеральная прокуратура.',
                 time: '09:41',
-                category: 'Общество'
+                category: 'Общество',
+                image: '/Images/elonmask.webp',
             },
         ]
     },
     sport_news: {
         id: 40,
-        name: 'Спорт',
-        mainCard: {direction: 'column'},
+        category: 'Спорт',
         button: {
             color: 'rgba(20, 192, 141, 1)',
             label: 'все новости спорта',
@@ -352,43 +366,47 @@ export const newsData = {
                 desc: 'В рамках отборочного турнира чемпионата мира-2022 сборная Португалии в домашнем матче оказалась сильнее сборной Ирландии.',
                 time: '9:41',
                 category: 'Спорт',
-                image: '/Image.png',
-                mainCard: true
+                image: '/Images/ronaldo.webp',
             },
             {
                 id: 42,
                 title: 'Пекин 2022. Биатлон. Йоханнес Бё — пятикратный олимпийский чемпион.',
                 desc: '',
                 time: '09:41',
-                category: 'Спорт'
+                category: 'Спорт',
+                image: '/Images/ronaldo.webp',
             },
             {
                 id: 43,
                 title: 'Фото: Мирзиёев вручил госнаграды спортсменам и тренерам ',
                 desc: '',
                 time: '09:41',
-                category: 'Спорт'
+                category: 'Спорт',
+                image: '/Images/ronaldo.webp',
             },
             {
                 id: 44,
                 title: 'Сборная Узбекистана по дзюдо завершила турнир «Большого шлема» с тремя медалями',
                 desc: '',
                 time: '09:41',
-                category: 'Спорт'
+                category: 'Спорт',
+                image: '/Images/ronaldo.webp',
             },
             {
                 id: 45,
                 title: 'Стало известно, какую сумму получат призеры Олимпийских игр в Париже',
                 desc: '',
                 time: '09:41',
-                category: 'Спорт'
+                category: 'Спорт',
+                image: '/Images/ronaldo.webp',
             },
             {
                 id: 48,
                 title: 'Шота Арвеладзе стал главным тренером клуба «Халл Сити»',
                 desc: '',
                 time: '09:41',
-                category: 'Спорт'
+                category: 'Спорт',
+                image: '/Images/ronaldo.webp',
             },
         ]
     },

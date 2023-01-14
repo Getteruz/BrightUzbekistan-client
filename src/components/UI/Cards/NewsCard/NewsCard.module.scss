@@ -27,12 +27,14 @@
     }
 
     &__title{
+        max-width: 512px;
         font-weight: 700;
         font-size: 18px;
         line-height: 22px;
     }
 
     &__desc{
+        max-width: 512px;
         font-size: 13px;
         line-height: 17px;
     }

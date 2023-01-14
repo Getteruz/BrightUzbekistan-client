@@ -16,7 +16,7 @@ const NewsCard = ({
                 }</time>
                 <h4 className={cls.card__info__category}>{category}</h4>
             </div>
-            <h3 className={cls.card__title}>{title}</h3>
+            {title && <h3 className={cls.card__title}>{title}</h3>}
             {desc && <p className={cls.card__desc}>{desc}</p>}
         </div>
     );

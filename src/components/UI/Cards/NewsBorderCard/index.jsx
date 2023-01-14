@@ -1,14 +1,14 @@
 import Image from 'next/image';
 import NewsCard from '../NewsCard';
-import cls from './NewsCardWithBorder.module.scss'
+import cls from './NewsBorderCard.module.scss'
 
-const NewsCardWithBorder = ({
+const NewsBorderCard = ({
     image = '',
     title = '',
     desc = '',
     time = '',
     category = '',
-    withImage = false
+    withImage = true
 }) => {
     return (
         <div className={cls.card}>
@@ -34,4 +34,4 @@ const NewsCardWithBorder = ({
     );
 }
 
-export default NewsCardWithBorder;
+export default NewsBorderCard;

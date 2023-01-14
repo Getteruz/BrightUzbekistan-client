@@ -9,10 +9,10 @@
     align-items: flex-end;
     border-width: 0 4px 0 0;
     border-style: solid;
-    -moz-border-image: url('/WaveLine.svg') 27 repeat;
-    -webkit-border-image: url('/WaveLine.svg') 27 repeat;
-    -o-border-image: url('/WaveLine.svg') 27 repeat;
-    border-image: url('/WaveLine.svg') 27 fill repeat;
+    -moz-border-image: url('/svg/WaveLine.svg') 27 repeat;
+    -webkit-border-image: url('/svg/WaveLine.svg') 27 repeat;
+    -o-border-image: url('/svg/WaveLine.svg') 27 repeat;
+    border-image: url('/svg/WaveLine.svg') 27 fill repeat;
 
     &__city{
         margin-bottom: 27px;

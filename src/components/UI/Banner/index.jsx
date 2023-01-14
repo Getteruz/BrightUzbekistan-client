@@ -25,7 +25,7 @@ const Banner = () => {
                 <div style={{position: 'relative'}}>
                     <div  className={cls.banner__image}>
                     <Image 
-                        src='/MobileApp.svg'
+                        src='/svg/MobileApp.svg'
                         layout='fill'
                         objectFit='cover'
                         alt='Bright Uzbekistan Mobile App'
