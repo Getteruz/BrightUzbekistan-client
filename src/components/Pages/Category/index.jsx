@@ -1,4 +1,5 @@
 import Aside from "components/UI/Aside/RightAside/News";
+import GreyButton from "components/UI/Buttons/GreyButton";
 import CardsGroup from "components/UI/CardsGroup";
 import Flex from "components/UI/Flex";
 import GoToBack from "components/UI/GoToBack";
@@ -11,7 +12,7 @@ const Category = () => {
 
     return (
         <LayoutChildWrapper asideComponent={<Aside />}>
-            <GoToBack />
+            <GoToBack title={newsData[router.query.categoryId]?.category} />
             <div style={{ padding: '17px 0 82px 0' }}>
                 <Flex
                     direction='column'
@@ -26,6 +27,7 @@ const Category = () => {
                         )
                     }
                 </Flex>
+                <GreyButton label='загрузить еще' style={{marginTop: '80px'}}/>
             </div>
         </LayoutChildWrapper>
     );

@@ -1,0 +1,65 @@
+.card{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #E7E7E7;
+
+    &__text{
+        max-width: 350px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    &__info{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        
+        & > *{
+            font-weight: 800;
+            font-size: 11px;
+            line-height: 15px;
+        }
+
+        &__time{
+            display: flex;
+            align-items: center;
+            gap: 4px;
+
+            & >svg{
+                transform: translateY(1px);
+            }
+        }
+    }
+
+    &__image{
+        width: 100%;
+        position: relative;
+        aspect-ratio: 416/230;
+    }
+
+    &__title{
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+    }
+}
+
+
+.fullWidth{
+    flex-direction: row!important;
+    gap: 22px;
+
+    & > div{
+        max-width: calc(50% - 11px);
+        width: 100%;
+        aspect-ratio: 416/380;
+    }
+
+    &  h3{
+        font-weight: 700;
+        font-family: 'Old Standard TT';
+    }
+}

@@ -67,3 +67,27 @@
     src: url("TimesNewRoman/times.ttf") format("truetype");
     font-display: swap;
 }
+
+@font-face {
+    font-family: "Noto Sans Normal";
+    src: url("NotoSans/NotoSans-Regular.woff") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Noto Sans Normal";
+    src: url("NotoSans/NotoSans-Medium.woff") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Noto Sans Normal";
+    src: url("NotoSans/NotoSans-Bold.woff") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}

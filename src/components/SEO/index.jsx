@@ -29,6 +29,8 @@ const SEO = (props) => {
       {socialTags(props).map(({ name, content }) => {
         return <meta key={name} property={name} content={content} />;
       })}
+      <meta property="og:image:width" content="1200"/>
+      <meta property="og:image:height" content="630"/>
     </Head>
   );
 };

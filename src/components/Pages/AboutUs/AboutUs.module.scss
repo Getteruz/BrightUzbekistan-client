@@ -2,6 +2,10 @@
     width: 100%;
     padding: 16px 0 32px;
 
+    & *{
+        font-family: 'Noto Sans Normal';
+    }
+
     &__image{
         width: 100%;
         aspect-ratio: 679/400;
