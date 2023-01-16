@@ -6,7 +6,7 @@ import CardsGroup from "components/UI/CardsGroup";
 import GoToBack from "components/UI/GoToBack";
 import LayoutChildWrapper from "components/UI/LayoutChildWrapper";
 import ShareBanner from "components/UI/ShareBanner";
-import { newsData } from "../Category/data";
+import { newsData } from "./data";
 import cls from './SingleNews.module.scss'
 
 const tags = ['# Узбекистан', '# Таможня', '# Шавкат Мирзиёев.', '# Экономика']
