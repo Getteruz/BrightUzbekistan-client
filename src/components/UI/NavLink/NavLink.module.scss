@@ -4,10 +4,11 @@
     line-height: 22px;
     color: var(--text-color);
     cursor: pointer;
+    transition: all 0.3s;
 }
 
 .active{
-    color: #0066FF!important;
+    color: rgba(0, 26, 255, 1)!important;
 }
 
 .light__link{

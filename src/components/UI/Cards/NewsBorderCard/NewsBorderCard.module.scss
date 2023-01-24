@@ -27,5 +27,10 @@
         font-size: 28px;
         line-height: 30px;
         margin-bottom: 25px;
+        transition: all 0.3s;
+
+        &:hover{
+            color: rgba(0, 26, 255, 1);
+        }
     }
 }

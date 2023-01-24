@@ -12,5 +12,10 @@
         font-weight: 700;
         font-size: 28px;
         line-height: 30px;
+        transition: all 0.3s;
+
+        &:hover{
+            color: rgba(0, 26, 255, 1);
+        }
     }
 }
