@@ -46,3 +46,12 @@ ul {
   margin: 0;
   padding: 0;
 }
+
+.react-pdf__Document{
+  overflow: hidden;
+  max-height: 100%!important;
+}
+
+.stf__wrapper{
+  background: white;
+}

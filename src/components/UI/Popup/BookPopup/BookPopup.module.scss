@@ -1,0 +1,35 @@
+
+.popup{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(11, 33, 43, 0.5);
+    backdrop-filter: blur(7px);
+    cursor: pointer;
+
+    &__wrapper{
+        width: 548px;
+        height: 315px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+        background: #fafafa;
+        cursor: initial;
+
+        & > p{
+            max-width: 359px;
+            font-family: 'Old Standard TT';
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 28px;
+            text-align: center;
+        }
+    }
+}

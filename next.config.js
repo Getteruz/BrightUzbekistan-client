@@ -1,11 +1,9 @@
 /** @type {import('next').NextConfig} */
+const withTM = require('next-transpile-modules')(['react-pageflip', 'react-pdf']);
 
-const nextConfig = {
-  // reactStrictMode: true,
+module.exports = withTM({
   swcMinify: true,
   env: {
     COOKIE_TIME: 30 * 24 * 60 * 60,
-  }
-}
-
-module.exports = nextConfig
+  },
+});

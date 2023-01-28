@@ -53,6 +53,12 @@ export const navlinks = [
         label: 'Аудио новости',
         activeColor: ''
     },
+    {
+        id: 10,
+        link: '/journal/1',
+        label: 'Журналы',
+        activeColor: ''
+    },
 ]
 
 export const projectLinks = [
