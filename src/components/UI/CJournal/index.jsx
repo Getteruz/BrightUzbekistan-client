@@ -103,4 +103,6 @@ const CJournal = forwardRef(({onFlip}, ref) => {
     );
 })
 
+CJournal.displayName = 'CJournal'
+
 export default CJournal;
