@@ -4,8 +4,10 @@ import Footer from "components/UI/Footer";
 import Banner from "components/UI/Banner";
 
 import cls from './Layot.module.scss'
+import { useRouter } from "next/router";
 
 const Layout = ({ children }) => {
+    const router = useRouter()
     return (
         <>
             <Container className={cls.layout__container}>
@@ -16,7 +18,7 @@ const Layout = ({ children }) => {
                     <div className={cls.layout__main__wrapper}>
                         {children}
                     </div>
-                    <Banner />
+                    {router.pathname !== '/journal/[id]' && <Banner />}
                 </div>
             </Container>
             <Footer />
