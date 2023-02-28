@@ -1,0 +1,23 @@
+.card{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #E2E2E2;
+    padding: 30px;
+    gap: 15px;
+
+    &__title{
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 30px;
+    }
+
+    &__subtitle{
+        font-size: 12px;
+        line-height: 19px;
+    }
+
+    & *{
+        font-family: 'Noto Sans Normal';
+    }
+}

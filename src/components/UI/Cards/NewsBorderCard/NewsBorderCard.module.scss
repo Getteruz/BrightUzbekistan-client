@@ -1,0 +1,36 @@
+.card {
+    width: 100%;
+    border: 1px solid #E2E2E2;
+    cursor: pointer;
+
+    &__image {
+        width: 100%;
+        aspect-ratio: 31/17;
+        position: relative;
+        // margin-bottom: 20px;
+    }
+
+    &__block {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        & > div{
+            flex-direction: column-reverse;
+        }
+    }
+
+    &__title {
+        font-family: 'Old Standard TT';
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 30px;
+        margin-bottom: 25px;
+        transition: all 0.3s;
+
+        &:hover{
+            color: rgba(0, 26, 255, 1);
+        }
+    }
+}

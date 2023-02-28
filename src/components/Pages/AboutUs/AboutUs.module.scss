@@ -1,0 +1,30 @@
+.about{
+    width: 100%;
+    padding: 16px 0 32px;
+
+    & *{
+        font-family: 'Noto Sans Normal';
+    }
+
+    &__image{
+        width: 100%;
+        aspect-ratio: 679/400;
+        position: relative;
+        border: 1px solid #EEEEEE;
+        margin-bottom: 57px;
+    }
+
+    &__title{
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 54px;
+        margin-bottom: 15px;
+    }
+
+    &__desc{
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 34px;
+        margin-bottom: 102px;
+    }
+}

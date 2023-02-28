@@ -1,0 +1,26 @@
+.label {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+
+    &>span {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 22px;
+    }
+}
+
+.input{
+    padding: 11px 19px;
+    background: #E7E9EA;
+    border-radius: 32px;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    border: none;
+    outline: none;
+
+    &::placeholder{
+        opacity: 0.3;
+    }
+}
