@@ -32,6 +32,12 @@
         font-size: 18px;
         line-height: 22px;
         transition: all 0.3s;
+        overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: initial;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
 
         &:hover{
             color: rgba(0, 26, 255, 1);

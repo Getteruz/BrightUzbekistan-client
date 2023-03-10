@@ -6,4 +6,7 @@ module.exports = withTM({
   env: {
     COOKIE_TIME: 30 * 24 * 60 * 60,
   },
+  images: {
+    domains: ['localhost', 'bright-test.onrender.com']
+  }
 });

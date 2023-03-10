@@ -6,12 +6,13 @@ import cls from './NewsImageCard.module.scss'
 const NewsImageCard = ({
     id = 1,
     title = '',
-    image = '',
-    desc = '',
+    img = '',
+    shortDesc = '',
     time = '',
-    category = '',
+    categories = '',
     direction = 'grid',
-    reverse = false
+    reverse = false,
+    date = ''
 }) => {
     const link = `/news/${id}`
     return (
@@ -19,10 +20,11 @@ const NewsImageCard = ({
             <div className={`${cls.card} ${direction === 'column' ? cls.column : ''}`}>
                 <Link href={link}><a><h2 className={cls.card__title}>{title}</h2></a></Link>
                 <div className={cls.card__infoblock} style={{ display: 'flex', flexDirection: `${reverse ? 'column-reverse' : ''}` }}>
-                    {image && (
+                    {img && (
                         <div className={cls.card__image}>
                             <Image
-                                src={image}
+                            
+                                src={'https://bright-test.onrender.com' + img}
                                 layout='fill'
                                 objectFit='cover'
                                 alt='News Image'
@@ -30,9 +32,9 @@ const NewsImageCard = ({
                         </div>
                     )}
                     <NewsCard
-                        title={desc}
-                        time={time}
-                        category={category}
+                        title={shortDesc}
+                        date={date}
+                        categories={categories}
                     />
                 </div>
             </div>

@@ -9,6 +9,12 @@
         line-height: 54px;
         margin-bottom: 25px;
         transition: all 0.3s;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: initial;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
 
         &:hover{
             color: rgba(0, 26, 255, 1);

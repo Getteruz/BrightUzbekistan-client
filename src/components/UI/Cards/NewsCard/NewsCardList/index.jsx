@@ -5,7 +5,7 @@ const NewsCardList = ({items, desc = true}) => {
     return (
         <div className={cls.list}>
             {
-                items?.length > 0 && items.map(item => <NewsCard key={item.id} {...item} desc={desc && item.desc}/>)
+                items?.length > 0 && items.map((item, index) => <NewsCard key={index} {...item} desc={desc && item.desc}/>)
             }
         </div>
     );
