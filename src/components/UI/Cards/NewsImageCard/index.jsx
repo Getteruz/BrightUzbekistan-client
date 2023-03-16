@@ -5,6 +5,8 @@ import cls from './NewsImageCard.module.scss'
 
 const NewsImageCard = ({
     id = 1,
+    ru = {},
+    publishDate,
     title = '',
     img = '',
     shortDesc = '',
@@ -18,13 +20,13 @@ const NewsImageCard = ({
     return (
         <Link href={link}>
             <div className={`${cls.card} ${direction === 'column' ? cls.column : ''}`}>
-                <Link href={link}><a><h2 className={cls.card__title}>{title}</h2></a></Link>
+                <Link href={link}><a><h2 className={cls.card__title}>{ru?.title}</h2></a></Link>
                 <div className={cls.card__infoblock} style={{ display: 'flex', flexDirection: `${reverse ? 'column-reverse' : ''}` }}>
-                    {img && (
+                    {ru?.file && (
                         <div className={cls.card__image}>
                             <Image
                             
-                                src={'https://bright-test.onrender.com' + img}
+                                src={ru?.file}
                                 layout='fill'
                                 objectFit='cover'
                                 alt='News Image'
@@ -32,8 +34,8 @@ const NewsImageCard = ({
                         </div>
                     )}
                     <NewsCard
-                        title={shortDesc}
-                        date={date}
+                        ru={{title: ru?.shortDescription}}
+                        date={publishDate}
                         categories={categories}
                     />
                 </div>

@@ -3,7 +3,7 @@ import Main from "components/Pages/Main";
 import SEO from "components/SEO";
 
 export async function getServerSideProps() {
-  const res = await axios.get('https://bright-test.onrender.com/news', {
+  const res = await axios.get(`${process.env.NEXT_PUBLIC_API}/news`, {
     headers: {
       "Content-Type": "application/json"
     }
@@ -16,8 +16,8 @@ export async function getServerSideProps() {
   }
 }
 
-export default function Home({news}) {
-
+export default function Home({news = []}) {
+news = news?.reverse()
   return (
     <>
       <SEO />

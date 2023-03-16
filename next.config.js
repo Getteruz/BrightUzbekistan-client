@@ -7,6 +7,6 @@ module.exports = withTM({
     COOKIE_TIME: 30 * 24 * 60 * 60,
   },
   images: {
-    domains: ['localhost', 'bright-test.onrender.com']
+    domains: ['localhost', 'bright-test.onrender.com', 'storage.bright.getter.uz']
   }
 });
