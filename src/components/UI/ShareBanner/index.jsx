@@ -13,7 +13,7 @@ const ShareBanner = ({
                 <ul className={cls.banner__list}>
                     {
                         tags?.length > 0 && tags.map((tag, index) => (
-                            <li className={cls.banner__tag} key={index}>{tag}</li>
+                            <li className={cls.banner__tag} key={index}>#{tag}</li>
                         ))
                     }
                 </ul>

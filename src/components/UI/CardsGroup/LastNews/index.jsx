@@ -8,10 +8,16 @@ const LastNews = ({
     category = '',
     items = []
 }) => {
-
+    const firtsNews = items?.slice(0, 1)?.[0]
+    
     return (
         <GroupWrapper withNavigation={withNavigation} button={button} category={category}>
-            {items?.slice(0, 1)?.length > 0 && <NewsImageCard {...items?.slice(0, 1)?.[0]} id={items?.slice(0, 1)?.[0]?.id} />}
+            {firtsNews && <NewsImageCard
+                ru={firtsNews?.ru}
+                publishDate={firtsNews?.created_at}
+                categories={firtsNews?.categories?.map(ctg => ctg.ru)}
+                id={firtsNews?.id}
+            />}
             <NewsCardList items={items?.slice(1, 5) || []} desc={false} />
         </GroupWrapper>
     );

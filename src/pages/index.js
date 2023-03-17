@@ -17,7 +17,6 @@ export async function getServerSideProps() {
 }
 
 export default function Home({news = []}) {
-news = news?.reverse()
   return (
     <>
       <SEO />

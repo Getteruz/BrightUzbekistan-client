@@ -2,7 +2,7 @@ import NewsCard from '..';
 import cls from './List.module.scss'
 
 const NewsCardList = ({items, desc = true}) => {
-    console.log(items);
+
     return (
         <div className={cls.list}>
             {

@@ -9,10 +9,12 @@ import ShareBanner from "components/UI/ShareBanner";
 import { newsData } from "./data";
 import cls from './SingleNews.module.scss'
 import Markup from "components/UI/Markup";
+import parseTimestamp from "utils/parseTimestamp";
 
 const tags = ['# Узбекистан', '# Таможня', '# Шавкат Мирзиёев.', '# Экономика']
 
 const SingleNews = ({news = {}}) => {
+    const {year, data, hours, minutes, month} = parseTimestamp(news?.created_at)
     
     return (
         <LayoutChildWrapper asideComponent={<Aside />}>
@@ -43,10 +45,10 @@ const SingleNews = ({news = {}}) => {
                         <br />
                         Даны указания по совершенствованию инфраструктуры пограничных таможенных постов, благоустройству прилегающей к ним территории, реконструкции некоторых постов и ремонту ведущих к ним дорог», – сказал Шавкат Мирзиёев. */}
                     {/* </p> */}
-                    <time className={cls.main__time}>7 Февраль, 2022.  09:11</time>
+                    <time className={cls.main__time}>{`${data} ${month}, ${year}.  ${hours}:${minutes}`}</time>
                 </div>
                 <div className={cls.main__banner}>
-                    <ShareBanner tags={tags} />
+                    <ShareBanner tags={news?.ru?.tags} />
                 </div>
                 <div className={cls.main__cards}>
                     <CardsGroup news={{...newsData['political-news'], withNavigation: true}} />

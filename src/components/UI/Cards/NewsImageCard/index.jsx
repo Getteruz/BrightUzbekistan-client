@@ -25,7 +25,6 @@ const NewsImageCard = ({
                     {ru?.file && (
                         <div className={cls.card__image}>
                             <Image
-                            
                                 src={ru?.file}
                                 layout='fill'
                                 objectFit='cover'
