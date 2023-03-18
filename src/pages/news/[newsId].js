@@ -14,8 +14,8 @@ const SingleNewsPage = ({news = {}}) => {
 export default SingleNewsPage;
 
 export async function getServerSideProps(ctx) {
-    const res = await axios.get(`${process.env.NEXT_PUBLIC_API}/news/${ctx.params?.newsId}`)
-    console.log(res.data);
+    const res = await axios.get(`${process.env.NEXT_PUBLIC_API}/single-news/${ctx.params?.newsId}`)
+    
     try {
         return {
             props: {
