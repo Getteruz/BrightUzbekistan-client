@@ -33,6 +33,7 @@ const NewsImageCard = ({
                         </div>
                     )}
                     <NewsCard
+                        id={id}
                         ru={{title: ru?.shortDescription}}
                         date={publishDate}
                         categories={categories}
