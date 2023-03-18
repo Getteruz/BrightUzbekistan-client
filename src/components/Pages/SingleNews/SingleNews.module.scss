@@ -11,19 +11,31 @@
         margin-bottom: 30px;
     }
 
+    &__time{
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        & > span{
+            display: flex;
+            align-items: center;
+            gap: 3px;
+        }
+    }
+
     &__image {
         width: 100%;
         aspect-ratio: 647/400;
         position: relative;
-        margin: 35px 0;
+        margin-bottom: 40px;
     }
 
     &__subtitle {
         font-weight: 700;
         font-size: 20px;
         line-height: 26px;
-        margin-bottom: 40px;
-        font-family: 'Noto Sans Normal';
+        margin-bottom: 34px;
+        font-family: 'Noto Sans';
     }
 
     &__desc {

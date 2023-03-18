@@ -1,11 +1,11 @@
-import React from 'react';
+import cls from './Markup.module.scss'
 
 const Markup = ({html = ''}) => {
     function createMarkup(c) {
         return { __html: c };
     }
     return (
-        <div dangerouslySetInnerHTML={createMarkup(html)}>
+        <div dangerouslySetInnerHTML={createMarkup(html)} className={cls.markup}>
             
         </div>
     );
