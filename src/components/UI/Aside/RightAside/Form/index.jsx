@@ -14,23 +14,18 @@ const Aside = () => {
                 direction='column'
                 gap='20'
             >
-                <NewsCard 
+                {/* <NewsCard 
                     title='«Моя цель — чтобы люди спокойно входили в дом, не запирая машины», — президент о безопасности'
                     category='Спорт'
                     date='12 Fevral  2021'
-                />
-                <NewsCard 
-                    title='Мирзиёев анонсировал ряд изменений в таможенной сфере'
-                    category='Узбекистан'
-                    date='12 Fevral  2021'
-                />
+                /> */}
             </Flex>
 
-            <GreyButton 
+            {/* <GreyButton 
                 icon={RightArrows}
                 label='все новости'
                 style={{margin: '36px 0'}}
-            />
+            /> */}
 
             <form className={cls.aside__form}>
                 <Input 

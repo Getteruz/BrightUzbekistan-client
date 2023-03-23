@@ -10,17 +10,17 @@ const Aside = () => {
         <>
             <div className={cls.cards__wrapper}>
                 <Flex direction='column' gap='27'>
-                    {
+                    {/* {
                         newsData?.length > 0 && newsData.map(news => 
                             <NewsCard 
                                 key={news.id}
                                 {...news}
                             />    
                         )
-                    }
+                    } */}
                 </Flex>
             </div>
-            <GreyButton label='все новости' icon={RightArrows} />
+            {/* <GreyButton label='все новости' icon={RightArrows} /> */}
         </>
     );
 }

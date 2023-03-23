@@ -27,7 +27,7 @@ const Category = () => {
                         )
                     }
                 </Flex>
-                <GreyButton label='загрузить еще' style={{marginTop: '80px'}}/>
+                {/* <GreyButton label='загрузить еще' style={{marginTop: '80px'}}/> */}
             </div>
         </LayoutChildWrapper>
     );

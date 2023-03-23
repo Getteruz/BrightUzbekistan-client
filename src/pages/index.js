@@ -3,7 +3,7 @@ import Main from "components/Pages/Main";
 import SEO from "components/SEO";
 
 export async function getServerSideProps() {
-  const res = await axios.get(`${process.env.NEXT_PUBLIC_API}/news`, {
+  const res = await axios.get(`${process.env.NEXT_PUBLIC_API}/news/published`, {
     headers: {
       "Content-Type": "application/json"
     }
