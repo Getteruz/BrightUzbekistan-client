@@ -1,0 +1,48 @@
+.rate {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 20px 0;
+}
+
+@media only screen and (max-width: 500px) {
+  .rate {
+    background: #EEEEEE;
+    padding: 20px 20px;
+    margin-bottom: 28px;
+    width: 375px;
+    overflow: scroll;
+  }
+  .rate::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.rate__title {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+
+.rate__list {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+@media only screen and (max-width: 500px) {
+  .rate__list {
+    min-width: 430px;
+  }
+}
+
+.tashkent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 20px;
+  width: 100%;
+  max-width: 500px;
+}

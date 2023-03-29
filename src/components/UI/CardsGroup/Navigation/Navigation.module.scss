@@ -1,33 +1,33 @@
-.navigation{
+.navigation {
     display: flex;
     align-items: center;
 
-    &__icon{
+    &__icon {
         width: 32px;
         height: 32px;
         position: relative;
         margin-right: 5px;
     }
 
-    &__info{
+    &__info {
         display: flex;
         flex-direction: column;
         margin-right: 21px;
 
-        &__title{
+        &__title {
             font-weight: 600;
             font-size: 15px;
             line-height: 14px;
             text-transform: uppercase;
         }
 
-        &__subtitle{
+        &__subtitle {
             font-size: 12px;
             line-height: 14px;
         }
     }
 
-    &__link{
+    &__link {
         padding: 4px 10px;
         background: rgba(243, 80, 52, 0.1);
         border: 1px solid var(--red-color);
