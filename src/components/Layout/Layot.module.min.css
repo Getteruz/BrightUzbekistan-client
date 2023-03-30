@@ -1,0 +1,1 @@
+.layout__left__aside{width:100%;max-width:403px}@media only screen and (max-width: 500px){.layout__left__aside{display:none}}.layout__main{flex-grow:1;min-height:100vh;display:flex;flex-direction:column;justify-content:space-between}.layout__main__wrapper{display:flex}

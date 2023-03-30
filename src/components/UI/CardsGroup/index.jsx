@@ -1,4 +1,7 @@
 import createButtonStyleFromCategory from "utils/createButtonStyleFromCategory";
+import { useGetWindowWidth } from "hooks/useGetWindowWith";
+import AudioCard from "../AudioCard";
+import AudioCartmobil from "./audioCart/audioCart";
 import BusinessNews from "./BusinessNews";
 import EconomicNews from "./EconomicNews";
 import LastNews from "./LastNews";

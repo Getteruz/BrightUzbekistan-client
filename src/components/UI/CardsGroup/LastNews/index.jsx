@@ -1,6 +1,8 @@
 import NewsImageCard from '../../Cards/NewsImageCard';
 import GroupWrapper from '../GroupWrapper';
 import NewsCardList from 'components/UI/Cards/NewsCard/NewsCardList';
+import { useGetWindowWidth } from 'hooks/useGetWindowWith';
+import AudioCartmobil from '../audioCart/audioCart';
 
 const LastNews = ({
     withNavigation = true,
@@ -9,6 +11,7 @@ const LastNews = ({
     items = []
 }) => {
     const [firstNews] = items?.slice(0, 1) || []
+    const windowWidth = useGetWindowWidth()
     
     return items?.length > 0 ? (
         <GroupWrapper withNavigation={withNavigation} button={button} category={category}>

@@ -4,15 +4,35 @@
     gap: 10px;
     cursor: pointer;
 
+    @media only screen and (max-width:500px) {
+        width: 100%;
+        max-width: 500px !important;
+        border-bottom: 1px solid #EEEEEE;
+        padding-bottom: 10px;
+    }
+
     &__info {
         display: flex;
         align-items: center;
         gap: 10px;
 
+        @media only screen and (max-width:500px) {
+
+            opacity: .7;
+        }
+
         &>* {
             font-weight: 800;
             font-size: 11px;
             line-height: 15px;
+
+            @media only screen and (max-width:500px) {
+                font-family: 'Noto Sans';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 11px;
+                line-height: 15px;
+            }
         }
 
         &__time {
@@ -41,11 +61,21 @@
         &:hover {
             color: rgba(0, 26, 255, 1);
         }
+
+        @media only screen and (max-width:500px) {
+            font-family: 'Old Standard TT';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 22px;
+            line-height: 25px;
+            color: #000000;
+        }
     }
 
     &__desc {
         max-width: 512px;
         font-size: 13px;
         line-height: 17px;
+
     }
 }
