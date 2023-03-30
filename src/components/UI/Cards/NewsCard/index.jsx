@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import parseTimestamp from 'utils/parseTimestamp'
 import { CalendarIcon, ClockIcon } from '../../icons';
 import cls from './NewsCard.module.scss'
 
@@ -10,13 +11,14 @@ const NewsCard = ({
     category = '',
     date = ''
 }) => {
+    const {hours, minutes} = parseTimestamp(time)
     const link = `/news/${id}`
     return (
         <Link href={link}>
             <div className={cls.card}>
                 <div className={cls.card__info}>
                     <time className={cls.card__info__time}>{
-                        date ? <><CalendarIcon /> {date}</> : <><ClockIcon /> {time}</>
+                        date ? <><CalendarIcon /> {date}</> : <><ClockIcon /> {`${hours}:${minutes}`}</>
                     }</time>
                     <h4 className={cls.card__info__category}>{category}</h4>
                 </div>

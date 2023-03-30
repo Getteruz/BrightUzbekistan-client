@@ -5,12 +5,12 @@ import NavLink from '../../NavLink';
 import { navlinks, projectLinks } from './data';
 import cls from './LeftAside.module.scss'
 
-const Aside = () => {
+const Aside = ({ categories = [] }) => {
     const router = useRouter()
 
     return (
         <aside className={cls.aside} id='leftAside'>
-            <span className={cls.aside__city}>ТАШКЕНТ 2022</span>
+            <span className={cls.aside__city}>ТАШКЕНТ 2023</span>
 
             <Link href='/'>
                 <div className={cls.aside__logo}>
@@ -26,15 +26,30 @@ const Aside = () => {
 
             <ul className={cls.aside__links}>
                 {
-                    navlinks?.length > 0 && navlinks.map((options) => (
-                        <li key={options.id}>
+                    categories?.length > 0 && categories.map(ctg => (
+                        <li key={ctg.id}>
                             <NavLink
-                                {...options}
-                                isActive={router.asPath.split('/')?.slice(0, 3)?.join('/') === options.link}
+                                link={`/category/${ctg.id}`}
+                                label={ctg?.[router?.locale]}
+                                isActive={router.asPath.split('/')?.slice(0, 3)?.join('/') === `/category/${ctg.id}`}
                             />
                         </li>
                     ))
                 }
+                <li>
+                    <NavLink
+                        link='/category/audio-news'
+                        label='Аудио новости'
+                        isActive={router.asPath.split('/')?.slice(0, 3)?.join('/') === '/category/audio-news'}
+                    />
+                </li>
+                <li>
+                    <NavLink
+                        link='/journal/2'
+                        label='Журналы'
+                        isActive={router.asPath.split('/')?.slice(0, 3)?.join('/') === '/journal/2'}
+                    />
+                </li>
             </ul>
 
             <ul

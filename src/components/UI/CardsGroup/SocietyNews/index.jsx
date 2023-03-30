@@ -8,11 +8,11 @@ const SocietyNews = ({
     category = '',
     items = []
 }) => {
-    return (
+    return items?.length > 0 ?  (
         <GroupWrapper withNavigation={withNavigation} button={button} category={category}>
             <NewsCardList items={items.slice(0,5) || []} />
         </GroupWrapper>
-    );
+    ) : <></>;
 }
 
 export default SocietyNews;

@@ -3,12 +3,11 @@ import CardsGroup from 'components/UI/CardsGroup';
 import Aside from 'components/UI/Aside/RightAside/Form';
 import Flex from 'components/UI/Flex';
 import Rate from 'components/UI/Rate';
-import { newsData } from './data';
+import data from './data';
 import cls from './Main.module.scss'
 
-const Main = () => {
-    const newsArray = Object.entries(newsData || {})
-
+const Main = ({news = []}) => {
+    console.log(news);
     return (
         <LayoutChildWrapper asideComponent={<Aside />}>
             <main className={cls.main}>
@@ -19,10 +18,12 @@ const Main = () => {
                         gap='84'
                     >
                         {
-                            newsArray.length > 0 && newsArray.map(([_, data]) => (
+                            news?.length > 0 && news?.map((news, index) => (
                                 <CardsGroup
-                                    key={data.id}
-                                    news={data}
+                                    withNavigation
+                                    key={index}
+                                    news={news?.[1]}
+                                    category={news?.[0]}
                                 />
                             ))
                         }

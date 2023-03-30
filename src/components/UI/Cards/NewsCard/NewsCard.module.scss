@@ -1,44 +1,49 @@
-.card{
+.card {
     display: flex;
     flex-direction: column;
     gap: 10px;
     cursor: pointer;
-    
-    &__info{
+
+    &__info {
         display: flex;
         align-items: center;
         gap: 10px;
-        
-        & > *{
+
+        &>* {
             font-weight: 800;
             font-size: 11px;
             line-height: 15px;
         }
 
-        &__time{
+        &__time {
             display: flex;
             align-items: center;
             gap: 4px;
 
-            & >svg{
+            &>svg {
                 transform: translateY(1px);
             }
         }
     }
 
-    &__title{
+    &__title {
         max-width: 512px;
         font-weight: 700;
         font-size: 18px;
         line-height: 22px;
         transition: all 0.3s;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
 
-        &:hover{
+        &:hover {
             color: rgba(0, 26, 255, 1);
         }
     }
 
-    &__desc{
+    &__desc {
         max-width: 512px;
         font-size: 13px;
         line-height: 17px;
