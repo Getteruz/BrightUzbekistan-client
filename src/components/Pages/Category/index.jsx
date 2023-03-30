@@ -7,7 +7,7 @@ import LayoutChildWrapper from "components/UI/LayoutChildWrapper";
 import { useRouter } from "next/router";
 import { newsData } from "./data";
 
-const Category = () => {
+const Category = ({news = []}) => {
     const router = useRouter()
 
     return (
@@ -19,15 +19,16 @@ const Category = () => {
                     gap='84'
                 >
                     {
-                        Array(3).fill(null).map((_, index) =>
+                        news?.length > 0 && news.map((news, index) =>
                             <CardsGroup
                                 key={index}
-                                news={{...newsData[router.query.categoryId], withNavigation: false}}
+                                news={news}
+                                withNavigation={false}
                             />
                         )
                     }
                 </Flex>
-                <GreyButton label='загрузить еще' style={{marginTop: '80px'}}/>
+                {/* <GreyButton label='загрузить еще' style={{marginTop: '80px'}}/> */}
             </div>
         </LayoutChildWrapper>
     );

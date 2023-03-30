@@ -36,13 +36,13 @@ const Aside = ({ categories = [] }) => {
                         </li>
                     ))
                 }
-                <li>
+                {/* <li>
                     <NavLink
                         link='/category/audio-news'
                         label='Аудио новости'
                         isActive={router.asPath.split('/')?.slice(0, 3)?.join('/') === '/category/audio-news'}
                     />
-                </li>
+                </li> */}
                 <li>
                     <NavLink
                         link='/journal/2'

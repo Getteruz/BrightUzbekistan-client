@@ -9,8 +9,7 @@ import NavbarResponse from 'components/UI/navbarResponse/navbarResponse';
 import { useGetWindowWidth } from 'hooks/useGetWindowWith';
 import AudioCartmobil from 'components/UI/CardsGroup/audioCart/audioCart';
 
-const Main = () => {
-    const newsArray = Object.entries(newsData || {})
+const Main = ({news = []}) => {
     const windowWidth = useGetWindowWidth()
     return (
         <LayoutChildWrapper asideComponent={<Aside />}>

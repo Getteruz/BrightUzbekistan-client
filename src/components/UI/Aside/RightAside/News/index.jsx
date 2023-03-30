@@ -8,7 +8,7 @@ import cls from './News.module.scss'
 const Aside = () => {
     return (
         <>
-            <div className={cls.cards__wrapper}>
+            {/* <div className={cls.cards__wrapper}>
                 <Flex direction='column' gap='27'>
                     {
                         newsData?.length > 0 && newsData.map(news => 
@@ -20,7 +20,7 @@ const Aside = () => {
                     }
                 </Flex>
             </div>
-            <GreyButton label='все новости' icon={RightArrows} />
+            <GreyButton label='все новости' icon={RightArrows} /> */}
         </>
     );
 }
