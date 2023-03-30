@@ -30,7 +30,43 @@
 
     &_btn {
         margin-right: 17px;
+        position: relative;
     }
+
+
+
+    &__langugewrap {
+        position: absolute;
+        top: 25px;
+        left: -70px;
+        background: #FFFFFF;
+        border-radius: 12px;
+        width: 150px;
+        padding: 25px 20px;
+        box-shadow: 1px 1px 5px 2px rgb(0, 0, 0, 0.1);
+        display: none;
+
+        li {
+            font-family: 'Noto Sans';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 13px;
+            line-height: 18px;
+            text-transform: uppercase;
+            color: black;
+            padding-bottom: 12px;
+            cursor: pointer;
+
+            &:hover {
+                color: #001AFF;
+
+            }
+        }
+    }
+}
+
+.openmadal {
+    display: inline-block;
 }
 
 .madalopen {
@@ -38,7 +74,7 @@
     position: absolute;
     top: 184px;
     left: 0;
-    max-width: 500px;
+    width: 100%;
     background-color: white;
     z-index: 2;
     margin: 0;

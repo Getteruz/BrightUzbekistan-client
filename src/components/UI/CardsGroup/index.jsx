@@ -1,4 +1,6 @@
+import { useGetWindowWidth } from "hooks/useGetWindowWith";
 import AudioCard from "../AudioCard";
+import AudioCartmobil from "./audioCart/audioCart";
 import BusinessNews from "./BusinessNews";
 import EconomicNews from "./EconomicNews";
 import LastNews from "./LastNews";
@@ -9,6 +11,7 @@ import UzbekistanNews from "./UzbekistanNews";
 import WorldNews from "./WorldNews";
 
 const CardsGroup = ({ news = {} }) => {
+
     if (news?.category?.toLowerCase() === 'мировые') {
         return <WorldNews {...news} />
     } else if (news?.category?.toLowerCase() === 'узбекистан') {
@@ -26,7 +29,6 @@ const CardsGroup = ({ news = {} }) => {
     } else {
         return <>
             <LastNews {...news} />
-
         </>;
     }
 }

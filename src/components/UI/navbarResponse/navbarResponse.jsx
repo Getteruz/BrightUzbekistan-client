@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import cls from './navbarResponse.module.scss'
 import { PersonIcon2, GlobusIcon2 } from '../icons';
 import Link from 'next/link';
@@ -8,7 +8,21 @@ import { navlinks } from './data';
 import { useRouter } from 'next/router';
 
 export default function NavbarResponse() {
-    // const router = useRouter()
+    const x = useRef()
+    const iconRef = useRef()
+    useEffect(() => {
+        const handleClick = (e) => {
+            if (!x.current.contains(e.target) && !iconRef.current.contains(e.target)) {
+                x.current.classList.remove(cls.openmadal)
+            }
+            else if (x.current === e.target) {
+                x.current.classList.add(cls.openmadal)
+            }
+
+        }
+        document.addEventListener('click', handleClick);
+        return () => document.removeEventListener('click', handleClick)
+    }, [])
     const modal = useRef()
     return (
         <div className={cls.navbarResponse}>
@@ -36,11 +50,17 @@ export default function NavbarResponse() {
             </Link >
 
 
-            <div className={cls.navbarResponse_btn}>
+            <div ref={iconRef} className={cls.navbarResponse_btn} onClick={() => x.current.classList.add(cls.openmadal)}>
                 <Button
                     label='Ру'
                     icon={GlobusIcon2}
                 />
+                <ul ref={x} className={cls.navbarResponse__langugewrap}>
+                    <li>Русский</li>
+                    <li>Ўзбекча</li>
+                    <li>O'zbekcha</li>
+                    <li>English</li>
+                </ul>
             </div>
             <PersonIcon2 />
 

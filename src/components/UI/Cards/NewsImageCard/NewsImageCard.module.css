@@ -15,7 +15,6 @@
   font-size: 56px;
   line-height: 54px;
   margin-bottom: 25px;
-  transition: all 0.3s;
 }
 
 .card__title:hover {
@@ -26,11 +25,12 @@
   .card__title {
     font-family: 'Old Standard TT';
     font-style: normal;
-    font-weight: 700;
-    font-size: 40px;
+    font-weight: 600;
+    font-size: 30px;
     line-height: 37px;
     color: #000000;
     padding: 0 18px;
+    width: 100%;
   }
 }
 
@@ -50,7 +50,6 @@
 
 .card__image {
   position: relative;
-  min-width: 50%;
   max-width: 50%;
   width: 100%;
   min-height: 196px;

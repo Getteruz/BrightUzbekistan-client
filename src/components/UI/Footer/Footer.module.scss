@@ -1,28 +1,29 @@
-.footer{
+.footer {
     width: 100%;
     padding: 27px 0;
     background: var(--text-color);
-    
-    &__container{
+
+    &__container {
         display: flex;
         justify-content: space-between;
-        max-width: 1280px;
+        max-width: 1250px;
         width: 100%;
         padding: 0 40px;
+        padding-left: 55px;
     }
 
-    &__text{
+    &__text {
         color: var(--white-color);
         font-size: 13px;
         line-height: 18px;
     }
 
-    &__developed{
+    &__developed {
         font-size: 13px;
         line-height: 18px;
         color: rgba(255, 255, 255, 0.4);
 
-        & > span {
+        &>span {
             font-family: 'Outfit';
             font-weight: 800;
             font-size: 17px;
@@ -31,7 +32,7 @@
         }
     }
 
-    &__link{
+    &__link {
         font-size: 13px;
         line-height: 18px;
         color: var(--white-color);

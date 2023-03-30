@@ -7,6 +7,7 @@ import { newsData } from './data';
 import cls from './Main.module.scss'
 import NavbarResponse from 'components/UI/navbarResponse/navbarResponse';
 import { useGetWindowWidth } from 'hooks/useGetWindowWith';
+import AudioCartmobil from 'components/UI/CardsGroup/audioCart/audioCart';
 
 const Main = () => {
     const newsArray = Object.entries(newsData || {})
@@ -30,6 +31,7 @@ const Main = () => {
                                 />
                             ))
                         }
+                        {/* {windowWidth < 501 && <AudioCartmobil />} */}
                     </Flex>
                 </div>
             </main>
