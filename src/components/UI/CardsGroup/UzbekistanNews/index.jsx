@@ -10,8 +10,8 @@ const UzbekistanNews = ({
 }) => {
     return (
         <GroupWrapper withNavigation={withNavigation} button={button} category={category}>
-            <NewsCardList items={items.slice(0,4) || []} desc={false} />
-            {items?.slice(4,5)?.length > 0 && <NewsImageCard {...items.slice(4,5)?.[0]} direction='column' />}
+            {/* <NewsCardList items={items.slice(0, 4) || []} desc={false} /> */}
+            {items?.slice(4, 5)?.length > 0 && <NewsImageCard {...items.slice(4, 5)?.[0]} direction='column' />}
         </GroupWrapper>
     );
 }
