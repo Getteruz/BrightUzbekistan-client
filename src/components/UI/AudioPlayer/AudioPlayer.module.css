@@ -1,0 +1,64 @@
+.player {
+  max-width: 535px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.player__button {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: var(--light-text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.player__button > svg {
+  width: 13px;
+  height: 13px;
+}
+.player__button > svg[data-is-play=true] {
+  transform: translateX(1px);
+}
+.player__info {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  gap: 5px;
+}
+.player__duration {
+  display: flex;
+  gap: 5px;
+}
+.player__duration > span {
+  font-size: 11px;
+  line-height: 15px;
+}
+.player__progress {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 2px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+.player__progress::-webkit-slider-runnable-track {
+  overflow: hidden;
+  -webkit-appearance: none;
+  background-color: rgba(11, 33, 43, 0.1);
+  height: 4px;
+  border-radius: 2px;
+}
+.player__progress::-webkit-slider-thumb {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  width: 4px;
+  height: 4px;
+  -webkit-appearance: none;
+}/*# sourceMappingURL=AudioPlayer.module.css.map */

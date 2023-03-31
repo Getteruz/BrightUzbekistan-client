@@ -1,16 +1,21 @@
-.nav{
+.nav {
     display: flex;
     align-items: center;
     padding: 20px 0;
     gap: 5px;
 
-    &__btn, &__title{
+    @media only screen and (max-width:500px) {
+        padding: 20px;
+    }
+
+    &__btn,
+    &__title {
         font-weight: 500;
         font-size: 14px;
         line-height: 19px;
     }
 
-    &__btn{
+    &__btn {
         border: none;
         background: transparent;
         display: flex;
@@ -19,7 +24,7 @@
         padding: 0;
     }
 
-    &__title{
+    &__title {
         opacity: 0.4;
     }
 }

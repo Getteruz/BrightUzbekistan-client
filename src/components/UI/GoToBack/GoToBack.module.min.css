@@ -1,0 +1,1 @@
+.nav{display:flex;align-items:center;padding:20px 0;gap:5px}@media only screen and (max-width: 500px){.nav{padding:20px}}.nav__btn,.nav__title{font-weight:500;font-size:14px;line-height:19px}.nav__btn{border:none;background:transparent;display:flex;align-items:center;gap:5px;padding:0}.nav__title{opacity:0.4}

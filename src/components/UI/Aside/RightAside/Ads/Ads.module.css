@@ -1,0 +1,14 @@
+.cards__wrapper {
+  margin: 17px 0;
+  max-width: 416px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.link {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+}/*# sourceMappingURL=Ads.module.css.map */

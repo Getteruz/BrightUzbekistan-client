@@ -1,0 +1,10 @@
+.btn {
+  padding: 11px 18px;
+  background: #000000;
+  border-radius: 52px;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 18px;
+  border: none;
+  color: var(--white-color);
+}/*# sourceMappingURL=BlackButton.module.css.map */

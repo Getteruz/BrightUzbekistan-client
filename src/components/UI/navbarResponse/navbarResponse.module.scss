@@ -82,18 +82,19 @@
 
 
     &_item {
-        padding: 0;
-        font-family: 'Old Standard TT';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 40px;
-        line-height: 49px;
-        color: #000000;
+        a {
+            padding: 0;
+            font-family: 'Old Standard TT';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 40px;
+            line-height: 49px;
+            color: #000000;
+        }
     }
 
 }
 
 .open {
     display: inline-block;
-
 }

@@ -1,0 +1,41 @@
+.banner {
+  background-color: rgba(238, 238, 238, 0.1);
+  border: 1px solid rgba(11, 33, 43, 0.1019607843);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.banner__block {
+  padding: 15px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.banner__block__title {
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 15px;
+}
+.banner__line {
+  display: inline-block;
+  width: 100%;
+  height: 1px;
+  opacity: 0.1;
+  background-color: #384A52;
+}
+.banner__button {
+  padding: 12px;
+  background: transparent;
+  border: none;
+}
+.banner__list {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.banner__tag {
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 18px;
+  color: #001AFF;
+}/*# sourceMappingURL=ShareBanner.module.css.map */

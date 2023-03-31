@@ -1,0 +1,88 @@
+.navbarResponse {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 500px;
+  padding: 0 20px;
+}
+.navbarResponse__logo {
+  display: inline-block;
+  max-width: 133px;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 65/21;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: relative;
+  margin-right: auto;
+  margin-left: 16px;
+}
+.navbarResponse__burger {
+  display: inline-block;
+  max-width: 36px;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 65/21;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: relative;
+}
+.navbarResponse_btn {
+  margin-right: 17px;
+  position: relative;
+}
+.navbarResponse__langugewrap {
+  position: absolute;
+  top: 25px;
+  left: -70px;
+  background: #FFFFFF;
+  border-radius: 12px;
+  width: 150px;
+  padding: 25px 20px;
+  box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.1);
+  display: none;
+}
+.navbarResponse__langugewrap li {
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: black;
+  padding-bottom: 12px;
+  cursor: pointer;
+}
+.navbarResponse__langugewrap li:hover {
+  color: #001AFF;
+}
+
+.openmadal {
+  display: inline-block;
+}
+
+.madalopen {
+  display: none;
+  position: absolute;
+  top: 184px;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 2;
+  margin: 0;
+  padding: 0 22px;
+}
+.madalopen_item a {
+  padding: 0;
+  font-family: "Old Standard TT";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 49px;
+  color: #000000;
+}
+
+.open {
+  display: inline-block;
+}/*# sourceMappingURL=navbarResponse.module.css.map */

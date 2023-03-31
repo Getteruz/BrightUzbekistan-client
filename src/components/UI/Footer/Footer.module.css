@@ -1,0 +1,35 @@
+.footer {
+  width: 100%;
+  padding: 27px 0;
+  background: var(--text-color);
+}
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1250px;
+  width: 100%;
+  padding: 0 40px;
+  padding-left: 55px;
+}
+.footer__text {
+  color: var(--white-color);
+  font-size: 13px;
+  line-height: 18px;
+}
+.footer__developed {
+  font-size: 13px;
+  line-height: 18px;
+  color: rgba(255, 255, 255, 0.4);
+}
+.footer__developed > span {
+  font-family: "Outfit";
+  font-weight: 800;
+  font-size: 17px;
+  line-height: 21px;
+  color: var(--white-color);
+}
+.footer__link {
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--white-color);
+}/*# sourceMappingURL=Footer.module.css.map */

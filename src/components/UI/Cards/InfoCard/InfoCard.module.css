@@ -1,0 +1,20 @@
+.card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #E2E2E2;
+  padding: 30px;
+  gap: 15px;
+}
+.card__title {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 30px;
+}
+.card__subtitle {
+  font-size: 12px;
+  line-height: 19px;
+}
+.card * {
+  font-family: "Noto Sans Normal";
+}/*# sourceMappingURL=InfoCard.module.css.map */

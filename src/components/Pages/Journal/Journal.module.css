@@ -1,0 +1,60 @@
+.journal {
+  max-width: 1225px;
+  width: 100%;
+  padding: 0 40px;
+}
+.journal__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.journal__content {
+  display: flex;
+  flex-direction: column;
+  gap: 38px;
+  align-items: flex-start;
+  padding: 40px 0;
+}
+.journal__title {
+  font-family: "Old Standard TT";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  padding-left: 20px;
+}
+.journal__info {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.journal__info__page {
+  font-size: 12px;
+  line-height: 20px;
+  font-family: "Inter";
+}
+.journal__info__wrapper {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.journal__info__wrapper > div {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  max-width: 569px;
+}
+.journal__info__title {
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+}
+.journal__info__desc {
+  font-size: 12px;
+  line-height: 17px;
+  opacity: 0.6;
+  font-family: "Noto Sans Normal";
+}/*# sourceMappingURL=Journal.module.css.map */

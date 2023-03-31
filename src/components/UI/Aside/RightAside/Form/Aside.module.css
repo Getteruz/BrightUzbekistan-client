@@ -1,0 +1,10 @@
+.aside {
+  max-width: 394px;
+  width: 100%;
+}
+.aside__form {
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+  margin-bottom: 38px;
+}/*# sourceMappingURL=Aside.module.css.map */
