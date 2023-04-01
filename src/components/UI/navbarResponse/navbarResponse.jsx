@@ -6,10 +6,12 @@ import Image from 'next/image';
 import Button from './Button';
 import { navlinks } from './data';
 import { useRouter } from 'next/router';
+import NavLink from '../NavLink';
 
 export default function NavbarResponse() {
     const x = useRef()
     const iconRef = useRef()
+    const router = useRouter()
     useEffect(() => {
         const handleClick = (e) => {
             if (!x.current.contains(e.target) && !iconRef.current.contains(e.target)) {
@@ -68,8 +70,10 @@ export default function NavbarResponse() {
                 {
                     navlinks?.length > 0 && navlinks.map((options) => (
                         <li key={options.id} className={cls.madalopen_item}>
-                            {/* <Link to={options.link}>{options.label}</Link> */}
-                            {options.label}
+                            <NavLink
+                                {...options}
+                                isActive={router.asPath.split('/')?.slice(0, 3)?.join('/') === options.link}
+                            />
                         </li>
                     ))
                 }

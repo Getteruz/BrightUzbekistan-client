@@ -13,7 +13,7 @@ body {
   background: var(--white-color);
   padding: 0;
   margin: 0;
-  font-family: 'Noto Sans';
+  font-family: "Noto Sans";
   color: var(--text-color);
 }
 
@@ -58,3 +58,9 @@ ul {
 .stf__wrapper {
   background: white;
 }
+
+@media only screen and (max-width: 500px) {
+  .css-1xojh73 > * {
+    max-width: 100% !important;
+  }
+}/*# sourceMappingURL=globals.css.map */

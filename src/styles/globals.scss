@@ -59,3 +59,9 @@ ul {
 .stf__wrapper {
   background: white;
 }
+
+.css-1xojh73>* {
+  @media only screen and (max-width:500px) {
+    max-width: 100% !important;
+  }
+}

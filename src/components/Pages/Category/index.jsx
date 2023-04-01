@@ -4,19 +4,20 @@ import CardsGroup from "components/UI/CardsGroup";
 import Flex from "components/UI/Flex";
 import GoToBack from "components/UI/GoToBack";
 import LayoutChildWrapper from "components/UI/LayoutChildWrapper";
+import { useGetWindowWidth } from "hooks/useGetWindowWith";
 import { useRouter } from "next/router";
 import { newsData } from "./data";
 
 const Category = ({news = []}) => {
     const router = useRouter()
-
+    const windowWidth = useGetWindowWidth()
     return (
         <LayoutChildWrapper asideComponent={<Aside />}>
             <GoToBack title={newsData[router.query.categoryId]?.category} />
-            <div style={{ padding: '17px 0 82px 0' }}>
+            <div style={windowWidth > 500 ? { padding: '17px 0 82px 0' } : { padding: '17px 0 42px 0' }}>
                 <Flex
                     direction='column'
-                    gap='84'
+                    gap={windowWidth > 500 ? "84" : '25'}
                 >
                     {
                         news?.length > 0 && news.map((news, index) =>
@@ -28,7 +29,7 @@ const Category = ({news = []}) => {
                         )
                     }
                 </Flex>
-                {/* <GreyButton label='загрузить еще' style={{marginTop: '80px'}}/> */}
+                <GreyButton label='загрузить еще' style={windowWidth > 500 ? { marginTop: '80px' } : { marginTop: '40px' }} />
             </div>
         </LayoutChildWrapper>
     );
