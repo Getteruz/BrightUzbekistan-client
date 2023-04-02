@@ -3,9 +3,17 @@ import cls from './Rate.module.scss'
 import RateItem from './RateItem';
 import { GlassesIcon, GlobusIcon, PersonIcon } from '../icons';
 import { useGetWindowWidth } from 'hooks/useGetWindowWith';
+import { useState } from 'react';
 
 const Rate = () => {
     const windowWidth = useGetWindowWidth()
+
+    const options = { method: 'GET', headers: { accept: 'application/json' } };
+    const [currency, setCurrency] = useState()
+    fetch('https://api.bright.getter.uz/currency', options)
+        .then(response => response.json())
+        .then(response => setCurrency(response))
+        .catch(err => console.error(err));
     return (
         <>
             {windowWidth < 501 && <div className={cls.tashkent}>
@@ -20,24 +28,17 @@ const Rate = () => {
             <div className={cls.rate}>
                 {windowWidth > 500 && <span className={cls.rate__title}>Последние новости</span>}
                 <ul className={cls.rate__list}>
-                    <RateItem
-                        currency='usd'
-                        value='10845.08'
-                        differens='7.92'
-                        up={true}
-                    />
-                    <RateItem
-                        currency='euro'
-                        value='9,400'
-                        differens='42.6'
-                        up={true}
-                    />
-                    <RateItem
-                        currency='rub'
-                        value='144.27'
-                        differens='0.94'
-                        up={false}
-                    />
+                    {
+                        currency && currency?.map(e => (
+                            <RateItem
+                                currency={e?.Ccy}
+                                value={e?.Rate}
+                                differens={e?.Diff}
+                                up={true}
+                            />
+                        ))
+                    }
+
                 </ul>
             </div>
         </>
