@@ -29,8 +29,9 @@ const Rate = () => {
                 {windowWidth > 500 && <span className={cls.rate__title}>Последние новости</span>}
                 <ul className={cls.rate__list}>
                     {
-                        currency && currency?.map(e => (
+                        currency && currency?.map((e, index) => (
                             <RateItem
+                                key={index}
                                 currency={e?.Ccy}
                                 value={e?.Rate}
                                 differens={e?.Diff}
