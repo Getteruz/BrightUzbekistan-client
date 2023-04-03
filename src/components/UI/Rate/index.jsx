@@ -9,18 +9,18 @@ import ru from '../../../lang/ru.json'
 import uz from '../../../lang/uz.json'
 import en from '../../../lang/en.json'
 import { useRouter } from 'next/router';
+const options = { method: 'GET', headers: { accept: 'application/json' } };
 
 const Rate = () => {
     const windowWidth = useGetWindowWidth()
     const router = useRouter()
-    const options = { method: 'GET', headers: { accept: 'application/json' } };
     const [currency, setCurrency] = useState()
     useEffect(() => {
         fetch('https://api.bright.getter.uz/currency', options)
             .then(response => response.json())
             .then(response => setCurrency(response))
             .catch(err => console.error(err));
-    }, [])
+    }, [options])
     const langData = {
         uz,
         ru,
