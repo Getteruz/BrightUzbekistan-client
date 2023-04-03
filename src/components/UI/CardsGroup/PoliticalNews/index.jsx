@@ -26,7 +26,7 @@ const PoliticalNews = ({
                         key={item.id} 
                         id={item?.id}
                         desc={item?.ru?.title}
-                        image={item?.ru?.file}
+                        image={item?.file}
                         time={item?.publishDate}
                         category={item?.mainCategory?.ru}
                     />

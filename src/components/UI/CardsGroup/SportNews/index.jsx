@@ -19,7 +19,7 @@ const SportNews = ({
                 time={firstNews?.publishDate}
                 category={firstNews?.mainCategory?.ru}
                 desc={firstNews?.ru?.shortDescription}
-                image={firstNews?.ru?.file}
+                image={firstNews?.file}
             />
             <NewsCardList items={items.slice(1,6) || []} desc={false} />
         </GroupWrapper>

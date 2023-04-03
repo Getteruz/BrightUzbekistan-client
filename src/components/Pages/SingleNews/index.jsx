@@ -24,13 +24,14 @@ const SingleNews = ({news = {}}) => {
                 <div className={cls.main__wrapper}>
                     <h2 className={cls.main__title}>{news?.[router?.locale]?.title}</h2>
                     <NewsCard 
+                        cutLine={false}
                         time={news?.publishDate} 
                         category={news?.mainCategory?.[router?.locale]} 
                         title={news?.[router?.locale]?.shortDescription} 
                     />
                     <div className={cls.main__image}>
                         {news?.[router?.locale]?.file && <Image
-                            src={news?.[router?.locale]?.file || ''}
+                            src={news?.file || ''}
                             layout="fill"
                             objectFit="cover"
                             alt="Image"

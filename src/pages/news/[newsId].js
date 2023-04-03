@@ -15,7 +15,6 @@ export default SingleNewsPage;
 
 export async function getServerSideProps(ctx) {
     const news = await getNewsById(ctx?.query?.newsId, ctx?.locale)
-    console.log(news);
     return {
         props: {
             news: news || {}

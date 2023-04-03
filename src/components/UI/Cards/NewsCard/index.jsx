@@ -9,7 +9,8 @@ const NewsCard = ({
     desc = '',
     time = '',
     category = '',
-    date = ''
+    date = '',
+    cutLine = true
 }) => {
     const {hours, minutes} = parseTimestamp(time)
     const link = `/news/${id}`
@@ -22,7 +23,7 @@ const NewsCard = ({
                     }</time>
                     <h4 className={cls.card__info__category}>{category}</h4>
                 </div>
-                {title && <Link href={link}><a><h3 className={cls.card__title}>{title}</h3></a></Link>}
+                {title && <Link href={link}><a><h3 className={`${cls.card__title} ${cutLine ? cls.cutLine : ''}`}>{title}</h3></a></Link>}
                 {desc && <p className={cls.card__desc}>{desc}</p>}
             </div>
         </Link>
