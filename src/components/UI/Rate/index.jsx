@@ -20,7 +20,7 @@ const Rate = () => {
             .then(response => response.json())
             .then(response => setCurrency(response))
             .catch(err => console.error(err));
-    }, [options])
+    }, [])
     const langData = {
         uz,
         ru,
