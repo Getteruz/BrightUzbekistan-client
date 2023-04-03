@@ -4,12 +4,20 @@ import Container from '../Container';
 import Flex from '../Flex';
 import { links, rules } from './data';
 import cls from './Footer.module.scss'
-
+import { useRouter } from 'next/router';
+import ru from '../../../lang/ru.json'
+import uz from '../../../lang/uz.json'
+import en from '../../../lang/en.json'
 
 const Footer = () => {
     const { width } = useGetSize('leftAside')
     const style = { marginLeft: `${width || 0}px !important` }
-
+    const router = useRouter()
+    const langData = {
+        uz,
+        ru,
+        en
+    }
     return (
         <footer className={cls.footer}>
             <Container className={cls.footer__container} maxWidth={1200} margin={`0 0 0 ${width}px`} >
@@ -19,7 +27,7 @@ const Footer = () => {
                     <span>
                         <Flex gap='46'>
                             {
-                                links?.length > 0 && links.map(options =>
+                                links[router.locale]?.length > 0 && links[router.locale]?.map(options =>
                                     <Link
                                         key={options.id}
                                         href={options.link}
@@ -41,7 +49,7 @@ const Footer = () => {
                     <span>
                         <Flex gap='17'>
                             {
-                                rules?.length > 0 && rules.map(options =>
+                                rules[router.locale]?.length > 0 && rules[router.locale]?.map(options =>
                                     <Link
                                         key={options.id}
                                         href={options.link}

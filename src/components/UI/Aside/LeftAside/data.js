@@ -61,7 +61,7 @@ export const navlinks = [
     },
 ]
 
-export const projectLinks = [
+export const projectLinks = 
     {
         uz: [
             {
@@ -112,4 +112,3 @@ export const projectLinks = [
             },
        ]
    }
-]

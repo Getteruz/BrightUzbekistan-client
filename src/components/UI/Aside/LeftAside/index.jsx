@@ -15,6 +15,7 @@ const Aside = ({ categories = [] }) => {
         ru,
         en
     }
+
     return (
         <aside className={cls.aside} id='leftAside'>
             <span className={cls.aside__city}>{langData[router.locale]?.city} 2023</span>
@@ -64,7 +65,7 @@ const Aside = ({ categories = [] }) => {
                 style={{ flexGrow: 0 }}
             >
                 {
-                    projectLinks?.length > 0 && projectLinks.map((options) => (
+                    projectLinks[router.locale]?.length > 0 && projectLinks[router.locale].map((options) => (
                         <li key={options.id}>
                             <NavLink
                                 {...options}
