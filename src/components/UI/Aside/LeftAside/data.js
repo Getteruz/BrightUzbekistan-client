@@ -63,17 +63,53 @@ export const navlinks = [
 
 export const projectLinks = [
     {
-        id: 10,
-        link: '/about-project',
-        label: 'О проекте',
-        activeColor: '',
-        light: true
-    },
-    {
-        id: 11,
-        link: '/contact-us',
-        label: 'Связатся с нами',
-        activeColor: '',
-        light: true
-    },
+        uz: [
+            {
+                id: 10,
+                link: '/about-project',
+                label: 'LOYIHA HAQIDA',
+                activeColor: '',
+                light: true
+            },
+            {
+                id: 11,
+                link: '/contact-us',
+                label: "Biz bilan bog'lanish",
+                activeColor: '',
+                light: true
+            },
+        ],
+        ru: [
+            {
+                id: 10,
+                link: '/about-project',
+                label: 'О проекте',
+                activeColor: '',
+                light: true
+            },
+            {
+                id: 11,
+                link: '/contact-us',
+                label: 'Связатся с нами',
+                activeColor: '',
+                light: true
+            },
+        ],
+        en: [
+            {
+                id: 10,
+                link: '/about-project',
+                label: 'ABOUT PROJECT',
+                activeColor: '',
+                light: true
+            },
+            {
+                id: 11,
+                link: '/contact-us',
+                label: 'Contact us',
+                activeColor: '',
+                light: true
+            },
+       ]
+   }
 ]

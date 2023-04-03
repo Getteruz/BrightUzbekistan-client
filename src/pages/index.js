@@ -16,7 +16,8 @@ export default function Home({ news }) {
 export async function getServerSideProps(ctx) {
   const news = []
   const categories = await getCategories()
-  await Promise.all(categories?.map(async ctg => {
+
+   Promise.all(categories?.map(async ctg => {
     const newsCtg = await getNewsByMainCtg(ctg?.id, ctx?.locale)
     news?.push([ctg?.[ctx?.locale], newsCtg?.map(news => ({ru: {...news?.[ctx?.locale]}, ...news}))])
   }))

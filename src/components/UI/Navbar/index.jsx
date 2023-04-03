@@ -4,6 +4,9 @@ import { GlassesIcon, GlobusIcon, PersonIcon } from '../icons';
 
 import Button from './Button';
 import cls from './Navbar.module.scss'
+import ru from '../../../lang/ru.json'
+import uz from '../../../lang/uz.json'
+import en from '../../../lang/en.json'
 
 const Navbar = () => {
     const router = useRouter()
@@ -13,6 +16,7 @@ const Navbar = () => {
             query: router.query
         }, router.asPath, { locale });
     }
+
     const x = useRef()
     const iconRef = useRef()
     useEffect(() => {
@@ -28,24 +32,33 @@ const Navbar = () => {
         document.addEventListener('click', handleClick);
         return () => document.removeEventListener('click', handleClick)
     }, [])
+
+
+    const langData = {
+        uz,
+        ru,
+        en
+    }
+
     return (
         <nav className={cls.navbar}>
             <ul className={cls.navbar__list}>
                 <li onClick={() => document.body.classList.toggle('gradient')}>
                     <Button
-                        label='для слабовидящих'
+                        label={langData[router.locale]?.VISIONALLY}
                         icon={GlassesIcon}
                     />
                 </li>
                 <li ref={iconRef} className={cls.navbar__langugeitem} onClick={() => x.current.classList.add(cls.openmadal)}>
                     <Button
-                        label='Русский'
+                        label={langData[router.locale]?.language}
                         icon={GlobusIcon}
                     />
                     <ul ref={x} className={cls.navbar__langugewrap}>
-                        <li onClick={() => changeLocale('ru')}>Русский</li>
-                        <li onClick={() => changeLocale('уз')}>Ўзбекча</li>
                         <li onClick={() => changeLocale('uz')}>O'zbekcha</li>
+                        {/* <li onClick={() => changeLocale('уз')}>Ўзбекча</li> */}
+                        <li >Ўзбекча</li>
+                        <li onClick={() => changeLocale('ru')}>Русский</li>
                         <li onClick={() => changeLocale('en')}>English</li>
                     </ul>
                 </li>

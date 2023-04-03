@@ -3,14 +3,21 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import NavLink from '../../NavLink';
 import { navlinks, projectLinks } from './data';
+import ru from '../../../../lang/ru.json'
+import uz from '../../../../lang/uz.json'
+import en from '../../../../lang/en.json'
 import cls from './LeftAside.module.scss'
 
 const Aside = ({ categories = [] }) => {
     const router = useRouter()
-
+    const langData = {
+        uz,
+        ru,
+        en
+    }
     return (
         <aside className={cls.aside} id='leftAside'>
-            <span className={cls.aside__city}>ТАШКЕНТ 2023</span>
+            <span className={cls.aside__city}>{langData[router.locale]?.city} 2023</span>
 
             <Link href='/'>
                 <div className={cls.aside__logo}>
