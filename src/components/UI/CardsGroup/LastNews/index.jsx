@@ -12,10 +12,10 @@ const LastNews = ({
 }) => {
     const [firstNews] = items?.slice(0, 1) || []
     const windowWidth = useGetWindowWidth()
-    
+
     return items?.length > 0 ? (
         <GroupWrapper withNavigation={withNavigation} button={button} category={category}>
-            {items?.slice(0, 1)?.length > 0 && <NewsImageCard 
+            {items?.slice(0, 1)?.length > 0 && <NewsImageCard
                 id={firstNews?.id}
                 title={firstNews?.ru?.title}
                 image={firstNews?.ru?.file}

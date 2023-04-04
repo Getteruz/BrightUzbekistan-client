@@ -16,6 +16,7 @@ const NewsImageCard = ({
 }) => {
     const link = `/news/${id}`
     const windowWidth = useGetWindowWidth()
+
     return (
         <div >
             {windowWidth < 501 && <p className={cls.cardtext}>Новости дня</p>}
@@ -34,6 +35,7 @@ const NewsImageCard = ({
                             </div>
                         )}
                         {windowWidth > 500 && <NewsCard
+                            id={id}
                             title={desc}
                             time={time}
                             category={category}
