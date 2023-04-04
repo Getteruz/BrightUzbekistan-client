@@ -17,7 +17,7 @@ export async function getServerSideProps(ctx) {
   const news = []
   const categories = await getCategories()
 
-   Promise.all(categories?.map(async ctg => {
+    await Promise.all(categories?.map(async ctg => {
     const newsCtg = await getNewsByMainCtg(ctg?.id, ctx?.locale)
     news?.push([ctg?.[ctx?.locale], newsCtg?.map(news => ({ru: {...news?.[ctx?.locale]}, ...news}))])
   }))

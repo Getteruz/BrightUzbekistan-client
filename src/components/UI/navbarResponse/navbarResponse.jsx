@@ -12,6 +12,12 @@ export default function NavbarResponse() {
     const x = useRef()
     const iconRef = useRef()
     const router = useRouter()
+    const changeLocale = (locale) => {
+        router.push({
+            route: router.pathname,
+            query: router.query
+        }, router.asPath, { locale });
+    }
     useEffect(() => {
         const handleClick = (e) => {
             if (!x.current.contains(e.target) && !iconRef.current.contains(e.target)) {
@@ -58,10 +64,10 @@ export default function NavbarResponse() {
                     icon={GlobusIcon2}
                 />
                 <ul ref={x} className={cls.navbarResponse__langugewrap}>
-                    <li>Русский</li>
-                    <li>Ўзбекча</li>
-                    <li>O'zbekcha</li>
-                    <li>English</li>
+                    <li onClick={() => changeLocale('uz')}>O'zbekcha</li>
+                    <li onClick={() => changeLocale('уз')}>Ўзбекча</li>
+                    <li onClick={() => changeLocale('ru')}>Русский</li>
+                    <li onClick={() => changeLocale('en')}>English</li>
                 </ul>
             </div>
             <PersonIcon2 />

@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import ru from '../../../lang/ru.json'
 import uz from '../../../lang/uz.json'
+import уз from '../../../lang/уз.json'
 import en from '../../../lang/en.json'
 import { useRouter } from 'next/router';
 
@@ -24,6 +25,7 @@ const Rate = () => {
     const langData = {
         uz,
         ru,
+        уз,
         en
     }
 

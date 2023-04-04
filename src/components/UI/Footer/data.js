@@ -31,13 +31,27 @@ export const links = {
         {
             id: 1,
             link: '/',
-            label: 'LOYIHA HAQIDA',
+            label: 'Loyiha haqida',
             color: 'white'
         },
         {
             id: 2,
             link: '/',
             label: 'Saytda reklama',
+            color: 'white'
+        },
+    ],
+    уз:[
+        {
+            id: 1,
+            link: '/',
+            label: 'Лойиҳа ҳақида',
+            color: 'white'
+        },
+        {
+            id: 2,
+            link: '/',
+            label: 'Сайтда реклама',
             color: 'white'
         },
     ]
@@ -83,6 +97,20 @@ export const rules = {
             id: 5,
             link: '/',
             label: 'Maxfiylik siyosati',
+            color: '#F3715B'
+        },
+    ],
+    уз:[
+        {
+            id: 4,
+            link: '/',
+            label: 'Фойдаланиш шартлари',
+            color: '#F3715B'
+        },
+        {
+            id: 5,
+            link: '/',
+            label: 'Махфийлик сиёсати',
             color: '#F3715B'
         },
     ]

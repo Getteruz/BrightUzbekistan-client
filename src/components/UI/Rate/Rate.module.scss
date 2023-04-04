@@ -9,7 +9,8 @@
         background: #EEEEEE;
         padding: 20px 20px;
         margin-bottom: 28px;
-        width: 375px;
+        width: 100vw;
+        max-width: 500px;
         overflow: scroll;
 
         &::-webkit-scrollbar {

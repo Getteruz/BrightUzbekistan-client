@@ -10,12 +10,19 @@
         width: 100%;
         padding: 0 40px;
         padding-left: 55px;
+
+        @media only screen and (max-width:500px) {
+            flex-direction: column;
+            padding: 0 20px;
+        }
     }
 
     &__text {
         color: var(--white-color);
         font-size: 13px;
         line-height: 18px;
+
+
     }
 
     &__developed {
@@ -23,12 +30,27 @@
         line-height: 18px;
         color: rgba(255, 255, 255, 0.4);
 
+        @media only screen and (max-width:500px) {
+            width: 100%;
+            display: flex;
+            align-items: center;
+
+            // justify-content: space-between;
+            &__text {
+                margin-right: auto;
+            }
+        }
+
         &>span {
             font-family: 'Outfit';
             font-weight: 800;
             font-size: 17px;
             line-height: 21px;
             color: var(--white-color);
+
+            @media only screen and (max-width:500px) {
+                margin-left: 4px;
+            }
         }
     }
 
@@ -36,5 +58,11 @@
         font-size: 13px;
         line-height: 18px;
         color: var(--white-color);
+
+        @media only screen and (max-width:500px) {
+            font-size: 16px;
+            margin-top: 8px;
+            line-height: 20px
+        }
     }
 }
