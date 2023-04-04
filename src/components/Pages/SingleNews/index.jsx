@@ -25,6 +25,7 @@ const SingleNews = ({ news = {} }) => {
                 <div className={cls.main__wrapper}>
                     <h2 className={cls.main__title}>{news?.[router?.locale]?.title}</h2>
                     <NewsCard
+                        cutLine={false}
                         id={news?.id}
                         time={news?.publishDate}
                         category={news?.mainCategory?.[router?.locale]}
