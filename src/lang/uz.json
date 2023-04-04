@@ -1,8 +1,9 @@
 {
     "language":"O'zbekcha",
-    "city":"TOSHKENT",
+    "city":"ТОШКЕНТ",
     "lastNew":"So'ngi yangiliklar",
-    "VISIONALLY": "VIZONAL UCHUN",
-    "ABOUTPROJECT":"LOYIHA HAQIDA"
-   
+    "VISIONALLY": "Ko'zi zaiflar uchun",
+    "ABOUTPROJECT":"Loyiha haqida",
+    "back":"Orqaga",
+    "Load":"yana yuklash"
 }

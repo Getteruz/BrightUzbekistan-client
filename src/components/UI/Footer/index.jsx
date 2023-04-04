@@ -5,24 +5,18 @@ import Flex from '../Flex';
 import { links, rules } from './data';
 import cls from './Footer.module.scss'
 import { useRouter } from 'next/router';
-import ru from '../../../lang/ru.json'
-import uz from '../../../lang/uz.json'
-import en from '../../../lang/en.json'
+import { useGetWindowWidth } from 'hooks/useGetWindowWith';
 
 const Footer = () => {
     const { width } = useGetSize('leftAside')
     const style = { marginLeft: `${width || 0}px !important` }
     const router = useRouter()
-    const langData = {
-        uz,
-        ru,
-        en
-    }
+    const windowWidth = useGetWindowWidth()
     return (
         <footer className={cls.footer}>
             <Container className={cls.footer__container} maxWidth={1200} margin={`0 0 0 ${width}px`} >
-                <Flex width='auto' gap='33'>
-                    <div className={cls.footer__text}>Copyright: 2022</div>
+                <Flex className={cls.footer__left} width='auto' gap='33'>
+                    {windowWidth > 500 ? <div className={cls.footer__text}>Copyright: 2023</div> : ""}
 
                     <span>
                         <Flex gap='46'>
@@ -43,9 +37,11 @@ const Footer = () => {
                             }
                         </Flex>
                     </span>
+
+
                 </Flex>
 
-                <Flex width={'auto'} gap='46'>
+                <Flex width={'auto'} gap={windowWidth > 500 ? 46 : 7} style={windowWidth > 500 ? { marginTop: "8px" } : { marginTop: "0" }} >
                     <span>
                         <Flex gap='17'>
                             {
@@ -67,12 +63,13 @@ const Footer = () => {
                     </span>
 
                     <div className={cls.footer__developed}>
+                        {windowWidth < 500 ? <div className={cls.footer__developed__text}>Copyright: 2023</div> : ""}
                         Developed by:
                         <span> Getter</span>
                     </div>
                 </Flex>
             </Container>
-        </footer>
+        </footer >
     );
 }
 

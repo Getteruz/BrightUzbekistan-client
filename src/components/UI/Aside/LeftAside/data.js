@@ -67,7 +67,7 @@ export const projectLinks =
             {
                 id: 10,
                 link: '/about-project',
-                label: 'LOYIHA HAQIDA',
+                label: 'Loyiha haqida',
                 activeColor: '',
                 light: true
             },
@@ -78,7 +78,23 @@ export const projectLinks =
                 activeColor: '',
                 light: true
             },
-        ],
+    ],
+    уз: [
+        {
+            id: 10,
+            link: '/about-project',
+            label: 'Лойиҳа ҳақида',
+            activeColor: '',
+            light: true
+        },
+        {
+            id: 11,
+            link: '/contact-us',
+            label: "Биз билан боғланиш",
+            activeColor: '',
+            light: true
+        },
+    ],
         ru: [
             {
                 id: 10,
@@ -99,7 +115,7 @@ export const projectLinks =
             {
                 id: 10,
                 link: '/about-project',
-                label: 'ABOUT PROJECT',
+                label: 'About project',
                 activeColor: '',
                 light: true
             },

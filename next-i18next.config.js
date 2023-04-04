@@ -1,6 +1,6 @@
 module.exports = {
     i18n: {
-      defaultLocale: 'ru',
+      defaultLocale: 'уз',
       locales: ['en', 'ru', 'uz', 'уз'],
       localeDetection: false
     },

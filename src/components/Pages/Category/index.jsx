@@ -7,10 +7,20 @@ import LayoutChildWrapper from "components/UI/LayoutChildWrapper";
 import { useGetWindowWidth } from "hooks/useGetWindowWith";
 import { useRouter } from "next/router";
 import { newsData } from "./data";
+import ru from '../../../lang/ru.json'
+import uz from '../../../lang/uz.json'
+import уз from '../../../lang/уз.json'
+import en from '../../../lang/en.json'
 
-const Category = ({news = []}) => {
+const Category = ({ news = [] }) => {
     const router = useRouter()
     const windowWidth = useGetWindowWidth()
+    const langData = {
+        uz,
+        уз,
+        ru,
+        en
+    }
     return (
         <LayoutChildWrapper asideComponent={<Aside />}>
             <GoToBack title={newsData[router.query.categoryId]?.category} />
@@ -29,7 +39,7 @@ const Category = ({news = []}) => {
                         )
                     }
                 </Flex>
-                <GreyButton label='загрузить еще' style={windowWidth > 500 ? { marginTop: '80px' } : { marginTop: '40px' }} />
+                <GreyButton label={langData[router.locale]?.Load} style={windowWidth > 500 ? { marginTop: '80px' } : { marginTop: '40px' }} />
             </div>
         </LayoutChildWrapper>
     );

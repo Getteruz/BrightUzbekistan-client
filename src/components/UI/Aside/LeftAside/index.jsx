@@ -5,6 +5,7 @@ import NavLink from '../../NavLink';
 import { navlinks, projectLinks } from './data';
 import ru from '../../../../lang/ru.json'
 import uz from '../../../../lang/uz.json'
+import уз from '../../../../lang/уз.json'
 import en from '../../../../lang/en.json'
 import cls from './LeftAside.module.scss'
 
@@ -13,6 +14,7 @@ const Aside = ({ categories = [] }) => {
     const langData = {
         uz,
         ru,
+        уз,
         en
     }
 

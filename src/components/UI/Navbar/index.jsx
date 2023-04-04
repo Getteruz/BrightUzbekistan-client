@@ -6,6 +6,7 @@ import Button from './Button';
 import cls from './Navbar.module.scss'
 import ru from '../../../lang/ru.json'
 import uz from '../../../lang/uz.json'
+import уз from '../../../lang/уз.json'
 import en from '../../../lang/en.json'
 
 const Navbar = () => {
@@ -36,6 +37,7 @@ const Navbar = () => {
 
     const langData = {
         uz,
+        уз,
         ru,
         en
     }
@@ -56,8 +58,7 @@ const Navbar = () => {
                     />
                     <ul ref={x} className={cls.navbar__langugewrap}>
                         <li onClick={() => changeLocale('uz')}>O'zbekcha</li>
-                        {/* <li onClick={() => changeLocale('уз')}>Ўзбекча</li> */}
-                        <li >Ўзбекча</li>
+                        <li onClick={() => changeLocale('уз')}>Ўзбекча</li>
                         <li onClick={() => changeLocale('ru')}>Русский</li>
                         <li onClick={() => changeLocale('en')}>English</li>
                     </ul>
