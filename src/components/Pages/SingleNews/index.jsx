@@ -14,23 +14,24 @@ import parseTimestamp from "utils/parseTimestamp";
 
 const tags = ['# Узбекистан', '# Таможня', '# Шавкат Мирзиёев.', '# Экономика']
 
-const SingleNews = ({news = {}}) => {
+const SingleNews = ({ news = {} }) => {
     const router = useRouter()
-    const {hours, minutes, year, month, data} = parseTimestamp(news?.publishDate)
+    const { hours, minutes, year, month, data } = parseTimestamp(news?.publishDate)
+
     return (
         <LayoutChildWrapper asideComponent={<Aside />}>
             <main className={cls.main}>
                 <GoToBack title="Последние новости" />
                 <div className={cls.main__wrapper}>
                     <h2 className={cls.main__title}>{news?.[router?.locale]?.title}</h2>
-                    <NewsCard 
-                        time={news?.publishDate} 
-                        category={news?.mainCategory?.[router?.locale]} 
-                        title={news?.[router?.locale]?.shortDescription} 
+                    <NewsCard
+                        time={news?.publishDate}
+                        category={news?.mainCategory?.[router?.locale]}
+                        title={news?.[router?.locale]?.shortDescription}
                     />
                     <div className={cls.main__image}>
-                        {news?.[router?.locale]?.file && <Image
-                            src={news?.[router?.locale]?.file || ''}
+                        {news?.file && <Image
+                            src={news?.file || ''}
                             layout="fill"
                             objectFit="cover"
                             alt="Image"

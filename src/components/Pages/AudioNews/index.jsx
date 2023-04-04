@@ -4,16 +4,22 @@ import GreyButton from "components/UI/Buttons/GreyButton";
 import Flex from "components/UI/Flex";
 import GoToBack from "components/UI/GoToBack";
 import LayoutChildWrapper from "components/UI/LayoutChildWrapper";
+import NavbarResponse from "components/UI/navbarResponse/navbarResponse";
+import Rate from "components/UI/Rate";
+import { useGetWindowWidth } from "hooks/useGetWindowWith";
 
 
 const AudioNews = () => {
+    const windowWidth = useGetWindowWidth()
     return (
         <LayoutChildWrapper asideComponent={<Aside />}>
-            <GoToBack title="Аудио новости"/>
-            <Flex style={{margin: '17px 0 104px 0'}}>
+            {windowWidth < 501 && <Rate />}
+            {windowWidth < 501 && <NavbarResponse />}
+            <GoToBack title="Аудио новости" />
+            <Flex style={{ margin: '17px 0 104px 0' }}>
                 {
-                    Array(9).fill(null).map((_, index) => 
-                        <AudioCard 
+                    Array(9).fill(null).map((_, index) =>
+                        <AudioCard
                             key={index}
                             title="Под обломками торгового центра в Денау найден второй погибший"
                             category="Спорт"
@@ -22,7 +28,7 @@ const AudioNews = () => {
                     )
                 }
             </Flex>
-            <GreyButton label='загрузить еще' style={{margin: '0 0 145px 0'}} />
+            <GreyButton label='загрузить еще' style={{ margin: '0 0 145px 0' }} />
         </LayoutChildWrapper>
     );
 }

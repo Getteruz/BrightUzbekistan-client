@@ -17,10 +17,14 @@ export async function getServerSideProps(ctx) {
   const news = []
   const categories = await getCategories()
 
+  try {
     await Promise.all(categories?.map(async ctg => {
     const newsCtg = await getNewsByMainCtg(ctg?.id, ctx?.locale)
     news?.push([ctg?.[ctx?.locale], newsCtg?.map(news => ({ru: {...news?.[ctx?.locale]}, ...news}))])
   }))
+  } catch (err) {
+    console.log("error");
+  }
   return {
     props: {
       news: news || []
