@@ -17,7 +17,7 @@ const UzbekistanNews = ({
                 <NewsImageCard
                     id={lastNews?.id}
                     title={lastNews?.ru?.title}
-                    image={lastNews?.ru?.file}
+                    image={lastNews?.file}
                     time={lastNews?.publishDate}
                     desc={lastNews?.ru?.shortDescription}
                     category={lastNews?.mainCategory?.ru}

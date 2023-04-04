@@ -4,7 +4,7 @@ import { getCategories } from "services/categories";
 import { getNewsByMainCtg } from "services/news";
 
 export default function Home({ news }) {
-  
+
   return (
     <>
       <SEO />
@@ -14,13 +14,13 @@ export default function Home({ news }) {
 }
 
 export async function getServerSideProps(ctx) {
-  const news = []
+  let news = []
   const categories = await getCategories()
 
   try {
     await Promise.all(categories?.map(async ctg => {
     const newsCtg = await getNewsByMainCtg(ctg?.id, ctx?.locale)
-    news?.push([ctg?.[ctx?.locale], newsCtg?.map(news => ({ru: {...news?.[ctx?.locale]}, ...news}))])
+    news.push([ctg?.[ctx?.locale], newsCtg?.map(news => ({ ru: { ...news?.[ctx?.locale] }, ...news }))])
   }))
   } catch (err) {
     console.log("error");

@@ -10,11 +10,11 @@ import uz from '../../../lang/uz.json'
 import уз from '../../../lang/уз.json'
 import en from '../../../lang/en.json'
 import { useRouter } from 'next/router';
+const options = { method: 'GET', headers: { accept: 'application/json' } };
 
 const Rate = () => {
     const windowWidth = useGetWindowWidth()
     const router = useRouter()
-    const options = { method: 'GET', headers: { accept: 'application/json' } };
     const [currency, setCurrency] = useState()
     useEffect(() => {
         fetch('https://api.bright.getter.uz/currency', options)
