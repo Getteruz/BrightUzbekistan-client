@@ -18,7 +18,7 @@ const LastNews = ({
             {items?.slice(0, 1)?.length > 0 && <NewsImageCard
                 id={firstNews?.id}
                 title={firstNews?.ru?.title}
-                image={firstNews?.ru?.file}
+                image={firstNews?.file}
                 time={firstNews?.publishDate}
                 desc={firstNews?.ru?.shortDescription}
                 category={firstNews?.mainCategory?.ru}
