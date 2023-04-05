@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 import { useState } from 'react'
 import { useRef } from 'react'
@@ -23,12 +24,14 @@ const data = [
 
 ]
 export default function JurnalCard() {
+
     const img1 = useRef()
     const img2 = useRef()
     const [progress, setProgress] = useState(0)
     const [number, setNumber] = useState(0)
     const [number1, setNumber1] = useState(1)
-    // let number = 0, number2 = 0;
+
+
     useEffect(() => {
         setInterval(() => {
             setProgress(state => {
@@ -74,7 +77,7 @@ export default function JurnalCard() {
                             <Image src={data[number]?.img} width={200} height={282} />
                         </div>
                         <div ref={img2} className={cls.JurnalCard__img1}>
-                            <Image src={data[number1]?.img} width={200} height={282} />
+                            <Link href={`/journal/${data[number1]?.id}`}><Image src={data[number1]?.img} width={200} height={282} /></Link>
                         </div>
                     </div>
                     <Progress_bar bgcolor="#F35034" progress={progress} height={1} />

@@ -65,7 +65,7 @@ const Navbar = () => {
                 </li>
                 <li>
                     <Button
-                        label='kabinet'
+                        label={langData[router.locale]?.room}
                         icon={PersonIcon}
                     />
                 </li>
