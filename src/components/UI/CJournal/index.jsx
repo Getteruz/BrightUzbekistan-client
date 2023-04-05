@@ -8,7 +8,7 @@ import BookPopup from '../Popup/BookPopup';
 import cls from './CJournal.module.scss'
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
-
+const journalName = '/1.pdf'
 const CJournal = forwardRef(({onFlip}, ref) => {
     const [open, setOpen] = useState(false)
 
@@ -38,62 +38,62 @@ const CJournal = forwardRef(({onFlip}, ref) => {
                 }}
             >
                 <div>
-                    <Document file="/2.pdf">
+                    <Document file={journalName}>
                         <Page width={500} height={692} renderMode='svg' pageNumber={1} />
                     </Document>
                 </div>
                 <div>
-                    <Document file="/2.pdf">
+                    <Document file={journalName}>
                         <Page width={500} height={692} renderMode='svg' pageNumber={2} />
                     </Document>
                 </div>
                 <div>
-                    <Document file="/2.pdf">
+                    <Document file={journalName}>
                         <Page width={500} height={692} renderMode='svg' pageNumber={3} />
                     </Document>
                 </div>
                 <div>
-                    <Document file="/2.pdf">
+                    <Document file={journalName}>
                         <Page width={500} height={692} renderMode='svg' pageNumber={4} />
                     </Document>
                 </div>
                 <div>
-                    <Document file="/2.pdf">
+                    <Document file={journalName}>
                         <Page width={500} height={692} renderMode='svg' pageNumber={5} />
                     </Document>
                 </div>
                 <div>
-                    <Document file="/2.pdf">
+                    <Document file={journalName}>
                         <Page width={500} height={692} renderMode='svg' pageNumber={6} />
                     </Document>
                 </div>
                 <div>
-                    <Document file="/2.pdf">
+                    <Document file={journalName}>
                         <Page width={500} height={692} renderMode='svg' pageNumber={7} />
                     </Document>
                 </div>
                 <div>
-                    <Document file="/2.pdf">
+                    <Document file={journalName}>
                         <Page width={500} height={692} renderMode='svg' pageNumber={8} />
                     </Document>
                 </div>
                 <div>
-                    <Document file="/2.pdf">
+                    <Document file={journalName}>
                         <Page width={500} height={692} renderMode='svg' pageNumber={9} />
                     </Document>
                 </div>
                 <div>
-                    <Document file="/2.pdf">
+                    <Document file={journalName}>
                         <Page width={500} height={692} renderMode='svg' pageNumber={10} />
                     </Document>
                 </div>
                 <div>
-                    <Document file="/2.pdf">
+                    <Document file={journalName}>
                         <Page width={500} height={692} renderMode='svg' pageNumber={9} />
                     </Document>
                 </div>
                 <div>
-                    <Document file="/2.pdf">
+                    <Document file={journalName}>
                         <Page width={500} height={692} renderMode='svg' pageNumber={10} />
                     </Document>
                 </div>
