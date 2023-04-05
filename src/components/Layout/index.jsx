@@ -25,6 +25,7 @@ const Layout = ({ children }) => {
                     {router.pathname !== '/journal/[id]' && <Banner />}
                 </div>
             </Container>
+
             <Footer />
         </>
     );

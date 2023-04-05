@@ -12,6 +12,8 @@ const Banner = () => {
         <div className={cls.banner}>
             <Flex>
                 <div className={cls.banner__block}>
+                    <h2 className={cls.banner__title}>Скоро</h2>
+                    <p className={cls.banner__text}>Скачайте наше мобильное приложение и следите за новостями!</p>
                     <Flex gap={10} >
                         <span>
                             <GooglePlay />
@@ -20,16 +22,15 @@ const Banner = () => {
                             <AppStore />
                         </span>
                     </Flex>
-                    <p className={cls.banner__text}>Скачайте наше мобильное приложение и следите за новостями!</p>
                 </div>
-                <div style={{position: 'relative'}}>
-                    <div  className={cls.banner__image}>
-                    <Image 
-                        src='/svg/MobileApp.svg'
-                        layout='fill'
-                        objectFit='cover'
-                        alt='Bright Uzbekistan Mobile App'
-                    />
+                <div style={{ position: 'relative' }}>
+                    <div className={cls.banner__image}>
+                        <Image
+                            src='/svg/MobileApp.svg'
+                            layout='fill'
+                            objectFit='cover'
+                            alt='Bright Uzbekistan Mobile App'
+                        />
                     </div>
                 </div>
             </Flex>
