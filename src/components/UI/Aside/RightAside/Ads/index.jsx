@@ -11,7 +11,7 @@ const Aside = () => {
                 title='Для рекламодателей!'
                 subtitle="If you keep moving in the right direction you'll get your dream or something better."
             >
-                <DownloadButton label='Скачать медия кит' src='/music.mp3' />
+                <DownloadButton label='Скачать медия кит' src='/media-kit.pdf' />
             </InfoCard>
             <InfoCard
                 title='Полезные ссылки'

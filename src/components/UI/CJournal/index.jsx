@@ -38,62 +38,62 @@ const CJournal = forwardRef(({onFlip}, ref) => {
                 }}
             >
                 <div>
-                    <Document file="/file.pdf">
+                    <Document file="/2.pdf">
                         <Page width={500} height={692} renderMode='svg' pageNumber={1} />
                     </Document>
                 </div>
                 <div>
-                    <Document file="/file.pdf">
+                    <Document file="/2.pdf">
                         <Page width={500} height={692} renderMode='svg' pageNumber={2} />
                     </Document>
                 </div>
                 <div>
-                    <Document file="/file.pdf">
+                    <Document file="/2.pdf">
                         <Page width={500} height={692} renderMode='svg' pageNumber={3} />
                     </Document>
                 </div>
                 <div>
-                    <Document file="/file.pdf">
+                    <Document file="/2.pdf">
                         <Page width={500} height={692} renderMode='svg' pageNumber={4} />
                     </Document>
                 </div>
                 <div>
-                    <Document file="/file.pdf">
+                    <Document file="/2.pdf">
                         <Page width={500} height={692} renderMode='svg' pageNumber={5} />
                     </Document>
                 </div>
                 <div>
-                    <Document file="/file.pdf">
+                    <Document file="/2.pdf">
                         <Page width={500} height={692} renderMode='svg' pageNumber={6} />
                     </Document>
                 </div>
                 <div>
-                    <Document file="/file.pdf">
+                    <Document file="/2.pdf">
                         <Page width={500} height={692} renderMode='svg' pageNumber={7} />
                     </Document>
                 </div>
                 <div>
-                    <Document file="/file.pdf">
+                    <Document file="/2.pdf">
                         <Page width={500} height={692} renderMode='svg' pageNumber={8} />
                     </Document>
                 </div>
                 <div>
-                    <Document file="/file.pdf">
+                    <Document file="/2.pdf">
                         <Page width={500} height={692} renderMode='svg' pageNumber={9} />
                     </Document>
                 </div>
                 <div>
-                    <Document file="/file.pdf">
+                    <Document file="/2.pdf">
                         <Page width={500} height={692} renderMode='svg' pageNumber={10} />
                     </Document>
                 </div>
                 <div>
-                    <Document file="/file.pdf">
+                    <Document file="/2.pdf">
                         <Page width={500} height={692} renderMode='svg' pageNumber={9} />
                     </Document>
                 </div>
                 <div>
-                    <Document file="/file.pdf">
+                    <Document file="/2.pdf">
                         <Page width={500} height={692} renderMode='svg' pageNumber={10} />
                     </Document>
                 </div>
