@@ -9,7 +9,6 @@ import { useGetWindowWidth } from 'hooks/useGetWindowWith';
 
 const Footer = () => {
     const { width } = useGetSize('leftAside')
-    const style = { marginLeft: `${width || 0}px !important` }
     const router = useRouter()
     const windowWidth = useGetWindowWidth()
     return (
@@ -65,7 +64,7 @@ const Footer = () => {
                     <div className={cls.footer__developed}>
                         {windowWidth < 500 ? <div className={cls.footer__developed__text}>Copyright: 2023</div> : ""}
                         Developed by:
-                        <span> Getter</span>
+                        <a href='https://getter.uz' target='_blank'> Getter</a>
                     </div>
                 </Flex>
             </Container>

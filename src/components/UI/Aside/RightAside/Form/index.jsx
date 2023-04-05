@@ -5,26 +5,32 @@ import NewsCard from 'components/UI/Cards/NewsCard';
 import Flex from 'components/UI/Flex';
 import Input from 'components/UI/Forms/Input';
 import { RightArrows } from 'components/UI/icons';
+import { useRouter } from 'next/router';
+import { useQuery } from 'react-query';
+import { getLastNews } from 'services/news';
 import cls from './Aside.module.scss'
 
 const Aside = () => {
+    const router = useRouter()
+    const { data } = useQuery('last-news', () => getLastNews(router.locale))
+
     return (
         <div className={cls.aside}>
-            {/* <Flex
+            <Flex
                 direction='column'
                 gap='20'
             >
-                <NewsCard 
-                    title='«Моя цель — чтобы люди спокойно входили в дом, не запирая машины», — президент о безопасности'
-                    category='Спорт'
-                    date='12 Fevral  2021'
-                />
-                <NewsCard 
-                    title='Мирзиёев анонсировал ряд изменений в таможенной сфере'
-                    category='Узбекистан'
-                    date='12 Fevral  2021'
-                />
-            </Flex> */}
+
+                {
+                    data?.length > 0 && data?.map(news => (
+                        <NewsCard
+                            title={news?.[router?.locale]?.title}
+                            category={news?.categories?.[0]?.[router?.locale]}
+                            time={news?.publishDate}
+                        />
+                    ))
+                }
+            </Flex>
 
             {/* <GreyButton 
                 icon={RightArrows}

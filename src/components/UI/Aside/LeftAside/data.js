@@ -78,51 +78,79 @@ export const projectLinks =
                 activeColor: '',
                 light: true
             },
+            {
+                id: 12,
+                link: '/journal/2',
+                label: "Jurnal",
+                activeColor: '',
+                light: true
+            },
     ],
     уз: [
         {
-            id: 10,
+            id: 13,
             link: '/about-project',
             label: 'Лойиҳа ҳақида',
             activeColor: '',
             light: true
         },
         {
-            id: 11,
+            id: 14,
             link: '/contact-us',
             label: "Биз билан боғланиш",
+            activeColor: '',
+            light: true
+        },
+        {
+            id: 15,
+            link: '/journal/2',
+            label: "Журнал",
             activeColor: '',
             light: true
         },
     ],
         ru: [
             {
-                id: 10,
+                id: 16,
                 link: '/about-project',
                 label: 'О проекте',
                 activeColor: '',
                 light: true
             },
             {
-                id: 11,
+                id: 17,
                 link: '/contact-us',
                 label: 'Связатся с нами',
+                activeColor: '',
+                light: true
+            },
+            {
+                id: 18,
+                link: '/journal/2',
+                label: 'Журнал',
                 activeColor: '',
                 light: true
             },
         ],
         en: [
             {
-                id: 10,
+                id: 19,
                 link: '/about-project',
                 label: 'About project',
                 activeColor: '',
                 light: true
             },
             {
-                id: 11,
+                id: 20,
                 link: '/contact-us',
                 label: 'Contact us',
+                activeColor: '',
+                light: true
+            },
+            {
+                id: 21,
+                link: '/journal/2',
+                label: 'Journal',
                 activeColor: '',
                 light: true
             },

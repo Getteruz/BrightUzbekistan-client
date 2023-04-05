@@ -56,7 +56,7 @@ const Aside = ({ categories = [] }) => {
                 <li>
                     <NavLink
                         link='/journal/2'
-                        label='Журналы'
+                        label={projectLinks[router.locale]?.[2]?.label}
                         isActive={router.asPath.split('/')?.slice(0, 3)?.join('/') === '/journal/2'}
                     />
                 </li>
@@ -67,14 +67,14 @@ const Aside = ({ categories = [] }) => {
                 style={{ flexGrow: 0 }}
             >
                 {
-                    projectLinks[router.locale]?.length > 0 && projectLinks[router.locale].map((options) => (
-                        <li key={options.id}>
+                    projectLinks[router.locale]?.length > 0 && projectLinks[router.locale].map((options, index) => {
+                        if(index !== 2) return <li key={options.id}>
                             <NavLink
                                 {...options}
                                 isActive={router.asPath.split('/')?.slice(0, 3)?.join('/') === options.link}
                             />
                         </li>
-                    ))
+                    })
                 }
             </ul>
         </aside>

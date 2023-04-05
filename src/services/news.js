@@ -1,4 +1,3 @@
-import { log } from "console";
 import api from "./api";
 
 export const getNewsByMainCtg = async (category, locale = 'ru') => {
@@ -10,7 +9,7 @@ export const getNewsByMainCtg = async (category, locale = 'ru') => {
     }
 }
 
-export const getNewsById = async (id, locale) => {
+export const getNewsById = async (id, locale = 'ru') => {
     try {
         const {data} = await api.get(`/single-news/${id}?lang=${locale}`)
         return data
@@ -19,9 +18,10 @@ export const getNewsById = async (id, locale) => {
     }
 }
 
-export const getLastNews = async () => {
+export const getLastNews = async (locale = 'ru', limit = 10) => {
     try {
-        const {data} = await api.get('/news/published?categoryId=')
+        const {data} = await api.get(`/news/last-news?state=published&lang=${locale}&page=1&limit=${limit}`)
+        return data
     } catch (error) {
         console.log(error);
     }

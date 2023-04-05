@@ -11,7 +11,7 @@ import AudioCartmobil from 'components/UI/CardsGroup/audioCart/audioCart';
 
 const Main = ({ news = [] }) => {
     const windowWidth = useGetWindowWidth()
-    console.log(news)
+    
     return (
         <LayoutChildWrapper asideComponent={<Aside />}>
             <main className={cls.main}>
@@ -25,7 +25,7 @@ const Main = ({ news = [] }) => {
                         {
                             news?.length > 0 && news?.map((news, index) => (
                                 <CardsGroup
-                                    withNavigation
+                                    withNavigation={news?.[2]}
                                     key={index}
                                     news={news?.[1]}
                                     category={news?.[0]}
