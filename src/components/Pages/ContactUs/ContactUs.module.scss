@@ -32,12 +32,13 @@
         justify-content: space-between;
         flex-wrap: wrap;
         margin-bottom: 9px;
-
+        width: 100%;
+        max-width: 504px;
     }
 
     &__box {
-        width: 100%;
-        max-width: 230px;
+        width: 50%;
+
         margin-bottom: 21px;
 
         &__text {
@@ -61,11 +62,40 @@
             font-size: 15px;
             line-height: 20px;
             color: #0B212B;
-            width: 225px;
+            width: 100%;
 
             span {
                 margin-right: 13px;
             }
+        }
+
+        &__text3 {
+            font-family: 'Noto Sans';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 18px;
+
+            color: #0B212B;
+            width: 100%;
+
+        }
+
+        &__email {
+            margin-top: 8px;
+            font-family: 'Noto Sans';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 15px;
+            line-height: 20px;
+            text-decoration-line: underline;
+
+            color: #00AFFF;
+
+        }
+
+        &:last-child {
+            width: 100%;
         }
     }
 }

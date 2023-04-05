@@ -19,19 +19,16 @@ const data = [
         img: '/images/jurnal2svgsvg.svg',
         title: "Выпуск: 10.01.2023"
     },
-    {
-        id: 3,
-        img: '/images/jurnal1.svg',
-        title: "Выпуск: 10.01.2023"
-    },
+
 
 ]
 export default function JurnalCard() {
     const img1 = useRef()
     const img2 = useRef()
     const [progress, setProgress] = useState(0)
-    const [number, setNunber] = useState(0)
-    const [number2, setNunber2] = useState(1)
+    const [number, setNumber] = useState(0)
+    const [number1, setNumber1] = useState(1)
+    // let number = 0, number2 = 0;
     useEffect(() => {
         setInterval(() => {
             setProgress(state => {
@@ -39,12 +36,34 @@ export default function JurnalCard() {
             })
 
         }, 1000 / (100 / sekund))
-
-
     }, [])
-    // 
 
 
+    useEffect(() => {
+        if (progress == 100) {
+
+            if (data.length - 1 > number) {
+                setNumber(state => {
+                    return state + 1
+                })
+            }
+            if (data.length - 1 == number) {
+                setNumber(state => {
+                    return state * 0
+                })
+            }
+            if (data.length - 1 > number1) {
+                setNumber1(state => {
+                    return state + 1
+                })
+            }
+            if (data.length - 1 == number1) {
+                setNumber1(state => {
+                    return state * 0
+                })
+            }
+        }
+    }, [progress, number, number1])
 
     return (
         <div className={cls.JurnalCard}>
@@ -52,10 +71,10 @@ export default function JurnalCard() {
                 <div>
                     <div className={cls.JurnalCard__img}>
                         <div ref={img1} className={cls.JurnalCard__img2}>
-                            <Image src={'/images/jurnal1.svg'} width={200} height={282} />
+                            <Image src={data[number]?.img} width={200} height={282} />
                         </div>
                         <div ref={img2} className={cls.JurnalCard__img1}>
-                            <Image src={'/images/jurnal2svgsvg.svg'} width={200} height={282} />
+                            <Image src={data[number1]?.img} width={200} height={282} />
                         </div>
                     </div>
                     <Progress_bar bgcolor="#F35034" progress={progress} height={1} />
