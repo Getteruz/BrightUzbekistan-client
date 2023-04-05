@@ -9,20 +9,21 @@ const Aside = () => {
         <div className={cls.cards__wrapper}>
             <InfoCard
                 title='Для рекламодателей!'
-                subtitle="If you keep moving in the right direction you'll get your dream or something better."
+                subtitle="Медакит для размещения модульных реклам и пиар статьей в журнале Bright Uzbekistan"
             >
                 <DownloadButton label='Скачать медия кит' src='/music.mp3' />
             </InfoCard>
             <InfoCard
                 title='Полезные ссылки'
-                subtitle="If you keep moving in the right direction you'll get your dream or something better."
+                subtitle="Проект Bright Uzbekistan осуществляется при поддержке Администрации Президента Республики Узбекистан, Министерства инвестиций, промышленности и торговли и Агентства стратегических Реформ при Президенте Республики Узбекистан."
             >
-                <Flex gap='20' direction='column'>
-                    <Link href='https://lex.uz'><a className={cls.link} target='_blank'>Lex.uz</a></Link>
-                    <Link href='https://mygov.uz'><a className={cls.link} target='_blank'>mygov.uz</a></Link>
-                    <Link href='https://prezident.uz'><a className={cls.link} target='_blank'>Preziden.uz</a></Link>
+                <Flex gap='10' direction='column'>
+                    <Link href='https://president.uz'><a className={cls.link} target='_blank'>www.president.uz</a></Link>
+                    <Link href='https://miit.uz'><a className={cls.link} target='_blank'>www.miit.uz</a></Link>
+                    <Link href='https://pasr.gov.uz'><a className={cls.link} target='_blank'>www.asr.gov.uz</a></Link>
                 </Flex>
             </InfoCard>
+
         </div>
     );
 }

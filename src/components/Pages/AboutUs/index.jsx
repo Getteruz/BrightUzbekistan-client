@@ -21,7 +21,7 @@ const AboutUs = () => {
                     />
                 </div>
                 <h1 className={cls.about__title}>Bright Uzbekistan tashkiloti haqida</h1>
-                <p className={cls.about__desc}>
+                {/* <p className={cls.about__desc}>
                     "Top Business Group" kompaniyasi 2008 yildan buyon nashriyot faoliyati bilan shug'ullanadi, "Top Business", "iste'molchi-istiqbolli" biznes - jurnallari va SMM reklama sohasida xizmat ko'rsatuvchi "ELEVATE" platformasi orqali ishbilarmon doiralarida keng tanilgan.
                     <br />
                     <br />
@@ -33,8 +33,8 @@ const AboutUs = () => {
                     <br />
                     "Bright Uzbekistan" jurnali UzAirways samolyotlari va yuqori tezlikdagi Afrosiyob poyezdlarida, mehmonxonalarda, xalqaro ko'rgazmalarda, respublikamizning MDH, Yevropa, Osiyo va Amerika davlatlaridagi elchixonalari orqali tarqatiladi.
                     "Bright Uzbekistan" loyihasi O'zbekistonning eksport, import va investitsiya faoliyati, hamkorlarimiz haqida fikr olish, o'z biznesini jahon miqyosida namoyish etish, yangi, uzoq kutilgan shartnomalar tuzish va yetkazib berish geografiyasini kengaytirish uchun ajoyib imkoniyatdir. Loyihaning asosiy vazifasi - O'zbekistonda biznes yuritish shartlari haqida gapirish, o'zbek ishbilarmonlarining haqiqiy ijobiy obrazini namoyish etish, xorijiy investorlar e'tiborini jalb qilish, manfaatlarni birlashtirish va yagona biznes loyihalarda hamkorlik aloqalarini kengaytirish va mustahkamlashga xizmat qilishdir.
-                </p>
-                <ShareBanner tags={tags} />
+                </p> */}
+                {/* <ShareBanner tags={tags} /> */}
             </main>
         </LayoutChildWrapper>
 
