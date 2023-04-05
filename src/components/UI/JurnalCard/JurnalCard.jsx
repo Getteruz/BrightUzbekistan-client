@@ -11,12 +11,12 @@ const sekund = 10
 const data = [
     {
         id: 1,
-        img: '/images/jurnal1.svg',
+        img: '/Images/jurnal1.svg',
         title: "Выпуск: 10.01.2023"
     },
     {
         id: 2,
-        img: '/images/jurnal2svgsvg.svg',
+        img: '/Images/jurnal2svgsvg.svg',
         title: "Выпуск: 10.01.2023"
     },
 
