@@ -64,7 +64,7 @@ const Footer = () => {
                     <div className={cls.footer__developed}>
                         {windowWidth < 500 ? <div className={cls.footer__developed__text}>Copyright: 2023</div> : ""}
                         Developed by:
-                        <a href='https://getter.uz' target='_blank'> Getter</a>
+                        <a href='https://getter.uz' target='_blank' rel="noreferrer"> Getter</a>
                     </div>
                 </Flex>
             </Container>
