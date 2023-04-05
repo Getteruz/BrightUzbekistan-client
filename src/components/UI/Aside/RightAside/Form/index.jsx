@@ -5,6 +5,7 @@ import NewsCard from 'components/UI/Cards/NewsCard';
 import Flex from 'components/UI/Flex';
 import Input from 'components/UI/Forms/Input';
 import { RightArrows } from 'components/UI/icons';
+import JurnalCard from 'components/UI/JurnalCard/JurnalCard';
 import { useRouter } from 'next/router';
 import { useQuery } from 'react-query';
 import { getLastNews } from 'services/news';
@@ -32,24 +33,28 @@ const Aside = () => {
                 }
             </Flex>
 
-            {/* <GreyButton 
+
+            <GreyButton
                 icon={RightArrows}
                 label='все новости'
-                style={{margin: '36px 0'}}
-            /> */}
+                style={{ margin: '36px 0' }}
+            />
 
-            {/* <form className={cls.aside__form}>
-                <Input 
+            <form className={cls.aside__form}>
+                <Input
                     label='Поиск по сайту'
                     placeholder='Поиск'
                 />
                 <BlackButton label='Показать результат' />
-            </form> */}
+            </form>
 
             {/* <AudioCard 
                 title='Под обломками торгового центра в Денау найден второй погибший'
                 src='/music.mp3'
             /> */}
+
+            <JurnalCard />
+
         </div>
     );
 }

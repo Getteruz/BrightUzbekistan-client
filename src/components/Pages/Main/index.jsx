@@ -9,6 +9,7 @@ import NavbarResponse from 'components/UI/navbarResponse/navbarResponse';
 import { useGetWindowWidth } from 'hooks/useGetWindowWith';
 import AudioCartmobil from 'components/UI/CardsGroup/audioCart/audioCart';
 
+
 const Main = ({ news = [] }) => {
     const windowWidth = useGetWindowWidth()
     
@@ -33,6 +34,7 @@ const Main = ({ news = [] }) => {
                             ))
                         }
                         {/* {windowWidth < 501 && <AudioCartmobil />} */}
+
                     </Flex>
                 </div>
             </main>

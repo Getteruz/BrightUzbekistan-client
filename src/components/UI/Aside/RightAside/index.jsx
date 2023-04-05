@@ -6,8 +6,8 @@ const RightAside = ({ children }) => {
     return (
         <aside className={cls.aside}>
             <Navbar />
-            {children}
             <Test />
+            {children}
         </aside>
     );
 }
