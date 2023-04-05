@@ -50,7 +50,7 @@
 }
 
 @keyframes test {
-    25% {
+    33% {
         position: absolute;
         top: 21px;
         left: 21px;
@@ -62,7 +62,7 @@
 
     }
 
-    50% {
+    66% {
         position: absolute;
         top: 9px;
         left: 9px;
@@ -73,7 +73,7 @@
         border-radius: 50%;
     }
 
-    75% {
+    100% {
         position: absolute;
         top: 0;
         left: 0;
@@ -84,14 +84,5 @@
         border-radius: 50%;
     }
 
-    100% {
-        position: absolute;
-        top: 21px;
-        left: 21px;
-        background: #F37434;
-        opacity: 0.2;
-        width: 28px;
-        height: 28px;
-        border-radius: 50%;
-    }
+
 }
