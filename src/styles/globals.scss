@@ -18,6 +18,10 @@ body {
   color: var(--text-color);
 }
 
+.gradient {
+  filter: grayscale(100);
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -36,7 +40,7 @@ h2,
 h3,
 h4,
 h5,
-h6, 
+h6,
 p {
   margin: 0;
 }
@@ -47,11 +51,17 @@ ul {
   padding: 0;
 }
 
-.react-pdf__Document{
+.react-pdf__Document {
   overflow: hidden;
-  max-height: 100%!important;
+  max-height: 100% !important;
 }
 
-.stf__wrapper{
+.stf__wrapper {
   background: white;
+}
+
+.css-1xojh73>* {
+  @media only screen and (max-width:500px) {
+    max-width: 100% !important;
+  }
 }

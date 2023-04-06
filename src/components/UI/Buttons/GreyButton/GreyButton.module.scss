@@ -1,4 +1,4 @@
-.btn{
+.btn {
     padding: 11px 18px;
     display: flex;
     align-items: center;
@@ -9,4 +9,11 @@
     font-size: 13px;
     line-height: 18px;
     border: none;
+
+    @media only screen and (max-width:500px) {
+        justify-content: center;
+
+        border-radius: 0;
+        margin: 0 20px;
+    }
 }

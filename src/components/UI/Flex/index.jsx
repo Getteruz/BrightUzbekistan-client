@@ -12,8 +12,8 @@ const Wrapper = styled('div')`
     flex-wrap: ${props => props.wrap ?? 'wrap'};
 
     & > *{
-        max-width: ${props => props.direction === 'row' 
-        ? `calc((100% - ${props.gap * (props.rowCount ?? 3 - 1)}px) / ${props.rowCount ?? 3})` 
+        max-width: ${props => props.direction === 'row'
+        ? `calc((100% - ${props.gap * (props.rowCount ?? 3 - 1)}px) / ${props.rowCount ?? 3})`
         : props.cardWidth || '100%'};
     }
 
@@ -22,6 +22,7 @@ const Wrapper = styled('div')`
 
 const Flex = ({
     children,
+
     media = {},
     ...other
 }) => {
@@ -36,7 +37,7 @@ const Flex = ({
         ${acc}
         `
     ), '')
-    
+
     return (
         <Wrapper
             mediaQuery={mediaQuery}

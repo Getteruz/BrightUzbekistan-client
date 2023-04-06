@@ -20,19 +20,18 @@ const AboutUs = () => {
                         alt='Bright Uzbekistan foto'
                     />
                 </div>
-                <h1 className={cls.about__title}>Bright Uzbekistan tashkiloti haqida</h1>
+                <h1 className={cls.about__title}>О проекте </h1>
                 <p className={cls.about__desc}>
-                    "Top Business Group" kompaniyasi 2008 yildan buyon nashriyot faoliyati bilan shug'ullanadi, "Top Business", "iste'molchi-istiqbolli" biznes - jurnallari va SMM reklama sohasida xizmat ko'rsatuvchi "ELEVATE" platformasi orqali ishbilarmon doiralarida keng tanilgan.
+                    Проект "Bright Uzbekistan" является международным проектом, разрабатываемым компанией "Top Business Group" и развивающиеся при поддержке Администрации Президента Республики Узбекистан. Проект включает в себя печатное издание и онлайн информационный портал, которые предназначены для повышения имиджа и продвижения экономического потенциала Узбекистана на международном уровне.
                     <br />
                     <br />
-                    12 yil mobaynida kompaniya uzoqni ko'zlagan rahbariyat va "Top Business Group" jamoasi tufayli sezilarli muvaffaqiyatlarga erishdi va faol rivojlanishda davom etmoqda - bu ishga tushirilgan "Bright Uzbekistan" yangi loyihasi bilan hamohangdir.
+                    Основная цель проекта - показать мировому сообществу экспортный, импортный и инвестиционный потенциал Узбекистана. Проект также направлен на укрепление позиций Узбекистана в международных экономических отношениях и на привлечение иностранных инвесторов в экономику страны. А так же каждый номер журнала это показатель взаимных отношений Узбекистана с другими государствами. 
                     <br />
                     <br />
-                    "Bright Uzbekistan" uchta yo'nalish – eksport, import va investitsiyalarni o'z ichiga oladi. Jurnalda O'zbekistonning investitsiya loyihalari, kompaniyalar faoliyati va rahbarlarning muvaffaqiyatli sirlari haqida ma'lumot mavjud. O'zbekistonning iqtisodiy faoliyatini eksport qilish, import qilish va tahlil qilish to'g'risidagi ma'lumotnomalar ham jurnal sahifalarida chop etilgan. Qo'shimcha ma'lumotlar "Facebook", "Youtube", "Instagram" ijtimoiy tarmoqlarida va "Telegram" yangiliklar kanalida hamda "Bright Uzbekistan" veb-saytida joylashtirilgan.
+                    Издание включает в себя информационный блок об осуществляемых мерах по поддержке предпринимательской деятельности, а также интервью с преуспевающими бизнесменами и влиятельными лицами Узбекистана и всего мира, новости торговли и ВЭД, аналитические обзоры, статистику и анализ, а также темы, касающиеся туризма, спорта, сельского хозяйства, образования и информационных технологий. 
                     <br />
                     <br />
-                    "Bright Uzbekistan" jurnali UzAirways samolyotlari va yuqori tezlikdagi Afrosiyob poyezdlarida, mehmonxonalarda, xalqaro ko'rgazmalarda, respublikamizning MDH, Yevropa, Osiyo va Amerika davlatlaridagi elchixonalari orqali tarqatiladi.
-                    "Bright Uzbekistan" loyihasi O'zbekistonning eksport, import va investitsiya faoliyati, hamkorlarimiz haqida fikr olish, o'z biznesini jahon miqyosida namoyish etish, yangi, uzoq kutilgan shartnomalar tuzish va yetkazib berish geografiyasini kengaytirish uchun ajoyib imkoniyatdir. Loyihaning asosiy vazifasi - O'zbekistonda biznes yuritish shartlari haqida gapirish, o'zbek ishbilarmonlarining haqiqiy ijobiy obrazini namoyish etish, xorijiy investorlar e'tiborini jalb qilish, manfaatlarni birlashtirish va yagona biznes loyihalarda hamkorlik aloqalarini kengaytirish va mustahkamlashga xizmat qilishdir.
+                    Проект "Bright Uzbekistan" — это уникальная возможность узнать о бизнес-возможностях Узбекистана и всего мира, о том, как предприниматели и инвесторы могут воспользоваться этими возможностями для достижения своих целей.
                 </p>
                 <ShareBanner tags={tags} />
             </main>

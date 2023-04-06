@@ -1,14 +1,15 @@
-import Journal from "components/Pages/Journal";
+
+import JournalById from "components/Pages/JournalById/JournalById";
 import SEO from "components/SEO";
 
 
-const JournalPage = () => {
+const JournalPagebyid = () => {
     return (
         <>
             <SEO />
-            <Journal />
+            <JournalById />
         </>
     );
 }
 
-export default JournalPage;
+export default JournalPagebyid;

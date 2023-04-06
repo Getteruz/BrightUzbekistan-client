@@ -61,19 +61,98 @@ export const navlinks = [
     },
 ]
 
-export const projectLinks = [
+export const projectLinks = 
     {
-        id: 10,
-        link: '/about-project',
-        label: 'О проекте',
-        activeColor: '',
-        light: true
-    },
-    {
-        id: 11,
-        link: '/contact-us',
-        label: 'Связатся с нами',
-        activeColor: '',
-        light: true
-    },
-]
+        uz: [
+            {
+                id: 10,
+                link: '/about-project',
+                label: 'Loyiha haqida',
+                activeColor: '',
+                light: true
+            },
+            {
+                id: 11,
+                link: '/contact-us',
+                label: "Biz bilan bog'lanish",
+                activeColor: '',
+                light: true
+            },
+            {
+                id: 12,
+                link: '/journal/2',
+                label: "Jurnal",
+                activeColor: '',
+                light: true
+            },
+    ],
+    уз: [
+        {
+            id: 13,
+            link: '/about-project',
+            label: 'Лойиҳа ҳақида',
+            activeColor: '',
+            light: true
+        },
+        {
+            id: 14,
+            link: '/contact-us',
+            label: "Биз билан боғланиш",
+            activeColor: '',
+            light: true
+        },
+        {
+            id: 15,
+            link: '/journal/2',
+            label: "Журнал",
+            activeColor: '',
+            light: true
+        },
+    ],
+        ru: [
+            {
+                id: 16,
+                link: '/about-project',
+                label: 'О проекте',
+                activeColor: '',
+                light: true
+            },
+            {
+                id: 17,
+                link: '/contact-us',
+                label: 'Связатся с нами',
+                activeColor: '',
+                light: true
+            },
+            {
+                id: 18,
+                link: '/journal/2',
+                label: 'Журнал',
+                activeColor: '',
+                light: true
+            },
+        ],
+        en: [
+            {
+                id: 19,
+                link: '/about-project',
+                label: 'About project',
+                activeColor: '',
+                light: true
+            },
+            {
+                id: 20,
+                link: '/contact-us',
+                label: 'Contact us',
+                activeColor: '',
+                light: true
+            },
+            {
+                id: 21,
+                link: '/journal/2',
+                label: 'Journal',
+                activeColor: '',
+                light: true
+            },
+       ]
+   }

@@ -8,46 +8,50 @@ import LayoutChildWrapper from "components/UI/LayoutChildWrapper";
 import ShareBanner from "components/UI/ShareBanner";
 import { newsData } from "./data";
 import cls from './SingleNews.module.scss'
+import { useRouter } from "next/router";
 import Markup from "components/UI/Markup";
 import parseTimestamp from "utils/parseTimestamp";
-import { ClockIcon } from "components/UI/icons";
 
+const tags = ['# Узбекистан', '# Таможня', '# Шавкат Мирзиёев.', '# Экономика']
 
-const SingleNews = ({news = {}}) => {
-    const {year, data, hours, minutes, month} = parseTimestamp(news?.created_at)
-    
+const SingleNews = ({ news = {} }) => {
+    const router = useRouter()
+    const { hours, minutes, year, month, data } = parseTimestamp(news?.publishDate)
+
     return (
         <LayoutChildWrapper asideComponent={<Aside />}>
             <main className={cls.main}>
                 <GoToBack title="Последние новости" />
                 <div className={cls.main__wrapper}>
-                    <h2 className={cls.main__title}>{news?.ru?.title}</h2>
-                    <div className={cls.main__time}>
-                        <span><ClockIcon />{`${hours}:${minutes}`}</span>
-                        <span>{news?.categories?.[0]?.ru}</span>
-                    </div>
-                    <h3 className={cls.main__subtitle}>{news?.ru?.shortDescription}</h3>
+                    <h2 className={cls.main__title}>{news?.[router?.locale]?.title}</h2>
+                    <NewsCard
+                        cutLine={false}
+                        id={news?.id}
+                        time={news?.publishDate}
+                        category={news?.mainCategory?.[router?.locale]}
+                        title={news?.[router?.locale]?.shortDescription}
+                    />
                     <div className={cls.main__image}>
-                        <Image
-                            src={news?.ru?.file || '/Images/prezident.webp'}
+                        {news?.file && <Image
+                            src={news?.file || ''}
                             layout="fill"
                             objectFit="cover"
                             alt="Image"
-                        />
+                        />}
                     </div>
-                    <Markup html={news?.ru?.description} />
-                    <time className={cls.main__time}>{`${data} ${month}, ${year}.  ${hours}:${minutes}`}</time>
+                    <Markup html={news?.[router?.locale]?.description} />
+                    <time className={cls.main__time}>{`${data} ${month}, ${year}  ${hours}:${minutes}`}</time>
                 </div>
                 <div className={cls.main__banner}>
-                    <ShareBanner tags={news?.ru?.tags} />
+                    <ShareBanner tags={news?.[router?.locale]?.tags} />
                 </div>
                 <div className={cls.main__cards}>
-                    <CardsGroup news={{...newsData['political-news'], withNavigation: true}} />
+                    {/* <CardsGroup news={{...newsData['political-news'], withNavigation: true}} /> */}
                 </div>
-                <div className={cls.main__recomended}>
+                {/* <div className={cls.main__recomended}>
                     <h4 className={cls.main__recomended__text}>Репортерские статьи</h4>
-                    <RecomendedCardList items={newsData['last-news'].items}/>
-                </div>
+                    <RecomendedCardList items={newsData['last-news'].items} />
+                </div> */}
             </main>
         </LayoutChildWrapper>
     );

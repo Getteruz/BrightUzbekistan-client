@@ -1,0 +1,130 @@
+.JurnalCard {
+    margin-bottom: 102px;
+
+    &__top {
+        display: flex;
+        align-items: flex-start;
+        gap: 30px;
+    }
+
+    &__img {
+        position: relative;
+        height: 315px;
+        width: 220px;
+    }
+
+    &__img1 {
+        position: absolute;
+        top: 15px;
+        left: 0;
+    }
+
+    &__img2 {
+        position: absolute;
+        top: 0;
+        left: 20px;
+        opacity: .2;
+    }
+
+    &__icons {
+        margin-top: 31px;
+
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 64px;
+            height: 64px;
+            text-align: center;
+            border-radius: 50%;
+
+            &:hover {
+                background-color: #EEEEEE;
+            }
+        }
+    }
+
+    &__line {
+        width: 200px;
+        height: 1px;
+        background-color: #EEEEEE;
+        position: relative;
+
+        div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1px;
+            height: 1px;
+            background: #F35034;
+            transition: all 5s ease;
+
+
+        }
+    }
+
+    &__text {
+        font-family: 'Noto Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+        margin-top: 10px;
+        color: #000000;
+
+    }
+}
+
+.img0 {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    opacity: .2;
+    animation: all 3s infinite;
+}
+
+.img1 {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    opacity: 1;
+}
+
+@keyframes out {
+    0% {
+        opacity: 0;
+        scale: 0.1;
+    }
+
+    25% {
+        opacity: .2;
+        scale: 0.2;
+    }
+
+    50% {
+        opacity: .4;
+        scale: 0.4;
+    }
+
+    75% {
+        opacity: .6;
+        scale: 0.6;
+    }
+
+    100% {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+@keyframes in {
+    0% {}
+
+    25% {}
+
+    50% {}
+
+    75% {}
+
+    100% {}
+}

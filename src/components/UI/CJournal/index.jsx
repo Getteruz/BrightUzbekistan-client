@@ -8,8 +8,8 @@ import BookPopup from '../Popup/BookPopup';
 import cls from './CJournal.module.scss'
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
-
-const CJournal = forwardRef(({ onFlip }, ref) => {
+const journalName = '/1.pdf'
+const CJournal = forwardRef(({onFlip}, ref) => {
     const [open, setOpen] = useState(false)
 
     const onClickOutside = () => {
@@ -19,63 +19,85 @@ const CJournal = forwardRef(({ onFlip }, ref) => {
 
     return (
         <div className={cls.wrapper}>
-            <Document file="/file.pdf">
-                <HTMLFlipBook
-                    width={510}
-                    height={692}
-                    ref={ref}
-                    onFlip={onFlip}
-                    onChangeState={(e) => {
-                        const pagesInfo = e?.object?.pages
-                        const currentPage = pagesInfo?.currentPageIndex
-                        const pageSpread = pagesInfo?.currentSpreadIndex
-                        const pageCount = ref.current?.pageFlip()?.getPageCount()
-
-                        if (currentPage + 2 === pageCount) {
-                            setOpen(true)
-                        } else {
-                            setOpen(false)
-                        }
-                    }}
-                >
-                    <div>
+            <HTMLFlipBook 
+                width={510} 
+                height={692} 
+                ref={ref}
+                onFlip={onFlip}
+                onChangeState={(e) => {
+                    const pagesInfo = e?.object?.pages
+                    const currentPage = pagesInfo?.currentPageIndex
+                    const pageSpread = pagesInfo?.currentSpreadIndex
+                    const pageCount = ref.current?.pageFlip()?.getPageCount()
+                    
+                    if(currentPage + 2 === pageCount){
+                        setOpen(true)
+                    } else {
+                        setOpen(false)
+                    }
+                }}
+            >
+                <div>
+                    <Document file={journalName}>
                         <Page width={500} height={692} renderMode='svg' pageNumber={1} />
-                    </div>
-                    <div>
+                    </Document>
+                </div>
+                <div>
+                    <Document file={journalName}>
                         <Page width={500} height={692} renderMode='svg' pageNumber={2} />
-                    </div>
-                    <div>
+                    </Document>
+                </div>
+                <div>
+                    <Document file={journalName}>
                         <Page width={500} height={692} renderMode='svg' pageNumber={3} />
-                    </div>
-                    <div>
+                    </Document>
+                </div>
+                <div>
+                    <Document file={journalName}>
                         <Page width={500} height={692} renderMode='svg' pageNumber={4} />
-                    </div>
-                    <div>
+                    </Document>
+                </div>
+                <div>
+                    <Document file={journalName}>
                         <Page width={500} height={692} renderMode='svg' pageNumber={5} />
-                    </div>
-                    <div>
+                    </Document>
+                </div>
+                <div>
+                    <Document file={journalName}>
                         <Page width={500} height={692} renderMode='svg' pageNumber={6} />
-                    </div>
-                    <div>
+                    </Document>
+                </div>
+                <div>
+                    <Document file={journalName}>
                         <Page width={500} height={692} renderMode='svg' pageNumber={7} />
-                    </div>
-                    <div>
+                    </Document>
+                </div>
+                <div>
+                    <Document file={journalName}>
                         <Page width={500} height={692} renderMode='svg' pageNumber={8} />
-                    </div>
-                    <div>
-                        <Page width={500} height={692} renderMode='svg' pageNumber={11} />
-                    </div>
-                    <div>
-                        <Page width={500} height={692} renderMode='svg' pageNumber={12} />
-                    </div>
-                    <div>
+                    </Document>
+                </div>
+                <div>
+                    <Document file={journalName}>
                         <Page width={500} height={692} renderMode='svg' pageNumber={9} />
-                    </div>
-                    <div>
+                    </Document>
+                </div>
+                <div>
+                    <Document file={journalName}>
                         <Page width={500} height={692} renderMode='svg' pageNumber={10} />
-                    </div>
-                </HTMLFlipBook>
-            </Document>
+                    </Document>
+                </div>
+                <div>
+                    <Document file={journalName}>
+                        <Page width={500} height={692} renderMode='svg' pageNumber={9} />
+                    </Document>
+                </div>
+                <div>
+                    <Document file={journalName}>
+                        <Page width={500} height={692} renderMode='svg' pageNumber={10} />
+                    </Document>
+                </div>
+            </HTMLFlipBook>
             {open && <BookPopup onClickOutside={onClickOutside} />}
         </div >
     );

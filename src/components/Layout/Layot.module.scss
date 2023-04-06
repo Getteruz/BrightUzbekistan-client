@@ -1,17 +1,21 @@
-.layout{
-    &__left__aside{
-        max-width: 403px;
+.layout {
+    &__left__aside {
         width: 100%;
+        max-width: 403px;
+
+        @media only screen and (max-width:500px) {
+            display: none;
+        }
     }
 
-    &__main{
+    &__main {
         flex-grow: 1;
         min-height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
 
-        &__wrapper{
+        &__wrapper {
             display: flex;
         }
     }

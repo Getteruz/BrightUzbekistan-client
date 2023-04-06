@@ -1,12 +1,13 @@
 import axios from "axios";
 import SingleNews from "components/Pages/SingleNews";
 import SEO from "components/SEO";
+import { getNewsById } from "services/news";
 
 const SingleNewsPage = ({news = {}}) => {
     return (
         <>
             <SEO />
-            <SingleNews news={news} />
+            <SingleNews news={news}/>
         </>
     );
 }
@@ -14,19 +15,10 @@ const SingleNewsPage = ({news = {}}) => {
 export default SingleNewsPage;
 
 export async function getServerSideProps(ctx) {
-    const res = await axios.get(`${process.env.NEXT_PUBLIC_API}/single-news/${ctx.params?.newsId}`)
-    
-    try {
-        return {
-            props: {
-                news: res?.data
-            }
-        }
-    } catch (error) {
-        return {
-            props: {
-
-            }
+    const news = await getNewsById(ctx?.query?.newsId, ctx?.locale)
+    return {
+        props: {
+            news: news || {}
         }
     }
 }

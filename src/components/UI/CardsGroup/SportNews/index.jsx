@@ -8,12 +8,22 @@ const SportNews = ({
     category = '',
     items = []
 }) => {
-    return (
+    const [firstNews] = items?.slice(0,1) || []
+    return items?.length > 0 ? (
         <GroupWrapper withNavigation={withNavigation} button={button} category={category}>
-            <NewsImageCard {...items?.slice(0,1)?.[0]} direction='column' reverse={true}/>
+            <NewsImageCard
+                direction='column' 
+                reverse={true}
+                id={firstNews?.id}
+                title={firstNews?.ru?.title}
+                time={firstNews?.publishDate}
+                category={firstNews?.mainCategory?.ru}
+                desc={firstNews?.ru?.shortDescription}
+                image={firstNews?.file}
+            />
             <NewsCardList items={items.slice(1,6) || []} desc={false} />
         </GroupWrapper>
-    );
+    ): <></>;
 }
 
 export default SportNews;
