@@ -74,10 +74,10 @@ export default function JurnalCard() {
                 <div>
                     <div className={cls.JurnalCard__img}>
                         <div ref={img1} className={cls.JurnalCard__img2}>
-                            <Image src={data[number]?.img} width={200} height={282} />
+                            <Image src={data[number]?.img} width={200} height={282} alt={"img"} />
                         </div>
                         <div ref={img2} className={cls.JurnalCard__img1}>
-                            <Link href={`/journal/${data[number1]?.id}`}><Image src={data[number1]?.img} width={200} height={282} /></Link>
+                            <Link href={`/journal/${data[number1]?.id}`}><Image src={data[number1]?.img} width={200} height={282} alt={"img"} /></Link>
                         </div>
                     </div>
                     <Progress_bar bgcolor="#F35034" progress={progress} height={1} />
