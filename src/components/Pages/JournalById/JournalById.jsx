@@ -20,7 +20,7 @@ export default function JournalById() {
     const router = useRouter()
     const id = router.query.id
 
-    const filter = data.filter(e => e.id == id || 1)
+    const filter = data.filter(e => e.id == id)
 
     return (
 
