@@ -37,7 +37,9 @@ const Banner = () => {
                             />
                         </div>
                     </div> : <div className={cls.banner__image2}>
-                        <img
+                        <Image
+                            width={240}
+                            height={310}
                             src='/svg/MobileApp.svg'
                             alt='Bright Uzbekistan Mobile App'
                         />
@@ -60,7 +62,7 @@ const Banner = () => {
                 <Flex width='100%' gap={widthwindow < 500 ? 20 : 30}>
                     {
                         contacts?.length > 0 && contacts.map((options) => (
-                            <p className={cls.banner__contacttetx}>
+                            <p key={options.id} className={cls.banner__contacttetx}>
                                 <NavLink
                                     key={options.id}
                                     {...options}

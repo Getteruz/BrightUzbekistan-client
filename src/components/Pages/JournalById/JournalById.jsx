@@ -18,14 +18,16 @@ const data = [
 
 export default function JournalById() {
     const router = useRouter()
-    const filter = data.filter(e => e.id == router.query.id)
+    const id = router.query.id
+
+    const filter = data.filter(e => e.id == id || 1)
 
     return (
 
         <div className={cls.JournalById}>
             <GoToBack title='Мировые новости' />
             <div className={cls.JournalById__top}>
-                <img className={cls.JournalById__img} src={filter[0]?.img} layout='fill' width={295} />
+                <Image alt="img" className={cls.JournalById__img} src={filter[0]?.img} height={388} width={295} />
                 <div className={cls.JournalById__left}>
                     <h2 className={cls.JournalById__left__title}>Информация о двадцать третьем пленарном заседании Сената Олий Мажлиса Республики Узбекистан﻿</h2>
                     <p className={cls.JournalById__left__text}>If you keep moving in the right direction you'll get your dream or something better.</p>
