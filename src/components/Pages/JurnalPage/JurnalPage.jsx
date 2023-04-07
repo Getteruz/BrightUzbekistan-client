@@ -20,7 +20,7 @@ export default function JurnalPage() {
     return (
         <LayoutChildWrapper >
             <GoToBack title='Мировые новости' />
-            <div className={cls.JournalById__top} onClick={() => router.push('journal/1')} >
+            <div className={cls.JournalById__top} onClick={() => router.push('journal/2')} >
                 <Image alt="img" className={cls.JournalById__img} src='/svg/rentang.svg' objectFit='cover' height={388} width={295} />
                 <div className={cls.JournalById__left}>
                     <h2 className={cls.JournalById__left__title}>Информация о двадцать третьем пленарном заседании Сената Олий Мажлиса Республики Узбекистан﻿</h2>

@@ -55,7 +55,7 @@ const Aside = ({ categories = [] }) => {
                 </li> */}
                 <li>
                     <NavLink
-                        link='/journal/2'
+                        link='/journal'
                         label={projectLinks[router.locale]?.[2]?.label}
                         isActive={router.asPath.split('/')?.slice(0, 3)?.join('/') === '/journal'}
                     />
