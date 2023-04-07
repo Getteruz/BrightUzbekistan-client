@@ -1,5 +1,4 @@
-
-import JournalById from "components/Pages/JournalById/JournalById";
+import Journal from "components/Pages/Journal";
 import SEO from "components/SEO";
 
 
@@ -7,7 +6,7 @@ const JournalPagebyid = () => {
     return (
         <>
             <SEO />
-            <JournalById />
+            <Journal />
         </>
     );
 }

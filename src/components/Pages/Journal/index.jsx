@@ -13,12 +13,13 @@ const Journal = () => {
     const [page, setPage] = useState()
     const journalRef = useRef()
     const windowWidth = useGetWindowWidth()
+
     return (
         <div className={cls.journal}>
             {windowWidth < 501 && <Rate />}
             {windowWidth < 501 && <NavbarResponse />}
             <div className={cls.journal__nav}>
-                <GoToBack title="Мировые новости" />
+                <GoToBack />
 
                 {windowWidth > 501 && <Navbar />}
             </div>

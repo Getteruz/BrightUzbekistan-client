@@ -39,7 +39,9 @@ const SingleNews = ({ news = {} }) => {
                             alt="Image"
                         />}
                     </div>
-                    <Markup html={news?.[router?.locale]?.description} />
+                    <div className={cls.main__desc}>
+                        <Markup html={news?.[router?.locale]?.description} />
+                    </div>
                     <time className={cls.main__time}>{`${data} ${month}, ${year}  ${hours}:${minutes}`}</time>
                 </div>
                 <div className={cls.main__banner}>

@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { forwardRef } from 'react';
 import HTMLFlipBook from 'react-pageflip';
@@ -8,9 +9,10 @@ import BookPopup from '../Popup/BookPopup';
 import cls from './CJournal.module.scss'
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
-const journalName = '/1.pdf'
 const CJournal = forwardRef(({onFlip}, ref) => {
     const [open, setOpen] = useState(false)
+    const { query: { id } } = useRouter()
+    const journalName = `/${id}.pdf`
 
     const onClickOutside = () => {
         setOpen(false)
@@ -20,6 +22,7 @@ const CJournal = forwardRef(({onFlip}, ref) => {
     return (
         <div className={cls.wrapper}>
             <HTMLFlipBook 
+            showCover
                 width={510} 
                 height={692} 
                 ref={ref}
@@ -30,7 +33,7 @@ const CJournal = forwardRef(({onFlip}, ref) => {
                     const pageSpread = pagesInfo?.currentSpreadIndex
                     const pageCount = ref.current?.pageFlip()?.getPageCount()
                     
-                    if(currentPage + 2 === pageCount){
+                    if(currentPage + 2 === 11){
                         setOpen(true)
                     } else {
                         setOpen(false)

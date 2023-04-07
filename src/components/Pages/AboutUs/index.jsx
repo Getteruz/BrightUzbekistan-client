@@ -14,7 +14,7 @@ const AboutUs = () => {
             <main className={cls.about}>
                 <div className={cls.about__image}>
                     <Image
-                        src='/Images/BrightUzbekistan.png'
+                        src='/Images/BrightUzbekistan.svg'
                         layout='fill'
                         objectFit='cover'
                         alt='Bright Uzbekistan foto'
