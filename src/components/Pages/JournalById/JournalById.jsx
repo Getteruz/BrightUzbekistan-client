@@ -32,7 +32,7 @@ export default function JournalById() {
                     <h2 className={cls.JournalById__left__title}>Информация о двадцать третьем пленарном заседании Сената Олий Мажлиса Республики Узбекистан﻿</h2>
                     <p className={cls.JournalById__left__text}>If you keep moving in the right direction you'll get your dream or something better.</p>
                     <div className={cls.JournalById__left__btnwrap}>
-                        <button className={cls.JournalById__left__btn}><Link href={'/journal'}>Интро</Link></button>
+                        <button className={cls.JournalById__left__btn}><Link href={'/journal-one'}>Интро</Link></button>
                         <button className={cls.JournalById__left__btn}>Заказать журнал</button>
                     </div>
                 </div>

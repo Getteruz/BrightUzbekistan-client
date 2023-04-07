@@ -1,0 +1,111 @@
+.JournalById {
+    width: 100%;
+    max-width: 800px;
+    margin-left: 7px;
+    margin-right: 25px;
+
+    &__top {
+        display: flex;
+        align-items: center;
+        gap: 63px;
+        background: #ECECEC;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    &__img {
+        width: 294px;
+    }
+
+    &__left {
+        width: 100%;
+        max-width: 297px;
+
+        &__title {
+            font-family: 'Old Standard TT';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 26px;
+            color: #000000;
+        }
+
+        &__text {
+            font-family: 'Noto Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 18px;
+            color: #000000;
+            opacity: 0.5;
+            margin-top: 11px;
+            margin-bottom: 27px;
+        }
+
+        &__btn {
+            background: #FFFFFF;
+            border-radius: 1000px;
+            border: none;
+            padding: 10px 14px;
+            font-family: 'Noto Sans';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 13px;
+            line-height: 18px;
+            color: #000000;
+            margin-right: 5px;
+        }
+    }
+
+    &__bottom {
+        margin-left: 40px;
+        margin-top: 26px;
+
+        &__title {
+            font-family: 'Noto Sans';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 28px;
+            line-height: 38px;
+            color: #0B212B;
+            width: 100%;
+            max-width: 462px;
+        }
+
+        &__text {
+            font-family: 'Noto Sans';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 22px;
+            color: #0B212B;
+            margin-top: 10px;
+            width: 100%;
+            max-width: 677px;
+            margin-bottom: 39px;
+        }
+    }
+
+    &__list {
+        width: 100%;
+        max-width: 602px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 20px;
+        color: #000000;
+        padding-bottom: 171px;
+
+
+    }
+
+    &__item {
+        padding: 10px 0;
+        border-bottom: 1px solid rgb(0, 0, 0, 0.1);
+
+        span {
+            margin-right: 16px;
+        }
+    }
+}

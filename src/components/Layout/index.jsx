@@ -22,7 +22,7 @@ const Layout = ({ children }) => {
                     <div className={cls.layout__main__wrapper}>
                         {children}
                     </div>
-                    {router.pathname !== '/journal' && <Banner />}
+                    {router.pathname !== '/journal-one' && <Banner />}
                 </div>
             </Container>
 
