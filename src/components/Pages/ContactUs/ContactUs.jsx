@@ -1,6 +1,6 @@
 
 import GoToBack from 'components/UI/GoToBack'
-import { FacebookIcon, InstagramIcon, TwitterIcon } from 'components/UI/icons'
+import { FacebookcolorIcon, TelgramcolorIcon, TiwitercolorIcon, YoutobeIcon } from 'components/UI/icons'
 import LayoutChildWrapper from 'components/UI/LayoutChildWrapper'
 import Map from 'components/UI/Map'
 import NavbarResponse from 'components/UI/navbarResponse/navbarResponse'
@@ -8,9 +8,21 @@ import Rate from 'components/UI/Rate'
 import { useGetWindowWidth } from 'hooks/useGetWindowWith'
 import Link from 'next/link'
 import cls from './ContactUs.module.scss'
-
+import ru from '../../../lang/ru.json'
+import uz from '../../../lang/uz.json'
+import уз from '../../../lang/уз.json'
+import en from '../../../lang/en.json'
+import { useRouter } from 'next/router'
+import { InstagramcolorIcon } from 'components/UI/instagram'
 export default function ContactUs() {
     const windowWidth = useGetWindowWidth()
+    const router = useRouter()
+    const langData = {
+        uz,
+        ru,
+        уз,
+        en
+    }
     return (
         <LayoutChildWrapper >
 
@@ -19,53 +31,60 @@ export default function ContactUs() {
 
             <GoToBack title='Связаться с нами' />
             <main className={cls.Contact}>
-                <h2 className={cls.Contact__title}>Связаться с нами</h2>
-                <p className={cls.Contact__text}>ООО “Bright Uzbekistan”  — You may be disappointed if you fail, but you are doomed if you don't try. If you keep moving in the right direction you'll get your dream or something better.</p>
+                <h2 className={cls.Contact__title}>{langData[router.locale]?.Contact}</h2>
+                <p className={cls.Contact__text}>ООО “Bright Uzbekistan”  — {langData[router.locale]?.ContactText}</p>
                 <div className={cls.Contact__wrap}>
                     <div className={cls.Contact__box}>
-                        <p className={cls.Contact__box__text}>Наше телефон:</p>
+                        <p className={cls.Contact__box__text}>{langData[router.locale]?.Commercial}:</p>
                         <p className={cls.Contact__box__text2}> <Link href={"tel:998900110000"}> +998 90 011 00 00</Link></p>
 
                     </div>
                     <div className={cls.Contact__box}>
-                        <p className={cls.Contact__box__text}>Коммерческий отдел:</p>
+                        <p className={cls.Contact__box__text}>{langData[router.locale]?.Commercial}:</p>
                         <p className={cls.Contact__box__text2}><Link href={"tel:998900001155"}>+998 90 000 11 55</Link></p>
 
                     </div>
                     <div className={cls.Contact__box}>
-                        <p className={cls.Contact__box__text}>Социальные сети</p>
+                        <p className={cls.Contact__box__text}>{langData[router.locale]?.Social}</p>
                         <div className={cls.Contact__box__text2}>
                             <span>
-                                <Link href={'/'}>
-                                    {
-                                        FacebookIcon()
-                                    }
+                                <Link href={'https://www.facebook.com/bright.uzbekistan'}>
+
+                                    <a target="_blank"> <FacebookcolorIcon /></a>
                                 </Link>
 
                             </span>
                             <span> {
-                                <Link href={'/'}>
-                                    {
-                                        InstagramIcon()
-                                    }
+                                <Link href={'https://www.instagram.com/bright_uzbekistan/'}>
+
+                                    <a target="_blank"> <InstagramcolorIcon /></a>
+
                                 </Link>
                             }</span>
                             <span> {
-                                <Link href={'/'}>
-                                    {
-                                        TwitterIcon()
-                                    }
+                                <Link href={'https://t.me/bright_uzbekistan'}>
+                                    <a target="_blank"> <TelgramcolorIcon /></a>
+                                </Link>
+                            }</span>
+                            <span> {
+                                <Link href={'https://twitter.com/brightuzb'}>
+                                    <a target="_blank"> <TiwitercolorIcon /></a>
+                                </Link>
+                            }</span>
+                            <span> {
+                                <Link href={'https://www.youtube.com/channel/UCqKubJUkz9N36NhO92Pq7-g'}>
+                                    <a target="_blank"> <YoutobeIcon /></a>
                                 </Link>
                             }</span>
                         </div>
                     </div>
                     <div className={cls.Contact__box}>
-                        <p className={cls.Contact__box__text}>Адресс:</p>
-                        <p className={cls.Contact__box__text2}>O'zbekiston, Toshkent, Mustaqillik shoh ko'chasi, 59A</p>
+                        <p className={cls.Contact__box__text}>{langData[router.locale]?.Address}:</p>
+                        <p className={cls.Contact__box__text2}>{langData[router.locale]?.AddressText}</p>
                     </div>
                     <div className={cls.Contact__box}>
-                        <p className={cls.Contact__box__text}>Электронная почта:</p>
-                        <p className={cls.Contact__box__text3}>Письма в редакцию, пресс-релизы, жалобы, сообщения об ошибках просьба направлять по адресу:</p>
+                        <p className={cls.Contact__box__text}>{langData[router.locale]?.email}:</p>
+                        <p className={cls.Contact__box__text3}>{langData[router.locale]?.emailText}:</p>
                         <p className={cls.Contact__box__email}> <Link href={"mailto:info@buzb.uz"}> info@buzb.uz</Link></p>
                     </div>
                     <Map />
