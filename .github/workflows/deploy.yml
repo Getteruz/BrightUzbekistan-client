@@ -13,10 +13,10 @@ jobs:
       - name: SSH to server
         uses: appleboy/ssh-action@master
         with:
-          HOST: 185.74.5.188
-          USERNAME: ${{ secrets.SSH_USERNAME }}
-          KEY: ${{ secrets.SSH_KEY }}
-          PORT: 22
+          host: 185.74.5.188
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: 22
           script: |
             cd /home/user/getter/bright-client
             git pull origin main
