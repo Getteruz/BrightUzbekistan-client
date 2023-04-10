@@ -10,7 +10,7 @@ jobs:
     name: Deploy to server
     runs-on: ubuntu-latest
     steps:
-      - name: SSH to server
+      - name: Deploying to server...
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
@@ -19,7 +19,7 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             cd /home/user/getter/bright-client
-            git pull getter main
+            git pull origin main
             git status
             npm install --yes --legacy-peer-deps
             rm -rf .next
