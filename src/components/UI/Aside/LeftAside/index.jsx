@@ -24,7 +24,7 @@ const Aside = ({ categories = [] }) => {
 
             <Link href='/'>
                 <div className={cls.aside__logo}>
-                    {/* <Image
+                        {/* <Image
                         src='/svg/logo.svg'
                         layout='fill'
                         objectFit='cover'
