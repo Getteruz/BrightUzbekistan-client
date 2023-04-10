@@ -19,11 +19,8 @@ jobs:
           port: 22
           script: |
             cd /home/user/getter/bright-client
-            eval `ssh-agent -s`
-            ssh-add ~/.ssh/id_keyid
             git pull origin main
             git status
-            export PATH=/home/${{ secrets.SSH_USERNAME }}/.nvm/versions/node/v14.17.0/bin:/usr/bin:/bin;
             npm install --yes
             rm -rf .next
             npm run build
