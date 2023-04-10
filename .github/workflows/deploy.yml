@@ -1,0 +1,30 @@
+name: Deployment BrightUzbekistan Client
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: SSH to server
+        uses: appleboy/ssh-action@v0.1.4
+        with:
+          host: 185.74.5.188
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          port: 22
+          script: |
+            cd /home/user/getter/bright-client
+            eval `ssh-agent -s`
+            ssh-add ~/.ssh/id_keyid
+            git pull origin main
+            git status
+            export PATH=/home/${{ secrets.SSH_USERNAME }}/.nvm/versions/node/v14.17.0/bin:/usr/bin:/bin;
+            npm install --yes
+            rm -rf .next
+            npm run build
+            pm2 restart bright-client
