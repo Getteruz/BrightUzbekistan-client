@@ -15,6 +15,9 @@
     "Address":"Address",
     "AddressText":"Uzbekistan, Tashkent, Mustakillik Avenue, 59A",
     "email":"Email",
-    "emailText":"Letters to the editor, press releases, complaints, error messages, please send to"
+    "emailText":"Letters to the editor, press releases, complaints, error messages, please send to",
+    "search":"Search",
+    "searchText":"Site search",
+    "show":"Show result"
 
 }
