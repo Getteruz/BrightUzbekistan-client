@@ -15,5 +15,8 @@
     "Address":"Manzil",
     "AddressText":"Uzbekistan, Tashkent, prospekt Mustakillik, 59A",
     "email":"Elektron pochta",
-    "emailText":"Tahririyatga maktublar, press-relizlar, shikoyatlar, xato xabarlari uchun quyidagi manzilga yuboring"
+    "emailText":"Tahririyatga maktublar, press-relizlar, shikoyatlar, xato xabarlari uchun quyidagi manzilga yuboring",
+    "search":"Qidirmoq",
+    "searchText":"Saytdan qidirish",
+    "show":"Natijani ko'rsatish"
 }

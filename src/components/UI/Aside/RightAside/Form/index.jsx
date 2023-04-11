@@ -7,8 +7,19 @@ import Input from 'components/UI/Forms/Input';
 import { RightArrows } from 'components/UI/icons';
 import JurnalCard from 'components/UI/JurnalCard/JurnalCard';
 import cls from './Aside.module.scss'
-
+import ru from '../../../../../lang/ru.json'
+import uz from '../../../../../lang/uz.json'
+import уз from '../../../../../lang/уз.json'
+import en from '../../../../../lang/en.json'
+import { useRouter } from 'next/router';
 const Aside = () => {
+    const router = useRouter()
+    const langData = {
+        uz,
+        ru,
+        уз,
+        en
+    }
     return (
         <div className={cls.aside}>
             <Flex
@@ -25,16 +36,16 @@ const Aside = () => {
 
             <GreyButton
                 icon={RightArrows}
-                label='все новости'
+                label={langData[router.locale]?.Load}
                 style={{ margin: '36px 0' }}
             />
 
             <form className={cls.aside__form}>
                 <Input
-                    label='Поиск по сайту'
-                    placeholder='Поиск'
+                    label={langData[router.locale]?.search}
+                    placeholder={langData[router.locale]?.searchText}
                 />
-                <BlackButton label='Показать результат' />
+                <BlackButton label={langData[router.locale]?.show} />
             </form>
 
             {/* <AudioCard 

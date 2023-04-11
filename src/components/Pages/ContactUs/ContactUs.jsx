@@ -29,7 +29,7 @@ export default function ContactUs() {
             {windowWidth < 501 && <Rate />}
             {windowWidth < 501 && <NavbarResponse />}
 
-            <GoToBack title='Связаться с нами' />
+            <GoToBack title={langData[router.locale]?.Contact} />
             <main className={cls.Contact}>
                 <h2 className={cls.Contact__title}>{langData[router.locale]?.Contact}</h2>
                 <p className={cls.Contact__text}>ООО “Bright Uzbekistan”  — {langData[router.locale]?.ContactText}</p>
