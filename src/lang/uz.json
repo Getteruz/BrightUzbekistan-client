@@ -6,6 +6,17 @@
     "VISIONALLY": "Ko'zi zaiflar uchun",
     "ABOUTPROJECT":"Loyiha haqida",
     "Contact": "Biz bilan bog'lanish",
+    "ContactText": "ijtimoiy-siyosiy, iqtisodiy-tijoriy xalqaro jurnal va onlayn axborot portal",
     "back":"Orqaga",
-    "Load":"yana yuklash"
+    "Load":"yana yuklash",
+    "Commercial":"Savdo bo'limi",
+    "OurContact":"Bizning kontaktlarimiz",
+    "Social":"Ijtimoiy tarmoqlar",
+    "Address":"Manzil",
+    "AddressText":"Uzbekistan, Tashkent, prospekt Mustakillik, 59A",
+    "email":"Elektron pochta",
+    "emailText":"Tahririyatga maktublar, press-relizlar, shikoyatlar, xato xabarlari uchun quyidagi manzilga yuboring",
+    "search":"Qidirmoq",
+    "searchText":"Saytdan qidirish",
+    "show":"Natijani ko'rsatish"
 }

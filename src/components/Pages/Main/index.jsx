@@ -12,7 +12,7 @@ import AudioCartmobil from 'components/UI/CardsGroup/audioCart/audioCart';
 
 const Main = ({ news = [] }) => {
     const windowWidth = useGetWindowWidth()
-    
+
     return (
         <LayoutChildWrapper asideComponent={<Aside />}>
             <main className={cls.main}>

@@ -6,7 +6,18 @@
     "VISIONALLY":"For the visionally",
     "ABOUTPROJECT":"ABOUT PROJECT",
     "Contact":"Contact us",
+    "ContactText":"Socio-political, Economic and Commercial International Magazine and Online Informational Portal",
     "back":"Back",
     "Load":"load more",
-    "tel":"Our phone"
+    "Commercial":"Sales department",
+    "OurContact":"Our contacts",
+    "Social":"Social media",
+    "Address":"Address",
+    "AddressText":"Uzbekistan, Tashkent, Mustakillik Avenue, 59A",
+    "email":"Email",
+    "emailText":"Letters to the editor, press releases, complaints, error messages, please send to",
+    "search":"Search",
+    "searchText":"Site search",
+    "show":"Show result"
+
 }

@@ -7,9 +7,12 @@ import NavLink from '../NavLink';
 import { contacts, navlinks } from './data';
 import cls from './Banner.module.scss'
 import { useGetWindowWidth } from 'hooks/useGetWindowWith';
+import { useRouter } from 'next/router';
 
 const Banner = () => {
     const widthwindow = useGetWindowWidth()
+    const router = useRouter()
+    // console.log(router.locale)
     return (
         <div className={cls.banner}>
             <Flex>
@@ -51,7 +54,7 @@ const Banner = () => {
             <div className={cls.banner__footer}>
                 <Flex gap={widthwindow < 500 ? 20 : 30} width='auto'>
                     {
-                        navlinks?.length > 0 && navlinks.map((options) => (
+                        navlinks[router.locale]?.length > 0 && navlinks[router.locale].map((options) => (
                             <NavLink
                                 key={options.id}
                                 {...options}
