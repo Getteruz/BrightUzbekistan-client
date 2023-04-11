@@ -14,9 +14,10 @@ import ru from '../../../../../lang/ru.json'
 import uz from '../../../../../lang/uz.json'
 import уз from '../../../../../lang/уз.json'
 import en from '../../../../../lang/en.json'
-import { useRouter } from 'next/router';
+
 const Aside = () => {
     const router = useRouter()
+    const { data } = useQuery('last-news', () => getLastNews(router.locale))
     const langData = {
         uz,
         ru,
