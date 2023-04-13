@@ -11,7 +11,7 @@ const Aside = () => {
                 title='Для рекламодателей!'
                 subtitle="Медакит для размещения модульных реклам и пиар статьей в журнале Bright Uzbekistan"
             >
-                <DownloadButton label='Скачать медия кит' src='/media-kit.pdf' />
+                <DownloadButton label='Скачать медия кит' src='https://storage.bright.getter.uz/media-kit.pdf' />
             </InfoCard>
             <InfoCard
                 title='Полезные ссылки'
