@@ -8,6 +8,7 @@ const DownloadButton = ({label = '', src = ''}) => {
             href={src}
             download
             target='_blank'
+            rel="noreferrer"
         >
             <span>{label}</span>
             <DownloadIcon />
