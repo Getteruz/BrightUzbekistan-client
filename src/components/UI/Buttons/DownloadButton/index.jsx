@@ -7,6 +7,7 @@ const DownloadButton = ({label = '', src = ''}) => {
             className={cls.btn}
             href={src}
             download
+            target='_blank'
         >
             <span>{label}</span>
             <DownloadIcon />
