@@ -11,8 +11,6 @@ import ru from '../../../lang/ru.json'
 import uz from '../../../lang/uz.json'
 import уз from '../../../lang/уз.json'
 import en from '../../../lang/en.json'
-import Rate from "components/UI/Rate";
-import NavbarResponse from "components/UI/navbarResponse/navbarResponse";
 
 const Category = ({ news = [] }) => {
     const router = useRouter()
@@ -25,8 +23,7 @@ const Category = ({ news = [] }) => {
     }
     return (
         <LayoutChildWrapper asideComponent={<Aside />}>
-            {windowWidth < 501 && <Rate />}
-            {windowWidth < 501 && <NavbarResponse />}
+
             <GoToBack title={newsData[router.query.categoryId]?.category} />
             <div style={windowWidth > 500 ? { padding: '17px 0 82px 0' } : { padding: '17px 0 42px 0' }}>
                 <Flex

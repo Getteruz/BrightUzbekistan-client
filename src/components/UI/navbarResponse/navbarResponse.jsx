@@ -8,7 +8,7 @@ import { navlinks } from './data';
 import { useRouter } from 'next/router';
 import NavLink from '../NavLink';
 
-export default function NavbarResponse() {
+export default function NavbarResponse({ categories }) {
     const x = useRef()
     const iconRef = useRef()
     const router = useRouter()
@@ -32,6 +32,7 @@ export default function NavbarResponse() {
         return () => document.removeEventListener('click', handleClick)
     }, [])
     const modal = useRef()
+
     return (
         <div className={cls.navbarResponse}>
             <div className={cls.navbarResponse__burger} onClick={() => modal.current.classList.toggle(cls.open)}>
@@ -74,11 +75,12 @@ export default function NavbarResponse() {
 
             <ul ref={modal} className={cls.madalopen}>
                 {
-                    navlinks?.length > 0 && navlinks.map((options) => (
-                        <li key={options.id} className={cls.madalopen_item}>
+                    categories?.length > 0 && categories.map((ctg) => (
+                        <li key={ctg.id} className={cls.madalopen_item}>
                             <NavLink
-                                {...options}
-                                isActive={router.asPath.split('/')?.slice(0, 3)?.join('/') === options.link}
+                                link={`/category/${ctg.id}`}
+                                label={ctg?.[router?.locale]}
+                                isActive={router.asPath.split('/')?.slice(0, 3)?.join('/') === `/category/${ctg.id}`}
                             />
                         </li>
                     ))
