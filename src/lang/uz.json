@@ -1,7 +1,7 @@
 {
     "language":"O'zbekcha",
     "room":"Kabinet",
-    "city":"ТОШКЕНТ",
+    "city":"TASHKENT",
     "lastNew":"So'ngi yangiliklar",
     "VISIONALLY": "Ko'zi zaiflar uchun",
     "ABOUTPROJECT":"Loyiha haqida",
@@ -18,5 +18,10 @@
     "emailText":"Tahririyatga maktublar, press-relizlar, shikoyatlar, xato xabarlari uchun quyidagi manzilga yuboring",
     "search":"Qidirmoq",
     "searchText":"Saytdan qidirish",
-    "show":"Natijani ko'rsatish"
+    "show":"Natijani ko'rsatish",
+    "tag":"Ishlatilgan teglar",
+    "withfriend":"Do'stlar bilan baham ko'ring",
+    "Soon":"Tez orada",
+    "Download":"Mobil ilovamizni yuklab oling va yangiliklarni kuzatib boring!" ,
+    "test":"Sayt test rejimida"
 }

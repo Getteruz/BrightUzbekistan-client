@@ -76,7 +76,7 @@ export default function NavbarResponse({ categories }) {
             <ul ref={modal} className={cls.madalopen}>
                 {
                     categories?.length > 0 && categories.map((ctg) => (
-                        <li key={ctg.id} className={cls.madalopen_item}>
+                        <li key={ctg.id} className={cls.madalopen_item} >
                             <NavLink
                                 link={`/category/${ctg.id}`}
                                 label={ctg?.[router?.locale]}
