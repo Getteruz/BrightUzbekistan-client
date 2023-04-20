@@ -3,7 +3,7 @@ import cls from './DownloadButton.module.scss'
 
 const DownloadButton = ({label = '', src = ''}) => {
     return (
-        <a 
+        <a
             className={cls.btn}
             href={src}
             download

@@ -30,6 +30,7 @@ const Main = ({ news = [] }) => {
                                     key={index}
                                     news={news?.[1]}
                                     category={news?.[0]}
+                                    ctgId={news?.[3]}
                                 />
                             ))
                         }
