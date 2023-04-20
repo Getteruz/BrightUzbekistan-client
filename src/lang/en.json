@@ -18,6 +18,10 @@
     "emailText":"Letters to the editor, press releases, complaints, error messages, please send to",
     "search":"Search",
     "searchText":"Site search",
-    "show":"Show result"
-
+    "show":"Show result",
+    "tag":"Used tags",
+    "withfriend":"Share with friends",
+    "Soon":"Soon",
+    "Download":"Download our mobile application and follow the news!" ,
+    "test":"The site is in test mode"
 }

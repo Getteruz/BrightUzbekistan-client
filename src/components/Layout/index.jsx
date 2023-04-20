@@ -7,8 +7,12 @@ import Footer from "components/UI/Footer";
 import Banner from "components/UI/Banner";
 
 import cls from './Layot.module.scss'
+import Rate from "components/UI/Rate";
+import NavbarResponse from "components/UI/navbarResponse/navbarResponse";
+import { useGetWindowWidth } from "hooks/useGetWindowWith";
 
 const Layout = ({ children }) => {
+    const windowWidth = useGetWindowWidth()
     const router = useRouter()
     const { data: categories } = useQuery('categories', getCategories)
 
@@ -19,6 +23,8 @@ const Layout = ({ children }) => {
                     <LeftAside categories={categories} />
                 </div>
                 <div className={cls.layout__main}>
+                    {windowWidth < 501 && <Rate />}
+                    {windowWidth < 501 && <NavbarResponse categories={categories} />}
                     <div className={cls.layout__main__wrapper}>
                         {children}
                     </div>

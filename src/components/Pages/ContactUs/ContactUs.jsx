@@ -3,9 +3,7 @@ import GoToBack from 'components/UI/GoToBack'
 import { FacebookcolorIcon, TelgramcolorIcon, TiwitercolorIcon, YoutobeIcon } from 'components/UI/icons'
 import LayoutChildWrapper from 'components/UI/LayoutChildWrapper'
 import Map from 'components/UI/Map'
-import NavbarResponse from 'components/UI/navbarResponse/navbarResponse'
-import Rate from 'components/UI/Rate'
-import { useGetWindowWidth } from 'hooks/useGetWindowWith'
+
 import Link from 'next/link'
 import cls from './ContactUs.module.scss'
 import ru from '../../../lang/ru.json'
@@ -15,7 +13,7 @@ import en from '../../../lang/en.json'
 import { useRouter } from 'next/router'
 import { InstagramcolorIcon } from 'components/UI/instagram'
 export default function ContactUs() {
-    const windowWidth = useGetWindowWidth()
+
     const router = useRouter()
     const langData = {
         uz,
@@ -26,8 +24,6 @@ export default function ContactUs() {
     return (
         <LayoutChildWrapper >
 
-            {windowWidth < 501 && <Rate />}
-            {windowWidth < 501 && <NavbarResponse />}
 
             <GoToBack title={langData[router.locale]?.Contact} />
             <main className={cls.Contact}>

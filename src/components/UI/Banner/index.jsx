@@ -8,8 +8,18 @@ import { contacts, navlinks } from './data';
 import cls from './Banner.module.scss'
 import { useGetWindowWidth } from 'hooks/useGetWindowWith';
 import { useRouter } from 'next/router';
-
+import ru from '../../../lang/ru.json'
+import uz from '../../../lang/uz.json'
+import уз from '../../../lang/уз.json'
+import en from '../../../lang/en.json'
 const Banner = () => {
+    const langData = {
+        uz,
+        уз,
+        ru,
+        en
+    }
+
     const widthwindow = useGetWindowWidth()
     const router = useRouter()
     // console.log(router.locale)
@@ -17,8 +27,8 @@ const Banner = () => {
         <div className={cls.banner}>
             <Flex>
                 <div className={cls.banner__block}>
-                    <h2 className={cls.banner__title}>Скоро</h2>
-                    <p className={cls.banner__text}>Скачайте наше мобильное приложение и следите за новостями!</p>
+                    <h2 className={cls.banner__title}>{langData[router.locale].Soon}</h2>
+                    <p className={cls.banner__text}>{langData[router.locale].Download}!</p>
                     <Flex gap={10} >
                         <span>
                             <GooglePlay />

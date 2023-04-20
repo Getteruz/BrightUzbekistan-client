@@ -5,8 +5,7 @@ import GoToBack from "components/UI/GoToBack";
 import Navbar from "components/UI/Navbar";
 import cls from './Journal.module.scss'
 import { useState } from "react";
-import NavbarResponse from "components/UI/navbarResponse/navbarResponse";
-import Rate from "components/UI/Rate";
+
 import { useGetWindowWidth } from "hooks/useGetWindowWith";
 
 const Journal = () => {
@@ -16,8 +15,7 @@ const Journal = () => {
 
     return (
         <div className={cls.journal}>
-            {windowWidth < 501 && <Rate />}
-            {windowWidth < 501 && <NavbarResponse />}
+
             <div className={cls.journal__nav}>
                 <GoToBack />
 

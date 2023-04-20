@@ -11,17 +11,29 @@ import cls from './SingleNews.module.scss'
 import { useRouter } from "next/router";
 import Markup from "components/UI/Markup";
 import parseTimestamp from "utils/parseTimestamp";
+import { useGetWindowWidth } from "hooks/useGetWindowWith";
+import ru from '../../../lang/ru.json'
+import uz from '../../../lang/uz.json'
+import уз from '../../../lang/уз.json'
+import en from '../../../lang/en.json'
 
 const tags = ['# Узбекистан', '# Таможня', '# Шавкат Мирзиёев.', '# Экономика']
 
 const SingleNews = ({ news = {} }) => {
+    const windowWidth = useGetWindowWidth()
+    const langData = {
+        uz,
+        уз,
+        ru,
+        en
+    }
     const router = useRouter()
     const { hours, minutes, year, month, data } = parseTimestamp(news?.publishDate)
 
     return (
         <LayoutChildWrapper asideComponent={<Aside />}>
             <main className={cls.main}>
-                <GoToBack title="Последние новости" />
+                <GoToBack title={langData[router.locale].lastNew} />
                 <div className={cls.main__wrapper}>
                     <h2 className={cls.main__title}>{news?.[router?.locale]?.title}</h2>
                     <NewsCard

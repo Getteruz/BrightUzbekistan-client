@@ -10,14 +10,15 @@ import { useGetWindowWidth } from 'hooks/useGetWindowWith';
 import AudioCartmobil from 'components/UI/CardsGroup/audioCart/audioCart';
 
 
+
 const Main = ({ news = [] }) => {
     const windowWidth = useGetWindowWidth()
 
     return (
         <LayoutChildWrapper asideComponent={<Aside />}>
             <main className={cls.main}>
-                <Rate />
-                {windowWidth < 501 && <NavbarResponse />}
+                {windowWidth > 501 && <Rate />}
+
                 <div style={{ padding: '17px 0 82px 0' }}>
                     <Flex
                         direction='column'
