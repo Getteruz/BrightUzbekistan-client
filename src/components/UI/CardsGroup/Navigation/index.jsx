@@ -1,3 +1,4 @@
+import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import Link from 'next/link';
 import cls from './Navigation.module.scss'
@@ -5,6 +6,8 @@ import cls from './Navigation.module.scss'
 const regex = /[0-9](?![^1]*[0-9])/m
 
 const Navigation = ({title = '', label = '', link = '', color = ''}) => {
+    const { t } = useTranslation()
+
     const style = {
         borderColor: color,
         color: color,
@@ -23,7 +26,7 @@ const Navigation = ({title = '', label = '', link = '', color = ''}) => {
             </div>
             <div className={cls.navigation__info}>
                 <span className={cls.navigation__info__title}>{title}</span>
-                <span className={cls.navigation__info__subtitle}>Новости</span>
+                <span className={cls.navigation__info__subtitle}>{t('Новости')}</span>
             </div>
             <Link href={link}>
                 <a className={cls.navigation__link} style={style}>{label}</a>

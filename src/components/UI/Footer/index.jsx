@@ -4,17 +4,18 @@ import Container from '../Container';
 import Flex from '../Flex';
 import { links, rules } from './data';
 import cls from './Footer.module.scss'
+import { useTranslation } from 'next-i18next';
 
 
 const Footer = () => {
     const { width } = useGetSize('leftAside')
-    const style = { marginLeft: `${width || 0}px !important` }
+    const { t } = useTranslation()
 
     return (
         <footer className={cls.footer}>
-            <Container className={cls.footer__container} maxWidth={1200} margin={`0 0 0 ${width}px`} >
+            <Container className={cls.footer__container} maxWidth={1200} margin={`0 0 0 ${width}px !important`} >
                 <Flex width='auto' gap='33'>
-                    <div className={cls.footer__text}>Copyright: 2022</div>
+                    <div className={cls.footer__text}>Copyright: 2023</div>
 
                     <span>
                         <Flex gap='46'>
@@ -28,7 +29,7 @@ const Footer = () => {
                                             className={cls.footer__link}
                                             style={{ [options.color && 'color']: options.color }}
                                         >
-                                            {options.label}
+                                            {t(options.label)}
                                         </a>
                                     </Link>
                                 )
@@ -50,7 +51,7 @@ const Footer = () => {
                                             className={cls.footer__link}
                                             style={{ [options.color && 'color']: options.color }}
                                         >
-                                            {options.label}
+                                            {t(options.label)}
                                         </a>
                                     </Link>
                                 )
@@ -60,7 +61,7 @@ const Footer = () => {
 
                     <div className={cls.footer__developed}>
                         Developed by:
-                        <span> Getter</span>
+                        <a href='https://getter.uz' target='_blank'> Getter</a>
                     </div>
                 </Flex>
             </Container>

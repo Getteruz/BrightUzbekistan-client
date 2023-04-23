@@ -2,10 +2,13 @@ import GreyButton from 'components/UI/Buttons/GreyButton';
 import NewsCard from 'components/UI/Cards/NewsCard';
 import Flex from 'components/UI/Flex';
 import { RightArrows } from 'components/UI/icons';
+import { useTranslation } from 'next-i18next';
 import { newsData } from './data';
 import cls from './News.module.scss'
 
 const Aside = () => {
+    const { t } = useTranslation()
+
     return (
         <>
             <div className={cls.cards__wrapper}>
@@ -20,7 +23,7 @@ const Aside = () => {
                     }
                 </Flex>
             </div>
-            <GreyButton label='все новости' icon={RightArrows} />
+            <GreyButton label={t("все новости")} icon={RightArrows} />
         </>
     );
 }

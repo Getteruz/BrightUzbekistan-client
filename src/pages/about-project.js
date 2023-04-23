@@ -1,5 +1,6 @@
 import AboutUs from "components/Pages/AboutUs";
 import SEO from "components/SEO";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export default function AboutUsPage() {
 
@@ -9,4 +10,12 @@ export default function AboutUsPage() {
       <AboutUs />
     </>
   )
+}
+
+export async function getServerSideProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common", 'about'])),
+    }
+  };
 }

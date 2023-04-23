@@ -5,9 +5,12 @@ import NewsCard from 'components/UI/Cards/NewsCard';
 import Flex from 'components/UI/Flex';
 import Input from 'components/UI/Forms/Input';
 import { RightArrows } from 'components/UI/icons';
+import { useTranslation } from 'next-i18next';
 import cls from './Aside.module.scss'
 
 const Aside = () => {
+    const { t } = useTranslation()
+
     return (
         <div className={cls.aside}>
             <Flex
@@ -28,16 +31,16 @@ const Aside = () => {
 
             <GreyButton 
                 icon={RightArrows}
-                label='все новости'
+                label={t('все новости')}
                 style={{margin: '36px 0'}}
             />
 
             <form className={cls.aside__form}>
                 <Input 
-                    label='Поиск по сайту'
-                    placeholder='Поиск'
+                    label={t('Поиск по сайту')}
+                    placeholder={t('Поиск')}
                 />
-                <BlackButton label='Показать результат' />
+                <BlackButton label={t('Показать результат')} />
             </form>
 
             <AudioCard 

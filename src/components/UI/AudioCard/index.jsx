@@ -1,3 +1,4 @@
+import { useTranslation } from 'next-i18next';
 import AudioPlayer from '../AudioPlayer';
 import Flex from '../Flex';
 import { HeadSetIcon } from '../icons';
@@ -8,12 +9,13 @@ const AudioCard = ({
     category = '',
     src = ''
 }) => {
+    const { t } = useTranslation()
     return (
         <div className={cls.card}>
             <Flex gap='10'>
                 <h5 className={cls.card__type}>
                     <HeadSetIcon />
-                    Аудио новости
+                    {t('Аудио новости')}
                 </h5>
                 {category && <h5 className={cls.card__category}>{category}</h5>}
             </Flex>

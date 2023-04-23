@@ -1,9 +1,11 @@
+import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 import { CornerUpLeftIcon } from '../icons';
 import cls from './GoToBack.module.scss'
 
 const GoToBack = ({title = ''}) => {
     const router = useRouter()
+    const { t } = useTranslation() 
     return (
         <div className={cls.nav}>
             <button 
@@ -11,7 +13,7 @@ const GoToBack = ({title = ''}) => {
                 onClick={() => router.back()}
             >
                 <CornerUpLeftIcon />
-                Назад
+                {t('Назад')}
             </button>
            {title &&  <span className={cls.nav__title}>| {title}</span>}
         </div>

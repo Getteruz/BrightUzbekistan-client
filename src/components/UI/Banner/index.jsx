@@ -6,8 +6,11 @@ import NavLink from '../NavLink';
 
 import { contacts, navlinks } from './data';
 import cls from './Banner.module.scss'
+import { useTranslation } from 'next-i18next';
 
 const Banner = () => {
+    const { t } = useTranslation()
+
     return (
         <div className={cls.banner}>
             <Flex>
@@ -20,16 +23,16 @@ const Banner = () => {
                             <AppStore />
                         </span>
                     </Flex>
-                    <p className={cls.banner__text}>Скачайте наше мобильное приложение и следите за новостями!</p>
+                    <p className={cls.banner__text}>{t('Скачайте наше мобильное приложение и следите за новостями!')}</p>
                 </div>
-                <div style={{position: 'relative'}}>
-                    <div  className={cls.banner__image}>
-                    <Image 
-                        src='/svg/MobileApp.svg'
-                        layout='fill'
-                        objectFit='cover'
-                        alt='Bright Uzbekistan Mobile App'
-                    />
+                <div style={{ position: 'relative' }}>
+                    <div className={cls.banner__image}>
+                        <Image
+                            src='/svg/MobileApp.svg'
+                            layout='fill'
+                            objectFit='cover'
+                            alt='Bright Uzbekistan Mobile App'
+                        />
                     </div>
                 </div>
             </Flex>

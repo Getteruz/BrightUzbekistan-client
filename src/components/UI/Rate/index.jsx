@@ -1,10 +1,13 @@
+import { useTranslation } from 'next-i18next';
 import cls from './Rate.module.scss'
 import RateItem from './RateItem';
 
 const Rate = () => {
+    const { t } = useTranslation()
+
     return (
         <div className={cls.rate}>
-            <span className={cls.rate__title}>Последние новости</span>
+            <span className={cls.rate__title}>{t('ПОСЛЕДНИЕ НОВОСТИ')}</span>
             <ul className={cls.rate__list}>
                 <RateItem 
                     currency='usd'
