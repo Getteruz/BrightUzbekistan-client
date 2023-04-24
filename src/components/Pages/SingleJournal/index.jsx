@@ -5,16 +5,18 @@ import CJournal from 'components/UI/CJournal'
 import GoToBack from "components/UI/GoToBack";
 import Navbar from "components/UI/Navbar";
 import cls from './Journal.module.scss'
+import { useTranslation } from "react-i18next";
 
 const Journal = () => {
     const [page, setPage] = useState()
+    const {t} = useTranslation()
     const router = useRouter()
     const journalRef = useRef()
 
     return (
         <div className={cls.journal}>
             <div className={cls.journal__nav}>
-                <GoToBack title="Мировые новости" />
+                <GoToBack title={t('Журнал')} />
                 <Navbar />
             </div>
             <div className={cls.journal__content}>

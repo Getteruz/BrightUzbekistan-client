@@ -13,10 +13,10 @@ const JournalPage = () => {
 
 export async function getServerSideProps({ locale }) {
     return {
-      props: {
-        ...(await serverSideTranslations(locale, ["common"])),
-      }
+        props: {
+            ...(await serverSideTranslations(locale, ["common"])),
+        }
     };
-  }
+}
 
 export default JournalPage
