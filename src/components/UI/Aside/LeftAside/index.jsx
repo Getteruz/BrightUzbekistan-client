@@ -42,7 +42,7 @@ const Aside = ({ categories = [] }) => {
                     ))
                 }
                 <li>
-                    <NavLink link='' label={t("Журнал")} />
+                    <NavLink link='/journal' label={t("Журнал")} />
                 </li>
             </ul>
 

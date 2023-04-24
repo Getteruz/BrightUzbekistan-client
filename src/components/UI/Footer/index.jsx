@@ -61,7 +61,7 @@ const Footer = () => {
 
                     <div className={cls.footer__developed}>
                         Developed by:
-                        <a href='https://getter.uz' target='_blank'> Getter</a>
+                        <a href='https://getter.uz' target='_blank' rel="noreferrer" > Getter</a>
                     </div>
                 </Flex>
             </Container>

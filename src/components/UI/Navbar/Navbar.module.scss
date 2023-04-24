@@ -1,7 +1,7 @@
-.navbar{
+.navbar {
     padding: 20px 0;
 
-    &__list{
+    &__list {
         display: flex;
         align-items: center;
         gap: 41px;
@@ -9,4 +9,46 @@
         margin: 0;
         padding: 0;
     }
+
+    &__langugeitem {
+        position: relative;
+    }
+
+    &__langugewrap {
+        position: absolute;
+        top: 25px;
+        left: 0;
+        background: #FFFFFF;
+        border-radius: 12px;
+        padding: 25px 20px;
+        padding-right: 57px;
+        box-shadow: 1px 1px 5px 2px rgb(0, 0, 0, 0.1);
+        display: none;
+        flex-direction: column;
+        gap: 12px;
+
+       & >  li {
+            font-family: 'Noto Sans Normal' !important;
+            font-weight: 500;
+            font-size: 13px;
+            line-height: 18px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s;
+
+            &:hover {
+                color: #001AFF;
+
+            }
+        }
+    }
+}
+
+.open__modal {
+    display: flex;
+    z-index: 5;
+}
+
+.active{
+    color: #F3715B !important;
 }

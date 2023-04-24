@@ -9,15 +9,15 @@ import cls from './AboutUs.module.scss'
 const tags = ['# Узбекистан', '# Таможня', '# Шавкат Мирзиёев.', '# Экономика']
 
 const AboutUs = () => {
-    const { t } = useTranslation(['about', 'common'])
+    const { t } = useTranslation('about')
 
     return (
         <LayoutChildWrapper asideComponent={<Aside />}>
-            <GoToBack />
+            <GoToBack title={t('О проекте')} />
             <main className={cls.about}>
                 <div className={cls.about__image}>
                     <Image
-                        src='/Images/BrightUzbekistan.png'
+                        src='/Images/BrightUzbekistan.svg'
                         layout='fill'
                         objectFit='cover'
                         alt='Bright Uzbekistan foto'
@@ -25,7 +25,7 @@ const AboutUs = () => {
                 </div>
                 <h1 className={cls.about__title}>{t('О проекте')}</h1>
                 <p className={cls.about__desc}>{t('Описание')}</p>
-                <ShareBanner tags={tags} />
+                {/* <ShareBanner tags={tags} /> */}
             </main>
         </LayoutChildWrapper>
 

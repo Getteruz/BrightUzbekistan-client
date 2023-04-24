@@ -1,10 +1,10 @@
+import { useRouter } from "next/router";
 import LeftAside from "components/UI/Aside/LeftAside";
 import Container from "components/UI/Container";
 import Footer from "components/UI/Footer";
 import Banner from "components/UI/Banner";
 
 import cls from './Layot.module.scss'
-import { useRouter } from "next/router";
 
 const Layout = ({ children, categories = [] }) => {
     const router = useRouter()

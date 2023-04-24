@@ -8,7 +8,6 @@ import { getCategories } from 'services/category';
 
 import '../styles/globals.scss'
 
-
 function MyApp({ Component, pageProps, categories }) {
   return (
     <>

@@ -1,0 +1,88 @@
+.Contact {
+    margin-top: 24px;
+
+    & *{
+        font-family: 'Noto Sans Normal';
+    }
+
+    @media only screen and (max-width:500px) {
+        padding: 0 20px;
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 38px;
+    }
+
+    &__text {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 18px;
+        margin-top: 10px;
+        margin-bottom: 36px;
+    }
+
+    &__wrap {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-bottom: 9px;
+        width: 100%;
+        max-width: 504px;
+    }
+
+    &__box {
+        width: 50%;
+        margin-bottom: 21px;
+
+        &__text {
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 16px;
+            opacity: 0.6;
+            margin-bottom: 8px;
+        }
+
+        &__text2 {
+            font-weight: 600;
+            font-size: 15px;
+            line-height: 20px;
+            width: 100%;
+
+            span {
+                display: inline-block;
+                margin-top: 10px;
+                margin-right: 13px;
+            }
+        }
+
+        &__text3 {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 18px;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        &__email {
+            margin-top: 8px;
+            font-weight: 600;
+            font-size: 15px;
+            line-height: 20px;
+            text-decoration-line: underline;
+            color: #00AFFF;
+        }
+
+        &:last-child {
+            width: 100%;
+        }
+    }
+
+    &__map{
+        max-width: 500px;
+        width: 100%;
+        margin-top: 24px;
+    }
+}
