@@ -1,0 +1,12 @@
+
+.main{
+    display: flex;
+    flex-direction: column;
+
+    &__cards{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 24px 0;
+    }
+}

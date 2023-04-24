@@ -9,7 +9,10 @@ import cls from './CJournal.module.scss'
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
-const CJournal = forwardRef(({onFlip}, ref) => {
+const CJournal = forwardRef(({
+    onFlip,
+    src = ''
+}, ref) => {
     const [open, setOpen] = useState(false)
 
     const onClickOutside = () => {
@@ -20,6 +23,7 @@ const CJournal = forwardRef(({onFlip}, ref) => {
     return (
         <div className={cls.wrapper}>
             <HTMLFlipBook 
+                showCover
                 width={510} 
                 height={692} 
                 ref={ref}
@@ -37,66 +41,15 @@ const CJournal = forwardRef(({onFlip}, ref) => {
                     }
                 }}
             >
-                <div>
-                    <Document file="/file.pdf">
-                        <Page width={500} height={692} renderMode='svg' pageNumber={1} />
-                    </Document>
-                </div>
-                <div>
-                    <Document file="/file.pdf">
-                        <Page width={500} height={692} renderMode='svg' pageNumber={2} />
-                    </Document>
-                </div>
-                <div>
-                    <Document file="/file.pdf">
-                        <Page width={500} height={692} renderMode='svg' pageNumber={3} />
-                    </Document>
-                </div>
-                <div>
-                    <Document file="/file.pdf">
-                        <Page width={500} height={692} renderMode='svg' pageNumber={4} />
-                    </Document>
-                </div>
-                <div>
-                    <Document file="/file.pdf">
-                        <Page width={500} height={692} renderMode='svg' pageNumber={5} />
-                    </Document>
-                </div>
-                <div>
-                    <Document file="/file.pdf">
-                        <Page width={500} height={692} renderMode='svg' pageNumber={6} />
-                    </Document>
-                </div>
-                <div>
-                    <Document file="/file.pdf">
-                        <Page width={500} height={692} renderMode='svg' pageNumber={7} />
-                    </Document>
-                </div>
-                <div>
-                    <Document file="/file.pdf">
-                        <Page width={500} height={692} renderMode='svg' pageNumber={8} />
-                    </Document>
-                </div>
-                <div>
-                    <Document file="/file.pdf">
-                        <Page width={500} height={692} renderMode='svg' pageNumber={9} />
-                    </Document>
-                </div>
-                <div>
-                    <Document file="/file.pdf">
-                        <Page width={500} height={692} renderMode='svg' pageNumber={10} />
-                    </Document>
-                </div>
-                <div>
-                    <Document file="/file.pdf">
-                        <Page width={500} height={692} renderMode='svg' pageNumber={9} />
-                    </Document>
-                </div>
-                <div>
-                    <Document file="/file.pdf">
-                        <Page width={500} height={692} renderMode='svg' pageNumber={10} />
-                    </Document>
-                </div>
+                {
+                    Array(10).fill(null).map((_, index) => (
+                        <div key={index}>
+                            <Document file={src}>
+                                <Page width={500} height={692} renderMode='svg' pageNumber={index + 1} />
+                            </Document>
+                        </div>
+                    ))
+                }
             </HTMLFlipBook>
             {open && <BookPopup onClickOutside={onClickOutside} />}
         </div>

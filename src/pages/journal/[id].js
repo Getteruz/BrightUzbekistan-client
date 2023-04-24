@@ -1,4 +1,4 @@
-import Journal from "components/Pages/Journal";
+import Journal from "components/Pages/SingleJournal";
 import SEO from "components/SEO";
 
 
