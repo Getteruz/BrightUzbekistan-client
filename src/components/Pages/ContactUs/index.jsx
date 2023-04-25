@@ -32,7 +32,7 @@ export default function ContactUs() {
                                 socialMedias?.length > 0 && socialMedias.map(contact => (
                                     <span key={contact.id}>
                                         <Link href={contact.link} passHref>
-                                            <a target="_blank" rel="noopener noreferrer">{contact.icon}</a>
+                                            <a target="_blank" rel="noreferrer">{contact.icon}</a>
                                         </Link>
                                     </span>
                                 ))
@@ -44,7 +44,7 @@ export default function ContactUs() {
                         <p className={cls.Contact__box__text2}>
                             <Link href={"https://goo.gl/maps/HJZLLLshWigYFNhE6"} passHref>
                                 <a target="_blank" rel="noopener noreferrer">
-                                    {t('O\'zbekiston, Toshkent, Mustaqillik shoh ko\'chasi, 59A')}
+                                    {t("O'zbekiston, Toshkent, Mustaqillik shoh ko'chasi, 59A") || ''}
                                 </a>
                             </Link>
                         </p>

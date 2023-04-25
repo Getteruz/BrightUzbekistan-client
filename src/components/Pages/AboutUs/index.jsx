@@ -24,7 +24,7 @@ const AboutUs = () => {
                     />
                 </div>
                 <h1 className={cls.about__title}>{t('О проекте')}</h1>
-                <p className={cls.about__desc}>{t('Описание')}</p>
+                <p className={cls.about__desc} dangerouslySetInnerHTML={{__html: t('Описание')}}></p>
                 {/* <ShareBanner tags={tags} /> */}
             </main>
         </LayoutChildWrapper>
