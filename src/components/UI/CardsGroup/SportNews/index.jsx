@@ -1,18 +1,37 @@
-import NewsCardList from 'components/UI/Cards/NewsCard/NewsCardList';
+import NewsCard from 'components/UI/Cards/NewsCard';
 import NewsImageCard from 'components/UI/Cards/NewsImageCard';
-import GroupWrapper from '../GroupWrapper';
+import cls from './SportNews.module.scss'
 
 const SportNews = ({
-    withNavigation = true,
-    button = {},
-    category = '',
     items = []
 }) => {
+    const [firtsNews] = items?.slice(0, 1) || []
+    const otherNews = items?.slice(1, 5) || []
+
     return (
-        <GroupWrapper withNavigation={withNavigation} button={button} category={category}>
-            <NewsImageCard {...items?.slice(0,1)?.[0]} direction='column' reverse={true}/>
-            <NewsCardList items={items.slice(1,6) || []} desc={false} />
-        </GroupWrapper>
+        <div className={cls.wrapper}>
+            {firtsNews?.id && <NewsImageCard 
+                title='Криштиану Роналду побил мировой рекорд по забитым мячам за сборную'
+                description='В рамках отборочного турнира чемпионата мира-2022 сборная Португалии в домашнем матче оказалась сильнее сборной Ирландии.'
+                category='Sport'
+                date='2023-04-24T12:58:51.406Z'
+                image='/Images/image.webp'
+                direction='column' 
+                reverse={true}
+            />}
+            <div className={cls.wrapper__group}>
+                {
+                    otherNews?.length > 0 && otherNews.map((news, index) => (
+                        <NewsCard 
+                            key={index}
+                            title='Пекин 2022. Биатлон. Йоханнес Бё — пятикратный олимпийский чемпион.'
+                            category='Sport'
+                            date='2023-04-24T12:58:51.406Z'
+                        />
+                    ))
+                }
+            </div>
+        </div>
     );
 }
 

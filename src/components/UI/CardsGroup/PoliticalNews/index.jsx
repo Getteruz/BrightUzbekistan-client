@@ -1,23 +1,35 @@
-import NewsBorderCard from 'components/UI/Cards/NewsBorderCard';
 import NewsImageCard from 'components/UI/Cards/NewsImageCard';
-import Flex from 'components/UI/Flex';
-import GroupWrapper from '../GroupWrapper';
+import NewsImageCardWithBorder from 'components/UI/Cards/NewsImageCardWithBorder';
+import cls from './PoliticalNews.module.scss'
 
 const PoliticalNews = ({
-    withNavigation = true,
-    button = {},
-    category = '',
     items = []
 }) => {
+    const [firtsNews] = items?.slice(0, 1) || []
+    const otherNews = Array(4).fill(null) || []
+
     return (
-        <GroupWrapper withNavigation={withNavigation} button={button} category={category}>
-            {items?.slice(0, 1)?.length > 0 && <NewsImageCard {...items.slice(0, 1)?.[0]} image='' />}
-            <Flex gap='28' direction='row' rowCount={2}>
-                {items?.slice(1, 3)?.length > 0 && items.slice(1, 3).map(item =>
-                    <NewsBorderCard {...item} key={item.id} />
+        <div className={cls.wrapper}>
+            {firtsNews?.id && <NewsImageCard
+                id={1}
+                title='Рискнувшая отдыхом в бюджетном отеле Египта россиянка рассказала о везении'
+                description='Россиянка купила тур в бюджетный отель Египта за 39 тысяч рублей и рассказала о его плюсах...'
+                category='Iqtisod'
+                date='2023-04-24T12:58:51.406Z'
+                direction='column'
+            />}
+            <div className={cls.wrapper__group}>
+                {otherNews.length > 0 && otherNews.map((news, index) =>
+                    <NewsImageCardWithBorder
+                        key={index} 
+                        title='Рискнувшая отдыхом в бюджетном отеле Египта россиянка рассказала о везении'
+                        category='Iqtisod'
+                        image='/Images/image.webp'
+                        date='2023-04-24T12:58:51.406Z'
+                    />
                 )}
-            </Flex>
-        </GroupWrapper>
+            </div>
+        </div>
     );
 }
 

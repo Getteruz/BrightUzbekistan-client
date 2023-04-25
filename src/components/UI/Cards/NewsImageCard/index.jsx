@@ -1,19 +1,25 @@
+import { useRouter } from 'next/router';
 import Image from 'next/image';
 import Link from 'next/link';
-import NewsCard from '../NewsCard';
+import parseTimestamp from 'utils/parseTimestamp';
 import cls from './NewsImageCard.module.scss'
+import { CalendarIcon, ClockIcon } from 'components/UI/icons';
 
 const NewsImageCard = ({
     id = 1,
     title = '',
     image = '',
-    desc = '',
-    time = '',
+    description = '',
+    date = '',
     category = '',
     direction = 'grid',
     reverse = false
 }) => {
     const link = `/news/${id}`
+    const router = useRouter()
+    const { hours, minutes, month, data, year } = parseTimestamp(date, router.locale)
+    const { data: currentData, month: currentMonth, year: currentYear } = parseTimestamp(Date.now())
+
     return (
         <Link href={link}>
             <div className={`${cls.card} ${direction === 'column' ? cls.column : ''}`}>
@@ -25,15 +31,21 @@ const NewsImageCard = ({
                                 src={image}
                                 layout='fill'
                                 objectFit='cover'
-                                alt='News Image'
+                                alt={title}
                             />
                         </div>
                     )}
-                    <NewsCard
-                        title={desc}
-                        time={time}
-                        category={category}
-                    />
+                    <div className={cls.card__grid}>
+                        <div className={cls.card__grid__info}>
+                            <time className={cls.card__grid__info__time}>{
+                                data === currentData && month === currentMonth && year === currentYear
+                                    ? <><ClockIcon /> {hours} : {minutes}</>
+                                    : <><CalendarIcon /> {`${data} ${month} ${year === currentYear ? '' : year}`}</>
+                            }</time>
+                            <span className={cls.card__grid__info__ctg}>{category}</span>
+                        </div>
+                        <p className={cls.card__grid__desc}>{description}</p>
+                    </div>
                 </div>
             </div>
         </Link>

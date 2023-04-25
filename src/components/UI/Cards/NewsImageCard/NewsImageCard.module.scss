@@ -18,7 +18,7 @@
     &__infoblock{
         display: flex;
         gap: 24px;
-        align-items: flex-start;
+        align-items: stretch;
 
         &  h3{
             font-weight: 400!important;
@@ -36,6 +36,42 @@
         min-height: 196px;
         height: auto;
         aspect-ratio: 84/49;
+    }
+
+    &__grid{
+        max-height: 196px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        &__info{
+            display: flex;
+            align-items: center;
+            gap: 10px;              
+            
+            &__time, &__ctg{
+                font-family: 'Noto Sans Normal';
+                font-weight: 800;
+                font-size: 11px;
+                line-height: 15px;
+                display: flex;
+                align-items: center;
+                gap: 4px;
+            }
+        }
+
+        &__desc{
+            max-width: 512px;
+            flex-grow: 1;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 21px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 8;
+                    line-clamp: 8; 
+            -webkit-box-orient: vertical;
+        }
     }
 }
 

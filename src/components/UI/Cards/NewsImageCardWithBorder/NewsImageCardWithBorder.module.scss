@@ -1,0 +1,44 @@
+
+.card{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #E2E2E2;
+    cursor: pointer;
+
+    &__image{
+        position: relative;
+        width: 100%;
+        aspect-ratio: 31/17;
+    }
+
+    &__info{
+        flex-grow: 1;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 10px;
+
+        &__title{
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 22px;
+        }
+
+        &__flex{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        &__time, &__ctg{
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-weight: 800;
+            font-size: 11px;
+            line-height: 15px;
+        }
+    }
+}

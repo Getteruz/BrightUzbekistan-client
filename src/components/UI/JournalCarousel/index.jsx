@@ -21,11 +21,11 @@ const JournalCarousel = () => {
     }
 
     useEffect(() => {
-        first.current.classList.add(cls.firstAnimation)
-        second.current.classList.add(cls.secondAnimation)
+        first.current?.classList?.add(cls.firstAnimation)
+        second.current?.classList?.add(cls.secondAnimation)
         setTimeout(() => {
-            first.current.classList.remove(cls.firstAnimation)
-            second.current.classList.remove(cls.secondAnimation)
+            first.current?.classList?.remove(cls.firstAnimation)
+            second.current?.classList?.remove(cls.secondAnimation)
         }, 500)
     }, [currentJournal])
 

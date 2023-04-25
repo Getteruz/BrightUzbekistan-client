@@ -13,11 +13,8 @@ const Main = () => {
         <LayoutChildWrapper asideComponent={<Aside />}>
             <main className={cls.main}>
                 <Rate />
-                <div style={{ padding: '17px 0 82px 0' }}>
-                    <Flex
-                        direction='column'
-                        gap='84'
-                    >
+                <div className={cls.main__cards}>
+                    <Flex direction='column' gap='84'>
                         {
                             newsArray.length > 0 && newsArray.map(([_, data]) => (
                                 <CardsGroup

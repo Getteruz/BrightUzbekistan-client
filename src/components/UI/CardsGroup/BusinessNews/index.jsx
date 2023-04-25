@@ -1,23 +1,47 @@
-import NewsBusinessCard from 'components/UI/Cards/NewsBusinessCard';
-import NewsCardList from 'components/UI/Cards/NewsCard/NewsCardList';
+import NewsCard from 'components/UI/Cards/NewsCard';
+import NewsCardWithBorder from 'components/UI/Cards/NewsCardWithBorder';
 import NewsImageCard from 'components/UI/Cards/NewsImageCard';
-import Flex from 'components/UI/Flex';
-import GroupWrapper from '../GroupWrapper';
+import cls from './BusinessNews.module.scss'
 
 const BusinessNews = ({
-    withNavigation = true,
-    button = {},
-    category = '',
     items = []
 }) => {
+    const firstGroup = items.slice(0, 2) || []
+    const secondGroup = items.slice(3,5) || []
+
     return (
-        <GroupWrapper withNavigation={withNavigation} button={button} category={category}>
-            <Flex rowCount={2} gap='48' direction='row'>
-                {items?.slice(0,2)?.length > 0 && items.slice(0,2).map(item => <NewsBusinessCard key={item.id} {...item}/>)}
-            </Flex>
-            <NewsImageCard direction='column' {...items?.slice(2,3)?.[0]} reverse={true} />
-            <NewsCardList items={items.slice(3,7) || []} desc={false} />
-        </GroupWrapper>
+        <div className={cls.wrapper}>
+            <div className={cls.wrapper__group}>
+                {firstGroup?.length > 0 && firstGroup.map((item, index) => 
+                    <NewsCardWithBorder 
+                        key={item.id}
+                        description='Джефф Безос вложил 3 миллиарда долларов в создание противосмертоносного препарата'
+                        date='2023-04-24T12:58:51.406Z'
+                        category='Biznes'
+                    />
+                )}
+            </div>
+            <NewsImageCard 
+                id={1}
+                title='Основатель и генеральный директор Tesla уже пять недель сокращает свою долю в компании.'
+                description='В комментариях на странице некоторые блогеры уже предложили Маску помощь в продвижении каналов.'
+                category='Biznes'
+                image='/Images/image.webp'
+                date='2023-04-24T12:58:51.406Z'
+                direction='column' 
+                reverse={true} 
+            />
+            <div className={cls.wrapper__group}>
+                {secondGroup?.length > 0 && secondGroup.map((item, index) => 
+                    <NewsCard 
+                        key={index}
+                        title='Джефф Безос вложил 3 миллиарда долларов в создание противосмертоносного препарата'
+                        date='2023-04-24T12:58:51.406Z'
+                        category='Biznes'
+                    />
+                )}
+            </div>
+        </div>
     );
 }
 
