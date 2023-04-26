@@ -2,6 +2,9 @@
     width: 100%;
     padding: 27px 0;
     background: var(--text-color);
+    & * {
+        font-family: 'Noto Sans Normal';
+    }
     
     &__container{
         display: flex;
@@ -26,7 +29,7 @@
         color: rgba(255, 255, 255, 0.4);
 
         & > a {
-            font-family: 'Outfit';
+            font-family: 'Outfit' !important;
             font-weight: 800;
             font-size: 17px;
             line-height: 21px;

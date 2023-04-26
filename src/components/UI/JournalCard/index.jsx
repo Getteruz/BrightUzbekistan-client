@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import { useTranslation } from 'react-i18next';
 import WhiteButton from '../Buttons/WhiteButton';
 import { DownloadSoftwareIcon, EyeIcon } from '../icons';
 import cls from './JournalCard.module.scss'
@@ -11,11 +12,12 @@ const JournalCard = ({
     desc = ''
 }) => {
     const router = useRouter()
+    const { t } = useTranslation('journal')
 
     return (
         <div className={cls.card}>
             <div className={cls.card__img}>
-                <Image 
+                <Image
                     src={image}
                     layout='fill'
                     objectFit='cover'
@@ -27,11 +29,11 @@ const JournalCard = ({
                 <p className={cls.card__desc}>{desc}</p>
                 <div className={cls.card__btns}>
                     <WhiteButton onClick={() => router.push(`/journal/${id}`)}>
-                        <EyeIcon /> Интро
+                        <EyeIcon /> {t('Intro')}
                     </WhiteButton>
                     <WhiteButton>
                         <DownloadSoftwareIcon />
-                        Заказать журнал
+                        {t('Заказать журнал')}
                     </WhiteButton>
                 </div>
             </div>

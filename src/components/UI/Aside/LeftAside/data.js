@@ -66,7 +66,7 @@ export const projectLinks = [
         id: 10,
         link: '/about-project',
         label: 'О проекте',
-        activeColor: '',
+        activeColor: 'rgba(35, 156, 120, 1)',
         light: true
     },
     {

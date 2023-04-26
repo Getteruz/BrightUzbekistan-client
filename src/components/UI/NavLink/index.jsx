@@ -7,15 +7,15 @@ const NavLink = ({
     label = '', 
     light = false, 
     isActive = false,
-    activeColor = '',
+    activeColor = 'rgba(0, 26, 255, 1)',
     icon, 
     ariaLabel = ''
 }) => {
     return (
         <Link href={link}>
             <a 
-                className={`${cls.link} ${light ? cls.light__link : ''} ${isActive ? cls.active : ''}`}
-                style={activeColor ? {color: activeColor} : {}}
+                className={`${cls.link} ${light ? cls.light__link : ''}`}
+                style={isActive ? {color: activeColor} : {}}
                 aria-label={ariaLabel || label}
             >
             {typeof icon === 'function' ? icon() : label}

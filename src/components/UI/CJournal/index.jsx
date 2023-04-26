@@ -42,7 +42,7 @@ const CJournal = forwardRef(({
                 }}
             >
                 {
-                    Array(10).fill(null).map((_, index) => (
+                    Array(13).fill(null).map((_, index) => (
                         <div key={index}>
                             <Document file={src}>
                                 <Page width={500} height={692} renderMode='svg' pageNumber={index + 1} />

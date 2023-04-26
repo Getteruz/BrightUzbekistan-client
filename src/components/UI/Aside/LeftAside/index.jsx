@@ -1,9 +1,10 @@
+import { categoryColor } from 'constants/category';
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import NavLink from '../../NavLink';
-import { navlinks, projectLinks } from './data';
+import { projectLinks } from './data';
 import cls from './LeftAside.module.scss'
 
 const Aside = ({ categories = [] }) => {
@@ -28,21 +29,30 @@ const Aside = ({ categories = [] }) => {
 
             <ul className={cls.aside__links}>
                 <li>
-                    <NavLink link='' label={t("Главная")} />
+                    <NavLink 
+                        link='/' 
+                        label={t("Главная")} 
+                        isActive={router.asPath.split('/')?.slice(0, 3)?.join('/') === '/'}
+                    />
                 </li>
                 {
                     categories?.length > 0 && categories.map((ctg) => (
                         <li key={ctg.id}>
                             <NavLink
-                                link={ctg.id}
-                                label={ctg.ru}
-                                isActive={router.asPath.split('/')?.slice(0, 3)?.join('/') === ctg.ru}
+                                link={`/category/${ctg.id}`}
+                                label={ctg?.[router.locale]}
+                                isActive={router.asPath.split('/')?.slice(0, 3)?.join('/') == `/category/${ctg.id}`}
+                                activeColor={categoryColor?.[ctg.id]}
                             />
                         </li>
                     ))
                 }
                 <li>
-                    <NavLink link='/journal' label={t("Журнал")} />
+                    <NavLink 
+                        link='/journal' 
+                        label={t("Журнал")} 
+                        isActive={router.asPath.split('/')?.slice(0, 3)?.join('/').includes('/journal')}
+                    />
                 </li>
             </ul>
 
@@ -56,7 +66,8 @@ const Aside = ({ categories = [] }) => {
                             <NavLink
                                 link={link.link}
                                 label={t(link.label)}
-                                isActive={router.asPath.split('/')?.slice(0, 3)?.join('/') === link.link}
+                                isActive={router.asPath.split('/')?.slice(0, 3)?.join('/').includes(link.link)}
+                                activeColor={link.activeColor}
                                 light
                             />
                         </li>

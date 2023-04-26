@@ -1,18 +1,20 @@
 import { useRef, useState } from "react";
 import { useRouter } from "next/router";
+import { useTranslation } from "react-i18next";
 import GreenButton from "components/UI/Buttons/GreenButton";
 import CJournal from 'components/UI/CJournal'
 import GoToBack from "components/UI/GoToBack";
 import Navbar from "components/UI/Navbar";
+import { journals } from "../Journals/data";
 import cls from './Journal.module.scss'
-import { useTranslation } from "react-i18next";
 
 const Journal = () => {
     const [page, setPage] = useState()
-    const {t} = useTranslation()
+    const { t } = useTranslation()
     const router = useRouter()
     const journalRef = useRef()
-
+    const [journal] = journals.filter(journal => journal.id === router.query?.id) || []
+console.log(page);
     return (
         <div className={cls.journal}>
             <div className={cls.journal__nav}>
@@ -20,22 +22,22 @@ const Journal = () => {
                 <Navbar />
             </div>
             <div className={cls.journal__content}>
-                <h2 className={cls.journal__title}>“Bright Uzbekistan” 132 Soni</h2>
+                <h2 className={cls.journal__title}>{t(journal?.title)}</h2>
 
                 <CJournal
-                    src={`/journals/${router.query.id}.pdf`} 
-                    ref={journalRef} 
-                    onFlip={({data}) => setPage(data+1)} 
+                    src={`/journals/${router.query.id}.pdf`}
+                    ref={journalRef}
+                    onFlip={({ object }) => setPage(object?.pages?.currentPageIndex)}
                 />
 
                 <div className={cls.journal__info}>
-                    <span className={cls.journal__info__page}>{`${(page >= 0) ? `${page} - ${page+1}` : '1 - 2'}`}</span>
+                    <span className={cls.journal__info__page}>{`${(page > 0) ? `${page} - ${page + 1}` : ''}`}</span>
                     <div className={cls.journal__info__wrapper}>
                         <div>
-                            <h2 className={cls.journal__info__title}>Частным песчаным пляжем расположен в Дубае на острове Палм-Джумейра. </h2>
+                            <h2 className={cls.journal__info__title}>{t(journal?.title)}</h2>
                             <p className={cls.journal__info__desc}>"Bright Uzbekistan" loyihasi O'zbekistonning eksport, import va investitsiya faoliyati, hamkorlarimiz haqida fikr olish, o'z biznesini jahon miqyosida namoyish etish, yangi, uzoq kutilgan shartnomalar tuzish va yetkazib berish geografiyasini kengaytirish uchun ajoyib imkoniyatdir. </p>
                         </div>
-                        <GreenButton>Подписатся на выпуск</GreenButton>
+                        <GreenButton disabled>Подписатся на выпуск</GreenButton>
                     </div>
                 </div>
             </div>

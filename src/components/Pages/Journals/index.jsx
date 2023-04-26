@@ -6,7 +6,7 @@ import { journals } from './data';
 import cls from './Journals.module.scss'
 
 const Journals = () => {
-    const { t } = useTranslation()
+    const { t } = useTranslation('journal')
 
     return (
         <LayoutChildWrapper>
@@ -16,11 +16,11 @@ const Journals = () => {
                     {
                         journals?.length > 0 && journals.map(journal => (
                             <JournalCard
-                                id={journal.id}
                                 key={journal.id}
+                                id={journal.id}
                                 image={journal.image}
-                                title={journal.title}
-                                desc={journal.description}
+                                title={t(journal.title)}
+                                desc={t(journal.description)}
                             />
                         ))
                     }
