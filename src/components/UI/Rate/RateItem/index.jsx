@@ -7,7 +7,7 @@ const RateItem = ({currency = '', value = '', differens = '', up = false}) => {
                 {`${currency} = ${value}`}
             </span>
             <span className={`${cls.item__diff} ${up ? cls.up : cls.down}`}>
-                {`${up ? '+' : '-'}${differens}`}
+                {parseFloat(differens) > 0 ? `+${differens}` : differens}
             </span>
         </li>
     );

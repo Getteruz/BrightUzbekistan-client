@@ -1,32 +1,28 @@
 import { useTranslation } from 'next-i18next';
+import Link from 'next/link';
 import cls from './Rate.module.scss'
 import RateItem from './RateItem';
 
-const Rate = () => {
+const Rate = ({ rate = [] }) => {
     const { t } = useTranslation()
 
     return (
         <div className={cls.rate}>
-            <span className={cls.rate__title}>{t('ПОСЛЕДНИЕ НОВОСТИ')}</span>
+            <Link href='/last-news'>
+                <a className={cls.rate__title}>{t('ПОСЛЕДНИЕ НОВОСТИ')}</a>
+            </Link>
             <ul className={cls.rate__list}>
-                <RateItem 
-                    currency='usd'
-                    value='10845.08'
-                    differens='7.92'
-                    up={true}
-                />
-                <RateItem 
-                    currency='euro'
-                    value='9,400'
-                    differens='42.6'
-                    up={true}
-                />
-                <RateItem 
-                    currency='rub'
-                    value='144.27'
-                    differens='0.94'
-                    up={false}
-                />
+                {
+                    rate?.length > 0 && rate.map(curr => (
+                        <RateItem
+                            key={curr.id}
+                            currency={curr.Ccy}
+                            value={curr.Rate}
+                            differens={curr.Diff}
+                            up={parseFloat(curr.Diff) >= 0}
+                        />
+                    ))
+                }
             </ul>
         </div>
     );

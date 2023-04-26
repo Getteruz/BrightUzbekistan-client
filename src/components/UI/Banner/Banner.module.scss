@@ -10,6 +10,30 @@
         gap: 35px;
     }
 
+    &__info{
+        max-width: 240px;
+        display: flex;
+        flex-direction: column;
+        gap: 9px;
+        margin-bottom: 35px;
+
+        & * {
+            font-family: 'Noto Sans Normal';
+        }
+
+        &__title{
+            font-weight: 500;
+            font-size: 22px;
+            line-height: 18px;
+        }
+
+        &__desc{
+            font-weight: 500;
+            font-size: 13px;
+            line-height: 18px;
+        }
+    }
+
     &__text{
         max-width: 297px;
         margin: 0;
@@ -38,5 +62,20 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+    }
+
+    &__link{
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 18px;
+        font-family: 'Noto Sans Normal';
+        cursor: pointer;
+    }
+
+    &__categories{
+        max-width: 828px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
     }
 }

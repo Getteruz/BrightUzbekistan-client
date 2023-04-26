@@ -1,7 +1,7 @@
 export const links = [
     {
         id: 1,
-        link: '/',
+        link: '/about-project',
         label: 'О проекте',
         color: 'white'
     },

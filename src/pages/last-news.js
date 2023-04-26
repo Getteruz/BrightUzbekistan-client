@@ -1,22 +1,23 @@
-import Category from "components/Pages/Category";
+import LastNews from "components/Pages/LastNews";
 import SEO from "components/SEO";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
-const CategoryPage = () => {
+
+const LastNewsPage = () => {
     return (
         <>
             <SEO />
-            <Category />
+            <LastNews />
         </>
     );
 }
 
 export async function getServerSideProps({ locale }) {
     return {
-      props: {
-        ...(await serverSideTranslations(locale, ["common"])),
-      }
+        props: {
+            ...(await serverSideTranslations(locale, ["common"])),
+        }
     };
-  }
+}
 
-export default CategoryPage;
+export default LastNewsPage;

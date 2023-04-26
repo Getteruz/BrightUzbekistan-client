@@ -1,4 +1,6 @@
 import Image from 'next/image';
+import { useTranslation } from 'next-i18next';
+import { useQueryClient } from 'react-query';
 import AppStore from '../Buttons/AppStore';
 import GooglePlay from '../Buttons/GooglePlay';
 import Flex from '../Flex';
@@ -6,15 +8,22 @@ import NavLink from '../NavLink';
 
 import { contacts, navlinks } from './data';
 import cls from './Banner.module.scss'
-import { useTranslation } from 'next-i18next';
+import { useRouter } from 'next/router';
 
 const Banner = () => {
     const { t } = useTranslation()
+    const router = useRouter()
+    const queryClient = useQueryClient()
+    const categories = queryClient.getQueryData('categories')
 
     return (
         <div className={cls.banner}>
             <Flex>
                 <div className={cls.banner__block}>
+                    <div className={cls.banner__info}>
+                        <span className={cls.banner__info__title}>{t('Скоро')}</span>
+                        <span className={cls.banner__info__desc}>{t('Мобильное приложение Для вашего удобства')}</span>
+                    </div>
                     <Flex gap={10} >
                         <span>
                             <GooglePlay />
@@ -23,7 +32,6 @@ const Banner = () => {
                             <AppStore />
                         </span>
                     </Flex>
-                    <p className={cls.banner__text}>{t('Скачайте наше мобильное приложение и следите за новостями!')}</p>
                 </div>
                 <div style={{ position: 'relative' }}>
                     <div className={cls.banner__image}>
@@ -37,23 +45,30 @@ const Banner = () => {
                 </div>
             </Flex>
             <div className={cls.banner__footer}>
-                <Flex gap='30' width='auto'>
+                <div className={cls.banner__categories}>
                     {
-                        navlinks?.length > 0 && navlinks.map((options) => (
+                        categories?.length > 0 && categories.map(ctg => (
                             <NavLink
-                                key={options.id}
-                                {...options}
+                                key={ctg.id}
+                                label={ctg?.[router.locale]}
+                                link={`/category/${ctg.id}`}
                             />
                         ))
                     }
-                </Flex>
+                </div>
                 <Flex width='auto' gap='30'>
                     {
-                        contacts?.length > 0 && contacts.map((options) => (
-                            <NavLink
-                                key={options.id}
-                                {...options}
-                            />
+                        contacts?.length > 0 && contacts.map(link => (
+                            <a
+                                className={cls.banner__link}
+                                href={link.link}
+                                target='_blank'
+                                rel='noreferrer'
+                                key={link.id}
+                            >
+                                {link.icon}
+                                {link.label}
+                            </a>
                         ))
                     }
                 </Flex>

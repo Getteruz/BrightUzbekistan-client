@@ -45,13 +45,13 @@ const SingleNews = () => {
                 <div className={cls.main__banner}>
                     <ShareBanner tags={tags} />
                 </div>
-                <div className={cls.main__cards}>
+                {/* <div className={cls.main__cards}>
                     <CardsGroup news={{...newsData['political-news'], withNavigation: true}} />
                 </div>
                 <div className={cls.main__recomended}>
                     <h4 className={cls.main__recomended__text}>Репортерские статьи</h4>
                     <RecomendedCardList items={newsData['last-news'].items}/>
-                </div>
+                </div> */}
             </main>
         </LayoutChildWrapper>
     );

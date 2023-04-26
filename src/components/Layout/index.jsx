@@ -5,9 +5,12 @@ import Footer from "components/UI/Footer";
 import Banner from "components/UI/Banner";
 
 import cls from './Layot.module.scss'
+import { useQuery } from "react-query";
+import { getCategories } from "services/category";
 
 const Layout = ({ children, categories = [] }) => {
     const router = useRouter()
+    const { data } = useQuery('categories', getCategories, { initialData: categories })
     return (
         <>
             <Container className={cls.layout__container}>

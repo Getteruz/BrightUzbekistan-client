@@ -20,7 +20,7 @@ Document.getInitialProps = async (ctx) => {
 
     if (locale !== currentLocale && locales.includes(locale)) {
         if (ctx.res) {  
-            ctx.res.writeHead(307, { Location: locale === 'уз' ? '/' : `/${locale}/` }).end();
+            ctx.res.writeHead(307, { Location: locale === 'уз' ?ctx.req.url : `/${locale}${ctx.req.url}` }).end();
         }
     }
 

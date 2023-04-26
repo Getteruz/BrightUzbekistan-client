@@ -2,12 +2,18 @@
     max-width: 160px;
     width: 100%;
     padding: 8px 22px;
-    background: #0B212B;
+    background:  #EEEEEE;
     border-radius: 3px;
     border: none;
     display: flex;
     align-items: center;
     gap: 5px;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+
+    & * {
+        color: #9C9C9C !important;
+    }
 
     &__name{
         font-family: 'SF Pro Display';
@@ -26,6 +32,6 @@
         margin: 0;
         font-size: 11px;
         line-height: 13px;
-        color: #FFFFFF;
+        color: #9C9C9C;
     }
 }

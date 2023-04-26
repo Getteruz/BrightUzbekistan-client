@@ -10,11 +10,11 @@ import cls from './Journal.module.scss'
 
 const Journal = () => {
     const [page, setPage] = useState()
-    const { t } = useTranslation()
+    const { t } = useTranslation('journal')
     const router = useRouter()
     const journalRef = useRef()
     const [journal] = journals.filter(journal => journal.id === router.query?.id) || []
-console.log(page);
+
     return (
         <div className={cls.journal}>
             <div className={cls.journal__nav}>
@@ -35,9 +35,9 @@ console.log(page);
                     <div className={cls.journal__info__wrapper}>
                         <div>
                             <h2 className={cls.journal__info__title}>{t(journal?.title)}</h2>
-                            <p className={cls.journal__info__desc}>"Bright Uzbekistan" loyihasi O'zbekistonning eksport, import va investitsiya faoliyati, hamkorlarimiz haqida fikr olish, o'z biznesini jahon miqyosida namoyish etish, yangi, uzoq kutilgan shartnomalar tuzish va yetkazib berish geografiyasini kengaytirish uchun ajoyib imkoniyatdir. </p>
+                            <p className={cls.journal__info__desc}>{t("Описание журнала")}</p>
                         </div>
-                        <GreenButton disabled>Подписатся на выпуск</GreenButton>
+                        <GreenButton disabled>{t('Подписатся на выпуск')}</GreenButton>
                     </div>
                 </div>
             </div>

@@ -6,15 +6,15 @@ import Rate from 'components/UI/Rate';
 import { newsData } from './data';
 import cls from './Main.module.scss'
 
-const Main = () => {
+const Main = ({ rate }) => {
     const newsArray = Object.entries(newsData || {})
 
     return (
         <LayoutChildWrapper asideComponent={<Aside />}>
             <main className={cls.main}>
-                <Rate />
+                <Rate rate={rate} />
                 <div className={cls.main__cards}>
-                    <Flex direction='column' gap='84'>
+                    <Flex direction='column' gap='60'>
                         {
                             newsArray.length > 0 && newsArray.map(([_, data]) => (
                                 <CardsGroup

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Progress = ({
     max = 100,
@@ -8,7 +8,7 @@ const Progress = ({
     onEnd = () => {}
 }) => {
     const [value, setValue] = useState(0)
-    useState(() => {
+    useEffect(() => {
        const intervalFunc = setInterval(() => {
             setValue(state => {
                 const diff = duration * interval
