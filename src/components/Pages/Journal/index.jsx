@@ -26,7 +26,7 @@ const Journal = () => {
 
                 <CJournal ref={journalRef} onFlip={({ data }) => setPage(data + 1)} />
 
-                <div className={cls.journal__info}>
+                {/* <div className={cls.journal__info}>
                     <span className={cls.journal__info__page}>{`${(page >= 0) ? `${page} - ${page + 1}` : '1 - 2'}`}</span>
                     <div className={cls.journal__info__wrapper}>
                         <div>
@@ -35,7 +35,7 @@ const Journal = () => {
                         </div>
                         <GreenButton>Подписатся на выпуск</GreenButton>
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
     );
