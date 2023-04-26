@@ -11,6 +11,32 @@
         margin-bottom: 30px;
     }
 
+    &__info{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+
+        & *{
+            font-family: 'Noto Sans Normal';
+            font-weight: 800;
+            font-size: 11px;
+            line-height: 15px;
+        }
+
+        &__time{
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+    }
+
+    &__shortDesc{
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 24px;
+    }
+
     &__image {
         width: 100%;
         aspect-ratio: 647/400;

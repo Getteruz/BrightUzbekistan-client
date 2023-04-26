@@ -8,42 +8,47 @@ import LayoutChildWrapper from "components/UI/LayoutChildWrapper";
 import ShareBanner from "components/UI/ShareBanner";
 import { newsData } from "./data";
 import cls from './SingleNews.module.scss'
+import parseTimestamp from "utils/parseTimestamp";
+import { useRouter } from "next/router";
+import { CalendarIcon, ClockIcon } from "components/UI/icons";
+import Markup from "components/UI/Markup";
 
-const tags = ['# Узбекистан', '# Таможня', '# Шавкат Мирзиёев.', '# Экономика']
 
-const SingleNews = () => {
+const SingleNews = ({ news = {}, lastnews = [] }) => {
+    const router = useRouter()
+    const { hours, minutes, month, data, year } = parseTimestamp(news?.publishDate || news?.updated_at, router.locale)
+    const { data: currentData, month: currentMonth, year: currentYear } = parseTimestamp(Date.now())
+
     return (
-        <LayoutChildWrapper asideComponent={<Aside />}>
+        <LayoutChildWrapper asideComponent={<Aside news={lastnews} />}>
             <main className={cls.main}>
-                <GoToBack title="Последние новости" />
+                <GoToBack />
                 <div className={cls.main__wrapper}>
-                    <h2 className={cls.main__title}>Мирзиёев анонсировал ряд изменений в таможенной сфере</h2>
-                    <NewsCard time="9:41" category="Политика" title="17 февраля президент Шавкат Мирзиёев провел совещание по дальнейшему реформированию таможни и преобразованию ее в сферу, свободную от коррупции." />
+                    <h2 className={cls.main__title}>{news?.title}</h2>
+                    <div className={cls.main__info}>
+                        <time className={cls.main__info__title}>
+                            {
+                                data === currentData && month === currentMonth && year === currentYear
+                                    ? <><ClockIcon /> {hours} : {minutes}</>
+                                    : <><CalendarIcon /> {`${data} ${month} ${year === currentYear ? '' : year}`}</>
+                            }
+                        </time>
+                        <span className={cls.main__info__ctg}>{news?.mainCategory?.[router?.locale]}</span>
+                    </div>
+                    <p className={cls.main__shortDesc}>{news?.shortDescription}</p>
                     <div className={cls.main__image}>
                         <Image
-                            src='/Images/prezident.webp'
+                            src={news?.file || '/Images/BrightUzbekistan.svg'}
                             layout="fill"
                             objectFit="cover"
-                            alt="Image"
+                            alt={news?.title}
                         />
                     </div>
-                    <h3 className={cls.main__subtitle}>Как сообщили в пресс-службе главы государства, таможенная система является важным связующим звеном между отечественной и мировой экономикой.</h3>
-                    <p className={cls.main__desc}>
-                        «Если эта система не будет работать правильно и прозрачно, то будет только препятствовать предпринимательству и инвестициям. Поэтому в 2019 году началось реформирование таможенного администрирования и процедур. В частности, на таможенных постах организованы коридоры упрощенного контроля. Сегодня через них проходят 95 процентов пассажиров и 75 процентов грузов. Разрешения 60 видов, которые прежде выдавались 12 различными ведомствами, сегодня предоставляются в электронном виде через “единое окно”. В результате время таможенного оформления сократилось в 10 раз. В стратегии развития на 2022-2026 годы поставлена цель довести объем экспорта до 30 миллиардов долларов и число иностранных туристов до 7 миллионов. Это возлагает особую ответственность на таможенные органы», – говорится в сообщении.
-                        <br />
-                        <br />
-                        В связи с этим на совещании основное внимание уделено развитию таможенной системы, улучшению условий на постах.
-                        <br />
-                        <br />
-                        «Таможенные посты – это лицо нашей страны, именно здесь формируется первое впечатление. В них должны быть удобные условия для населения и предпринимателей.
-                        <br />
-                        <br />
-                        Даны указания по совершенствованию инфраструктуры пограничных таможенных постов, благоустройству прилегающей к ним территории, реконструкции некоторых постов и ремонту ведущих к ним дорог», – сказал Шавкат Мирзиёев.
-                    </p>
-                    <time className={cls.main__time}>7 Февраль, 2022.  09:11</time>
+                    <Markup html={news?.description} />
+                    <time className={cls.main__time}>{`${data} ${month}, ${year}.  ${hours}:${minutes}`}</time>
                 </div>
                 <div className={cls.main__banner}>
-                    <ShareBanner tags={tags} />
+                    <ShareBanner tags={news?.tags || []} link={typeof window !== 'undefined' ? document.location.href : ''} />
                 </div>
                 {/* <div className={cls.main__cards}>
                     <CardsGroup news={{...newsData['political-news'], withNavigation: true}} />

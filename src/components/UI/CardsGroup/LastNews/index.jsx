@@ -1,31 +1,34 @@
 import NewsCard from 'components/UI/Cards/NewsCard';
+import { useRouter } from 'next/router';
 import NewsImageCard from '../../Cards/NewsImageCard';
 import cls from './LastNews.module.scss'
 
 const LastNews = ({
     items = [],
 }) => {
+    const router = useRouter()
     const [firtsNews] = items?.slice(0, 1) || []
     const otherNews = items?.slice(1, 5) || []
-    
+
     return (
         <div className={cls.wrapper}>
-            {firtsNews?.id > 0 && <NewsImageCard 
-                id={1}
-                title='Рискнувшая отдыхом в бюджетном отеле Египта россиянка рассказала о везении'
-                image='/Images/Image.webp'
-                description='Россиянка купила тур в бюджетный отель Египта за 39 тысяч рублей и рассказала о его плюсах...'
-                category='Iqtisod'
-                date='2023-04-24T12:58:51.406Z'
+            {firtsNews?.id && <NewsImageCard 
+                id={firtsNews?.id}
+                title={firtsNews?.title}
+                image={firtsNews?.file}
+                description={firtsNews?.shortDescription}
+                category={firtsNews?.mainCategory?.[router?.locale]}
+                date={firtsNews?.publishedDate || firtsNews?.updated_at}
             />}
             <div className={cls.wrapper__group}>
                 {
-                    otherNews?.length > 0 && otherNews.map((news, index) => (
+                    otherNews?.length > 0 && otherNews.map((news) => (
                         <NewsCard 
-                            key={index}
-                            title={'Рискнувшая отдыхом в бюджетном отеле Египта россиянка рассказала о везении'}
-                            date={'2023-04-24T12:58:51.406Z'}
-                            category='Iqtisod'
+                            key={news?.id}
+                            id={news?.id}
+                            title={news?.title}
+                            date={news?.publishedDate || news?.updated_at}
+                            category={news?.mainCategory?.[router?.locale]}
                         />
                     ))
                 }

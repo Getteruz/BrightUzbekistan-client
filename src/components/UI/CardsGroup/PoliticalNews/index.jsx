@@ -1,31 +1,34 @@
 import NewsImageCard from 'components/UI/Cards/NewsImageCard';
 import NewsImageCardWithBorder from 'components/UI/Cards/NewsImageCardWithBorder';
+import { useRouter } from 'next/router';
 import cls from './PoliticalNews.module.scss'
 
 const PoliticalNews = ({
     items = []
 }) => {
+    const router = useRouter()
     const [firtsNews] = items?.slice(0, 1) || []
-    const otherNews = Array(4).fill(null) || []
+    const otherNews = items?.slice(1, 5) || []
 
     return (
         <div className={cls.wrapper}>
             {firtsNews?.id && <NewsImageCard
-                id={1}
-                title='Рискнувшая отдыхом в бюджетном отеле Египта россиянка рассказала о везении'
-                description='Россиянка купила тур в бюджетный отель Египта за 39 тысяч рублей и рассказала о его плюсах...'
-                category='Iqtisod'
-                date='2023-04-24T12:58:51.406Z'
+                id={firtsNews?.id}
+                title={firtsNews?.title}
+                description={firtsNews?.shortDescription}
+                category={firtsNews?.mainCategory?.[router?.locale]}
+                date={firtsNews?.publishedDate || firtsNews?.updated_at}
                 direction='column'
             />}
             <div className={cls.wrapper__group}>
-                {otherNews.length > 0 && otherNews.map((news, index) =>
+                {otherNews.length > 0 && otherNews.map((news) =>
                     <NewsImageCardWithBorder
-                        key={index} 
-                        title='Рискнувшая отдыхом в бюджетном отеле Египта россиянка рассказала о везении'
-                        category='Iqtisod'
-                        image='/Images/image.webp'
-                        date='2023-04-24T12:58:51.406Z'
+                        key={news?.id} 
+                        id={news?.id}
+                        title={news?.title}
+                        image={news?.file}
+                        category={news?.mainCategory?.[router?.locale]}
+                        date={news?.publishedDate || news?.updated_at}
                     />
                 )}
             </div>

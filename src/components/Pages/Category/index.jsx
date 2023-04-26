@@ -5,29 +5,38 @@ import Flex from "components/UI/Flex";
 import GoToBack from "components/UI/GoToBack";
 import LayoutChildWrapper from "components/UI/LayoutChildWrapper";
 import { useRouter } from "next/router";
+import { useQueryClient } from "react-query";
 import { newsData } from "./data";
 
-const Category = () => {
+const Category = ({ news = [] }) => {
+    let slicedArr = []
     const router = useRouter()
+    const queryClient = useQueryClient()
+    const [ctg] = queryClient.getQueryData('categories')?.filter(ctg => ctg.id === router.query?.id) || []
+
+    for (let i = 0; i < news.length; i += 5) {
+        slicedArr.push(news.slice(i, i + 5));
+    }
 
     return (
-        <LayoutChildWrapper asideComponent={<Aside />}>
-            <GoToBack title={newsData[router.query.categoryId]?.category} />
+        <LayoutChildWrapper asideComponent={<Aside news={news?.slice(0, 5)} />}>
+            <GoToBack title={ctg?.[router.locale]} />
             <div style={{ padding: '17px 0 82px 0' }}>
                 <Flex
                     direction='column'
                     gap='84'
                 >
                     {
-                        Array(3).fill(null).map((_, index) =>
+                        slicedArr?.length > 0 && slicedArr.map(news =>
                             <CardsGroup
-                                key={index}
-                                news={{...newsData[router.query.categoryId], withNavigation: false}}
+                                key={news?.id}
+                                news={news}
+                                categoryId={router?.query?.id}
                             />
                         )
                     }
                 </Flex>
-                <GreyButton label='загрузить еще' style={{marginTop: '80px'}}/>
+                {/* <GreyButton label='загрузить еще' style={{marginTop: '80px'}}/> */}
             </div>
         </LayoutChildWrapper>
     );

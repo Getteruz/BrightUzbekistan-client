@@ -1,26 +1,31 @@
+import Aside from "components/UI/Aside/RightAside/News";
 import CardsGroup from "components/UI/CardsGroup";
 import Flex from "components/UI/Flex";
 import GoToBack from "components/UI/GoToBack";
 import LayoutChildWrapper from "components/UI/LayoutChildWrapper";
+import { useRouter } from "next/router";
 import { useTranslation } from "react-i18next";
-import { newsData } from "../Main/data";
+import { useQueryClient } from "react-query";
 import cls from './LastNews.module.scss'
 
-const LastNews = () => {
-    const newsArray = Object.entries(newsData || {})
+const LastNews = ({ news = [] }) => {
+    let slicedArr = []
     const { t } = useTranslation()
-    console.log(t('Последние новости'));
-    return (    
-        <LayoutChildWrapper>
+    
+    for (let i = 0; i < news.length; i += 5) {
+        slicedArr.push(news.slice(i, i + 5));
+    }
+
+    return (
+        <LayoutChildWrapper asideComponent={<Aside news={news?.slice(0, 5)} />}>
             <main className={cls.main}>
                 <GoToBack title={t('Последние новости')} />
                 <Flex direction='column' gap='60'>
                     {
-                        newsArray?.length > 0 && newsArray.map(([_, data]) => (
+                        slicedArr?.length > 0 && slicedArr.map((news) => (
                             <CardsGroup
-                                withNavigation={false}
-                                key={data.id}
-                                news={data}
+                                key={news?.id}
+                                news={news}
                             />
                         ))
                     }

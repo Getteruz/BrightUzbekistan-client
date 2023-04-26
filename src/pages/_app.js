@@ -30,7 +30,10 @@ function MyApp({ Component, pageProps, categories }) {
 MyApp.getInitialProps = async (ctx) => {
   const pageProps = await App.getInitialProps(ctx);
   const categories = await getCategories()
-  return { ...pageProps, categories }
+  return { 
+    ...pageProps, 
+    categories 
+  }
 }
 
 export default appWithTranslation(MyApp)

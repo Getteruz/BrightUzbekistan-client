@@ -1,5 +1,11 @@
 const parseTimestamp = (timestapm, locale = 'ru') => {
-    if(Date.parse(timestapm) === NaN) return {}
+    if(Date.parse(timestapm) === NaN || !timestapm) return {
+        hours: '',
+        minutes: '',
+        year: '',
+        data: '',
+        month: ''
+    }
     
     let monthInArr = []
     const monthInRu =  ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"]

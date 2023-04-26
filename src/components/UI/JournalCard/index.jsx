@@ -18,7 +18,7 @@ const JournalCard = ({
         <div className={cls.card}>
             <div className={cls.card__img}>
                 <Image
-                    src={image}
+                    src={image || '/Images/BrightUzbekistan.svg'}
                     layout='fill'
                     objectFit='cover'
                     alt={title}

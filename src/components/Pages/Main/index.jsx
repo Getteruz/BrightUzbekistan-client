@@ -1,25 +1,28 @@
+import { useRouter } from 'next/router';
 import LayoutChildWrapper from 'components/UI/LayoutChildWrapper';
 import CardsGroup from 'components/UI/CardsGroup';
 import Aside from 'components/UI/Aside/RightAside/Form';
 import Flex from 'components/UI/Flex';
 import Rate from 'components/UI/Rate';
-import { newsData } from './data';
 import cls from './Main.module.scss'
 
-const Main = ({ rate }) => {
-    const newsArray = Object.entries(newsData || {})
-
+const Main = ({ rate = [], news = [] }) => {
+    const router = useRouter()
+    
     return (
-        <LayoutChildWrapper asideComponent={<Aside />}>
+        <LayoutChildWrapper asideComponent={<Aside news={news?.[0]?.news?.slice(0,2)} />}>
             <main className={cls.main}>
                 <Rate rate={rate} />
                 <div className={cls.main__cards}>
                     <Flex direction='column' gap='60'>
                         {
-                            newsArray.length > 0 && newsArray.map(([_, data]) => (
+                            news.length > 0 && news.map((news, index) => (
                                 <CardsGroup
-                                    key={data.id}
-                                    news={data}
+                                    key={index}
+                                    news={news?.news}
+                                    categoryName={news?.ctg?.[router?.locale]}
+                                    categoryId={news?.ctg?.id}
+                                    withNavigation={index !== 0}
                                 />
                             ))
                         }

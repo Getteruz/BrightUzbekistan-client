@@ -17,7 +17,7 @@ const RecomendedCard = ({
             <div className={`${cls.card} ${fullWidth ? cls.fullWidth : ''}`}>
                 <div className={cls.card__image}>
                     <Image
-                        src={image}
+                        src={image || '/Images/BrightUzbekistan.svg'}
                         layout='fill'
                         objectFit='cover'
                         alt={title}

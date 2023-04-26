@@ -5,6 +5,10 @@
     display: flex;
     flex-direction: column;
 
+    & * {
+        font-family: 'Noto Sans Normal';
+    }
+
     &__block{
         padding: 15px 25px;
         display: flex;

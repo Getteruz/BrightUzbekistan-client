@@ -7,41 +7,51 @@ import SportNews from "./SportNews";
 import UzbekistanNews from "./UzbekistanNews";
 import WorldNews from "./WorldNews";
 import Navigation from "./Navigation";
-import {categoryColor} from '../../../constants/category'
+import { categories, categoryColor } from '../../../constants/category'
 import cls from './CardsGroup.module.scss'
 
-const CardsGroup = ({news = {}, withNavigation = true}) => {
-    
-    return (
-        <div className={cls.wrapper}>
-            {withNavigation && <Navigation 
-                title="Мировые"
-                label="Мировые"
-                color={categoryColor?.['f6060976-5fb8-4e29-8e66-b69bbe1e0ffd']}
-            />}
-            {
-                (() => {
-                    if(news?.category?.toLowerCase() === 'мировые'){
-                        return <WorldNews {...news}/>
-                    } else if(news?.category?.toLowerCase() === 'узбекистан'){
-                        return <UzbekistanNews {...news}/>
-                    } else if(news?.category?.toLowerCase() === 'политика'){
-                        return <PoliticalNews {...news}/>
-                    } else if(news?.category?.toLowerCase() === 'экономика'){
-                        return <EconomicNews {...news}/>
-                    } else if(news?.category?.toLowerCase() === 'бизнес'){
-                        return <BusinessNews {...news}/>
-                    } else if(news?.category?.toLowerCase() === 'общество'){
-                        return <SocietyNews {...news}/>
-                    } else if(news?.category?.toLowerCase() === "спорт"){
-                        return <SportNews {...news}/>
-                    } else {
-                        return <LastNews {...news}/>;
-                    }
-                })()
-            }
-        </div>
-    )
+const CardsGroup = ({
+    categoryName = '',
+    categoryId = '',
+    news = [],
+    withNavigation = false
+}) => {
+
+    if (news?.length < 1) {
+        return <></>
+    } else {
+        return (
+            <div className={cls.wrapper}>
+                {withNavigation && <Navigation
+                    title={categoryName}
+                    label={categoryName}
+                    link={`/category/${categoryId}`}
+                    color={categoryColor?.[categoryId]}
+                />}
+                {
+                    (() => {
+                        if (categoryId === categories?.['Мир']) {
+                            return <WorldNews items={news} />
+                        } else if (categoryId === categories?.['Узбекистан']) {
+                            return <UzbekistanNews items={news} />
+                        } else if (categoryId === categories?.['Политика']) {
+                            return <PoliticalNews items={news} />
+                        } else if (categoryId === categories?.['Экономика']) {
+                            return <EconomicNews items={news} />
+                        } else if (categoryId === categories?.['Бизнес']) {
+                            return <BusinessNews items={news} />
+                        } else if (categoryId === categories?.['Общество']) {
+                            return <SocietyNews items={news} />
+                        } else if (categoryId === categories?.['Спорт']) {
+                            return <SportNews items={news} />
+                        } else {
+                            return <LastNews items={news} />;
+                        }
+                    })()
+                }
+            </div>
+        )
+    }
 }
 
 export default CardsGroup;

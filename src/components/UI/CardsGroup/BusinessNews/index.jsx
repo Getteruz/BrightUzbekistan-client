@@ -1,43 +1,48 @@
 import NewsCard from 'components/UI/Cards/NewsCard';
 import NewsCardWithBorder from 'components/UI/Cards/NewsCardWithBorder';
 import NewsImageCard from 'components/UI/Cards/NewsImageCard';
+import { useRouter } from 'next/router';
 import cls from './BusinessNews.module.scss'
 
 const BusinessNews = ({
     items = []
 }) => {
+    const router = useRouter()
     const firstGroup = items.slice(0, 2) || []
-    const secondGroup = items.slice(3,5) || []
+    const [thirdNews] = items?.slice(2, 3) || []
+    const secondGroup = items.slice(3, 5) || []
 
     return (
         <div className={cls.wrapper}>
             <div className={cls.wrapper__group}>
-                {firstGroup?.length > 0 && firstGroup.map((item, index) => 
-                    <NewsCardWithBorder 
-                        key={item.id}
-                        description='Джефф Безос вложил 3 миллиарда долларов в создание противосмертоносного препарата'
-                        date='2023-04-24T12:58:51.406Z'
-                        category='Biznes'
+                {firstGroup?.length > 0 && firstGroup.map((news) =>
+                    <NewsCardWithBorder
+                        key={news.id}
+                        id={news?.id}
+                        description={news?.shortDescription}
+                        category={news?.mainCategory?.[router?.locale]}
+                        date={news?.publishedDate || news?.updated_at}
                     />
                 )}
             </div>
-            <NewsImageCard 
-                id={1}
-                title='Основатель и генеральный директор Tesla уже пять недель сокращает свою долю в компании.'
-                description='В комментариях на странице некоторые блогеры уже предложили Маску помощь в продвижении каналов.'
-                category='Biznes'
-                image='/Images/image.webp'
-                date='2023-04-24T12:58:51.406Z'
-                direction='column' 
-                reverse={true} 
-            />
+            {thirdNews?.id && <NewsImageCard
+                id={thirdNews?.id}
+                title={thirdNews?.title}
+                description={thirdNews?.shortDescription}
+                image={thirdNews?.file}
+                category={thirdNews?.mainCategory?.[router?.locale]}
+                date={thirdNews?.publishedDate || thirdNews?.updated_at}
+                direction='column'
+                reverse={true}
+            />}
             <div className={cls.wrapper__group}>
-                {secondGroup?.length > 0 && secondGroup.map((item, index) => 
-                    <NewsCard 
-                        key={index}
-                        title='Джефф Безос вложил 3 миллиарда долларов в создание противосмертоносного препарата'
-                        date='2023-04-24T12:58:51.406Z'
-                        category='Biznes'
+                {secondGroup?.length > 0 && secondGroup.map((news) =>
+                    <NewsCard
+                        key={news?.id}
+                        id={news?.id}
+                        title={news?.title}
+                        category={news?.mainCategory?.[router?.locale]}
+                        date={news?.publishedDate || news?.updated_at}
                     />
                 )}
             </div>

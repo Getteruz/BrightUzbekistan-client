@@ -35,6 +35,14 @@ const Aside = ({ categories = [] }) => {
                         isActive={router.asPath.split('/')?.slice(0, 3)?.join('/') === '/'}
                     />
                 </li>
+                <li>
+                    <NavLink 
+                        link='/last-news' 
+                        label={t("Последние новости")} 
+                        isActive={router.asPath.split('/')?.slice(0, 3)?.join('/').includes('/last-news')}
+                        activeColor='rgba(0, 175, 255, 1)'
+                    />
+                </li>
                 {
                     categories?.length > 0 && categories.map((ctg) => (
                         <li key={ctg.id}>
