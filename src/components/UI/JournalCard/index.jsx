@@ -26,7 +26,7 @@ const JournalCard = ({
             </div>
             <div className={cls.card__info}>
                 <h3 className={cls.card__title}>{title}</h3>
-                <p className={cls.card__desc}>{desc}</p>
+                {/* <p className={cls.card__desc}>{desc}</p> */}
                 <div className={cls.card__btns}>
                     <WhiteButton onClick={() => router.push(`/journal/${id}`)}>
                         <EyeIcon /> {t('Intro')}

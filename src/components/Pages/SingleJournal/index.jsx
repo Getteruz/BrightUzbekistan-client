@@ -35,7 +35,7 @@ const Journal = () => {
                     <div className={cls.journal__info__wrapper}>
                         <div>
                             <h2 className={cls.journal__info__title}>{t(journal?.title)}</h2>
-                            <p className={cls.journal__info__desc}>{t("Описание журнала")}</p>
+                            {/* <p className={cls.journal__info__desc}>{t("Описание журнала")}</p> */}
                         </div>
                         <GreenButton disabled>{t('Подписатся на выпуск')}</GreenButton>
                     </div>
