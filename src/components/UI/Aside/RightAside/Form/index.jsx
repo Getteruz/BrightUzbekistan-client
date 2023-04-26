@@ -24,6 +24,7 @@ const Aside = ({ news = [] }) => {
                     news?.length > 0 && news?.map(news => (
                         <NewsCard
                             key={news?.id}
+                            id={news?.id}
                             title={news?.title}
                             category={news?.mainCategory?.[router?.locale]}
                             date={news?.publishedDate || news?.updated_at}
