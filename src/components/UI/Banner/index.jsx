@@ -56,7 +56,7 @@ const Banner = () => {
                         ))
                     }
                 </div>
-                <Flex width='auto' gap='30'>
+                <div style={{display: 'flex', alignItems: 'center', gap: '30px', flexShrink: 0}}>
                     {
                         contacts?.length > 0 && contacts.map(link => (
                             <a
@@ -71,7 +71,7 @@ const Banner = () => {
                             </a>
                         ))
                     }
-                </Flex>
+                </div>
             </div>
         </div>
     );

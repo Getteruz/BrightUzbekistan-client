@@ -14,6 +14,7 @@ const Navbar = () => {
     const changeLocale = (locale) => {
         setCookie(null, 'locale', locale, {
             path: '/',
+            expires: Infinity
         })
         router.push({
             route: router.pathname,

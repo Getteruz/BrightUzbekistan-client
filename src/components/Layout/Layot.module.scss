@@ -1,10 +1,12 @@
 .layout{
     &__left__aside{
         max-width: 403px;
+        min-width: 186px;
         width: 100%;
     }
 
     &__main{
+        width: 100%;
         flex-grow: 1;
         min-height: 100vh;
         display: flex;

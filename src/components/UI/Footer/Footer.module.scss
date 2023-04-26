@@ -1,7 +1,9 @@
 .footer{
     width: 100%;
+    display: flex;
     padding: 27px 0;
     background: var(--text-color);
+
     & * {
         font-family: 'Noto Sans Normal';
     }

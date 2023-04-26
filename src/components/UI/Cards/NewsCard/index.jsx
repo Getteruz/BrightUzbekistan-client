@@ -31,7 +31,7 @@ const NewsCard = ({
                 <div className={cls.card__info}>
                     <time className={cls.card__info__time}>{
                         data === currentData && month === currentMonth && year === currentYear
-                            ? <><ClockIcon /> {hours} : {minutes}</>
+                            ? <><ClockIcon /> {hours}:{minutes}</>
                             : <><CalendarIcon /> {`${data} ${month} ${year === currentYear ? '' : year}`}</>
                     }</time>
                     <h4 className={cls.card__info__category}>{category}</h4>

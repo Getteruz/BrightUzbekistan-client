@@ -33,7 +33,7 @@ const NewsImageCardWithBorder = ({
                     <div className={cls.card__info__flex}>
                         <time className={cls.card__info__time}>{
                             data === currentData && month === currentMonth && year === currentYear
-                                ? <><ClockIcon /> {hours} : {minutes}</>
+                                ? <><ClockIcon /> {hours}:{minutes}</>
                                 : <><CalendarIcon /> {`${data} ${month} ${year === currentYear ? '' : year}`}</>
                         }</time>
                         <span className={cls.card__info__ctg}>{category}</span>

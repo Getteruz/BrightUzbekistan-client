@@ -29,7 +29,7 @@ const SingleNews = ({ news = {}, lastnews = [] }) => {
                         <time className={cls.main__info__title}>
                             {
                                 data === currentData && month === currentMonth && year === currentYear
-                                    ? <><ClockIcon /> {hours} : {minutes}</>
+                                    ? <><ClockIcon /> {hours}:{minutes}</>
                                     : <><CalendarIcon /> {`${data} ${month} ${year === currentYear ? '' : year}`}</>
                             }
                         </time>

@@ -5,15 +5,17 @@ import Flex from '../Flex';
 import { links, rules } from './data';
 import cls from './Footer.module.scss'
 import { useTranslation } from 'next-i18next';
+import useGetWindowWidth from 'hooks/useGetWindowWidth';
 
 
 const Footer = () => {
     const { width } = useGetSize('leftAside')
+    const windowWidth = useGetWindowWidth()
     const { t } = useTranslation()
 
     return (
         <footer className={cls.footer}>
-            <Container className={cls.footer__container} maxWidth={1200} margin={`0 0 0 ${width}px !important`} >
+            <Container className={cls.footer__container} maxWidth={1200} margin={windowWidth > 1178 ? `0 0 0 ${width}px !important` : ''} >
                 <Flex width='auto' gap='33'>
                     <div className={cls.footer__text}>Copyright: 2023</div>
 
