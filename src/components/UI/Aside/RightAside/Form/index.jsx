@@ -9,16 +9,18 @@ import { useTranslation } from 'next-i18next';
 import cls from './Aside.module.scss'
 import JournalCarousel from 'components/UI/JournalCarousel';
 import { useRouter } from 'next/router';
+import useGetWindowWidth from 'hooks/useGetWindowWidth';
 
 const Aside = ({ news = [] }) => {
-    const { t } = useTranslation()
     const router = useRouter()
+    const { t } = useTranslation()
+    const windowWidth = useGetWindowWidth()
 
     return (
         <div className={cls.aside}>
             <Flex
                 direction='column'
-                gap='20'
+                gap={windowWidth > 1440 ? 20 : 10}
             >
                 {
                     news?.length > 0 && news?.map(news => (
@@ -36,7 +38,7 @@ const Aside = ({ news = [] }) => {
             <GreyButton
                 icon={RightArrows}
                 label={t('все новости')}
-                style={{ margin: '36px 0' }}
+                style={{ margin: windowWidth > 1440 ? '36px 0' : '15px 0' }}
                 onClick={() => router.push('/last-news')}
             />
 

@@ -128,3 +128,14 @@
         opacity: 0.1;
     }
 }
+
+@media screen and (max-width: 1210px) {
+    .carousel{
+        flex-direction: column;
+        gap: 10px;
+
+        &__btns{
+            flex-direction: row;
+        }
+    }
+}

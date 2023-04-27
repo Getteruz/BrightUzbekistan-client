@@ -18,3 +18,9 @@
         }
     }
 }
+
+@media screen and (max-width: 1440px) {
+    .layout__main{
+        flex-shrink: 0;
+    }
+}
