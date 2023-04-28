@@ -17,7 +17,7 @@ export default function ContactUs() {
                 <p className={cls.Contact__text}>{t('ООО “Bright Uzbekistan”  — You may be disappointed if you fail, but you are doomed if you don\'t try. If you keep moving in the right direction you\'ll get your dream or something better.') || ''}</p>
                 <div className={cls.Contact__wrap}>
                     <div className={cls.Contact__box}>
-                        <p className={cls.Contact__box__text}>{t('Наше телефон:') || ''}</p>
+                        <p className={cls.Contact__box__text}>{t('Наше телефон') || ''}:</p>
                         <p className={cls.Contact__box__text2}> <Link href={"tel:998900110000"}> +998 90 011 00 00</Link></p>
                     </div>
                     <div className={cls.Contact__box}>
