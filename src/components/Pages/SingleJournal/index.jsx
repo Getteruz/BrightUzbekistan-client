@@ -10,6 +10,7 @@ import cls from './Journal.module.scss'
 
 const Journal = () => {
     const [page, setPage] = useState()
+    const [order, setOrder] = useState(false)
     const { t } = useTranslation('journal')
     const router = useRouter()
     const journalRef = useRef()
@@ -25,6 +26,8 @@ const Journal = () => {
                 <h2 className={cls.journal__title}>{t(journal?.title)}</h2>
 
                 <CJournal
+                    setOrder={setOrder}
+                    order={order}
                     src={`/journals/${router.query.id}.pdf`}
                     ref={journalRef}
                     onFlip={({ object }) => setPage(object?.pages?.currentPageIndex)}
@@ -37,7 +40,7 @@ const Journal = () => {
                             <h2 className={cls.journal__info__title}>{t(journal?.title)}</h2>
                             {/* <p className={cls.journal__info__desc}>{t("Описание журнала")}</p> */}
                         </div>
-                        <GreenButton disabled>{t('Подписатся на выпуск')}</GreenButton>
+                        <GreenButton onClick={() => setOrder(true)}>{t('Подписатся на выпуск')}</GreenButton>
                     </div>
                 </div>
             </div>

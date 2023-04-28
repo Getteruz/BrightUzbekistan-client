@@ -314,3 +314,19 @@ export function DownloadJournalIcon() {
         </svg>
     )
 }
+
+export function CloseIcon() {
+    return (
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11 1L1 11M1 1L11 11" stroke="black" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+    )
+}
+
+export function SuccessIcon() {
+    return (
+        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M27 40L35.6667 48.6667L53 31.3333M79 40C79 61.5391 61.5391 79 40 79C18.4609 79 1 61.5391 1 40C1 18.4609 18.4609 1 40 1C61.5391 1 79 18.4609 79 40Z" stroke="#3DBE78" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+    )
+}

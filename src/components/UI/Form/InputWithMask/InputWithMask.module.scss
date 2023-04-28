@@ -1,0 +1,20 @@
+
+.input{
+    padding: 17px 15px;
+    font-family: 'Noto Sans Normal';
+    font-size: 13px;
+    line-height: 18px;
+    border-radius: 0 !important;
+    outline: none;
+    border: none;
+    background: rgba(11, 33, 43, 0.04);
+    border-bottom: 1px solid rgba(11, 33, 43, 0.3);
+
+    &::placeholder{
+        opacity: 0.4;
+    }
+
+    &:focus{
+        border-bottom-color: rgba(11, 33, 43, 1);
+    }
+}

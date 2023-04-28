@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { forwardRef } from 'react';
 import HTMLFlipBook from 'react-pageflip';
@@ -5,11 +6,14 @@ import { Document, Page, pdfjs } from 'react-pdf/dist/esm/entry.webpack';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import 'react-pdf/dist/esm/Page/TextLayer.css';
 import BookPopup from '../Popup/BookPopup';
+import OrderForm from '../Popup/OrderForm';
 import cls from './CJournal.module.scss'
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 const CJournal = forwardRef(({
+    setOrder = () => {},
+    order = false,
     onFlip,
     src = ''
 }, ref) => {
@@ -51,7 +55,8 @@ const CJournal = forwardRef(({
                     ))
                 }
             </HTMLFlipBook>
-            {open && <BookPopup onClickOutside={onClickOutside} />}
+            {open && <BookPopup onClickOutside={onClickOutside} onOk={() => {setOrder(true); setOpen(false)}}  />}
+            {order && <OrderForm onClose={() => setOrder(false)} onOk={() => setOrder(false)} />}
         </div>
     );
 })
