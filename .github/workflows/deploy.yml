@@ -1,7 +1,7 @@
 name: Deployment BrightUzbekistan Client
 on:
   push:
-    branches: [main]
+    branches: [test]
   pull_request:
     branches: [main]
 
@@ -19,7 +19,7 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             cd /home/user/getter/bright-client
-            git pull origin main
+            git pull origin test
             git status
             npm install --yes --legacy-peer-deps
             rm -rf .next
