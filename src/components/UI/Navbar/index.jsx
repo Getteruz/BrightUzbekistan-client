@@ -39,7 +39,7 @@ const Navbar = () => {
                     />
                     <ul className={`${cls.navbar__langugewrap} ${openModal ? cls.open__modal : ""}`}>
                         <li className={router.locale === 'uz' ? cls.active: ""} onClick={() => changeLocale('uz')}>O'zbekcha</li>
-                        <li className={router.locale === 'уз' ? cls.active: ""} onClick={() => changeLocale('уз')}>Ўзбекча</li>
+                        {/* <li className={router.locale === 'уз' ? cls.active: ""} onClick={() => changeLocale('уз')}>Ўзбекча</li> */}
                         <li className={router.locale === 'ru' ? cls.active: ""} onClick={() => changeLocale('ru')}>Русский</li>
                         <li className={router.locale === 'en' ? cls.active: ""} onClick={() => changeLocale('en')}>English</li>
                     </ul>

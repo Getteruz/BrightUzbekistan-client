@@ -8,6 +8,7 @@ const Progress = ({
     onEnd = () => {}
 }) => {
     const [value, setValue] = useState(0)
+    
     useEffect(() => {
        const intervalFunc = setInterval(() => {
             setValue(state => {
@@ -21,8 +22,8 @@ const Progress = ({
             })
         }, interval * 1000)
         return () => clearInterval(intervalFunc)
-    }, [])
-    // console.log(value);
+    }, [duration, interval, max, onEnd])
+
     return (
         <progress className={className} max={max} value={value} />
     );

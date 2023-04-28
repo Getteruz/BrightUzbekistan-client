@@ -3,7 +3,6 @@
 
     &__aside{
         max-width: 686px;
-        // min-width: 386px;
         width: 100%;
         position: sticky;
         top: 0;
@@ -14,6 +13,18 @@
         width: 100%;
         padding: 0 35px;
         flex-grow: 1;
+
+        &__nav{
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .layout__main{
+        &__content{
+            max-width: 612px;
+        }
     }
 }
 
@@ -21,6 +32,23 @@
     .layout__main{
         &__content{
             padding: 0 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .layout__main{
+        &__content{
+            padding-right: 0;
+            max-width: 100%;
+            width: 100%;
+            &__nav{
+                display: flex;
+            }
+        }
+        &__aside{
+            display: none;
+            width: 0;
         }
     }
 }
