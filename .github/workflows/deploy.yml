@@ -1,0 +1,27 @@
+name: Deployment BrightUzbekistan Client
+on:
+  push:
+    branches: [test]
+  pull_request:
+    branches: [main]
+
+jobs:
+  deploy:
+    name: Deploy to server
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploying to server...
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: |
+            cd /home/user/getter/bright-client
+            git pull origin test
+            git status
+            npm install --yes --legacy-peer-deps
+            rm -rf .next
+            npm run build
+            pm2 restart bright-client
