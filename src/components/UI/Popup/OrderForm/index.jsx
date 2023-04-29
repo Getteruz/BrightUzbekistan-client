@@ -25,7 +25,7 @@ const OrderForm = ({
             setIsLoading(true)
             const res = await sendOrder({
                 ...data,
-                title: journals?.[router?.query?.id]?.title
+                title: journals?.filter(journal => journal.id == router?.query?.id)?.[0]?.title
             })
 
             if (res?.ok === true) {
