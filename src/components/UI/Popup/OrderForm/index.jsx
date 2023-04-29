@@ -1,26 +1,32 @@
+import { useState } from 'react';
+import { useRouter } from 'next/router';
+import { useForm } from 'react-hook-form';
+import { useTranslation } from 'next-i18next';
 import GreenButton from 'components/UI/Buttons/GreenButton';
 import Input from 'components/UI/Form/Input';
 import InputWithMask from 'components/UI/Form/InputWithMask';
 import { CloseIcon, SuccessIcon } from 'components/UI/icons';
-import { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { useTranslation } from 'next-i18next';
 import { sendOrder } from 'services/bot';
 import cls from './OrderForm.module.scss'
+import { journals } from 'components/Pages/Journals/data';
 
 const OrderForm = ({
     onClose = () => { },
     onOk = () => { },
 }) => {
+    const router = useRouter()
     const { t } = useTranslation('journal')
-    const { register, formState: { isValid }, handleSubmit, control } = useForm({ mode: 'onChange' })
     const [success, setSuccess] = useState()
     const [isLoading, setIsLoading] = useState()
+    const { register, formState: { isValid }, handleSubmit, control } = useForm({ mode: 'onChange' })
 
     const submitForm = async (data) => {
         try {
             setIsLoading(true)
-            const res = await sendOrder(data)
+            const res = await sendOrder({
+                ...data,
+                title: journals?.[router?.query?.id]?.title
+            })
 
             if (res?.ok === true) {
                 setSuccess(true)
