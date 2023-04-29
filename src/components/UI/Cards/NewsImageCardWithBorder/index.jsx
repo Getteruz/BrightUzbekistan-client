@@ -17,7 +17,7 @@ const NewsImageCardWithBorder = ({
     const { hours, minutes, month, data, year } = parseTimestamp(date, router.locale)
     const { data: currentData, month: currentMonth, year: currentYear } = parseTimestamp(Date.now(), router.locale)
 
-    return (
+    return (    
         <Link href={link}>
             <div className={cls.card}>
                 <div className={cls.card__image}>
