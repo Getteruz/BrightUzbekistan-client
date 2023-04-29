@@ -18,7 +18,7 @@ const NewsImageCard = ({
     const link = `/news/${id}`
     const router = useRouter()
     const { hours, minutes, month, data, year } = parseTimestamp(date, router.locale)
-    const { data: currentData, month: currentMonth, year: currentYear } = parseTimestamp(Date.now())
+    const { data: currentData, month: currentMonth, year: currentYear } = parseTimestamp(Date.now(), router.locale)
 
     return (
         <Link href={link}>

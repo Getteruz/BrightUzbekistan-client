@@ -17,7 +17,7 @@ import Markup from "components/UI/Markup";
 const SingleNews = ({ news = {}, lastnews = [] }) => {
     const router = useRouter()
     const { hours, minutes, month, data, year } = parseTimestamp(news?.publishDate || news?.updated_at, router.locale)
-    const { data: currentData, month: currentMonth, year: currentYear } = parseTimestamp(Date.now())
+    const { data: currentData, month: currentMonth, year: currentYear } = parseTimestamp(Date.now(), router.locale)
 
     return (
         <LayoutChildWrapper asideComponent={<Aside news={lastnews} />}>

@@ -1,10 +1,10 @@
 const settings = {
     meta: {
-        url: "https://bright-uzbekistan.vercel.app/",
+        url: "https://buzb.uz/",
         title: "Bright Uzbekistan",
         description: "Ozbekiston yangiliklari",
         social: {
-            graphic: "https://bright-uzbekistan.vercel.app/Images/BrightUzbekistan.png",
+            graphic: "https://buzb.uz/Images/BrightUzbekistan.png",
             twitter: "@brightuzb",
         },
         type: "website",
