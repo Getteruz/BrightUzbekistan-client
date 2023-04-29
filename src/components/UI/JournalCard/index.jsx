@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 import WhiteButton from '../Buttons/WhiteButton';
 import { DownloadSoftwareIcon, EyeIcon } from '../icons';
 import cls from './JournalCard.module.scss'

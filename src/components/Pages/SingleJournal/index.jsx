@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { useRouter } from "next/router";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
 import GreenButton from "components/UI/Buttons/GreenButton";
 import CJournal from 'components/UI/CJournal'
 import GoToBack from "components/UI/GoToBack";

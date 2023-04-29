@@ -21,7 +21,10 @@
 
 @media screen and (max-width: 1000px) {
     .rate{
+        position: relative;
+        left: -21px;
+        width: calc(100% + 40px);
         background-color: #eee;
-        padding: 8px 0;
+        padding: 21px 20px;
     }
 }

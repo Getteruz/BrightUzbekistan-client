@@ -8,7 +8,7 @@ import { getRate } from "services/rate";
 export default function Home({ rate = [], news = [] }) {
   return (
     <>
-      <SEO />
+      <SEO />  
       <Main rate={rate} news={news} />
     </>
   )
@@ -40,7 +40,6 @@ export async function getServerSideProps({ locale }) {
       })
     })
   }))
-
 
   return {
     props: {

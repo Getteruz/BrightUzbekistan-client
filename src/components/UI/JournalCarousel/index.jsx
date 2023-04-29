@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
+import { useTranslation } from 'next-i18next';
 import { DownloadJournalIcon, NotificationIcon, ShareIcon } from '../icons';
 import Progress from '../Progress';
 import cls from './JournalCarousel.module.scss'
@@ -8,6 +9,7 @@ import cls from './JournalCarousel.module.scss'
 const journalCount = 2
 
 const JournalCarousel = () => {
+    const {t} = useTranslation()
     const [currentJournal, setCurrentJournal] = useState(1)
     const first = useRef()
     const second = useRef()
@@ -60,7 +62,7 @@ const JournalCarousel = () => {
                 </div>
                 <div>
                     <Progress className={cls.carousel__progress} onEnd={onEnd} duration={20} />
-                    <span className={cls.carousel__text}>Выпуск: 10.01.2023</span>
+                    <span className={cls.carousel__text}>{t('Выпуск')}: 10.01.2023</span>
                 </div>
             </div>
             <div className={cls.carousel__btns}>

@@ -3,9 +3,7 @@ import CardsGroup from "components/UI/CardsGroup";
 import Flex from "components/UI/Flex";
 import GoToBack from "components/UI/GoToBack";
 import LayoutChildWrapper from "components/UI/LayoutChildWrapper";
-import { useRouter } from "next/router";
-import { useTranslation } from "react-i18next";
-import { useQueryClient } from "react-query";
+import { useTranslation } from "next-i18next";
 import cls from './LastNews.module.scss'
 
 const LastNews = ({ news = [] }) => {

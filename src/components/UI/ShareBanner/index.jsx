@@ -1,5 +1,4 @@
-import Link from 'next/link';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 import Flex from '../Flex';
 import { socialMedias } from './data';
 import cls from './ShareBanner.module.scss'

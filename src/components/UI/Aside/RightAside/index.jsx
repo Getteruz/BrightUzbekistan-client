@@ -1,6 +1,6 @@
 import Navbar from "../../Navbar";
-import cls from './RightAside.module.scss'
 import Test from "./Test";
+import cls from './RightAside.module.scss'
 
 const RightAside = ({children}) => {
     return (

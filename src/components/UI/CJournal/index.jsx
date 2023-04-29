@@ -24,6 +24,11 @@ const CJournal = forwardRef(({
         ref?.current?.pageFlip()?.turnToPrevPage()
     }
 
+    const onClose = () => {
+        setOrder(false)
+        ref?.current?.pageFlip()?.turnToPrevPage()
+    }
+
     return (
         <div className={cls.wrapper}>
             <HTMLFlipBook 
@@ -56,7 +61,7 @@ const CJournal = forwardRef(({
                 }
             </HTMLFlipBook>
             {open && <BookPopup onClickOutside={onClickOutside} onOk={() => {setOrder(true); setOpen(false)}}  />}
-            {order && <OrderForm onClose={() => setOrder(false)} onOk={() => setOrder(false)} />}
+            {order && <OrderForm onClose={onClose} onOk={onClose} />}
         </div>
     );
 })

@@ -3,8 +3,8 @@ import Input from 'components/UI/Form/Input';
 import InputWithMask from 'components/UI/Form/InputWithMask';
 import { CloseIcon, SuccessIcon } from 'components/UI/icons';
 import { useState } from 'react';
-import { useDetectClickOutside } from 'react-detect-click-outside';
 import { useForm } from 'react-hook-form';
+import { useTranslation } from 'next-i18next';
 import { sendOrder } from 'services/bot';
 import cls from './OrderForm.module.scss'
 
@@ -12,6 +12,7 @@ const OrderForm = ({
     onClose = () => { },
     onOk = () => { },
 }) => {
+    const { t } = useTranslation('journal')
     const { register, formState: { isValid }, handleSubmit, control } = useForm({ mode: 'onChange' })
     const [success, setSuccess] = useState()
     const [isLoading, setIsLoading] = useState()
@@ -38,13 +39,13 @@ const OrderForm = ({
                     <CloseIcon />
                 </button>
                 <form className={cls.popup__form} onSubmit={handleSubmit(submitForm)}>
-                    <h3 className={cls.popup__form__title}>Подписатся на выпуск</h3>
-                    <span className={cls.popup__form__desc}>Подписывайтесь на новый выпуск журнала «Bright Uzbekistan», оставьте свои данные</span>
+                    <h3 className={cls.popup__form__title}>{t('Подписатся на выпуск')}</h3>
+                    <span className={cls.popup__form__desc}>{t('Подписывайтесь на новый выпуск журнала «Bright Uzbekistan», оставьте свои данные')}</span>
                     {!success ? <div className={cls.popup__form__inputs}>
                         <Input placeholder='Имя' name='firstName' register={{ ...register('firstName', { required: true }) }} />
                         <Input placeholder='Фамилия' name='lastName' register={{ ...register('lastName', { required: true }) }} />
                         <InputWithMask placeholder='+998' mask='+\9\9\8 (99) 999-99-99' name='phoneNumber' control={control} rules={{ required: true }} />
-                        <Input placeholder='E-mail' name='email' register={{ ...register('email') }} />
+                        <Input placeholder='E-mail' name='email' register={{ ...register('email', { pattern: /^\S+@\S+$/i }) }} />
                     </div> : (
                         <div className={cls.success}>
                             <SuccessIcon />
@@ -65,7 +66,7 @@ const OrderForm = ({
                                 disabled={!isValid}
                                 type='submit'
                             >
-                                Отправить
+                                {t('Отправить')}
                             </GreenButton>
                         )
                     }

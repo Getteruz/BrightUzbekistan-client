@@ -1,7 +1,7 @@
 import GoToBack from 'components/UI/GoToBack';
 import JournalCard from 'components/UI/JournalCard';
 import LayoutChildWrapper from 'components/UI/LayoutChildWrapper';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 import { journals } from './data';
 import cls from './Journals.module.scss'
 
