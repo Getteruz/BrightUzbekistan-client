@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import { useQueryClient } from 'react-query';
-import { CloseNavbarIcon, MobileGlobusIcon } from '../icons';
+import { BurgerLineIcon, CloseNavbarIcon, MobileGlobusIcon } from '../icons';
 import cls from './Mobile.module.scss'
 import { useEffect, useState } from 'react';
 import { setCookie } from 'nookies';
@@ -45,7 +45,7 @@ const MobileNavbar = () => {
         <div className={cls.nav}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
                 <div className={cls.close__icon} onClick={() => setIsOpen(true)}>
-                    <CloseNavbarIcon />
+                    <BurgerLineIcon />
                 </div>
                 <div className={cls.nav__logo}>
                     <Image
