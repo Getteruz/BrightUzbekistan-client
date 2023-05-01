@@ -9,7 +9,7 @@ import cls from './JournalCarousel.module.scss'
 const journalCount = 2
 
 const JournalCarousel = () => {
-    const {t} = useTranslation()
+    const { t } = useTranslation()
     const [currentJournal, setCurrentJournal] = useState(1)
     const first = useRef()
     const second = useRef()

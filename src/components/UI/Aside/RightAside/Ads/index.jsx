@@ -21,9 +21,9 @@ const Aside = () => {
                 subtitle={t('Проект Bright Uzbekistan осуществляется при поддержке Администрации Президента Республики Узбекистан, Министерства инвестиций, промышленности и торговли и Агентства стратегических Реформ при Президенте Республики Узбекистан.')}
             >
                 <Flex gap='20' direction='column'>
-                    <Link href='www.president.uz'><a className={cls.link} target='_blank'>www.president.uz</a></Link>
-                    <Link href='www.miit.uz'><a className={cls.link} target='_blank'>www.miit.uz</a></Link>
-                    <Link href='www.asr.gov.uz'><a className={cls.link} target='_blank'>www.asr.gov.uz</a></Link>
+                    <a href='https://www.president.uz' className={cls.link} target='_blank' rel='noreferrer' >www.president.uz</a>
+                    <a href='http://www.miit.uz' className={cls.link} target='_blank' rel='noreferrer' >www.miit.uz</a>
+                    <a href='https://www.asr.gov.uz' className={cls.link} target='_blank' rel='noreferrer' >www.asr.gov.uz</a>
                 </Flex>
             </InfoCard>
         </div>

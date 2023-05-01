@@ -24,7 +24,7 @@ const NewsImageCard = ({
         <Link href={link}>
             <div className={`${cls.card} ${direction === 'column' ? cls.column : ''}`}>
                 <Link href={link}><a><h2 className={cls.card__title}>{title}</h2></a></Link>
-                <div className={cls.card__infoblock} style={{ display: 'flex', flexDirection: `${reverse ? 'column-reverse' : ''}` }}>
+                <div className={cls.card__infoblock} style={{ display: 'flex', flexDirection: `${reverse ? 'column-reverse' : 'row'}` }}>
                     {image && (
                         <div className={cls.card__image}>
                             <Image
