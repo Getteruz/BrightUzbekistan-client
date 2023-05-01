@@ -5,25 +5,43 @@ import Aside from 'components/UI/Aside/RightAside/Form';
 import Flex from 'components/UI/Flex';
 import Rate from 'components/UI/Rate';
 import cls from './Main.module.scss'
+import useGetWindowWidth from 'hooks/useGetWindowWidth';
+import JournalCarousel from 'components/UI/JournalCarousel';
+import { useQuery } from 'react-query';
+import { getRate } from 'services/rate';
 
 const Main = ({ rate = [], news = [] }) => {
     const router = useRouter()
-    
+    const windowWidth = useGetWindowWidth()
+    useQuery('rate', getRate, {initialData: rate})
+
     return (
-        <LayoutChildWrapper asideComponent={<Aside news={news?.[0]?.news?.slice(0,2)} />}>
+        <LayoutChildWrapper asideComponent={<Aside news={news?.[0]?.news?.slice(0, 2)} />}>
             <main className={cls.main}>
-                <Rate rate={rate} />
+                {windowWidth > 670 && <Rate rate={rate} />}
                 <div className={cls.main__cards}>
                     <Flex direction='column' gap='60'>
                         {
                             news.length > 0 && news.map((news, index) => (
-                                <CardsGroup
-                                    key={index}
-                                    news={news?.news}
-                                    categoryName={news?.ctg?.[router?.locale]}
-                                    categoryId={news?.ctg?.id}
-                                    withNavigation={index !== 0}
-                                />
+                                windowWidth > 1000 ? (
+                                    <CardsGroup
+                                        key={index}
+                                        news={news?.news}
+                                        categoryName={news?.ctg?.[router?.locale]}
+                                        categoryId={news?.ctg?.id}
+                                        withNavigation={index !== 0}
+                                    />) : (
+                                    <>
+                                        <CardsGroup
+                                            key={index}
+                                            news={news?.news}
+                                            categoryName={news?.ctg?.[router?.locale]}
+                                            categoryId={news?.ctg?.id}
+                                            withNavigation={index !== 0}
+                                        />
+                                        {index === 0 && <JournalCarousel />}
+                                    </>
+                                )
                             ))
                         }
                     </Flex>

@@ -68,3 +68,11 @@
         padding: 8px 0;
     }
 }
+
+@media screen and (max-width: 670px) {
+    .navbar{
+        &__list{
+            justify-content: space-between;
+        }
+    }
+}

@@ -5,7 +5,7 @@
     &__title{
         font-family: 'Old Standard TT';
         font-weight: 700;
-        font-size: 56px;
+        font-size: 50px;
         line-height: 54px;
         margin-bottom: 25px;
         transition: all 0.3s;
@@ -50,7 +50,6 @@
             gap: 10px;              
             
             &__time, &__ctg{
-                font-family: 'Noto Sans Normal';
                 font-weight: 800;
                 font-size: 11px;
                 line-height: 15px;
@@ -81,5 +80,13 @@
     .card__image{
         max-width: 100%;
         aspect-ratio: 54/25;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .card{
+        &__title{
+            font-size: 40px;
+        }
     }
 }

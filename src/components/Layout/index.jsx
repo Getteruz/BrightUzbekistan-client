@@ -12,7 +12,7 @@ import useGetWindowWidth from "hooks/useGetWindowWidth";
 
 const Layout = ({ children, categories = [] }) => {
     const router = useRouter()
-    const { data } = useQuery('categories', getCategories, { initialData: categories })
+    useQuery('categories', getCategories, { initialData: categories })
     const windowWidth = useGetWindowWidth()
     const { width } = useGetSize('leftAside')
 

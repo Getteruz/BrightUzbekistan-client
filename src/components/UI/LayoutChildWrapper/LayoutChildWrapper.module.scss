@@ -18,6 +18,10 @@
             display: none;
         }
     }
+
+    &__mobile__nav{
+        display: none;
+    }
 }
 
 @media screen and (max-width: 1100px) {
@@ -49,6 +53,19 @@
         &__aside{
             display: none;
             width: 0;
+        }
+    }
+}
+
+
+@media screen and (max-width: 670px) {
+    .layout__main{
+        &__content{
+            padding: 0;
+        }
+
+        &__mobile__nav{
+            display: block;
         }
     }
 }

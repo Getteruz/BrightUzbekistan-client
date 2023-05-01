@@ -1,4 +1,5 @@
 .layout{
+
     &__left__aside{
         max-width: 403px;
         min-width: 186px;
@@ -22,5 +23,13 @@
 @media screen and (max-width: 1440px) {
     .layout__main{
         flex-shrink: 0;
+    }
+}
+
+@media screen and (max-width: 670px) {
+    .layout{
+        &__left__aside{
+            display: none;
+        }
     }
 }

@@ -148,3 +148,15 @@
         }
     }
 }
+
+@media screen and (max-width: 1000px) {
+    .carousel {
+        flex-direction: row;
+        gap: 50px;
+        margin-top: 0;
+        
+        &__btns{
+            flex-direction: column;
+        }
+    }
+}
