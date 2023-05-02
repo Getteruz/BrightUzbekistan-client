@@ -38,7 +38,7 @@ const Main = ({ rate = [], news = [] }) => {
                                             categoryName={news?.ctg?.[router?.locale]}
                                             categoryId={news?.ctg?.id}
                                             withNavigation={index !== 0}
-                                            grey={index % 2 && windowWidth < 550 ? true : false}
+                                            // grey={index % 2 && windowWidth < 550 ? true : false}
                                         />
                                         {index === 0 && <JournalCarousel />}
                                     </React.Fragment>

@@ -1,5 +1,6 @@
 import NewsCard from 'components/UI/Cards/NewsCard';
 import NewsImageCard from 'components/UI/Cards/NewsImageCard';
+import useGetWindowWidth from 'hooks/useGetWindowWidth';
 import { useRouter } from 'next/router';
 import cls from './UzbekistanNews.module.scss'
 
@@ -7,6 +8,7 @@ const UzbekistanNews = ({
     items = []
 }) => {
     const router = useRouter()
+    const windowWidth = useGetWindowWidth()
     const [lastNews] = items?.slice(4, 5) || []
     const otherNews = items?.slice(0, 4) || []
 
@@ -21,6 +23,7 @@ const UzbekistanNews = ({
                             title={news?.title}
                             date={news?.publishedDate || news?.updated_at}
                             category={news?.mainCategory?.[router?.locale]}
+                            image={windowWidth < 550 ? news?.file : null}
                         />
                     ))
                 }

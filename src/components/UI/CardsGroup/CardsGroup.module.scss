@@ -37,12 +37,17 @@
             font-size: 22px;
             line-height: 25px;
         }
+
+        & > div:first-child > div:first-child{
+            display: flex;
+            flex-direction: column-reverse;
+            gap: 25px;
+        }
     }
 }
 
 @media screen and (max-width: 470px) {
     .wrapper {
-        height: auto;
         position: relative;
         padding: 34px 10px;
         max-width: calc(100% + 20px) !important;

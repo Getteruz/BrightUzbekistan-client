@@ -1,7 +1,7 @@
 import GreyButton from 'components/UI/Buttons/GreyButton';
 import NewsCard from 'components/UI/Cards/NewsCard';
 import Flex from 'components/UI/Flex';
-import { RightArrows } from 'components/UI/icons';
+// import { RightArrows } from 'components/UI/icons';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 import cls from './News.module.scss'
@@ -29,7 +29,6 @@ const Aside = ({ news = [] }) => {
             </div>
             <GreyButton 
                 label={t("все новости")} 
-                icon={RightArrows} 
                 onClick={() => router.push('/last-news')}
             />
         </>
