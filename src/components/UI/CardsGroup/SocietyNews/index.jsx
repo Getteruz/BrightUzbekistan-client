@@ -14,7 +14,7 @@ const SocietyNews = ({
                 news?.length > 0 && news?.map((news) =>  (
                     <NewsCard 
                         key={news?.id}
-                        id={news?.id}
+                        id={news?.shortLink || news?.id}
                         title={news?.title}
                         description={news?.shortDescription}
                         category={news?.mainCategory?.[router?.locale]}

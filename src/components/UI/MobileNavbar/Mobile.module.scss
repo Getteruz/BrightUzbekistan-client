@@ -1,6 +1,6 @@
 .nav {
     position: relative;
-    padding: 20px 0;
+    padding: 15px 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -25,36 +25,25 @@
     &__sidebar {
         position: absolute;
         z-index: 1000;
-        top: 0;
+        top: 74px;
         left: 0;
         transform: translate(calc(-100% - 20px), 0);
         background-color: white;
         width: calc(100% + 40px);
-        height: calc(100vh - 34px);
+        height: 100vh;
         display: flex;
         flex-direction: column;
         overflow: hidden;
-
-        &__nav {
-            padding: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        &__logo {
-            position: relative;
-            width: 131px;
-            aspect-ratio: 131/42;
-        }
-
+        
         &__categories{
+            max-height: calc(100vh - 184px);
+            height: 100%;
             flex-grow: 1;
             overflow-y: auto;
             background-color: white;
             display: flex;
             flex-direction: column;
-            padding-bottom: 20px;
+            padding-bottom: 10px;
 
             & > a{
                 padding: 17px 17px 17px 42px;
@@ -98,13 +87,6 @@
     }
 }
 
-.open{
-    animation: openA 0.4s linear;
-}
-
-.close{
-    animation: closeA 0.4s linear;
-}
 
 .openSidebar{
     animation: left 0.5s ease;
@@ -118,22 +100,27 @@
 
 .open__modal {
     display: flex;
-    z-index: 5;
+    z-index: 100000;
 }
 
-@keyframes openA {
-    0%{
-        transform: rotate(0);
-    } 100%{
-        transform: rotate(360deg);
-    }
+.open__icon{
+    animation: rotateAnimation 0.7s ease;
+    animation-fill-mode: forwards;
 }
 
-@keyframes closeA {
-    0%{
-        transform: rotate(0);
-    } 100%{
-        transform: rotate(-360deg);
+.icon{
+    width: 33px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+
+    & >span{
+        display: flex;
+        width: 33px;
+        height: 2px;
+        background-color: #000;
     }
 }
 
@@ -150,5 +137,99 @@
         transform: translate(-20px, 0);
     } 100%{
         transform: translate(calc(-100% - 20px), 0);
+    }
+}
+
+@keyframes rotateAnimation {
+    0%{
+        transform: rotate(0);
+    } 50%{
+        transform: rotate(720deg);
+    } 
+    100% {
+        transform: rotate(720deg);
+    }
+}
+
+
+.open{
+    & > span:first-child{
+        animation: first 0.3s ease  forwards;
+
+    }
+
+    & > span:nth-child(2){
+        animation: second 0.3s ease  forwards;
+    }
+}
+
+@keyframes first {
+    0%{
+        transform: rotate(0);
+    } 100% {
+        position: absolute;
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes second {
+    0%{
+        transform: rotate(0);
+    } 
+    50%{
+        transform: rotate(90deg);
+    }
+    100% {
+        position: absolute;
+        transform: rotate(135deg);
+    }
+}
+
+.close{
+    & > span:first-child{
+        animation: firstClose 0.3s ease  forwards;
+
+    }
+
+    & > span:nth-child(2){
+        animation: secondClose 0.3s ease  forwards;
+    }
+}
+
+@keyframes firstClose {
+    0%{
+        position: absolute;
+        transform: rotate(45deg);
+    } 100% {
+        transform: rotate(0);
+        position: relative;
+    }
+}
+
+@keyframes secondClose {
+    0%{
+        position: absolute;
+        transform: rotate(135deg);
+    } 
+    50%{
+        transform: rotate(90deg);
+    }
+    100% {
+        position: relative;
+        transform: rotate(0);
+    }
+}
+
+.close__icon{
+    animation: rotateAnimationRevers 0.7s ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes rotateAnimationRevers {
+    0%{
+        transform: rotate(720deg);
+    } 
+    100% {
+        transform: rotate(0);
     }
 }

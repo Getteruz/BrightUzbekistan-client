@@ -13,7 +13,7 @@ const PoliticalNews = ({
     return (
         <div className={cls.wrapper}>
             {firtsNews?.id && <NewsImageCard
-                id={firtsNews?.id}
+                id={firtsNews?.shortLink || firtsNews?.id}
                 title={firtsNews?.title}
                 description={firtsNews?.shortDescription}
                 category={firtsNews?.mainCategory?.[router?.locale]}
@@ -24,7 +24,7 @@ const PoliticalNews = ({
                 {otherNews.length > 0 && otherNews.map((news) =>
                     <NewsImageCardWithBorder
                         key={news?.id} 
-                        id={news?.id}
+                        id={news?.shortLink || news?.id}
                         title={news?.title}
                         image={news?.file}
                         category={news?.mainCategory?.[router?.locale]}

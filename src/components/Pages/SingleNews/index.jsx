@@ -12,12 +12,16 @@ import parseTimestamp from "utils/parseTimestamp";
 import { useRouter } from "next/router";
 import { CalendarIcon, ClockIcon } from "components/UI/icons";
 import Markup from "components/UI/Markup";
+import { useQuery } from "react-query";
+import { getNewsById } from "services/news";
 
 
 const SingleNews = ({ news = {}, lastnews = [] }) => {
     const router = useRouter()
-    const { hours, minutes, month, data, year } = parseTimestamp(news?.publishDate || news?.updated_at, router.locale)
+    console.log(news);
+    useQuery(['news', router.query?.id], () => getNewsById(router.query?.id, router.locale), { initialData: news })
     const { data: currentData, month: currentMonth, year: currentYear } = parseTimestamp(Date.now(), router.locale)
+    const { hours, minutes, month, data, year } = parseTimestamp(news?.publishDate || news?.updated_at, router.locale)
 
     return (
         <LayoutChildWrapper asideComponent={<Aside news={lastnews} />}>

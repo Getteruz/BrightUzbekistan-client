@@ -13,7 +13,7 @@ const EconomicNews = ({
     return (
         <div className={cls.wrapper}>
             {firtsNews?.id && <NewsCardWithBorder
-                id={firtsNews?.id}
+                id={firtsNews?.shortLink || firtsNews?.id}
                 title={firtsNews?.title}
                 description={firtsNews?.shortDescription}
                 category={firtsNews?.mainCategory?.[router?.locale]}
@@ -24,7 +24,7 @@ const EconomicNews = ({
                     otherNews?.length > 0 && otherNews.map((news) => (
                         <NewsCard
                             key={news?.id}
-                            id={news?.id}
+                            id={news?.shortLink || news?.id}
                             title={news?.title}
                             category={news?.mainCategory?.[router?.locale]}
                             date={news?.publishedDate || news?.updated_at}

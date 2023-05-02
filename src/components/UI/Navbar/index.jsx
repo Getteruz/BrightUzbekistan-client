@@ -3,25 +3,35 @@ import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 import { setCookie } from 'nookies';
 import { useState } from 'react';
+import { useQueryClient } from 'react-query';
 import { GlassesIcon, GlobusIcon, PersonIcon } from '../icons';
 import Button from './Button';
 import cls from './Navbar.module.scss'
 
 const Navbar = () => {
     const router = useRouter()
-    const [openModal, setIsOpenModal] = useState(false)
-    const windowWidth = useGetWindowWidth()
     const { t } = useTranslation()
+    const queryClient = useQueryClient()
+    const windowWidth = useGetWindowWidth()
+    const [openModal, setIsOpenModal] = useState(false)
 
     const changeLocale = (locale) => {
         setCookie(null, 'locale', locale, {
             path: '/',
             maxAge: 30 * 24 * 60 * 60
         })
-        router.push({
-            route: router.pathname,
-            query: router.query
-        }, router.asPath, { locale });
+        if (router.pathname === '/news/[id]') {
+            const news = queryClient.getQueryData(['news', router.query.id])
+            router.push({
+                route: router.pathname,
+                query: router.query
+            }, `/news/${news?.[locale]?.shortLink || news?.id}`, { locale, replace: true })
+        } else {
+            router.push({
+                route: router.pathname,
+                query: router.query
+            }, router.asPath, { locale });
+        }
     }
 
     return (

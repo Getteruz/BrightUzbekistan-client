@@ -18,7 +18,7 @@ const BusinessNews = ({
                 {firstGroup?.length > 0 && firstGroup.map((news) =>
                     <NewsCardWithBorder
                         key={news.id}
-                        id={news?.id}
+                        id={news?.shortLink || news?.id}
                         description={news?.shortDescription}
                         category={news?.mainCategory?.[router?.locale]}
                         date={news?.publishedDate || news?.updated_at}
@@ -26,7 +26,7 @@ const BusinessNews = ({
                 )}
             </div>
             {thirdNews?.id && <NewsImageCard
-                id={thirdNews?.id}
+                id={thirdNews?.shortLink || thirdNews?.id}
                 title={thirdNews?.title}
                 description={thirdNews?.shortDescription}
                 image={thirdNews?.file}
@@ -39,7 +39,7 @@ const BusinessNews = ({
                 {secondGroup?.length > 0 && secondGroup.map((news) =>
                     <NewsCard
                         key={news?.id}
-                        id={news?.id}
+                        id={news?.shortLink || news?.id}
                         title={news?.title}
                         category={news?.mainCategory?.[router?.locale]}
                         date={news?.publishedDate || news?.updated_at}

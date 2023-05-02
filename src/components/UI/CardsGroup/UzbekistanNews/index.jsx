@@ -17,7 +17,7 @@ const UzbekistanNews = ({
                     otherNews?.length > 0 && otherNews.map((news) => (
                         <NewsCard
                             key={news?.id}
-                            id={news?.id}
+                            id={news?.shortLink || news?.id}
                             title={news?.title}
                             date={news?.publishedDate || news?.updated_at}
                             category={news?.mainCategory?.[router?.locale]}
@@ -26,7 +26,7 @@ const UzbekistanNews = ({
                 }
             </div>
             {lastNews?.id && <NewsImageCard
-                id={lastNews?.id}
+                id={lastNews?.shortLink || lastNews?.id}
                 title={lastNews?.title}
                 image={lastNews?.file}
                 description={lastNews?.shortDescription}

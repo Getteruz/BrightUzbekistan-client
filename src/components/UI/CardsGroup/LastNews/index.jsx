@@ -13,7 +13,7 @@ const LastNews = ({
     return (
         <div className={cls.wrapper}>
             {firtsNews?.id && <NewsImageCard 
-                id={firtsNews?.id}
+                id={firtsNews?.shortLink || firtsNews?.id}
                 title={firtsNews?.title}
                 image={firtsNews?.file}
                 description={firtsNews?.shortDescription}
@@ -25,7 +25,7 @@ const LastNews = ({
                     otherNews?.length > 0 && otherNews.map((news) => (
                         <NewsCard 
                             key={news?.id}
-                            id={news?.id}
+                            id={news?.shortLink || news?.id}
                             title={news?.title}
                             date={news?.publishedDate || news?.updated_at}
                             category={news?.mainCategory?.[router?.locale]}

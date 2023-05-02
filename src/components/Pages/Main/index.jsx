@@ -9,6 +9,7 @@ import useGetWindowWidth from 'hooks/useGetWindowWidth';
 import JournalCarousel from 'components/UI/JournalCarousel';
 import { useQuery } from 'react-query';
 import { getRate } from 'services/rate';
+import React from 'react';
 
 const Main = ({ rate = [], news = [] }) => {
     const router = useRouter()
@@ -31,16 +32,15 @@ const Main = ({ rate = [], news = [] }) => {
                                         categoryId={news?.ctg?.id}
                                         withNavigation={index !== 0}
                                     />) : (
-                                    <>
+                                    <React.Fragment key={index}>
                                         <CardsGroup
-                                            key={index}
                                             news={news?.news}
                                             categoryName={news?.ctg?.[router?.locale]}
                                             categoryId={news?.ctg?.id}
                                             withNavigation={index !== 0}
                                         />
                                         {index === 0 && <JournalCarousel />}
-                                    </>
+                                    </React.Fragment>
                                 )
                             ))
                         }
