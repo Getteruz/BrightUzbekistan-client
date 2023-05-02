@@ -1,14 +1,15 @@
 import { useRouter } from "next/router";
+import { useQuery } from "react-query";
+import { getCategories } from "services/category";
+import useGetSize from "hooks/useGetSize";
+import useGetWindowWidth from "hooks/useGetWindowWidth";
+import Menu from "components/UI/Menu";
 import LeftAside from "components/UI/Aside/LeftAside";
 import Container from "components/UI/Container";
 import Footer from "components/UI/Footer";
 import Banner from "components/UI/Banner";
 
 import cls from './Layot.module.scss'
-import { useQuery } from "react-query";
-import { getCategories } from "services/category";
-import useGetSize from "hooks/useGetSize";
-import useGetWindowWidth from "hooks/useGetWindowWidth";
 
 const Layout = ({ children, categories = [] }) => {
     const router = useRouter()
@@ -30,6 +31,7 @@ const Layout = ({ children, categories = [] }) => {
                 </div>
             </Container>
             <Footer />
+            <Menu />
         </>
     );
 }

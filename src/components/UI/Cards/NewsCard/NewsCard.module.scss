@@ -1,32 +1,32 @@
-.card{
+.card {
     display: flex;
     flex-direction: column;
     gap: 10px;
     cursor: pointer;
-    
-    &__info{
+
+    &__info {
         display: flex;
         align-items: center;
         gap: 10px;
-        
-        & > *{
+
+        &>* {
             font-weight: 800;
             font-size: 11px;
             line-height: 15px;
         }
 
-        &__time{
+        &__time {
             display: flex;
             align-items: center;
             gap: 4px;
 
-            & >svg{
+            &>svg {
                 transform: translateY(1px);
             }
         }
     }
 
-    &__title{
+    &__title {
         max-width: 512px;
         font-weight: 700;
         font-size: 18px;
@@ -35,17 +35,29 @@
         overflow: hidden;
         display: -webkit-box;
         -webkit-line-clamp: attr(title-line number);
-                line-clamp: attr(title-line number); 
+        line-clamp: attr(title-line number);
         -webkit-box-orient: vertical;
 
-        &:hover{
+        &:hover {
             color: rgba(0, 26, 255, 1);
         }
     }
 
-    &__desc{
+    &__desc {
         max-width: 512px;
         font-size: 13px;
         line-height: 19px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .card {
+        // gap: 4px;
+        padding: 10px 0;
+        border-top: 1px solid #EEEEEE;
+
+        &:last-child {
+            border-bottom: 1px solid #EEEEEE;
+        }
     }
 }

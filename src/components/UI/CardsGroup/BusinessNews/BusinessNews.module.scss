@@ -15,3 +15,36 @@
         }
     }
 }
+
+@media screen and (max-width: 550px) {
+    .wrapper{
+        gap: 25px;
+
+        &__group:first-child{
+            width: auto;
+            overflow-x: auto;
+            flex-wrap: nowrap;
+            gap: 12px;
+            scroll-snap-type: x mandatory;
+
+            & > * {
+                min-width: 90% !important;
+                width: 100%;
+                scroll-snap-align: start;
+            }
+
+            & > div > div:nth-child(2), & > div > div:nth-child(2)  *{
+                background: white;
+            }
+        }
+
+        &__group:nth-child(2){
+            flex-direction: column;
+            gap: 0;
+
+            & > * {
+                max-width: 100%;
+            }
+        }
+    }
+}

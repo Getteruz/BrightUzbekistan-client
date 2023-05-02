@@ -92,3 +92,51 @@
         gap: 30px;
     }
 }
+
+@media screen and (max-width: 625px) {
+    .banner{
+        margin-top: 50px;
+        & > div{
+            flex-direction: column !important;
+        }
+
+        &__block{
+            padding: 10px 17px;
+            align-items: center;
+
+            & > div:nth-child(2){
+                max-width: 100%;
+                width: 100%;
+                display: flex;
+                gap: 5px;
+                justify-content: center;
+            }
+        }
+
+        &__info{
+            max-width: 100%;
+            margin-bottom: 33px;
+            align-items: center;
+        }
+
+        & > div:first-child > div:nth-child(2){
+                min-height: 270px;
+                width: 190px;
+                margin: 0 auto;
+        }
+
+        &__footer{
+            padding: 0;
+            & > div:nth-child(2){
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        &__categories{
+            justify-content: center;
+        }
+
+        
+    }
+}

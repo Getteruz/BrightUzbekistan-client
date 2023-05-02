@@ -21,7 +21,7 @@ const Main = ({ rate = [], news = [] }) => {
             <main className={cls.main}>
                 {windowWidth > 670 && <Rate rate={rate} />}
                 <div className={cls.main__cards}>
-                    <Flex direction='column' gap='60'>
+                    <Flex direction='column' gap={windowWidth > 550 ? '60' : 0}>
                         {
                             news.length > 0 && news.map((news, index) => (
                                 windowWidth > 1000 ? (
@@ -38,6 +38,7 @@ const Main = ({ rate = [], news = [] }) => {
                                             categoryName={news?.ctg?.[router?.locale]}
                                             categoryId={news?.ctg?.id}
                                             withNavigation={index !== 0}
+                                            grey={index % 2 && windowWidth < 550 ? true : false}
                                         />
                                         {index === 0 && <JournalCarousel />}
                                     </React.Fragment>

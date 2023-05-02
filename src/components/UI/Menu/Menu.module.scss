@@ -1,0 +1,57 @@
+.menu {
+    display: none;
+    bottom: 0;
+    left: 0;
+    padding: 20px 34px;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px -3px 34px rgba(0, 0, 0, 0.22);
+    z-index: 1000;
+    position: sticky;
+
+    &>div {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.open {
+    animation: openAnim 0.3s ease forwards;
+}
+
+.close {
+    animation: closeAnim 0.3s ease forwards;
+}
+
+@keyframes openAnim {
+    0% {
+        transform: translate(0, 101%);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes closeAnim {
+    0% {
+        transform: translate(0, 0);
+    }
+    99%{
+        transform: translate(0, 101%);
+        position: sticky;
+        bottom: 0;
+    }
+    100%{
+        position: fixed;
+        bottom:  -100%;
+    }
+}
+
+@media screen and (max-width: 670px) {
+    .menu {
+        display: flex;
+    }
+}

@@ -34,3 +34,11 @@
         padding: 10px 20px;
     }
 }
+
+@media screen and (max-width: 475px) {
+    .rate{
+        position: relative;
+        left: -10px;
+        width: calc(100% + 20px);
+    }
+}

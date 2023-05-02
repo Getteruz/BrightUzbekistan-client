@@ -6,6 +6,10 @@ const ContainerDiv = styled('div')`
     padding: 0 20px;
     max-width: ${props => props.maxWidth || '1940px'};
     margin: ${props => props.margin || '0 auto'};
+
+    @media (max-width: 475px){
+        padding: 0 10px;
+    }
 `
 
 const Container = ({ children, ...other }) => {

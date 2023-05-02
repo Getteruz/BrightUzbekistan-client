@@ -45,3 +45,19 @@
         color: var(--white-color);
     }
 }
+
+@media screen and (max-width: 863px) {
+    .footer{
+        &__container{
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+
+            & > div{
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+        }
+    }
+}

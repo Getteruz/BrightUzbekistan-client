@@ -1,8 +1,8 @@
-.card{
+.card {
     width: 100%;
     cursor: pointer;
 
-    &__title{
+    &__title {
         font-family: 'Old Standard TT';
         font-weight: 700;
         font-size: 50px;
@@ -10,25 +10,26 @@
         margin-bottom: 25px;
         transition: all 0.3s;
 
-        &:hover{
+        &:hover {
             color: rgba(0, 26, 255, 1);
         }
     }
 
-    &__infoblock{
+    &__infoblock {
         display: flex;
         gap: 24px;
         align-items: stretch;
 
-        &  h3{
-            font-weight: 400!important;
-            &:hover{
+        & h3 {
+            font-weight: 400 !important;
+
+            &:hover {
                 color: var(--text-color);
             }
         }
     }
 
-    &__image{
+    &__image {
         position: relative;
         min-width: 50%;
         max-width: 50%;
@@ -38,18 +39,19 @@
         aspect-ratio: 84/49;
     }
 
-    &__grid{
+    &__grid {
         max-height: 196px;
         display: flex;
         flex-direction: column;
         gap: 10px;
 
-        &__info{
+        &__info {
             display: flex;
             align-items: center;
-            gap: 10px;              
-            
-            &__time, &__ctg{
+            gap: 10px;
+
+            &__time,
+            &__ctg {
                 font-weight: 800;
                 font-size: 11px;
                 line-height: 15px;
@@ -59,7 +61,7 @@
             }
         }
 
-        &__desc{
+        &__desc {
             max-width: 640px;
             font-weight: 400;
             font-size: 18px;
@@ -67,26 +69,54 @@
             overflow: hidden;
             display: -webkit-box;
             -webkit-line-clamp: 5;
-                    line-clamp: 5; 
+            line-clamp: 5;
             -webkit-box-orient: vertical;
         }
     }
 }
 
-.column{
-    .card__infoblock{
+.column {
+    .card__infoblock {
         flex-direction: column;
     }
-    .card__image{
+
+    .card__image {
         max-width: 100%;
         aspect-ratio: 54/25;
     }
 }
 
 @media screen and (max-width: 700px) {
-    .card{
-        &__title{
+    .card {
+        &__title {
             font-size: 40px;
+        }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .card {
+        &__title {
+            max-width: 100%;
+            width: 100%;
+            font-size: 40px;
+            line-height: 37px;
+        }
+
+        &__infoblock {
+            flex-direction: column !important;
+        }
+
+        &__image {
+            max-width: 100%;
+            min-height: 300px;
+        }
+
+        &__grid {
+            &__desc {
+                font-size: 15px;
+                line-height: 20px;
+            }
         }
     }
 }

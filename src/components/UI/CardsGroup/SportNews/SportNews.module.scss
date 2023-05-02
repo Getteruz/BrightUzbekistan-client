@@ -14,3 +14,18 @@
         }
     }
 }
+
+@media screen and (max-width: 550px) {
+    .wrapper{
+        background-color: white;
+        gap: 25px;
+        &__group{
+            flex-direction: column;
+            gap: 0;
+
+            & > * {
+                max-width: 100%;
+            }
+        }
+    }
+}

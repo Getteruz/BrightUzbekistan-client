@@ -24,7 +24,7 @@
 
     &__sidebar {
         position: absolute;
-        z-index: 1000;
+        z-index: 10000;
         top: 74px;
         left: 0;
         transform: translate(calc(-100% - 20px), 0);
@@ -231,5 +231,14 @@
     } 
     100% {
         transform: rotate(0);
+    }
+}
+
+@media screen and (max-width: 475px) {
+    .nav{
+        &__sidebar{
+            transform: translate(calc(-100% - 10px), 0);
+            width: calc(100% + 30px);
+        }
     }
 }

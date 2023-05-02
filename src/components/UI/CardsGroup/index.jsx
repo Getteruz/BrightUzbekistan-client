@@ -14,14 +14,16 @@ const CardsGroup = ({
     categoryName = '',
     categoryId = '',
     news = [],
-    withNavigation = false
+    withNavigation = false,
+    grey = false,
+    ...other
 }) => {
 
     if (news?.length < 1) {
         return <></>
     } else {
         return (
-            <div className={cls.wrapper}>
+            <div className={`${cls.wrapper} ${grey ? cls.grey : ''}`} {...other}>
                 {withNavigation && <Navigation
                     title={categoryName}
                     label={categoryName}
