@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import parseTimestamp from 'utils/parseTimestamp';
@@ -10,7 +11,8 @@ const NewsCard = ({
     description = '',
     category = '',
     date = '',
-    maxTitleLine = 3
+    maxTitleLine = 3,
+    image = ''
 }) => {
     const link = `/news/${id}`
     const router = useRouter()
@@ -28,22 +30,32 @@ const NewsCard = ({
     return (
         <Link href={link}>
             <div className={cls.card}>
-                <div className={cls.card__info}>
-                    <time className={cls.card__info__time}>{
-                        data === currentData && month === currentMonth && year === currentYear
-                            ? <><ClockIcon /> {hours}:{minutes}</>
-                            : <><CalendarIcon /> {`${data} ${month} ${year === currentYear ? '' : year}`}</>
-                    }</time>
-                    <h4 className={cls.card__info__category}>{category}</h4>
+                {image && <div className={cls.card__img}>
+                    <Image 
+                        src={image}
+                        layout='fill'
+                        objectFit='cover'
+                        alt={title}
+                    />
+                </div>}
+                <div className={cls.card__flex}>
+                    <div className={cls.card__info}>
+                        <time className={cls.card__info__time}>{
+                            data === currentData && month === currentMonth && year === currentYear
+                                ? <><ClockIcon /> {hours}:{minutes}</>
+                                : <><CalendarIcon /> {`${data} ${month} ${year === currentYear ? '' : year}`}</>
+                        }</time>
+                        <h4 className={cls.card__info__category}>{category}</h4>
+                    </div>
+                    {title && <Link href={link}>
+                        <a>
+                            <h3 className={cls.card__title} style={ellipsisStyle}>
+                                {title}
+                            </h3>
+                        </a>
+                    </Link>}
+                    {description && <p className={cls.card__desc}>{description}</p>}
                 </div>
-                {title && <Link href={link}>
-                    <a>
-                        <h3 className={cls.card__title} style={ellipsisStyle}>
-                            {title}
-                        </h3>
-                    </a>
-                </Link>}
-                {description && <p className={cls.card__desc}>{description}</p>}
             </div>
         </Link>
     );

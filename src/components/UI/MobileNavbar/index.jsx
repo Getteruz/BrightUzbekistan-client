@@ -67,14 +67,16 @@ const MobileNavbar = () => {
                     <span></span>
                     <span></span>
                 </div>
-                <div className={cls.nav__logo}>
-                    <Image
-                        src='/svg/MobileLogo.svg'
-                        layout='fill'
-                        objectFit='cover'
-                        alt='Bright Uzbekistan logo'
-                    />
-                </div>
+                <Link href='/'>
+                    <a className={cls.nav__logo}>
+                        <Image
+                            src='/svg/MobileLogo.svg'
+                            layout='fill'
+                            objectFit='cover'
+                            alt='Bright Uzbekistan logo'
+                        />
+                    </a>
+                </Link>
             </div>
             <div className={cls.nav__lang} onClick={() => setIsOpenModal(state => !state)}>
                 <MobileGlobusIcon />

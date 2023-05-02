@@ -1,11 +1,13 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useEffect, useRef, useState } from 'react';
 import { menu } from './data';
 import cls from './Menu.module.scss'
 
 const Menu = () => {
-    const [isOpen, setIsOpen] = useState(true)
     const prevScrollPosition = useRef(0)
+    const router = useRouter()
+    const [isOpen, setIsOpen] = useState(true)
 
     useEffect(() => {
         const handleScroll = (e) => {
@@ -28,7 +30,12 @@ const Menu = () => {
                 {
                     menu?.length > 0 && menu.map(menu => (
                         <Link href={menu?.link} key={menu.id}>
-                            <a className={cls.menu__link}>
+                            <a 
+                                className={cls.menu__link}
+                                style={{
+                                    opacity: router.asPath.split('/')?.slice(0, 2)?.join('/') === menu.link ? 1 : 0.6
+                                }}
+                            >
                                 {menu?.icon}
                             </a>
                         </Link>

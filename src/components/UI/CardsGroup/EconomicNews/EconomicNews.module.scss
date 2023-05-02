@@ -15,6 +15,10 @@
             max-width: calc((100% - 48px) / 2);
         }
     }
+
+    & > div:first-child, & > div:first-child *{
+        background: white;
+    }
 }
 
 @media screen and (max-width: 550px) {

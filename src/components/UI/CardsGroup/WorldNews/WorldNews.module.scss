@@ -19,7 +19,9 @@
 @media screen and (max-width: 550px) {
     .wrapper{
         background-color: white;
+        flex-direction: column-reverse;
         gap: 25px;
+
         &__group{
             flex-direction: column;
             gap: 0;

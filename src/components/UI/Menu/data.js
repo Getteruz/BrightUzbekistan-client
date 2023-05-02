@@ -14,7 +14,7 @@ export const menu = [
     {
         id: 3,
         icon: <SearchIcon />,
-        link: '/'
+        link: ''
     },
     {
         id: 4,
@@ -24,6 +24,6 @@ export const menu = [
     {
         id: 5,
         icon: <UserIcon />,
-        link: '/'
+        link: ''
     },
 ]
