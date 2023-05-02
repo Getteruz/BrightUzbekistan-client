@@ -40,7 +40,7 @@ const Aside = ({ categories = [] }) => {
                         link='/last-news' 
                         label={t("Последние новости")} 
                         isActive={router.asPath.split('/')?.slice(0, 3)?.join('/').includes('/last-news')}
-                        activeColor='rgba(0, 175, 255, 1)'
+                        // activeColor='rgba(0, 175, 255, 1)'
                     />
                 </li>
                 {
@@ -50,7 +50,7 @@ const Aside = ({ categories = [] }) => {
                                 link={`/category/${ctg.id}`}
                                 label={ctg?.[router.locale]}
                                 isActive={router.asPath.split('/')?.slice(0, 3)?.join('/') == `/category/${ctg.id}`}
-                                activeColor={categoryColor?.[ctg.id]}
+                                // activeColor={categoryColor?.[ctg.id]}
                             />
                         </li>
                     ))
@@ -75,7 +75,7 @@ const Aside = ({ categories = [] }) => {
                                 link={link.link}
                                 label={t(link.label)}
                                 isActive={router.asPath.split('/')?.slice(0, 3)?.join('/').includes(link.link)}
-                                activeColor={link.activeColor}
+                                // activeColor={link.activeColor}
                                 light
                             />
                         </li>
