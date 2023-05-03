@@ -55,3 +55,9 @@ ul {
 .stf__wrapper{
   background: white;
 }
+
+@media screen and (max-width: 550px) {
+  body{
+    overflow-x: hidden;
+  }
+}

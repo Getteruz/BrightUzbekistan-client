@@ -1,6 +1,6 @@
 {
-  "name": "netcrack",
-  "version": "0.1.0",
+  "name": "Bright Uzbekistan",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -12,13 +12,11 @@
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.5",
     "@reduxjs/toolkit": "^1.9.1",
-    "@zeit/next-source-maps": "^0.0.3",
     "axios": "^1.2.1",
     "i18next": "^22.4.15",
     "next": "12.1.5",
-    "next-compose-plugins": "^2.2.1",
     "next-i18next": "^13.2.2",
-    "next-images": "^1.8.4",
+    "next-share": "^0.20.0",
     "next-transpile-modules": "^10.0.0",
     "nextjs-progressbar": "^0.0.16",
     "nookies": "^2.5.2",
@@ -33,7 +31,8 @@
     "react-query": "^3.39.3",
     "react-redux": "^8.0.5",
     "react-yandex-maps": "^4.6.0",
-    "sass": "^1.56.2"
+    "sass": "^1.56.2",
+    "sharer.js": "^0.5.1"
   },
   "devDependencies": {
     "eslint": "8.29.0",

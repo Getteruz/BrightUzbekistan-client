@@ -14,7 +14,7 @@ export const socialMedias = [
     {
         id: 3,
         icon: InstagramIcon,
-        link: 'https://www.instagram.com/?url='
+        link: 'https://www.instagram.com/bright_uzbekistan'
     },
     {
         id: 4,

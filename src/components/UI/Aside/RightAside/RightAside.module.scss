@@ -1,5 +1,12 @@
 .aside{
     width: 100%;
-    // position: sticky;
+    max-height: 100vh;
+    position: sticky;
     top: 0;
+    overflow-y: auto;
+    padding-bottom: 15px;
+
+    &::-webkit-scrollbar{
+        width: 0;
+    }
 }

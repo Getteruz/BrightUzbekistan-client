@@ -9,3 +9,9 @@
         display: none;
     }
 }
+
+@media screen and (max-width: 550px) {
+    .markup{
+        line-height: 26px;
+    }
+}

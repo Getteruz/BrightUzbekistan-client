@@ -18,15 +18,15 @@ export async function getServerSideProps({ locale }) {
   let news = []
   const rate = await getRate() || []
   const categories = await getCategories()
-  const lastNews = await getLastNews(locale, 5)
+  const lastNews = await getLastNews(locale, 5) || []
 
   news?.push({
     ctg: '',
-    news: lastNews?.map(news => {
+    news: lastNews?.length > 0 ?lastNews?.map(news => {
       const dto = { ...news?.[locale], ...news }
       delete dto?.[locale]
       return dto
-    })
+    }) : []
   })
 
   await Promise.all(categories?.map(async ctg => {

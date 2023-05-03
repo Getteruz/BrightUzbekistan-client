@@ -51,7 +51,11 @@ const SingleNews = ({ news = {}, lastnews = [] }) => {
                     <time className={cls.main__time}>{`${data} ${month}, ${year}.  ${hours}:${minutes}`}</time>
                 </div>
                 <div className={cls.main__banner}>
-                    <ShareBanner tags={news?.tags || []} link={typeof window !== 'undefined' ? document.location.href : ''} />
+                    <ShareBanner 
+                        tags={news?.tags || []} 
+                        link={typeof window !== 'undefined' ? document.location.href : ''} 
+                        title={news?.title}
+                    />
                 </div>
                 {/* <div className={cls.main__cards}>
                     <CardsGroup news={{...newsData['political-news'], withNavigation: true}} />
