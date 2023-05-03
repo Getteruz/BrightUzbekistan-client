@@ -35,7 +35,7 @@ const CJournal = forwardRef(({
         <div className={cls.wrapper}>
             <HTMLFlipBook 
                 showCover
-                width={windowWidth > 764 ? 510 : 400} 
+                width={510} 
                 height={windowWidth > 1260 ? 692 : 692} 
                 ref={ref}
                 onFlip={onFlip}

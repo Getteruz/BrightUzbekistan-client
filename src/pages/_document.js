@@ -17,8 +17,8 @@ Document.getInitialProps = async (ctx) => {
     const initialProps = await NextDocument.getInitialProps(ctx)
     const { locale } = ctx.req.cookies
     const currentLocale = ctx.locale 
-
-    if (locale !== currentLocale && locales.includes(locale)) {
+    
+    if (locale !== currentLocale && locales.includes(locale) && ctx.req.url === '/') {
         if (ctx.res) {  
             ctx.res.writeHead(307, { Location: locale === 'уз' ?ctx.req.url : `/${locale}${ctx.req.url}` }).end();
         }
