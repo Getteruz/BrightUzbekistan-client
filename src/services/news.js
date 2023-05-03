@@ -18,9 +18,9 @@ export const getNewsById = async (id, locale = '') => {
     }
 }
 
-export const getLastNews = async (locale = 'ru', limit) => {
+export const getLastNews = async (locale = 'ru', limit, page = 1) => {
     try {
-        const {data} = await api.get(`/news/last-news?state=published&lang=${locale}&page=1${limit ? `&limit=${limit}` : ''}`)
+        const {data} = await api.get(`/news/last-news?state=published&lang=${locale}&page=${page}${limit ? `&limit=${limit}` : ''}`)
         return data
     } catch (error) {
         console.log(error);

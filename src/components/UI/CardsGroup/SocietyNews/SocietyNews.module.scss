@@ -6,6 +6,12 @@
 
     &>* {
         max-width: calc((100% - 48px) / 2);
+        flex-direction: column-reverse;
+        & > div:first-child{
+            max-width: 100%;
+            aspect-ratio: 24/13;
+            height: auto;
+        }
     }
 }
 
@@ -16,6 +22,12 @@
         
         & > *{
             max-width: 100%;
+            flex-direction: row;
+
+            & > div:first-child{
+                max-width: 120px;
+                height: 90px;
+            }
         }
     }
 }

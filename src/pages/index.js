@@ -5,11 +5,11 @@ import { getCategories } from "services/category";
 import { getLastNews, getNewsByMainCtg } from "services/news";
 import { getRate } from "services/rate";
 
-export default function Home({ rate = [], news = [] }) {
+export default function Home({ rate = [], news = [], asideNews = [] }) {
   return (
     <>
       <SEO />  
-      <Main rate={rate} news={news} />
+      <Main rate={rate} news={news} asideNews={asideNews} />
     </>
   )
 }
@@ -22,12 +22,14 @@ export async function getServerSideProps({ locale }) {
 
   news?.push({
     ctg: '',
-    news: lastNews?.length > 0 ?lastNews?.map(news => {
+    news: lastNews?.length > 0 ? lastNews?.map(news => {
       const dto = { ...news?.[locale], ...news }
       delete dto?.[locale]
       return dto
     }) : []
   })
+
+  const asideNews = await getLastNews(locale, 5, 2) || []
 
   await Promise.all(categories?.map(async ctg => {
     const ctgNews = await getNewsByMainCtg(ctg?.id, locale)
@@ -37,15 +39,20 @@ export async function getServerSideProps({ locale }) {
         const dto = { ...news?.[locale], ...news }
         delete dto?.[locale]
         return dto
-      })
+      }),
     })
   }))
-
+  
   return {
     props: {
       ...(await serverSideTranslations(locale, ["common"])),
       rate,
-      news
+      news,
+      asideNews: asideNews?.map(news => {
+        const dto = { ...news?.[locale], ...news }
+        delete dto?.[locale]
+        return dto
+      })
     }
   };
 }

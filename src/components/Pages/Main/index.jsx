@@ -11,13 +11,13 @@ import { useQuery } from 'react-query';
 import { getRate } from 'services/rate';
 import React from 'react';
 
-const Main = ({ rate = [], news = [] }) => {
+const Main = ({ rate = [], news = [], asideNews = [] }) => {
     const router = useRouter()
     const windowWidth = useGetWindowWidth()
     useQuery('rate', getRate, {initialData: rate})
 
     return (
-        <LayoutChildWrapper asideComponent={<Aside news={news?.[0]?.news?.slice(0, 2)} />}>
+        <LayoutChildWrapper asideComponent={<Aside news={asideNews?.slice(0,2)} />}>
             <main className={cls.main}>
                 {windowWidth > 670 && <Rate rate={rate} />}
                 <div className={cls.main__cards}>
