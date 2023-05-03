@@ -1,12 +1,8 @@
 import Image from "next/image";
 import Aside from "components/UI/Aside/RightAside/News";
-import NewsCard from "components/UI/Cards/NewsCard";
-import RecomendedCardList from "components/UI/Cards/RecomendedCard/RecomendedCardList";
-import CardsGroup from "components/UI/CardsGroup";
 import GoToBack from "components/UI/GoToBack";
 import LayoutChildWrapper from "components/UI/LayoutChildWrapper";
 import ShareBanner from "components/UI/ShareBanner";
-import { newsData } from "./data";
 import cls from './SingleNews.module.scss'
 import parseTimestamp from "utils/parseTimestamp";
 import { useRouter } from "next/router";
@@ -18,7 +14,7 @@ import { getNewsById } from "services/news";
 
 const SingleNews = ({ news = {}, lastnews = [] }) => {
     const router = useRouter()
-    useQuery(['news', router.query?.id], () => getNewsById(router.query?.id, router.locale), { initialData: news })
+    useQuery(['news', router.query?.id], () => getNewsById(router.query?.id), { initialData: news })
     const { data: currentData, month: currentMonth, year: currentYear } = parseTimestamp(Date.now(), router.locale)
     const { hours, minutes, month, data, year } = parseTimestamp(news?.publishDate || news?.updated_at, router.locale)
 

@@ -1,5 +1,6 @@
+import useGetWindowWidth from 'hooks/useGetWindowWidth';
 import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { forwardRef } from 'react';
 import HTMLFlipBook from 'react-pageflip';
 import { Document, Page, pdfjs } from 'react-pdf/dist/esm/entry.webpack';
@@ -18,6 +19,7 @@ const CJournal = forwardRef(({
     src = ''
 }, ref) => {
     const [open, setOpen] = useState(false)
+    const windowWidth = useGetWindowWidth()
 
     const onClickOutside = () => {
         setOpen(false)
@@ -33,8 +35,8 @@ const CJournal = forwardRef(({
         <div className={cls.wrapper}>
             <HTMLFlipBook 
                 showCover
-                width={510} 
-                height={692} 
+                width={windowWidth > 764 ? 510 : 400} 
+                height={windowWidth > 1260 ? 692 : 692} 
                 ref={ref}
                 onFlip={onFlip}
                 onChangeState={(e) => {

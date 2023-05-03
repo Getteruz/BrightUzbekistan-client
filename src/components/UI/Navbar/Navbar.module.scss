@@ -72,7 +72,7 @@
 @media screen and (max-width: 670px) {
     .navbar{
         &__list{
-            gap: 0;
+            gap: 10px;
             justify-content: space-between;
         }
     }

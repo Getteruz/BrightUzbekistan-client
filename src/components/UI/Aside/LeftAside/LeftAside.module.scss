@@ -38,6 +38,15 @@
         gap: 13px;   
         flex-grow: 1;
         overflow-y: auto;
+
+        & > *{
+            display: flex;
+            justify-content: flex-end;
+            
+            & > *{
+                text-align: end;
+            }
+        }
     }
 }
 

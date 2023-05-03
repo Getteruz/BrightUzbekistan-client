@@ -34,9 +34,9 @@ const Journal = () => {
                 />
 
                 <div className={cls.journal__info}>
-                    <span className={cls.journal__info__page}>{`${(page > 0) ? `${page} - ${page + 1}` : ''}`}</span>
                     <div className={cls.journal__info__wrapper}>
                         <div>
+                            <span className={cls.journal__info__page}>{`${(page > 0) ? `${page} - ${page + 1}` : ''}`}</span>
                             <h2 className={cls.journal__info__title}>{t(journal?.title)}</h2>
                             {/* <p className={cls.journal__info__desc}>{t("Описание журнала")}</p> */}
                         </div>

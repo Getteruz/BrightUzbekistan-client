@@ -45,6 +45,11 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
+
+            & > div:first-child{
+                display: flex;
+                flex-direction: row;
+            }
             
             & > div{
                 display: flex;
@@ -66,6 +71,55 @@
             line-height: 17px;
             opacity: 0.6;
             font-family: "Noto Sans Normal";
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .journal{
+        &__nav{
+            & > nav{
+                width: auto;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 880px) {
+    .journal{
+        &__nav{
+            flex-direction: column-reverse;
+            align-items: flex-start;
+        }
+        &__content{
+            padding-top: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 942px) {
+    .journal{
+        &__info{
+            justify-content: center;
+
+            &__wrapper{
+                flex-direction: column;
+                gap: 20px;
+
+                & > button{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 670px) {
+    .journal{
+        padding: 0;
+        &__nav{
+            flex-direction: row;
+            align-items: center;
         }
     }
 }
