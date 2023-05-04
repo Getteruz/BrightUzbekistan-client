@@ -14,7 +14,7 @@
 
     &__wrapper{
         width: 548px;
-        height: 315px;
+        min-height: 315px !important;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -30,6 +30,19 @@
             font-size: 24px;
             line-height: 28px;
             text-align: center;
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .popup{
+        &__wrapper{
+            padding: 0 10px;
+            
+            & > p {
+                font-size: 20px;
+                line-height: 24px;
+            }
         }
     }
 }

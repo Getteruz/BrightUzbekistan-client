@@ -5,10 +5,6 @@
         font-family: 'Noto Sans Normal';
     }
 
-    @media only screen and (max-width:500px) {
-        padding: 0 20px;
-    }
-
     &__title {
         font-weight: 700;
         font-size: 28px;
@@ -86,4 +82,4 @@
         width: 100%;
         margin-top: 24px;
     }
-}
+} 

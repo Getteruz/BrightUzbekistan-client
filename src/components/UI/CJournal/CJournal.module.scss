@@ -7,7 +7,7 @@
 }
 
 @media screen and (max-width: 1260px) {
-    .wrapper * {
+    .wrapper *:not(button):not(input) {
         max-height: 692px !important;
         padding-bottom: 0 !important;
     }
