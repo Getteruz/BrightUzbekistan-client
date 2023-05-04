@@ -2,6 +2,13 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
+
+    
+    &__ads{
+        max-width: 100%;
+        height: 120px;
+        position: relative;
+    }
 }
 
 .grey {

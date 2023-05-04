@@ -9,6 +9,7 @@ import WorldNews from "./WorldNews";
 import Navigation from "./Navigation";
 import { categories, categoryColor } from '../../../constants/category'
 import cls from './CardsGroup.module.scss'
+import Image from "next/image";
 
 const CardsGroup = ({
     categoryName = '',
@@ -24,6 +25,18 @@ const CardsGroup = ({
     } else {
         return (
             <div className={`${cls.wrapper} ${grey ? cls.grey : ''}`} {...other}>
+                {
+                    ['0191bfdd-9e68-48ee-b3da-59ea95519497', 'cc9c8bf7-8ef5-4407-aa06-80086a8d4784'].includes(categoryId) && (
+                        <div className={cls.wrapper__ads}>
+                            <Image 
+                                src='/ads/avto_lizing_short_banner.svg'
+                                layout="fill"
+                                objectFit="cover"
+                                alt="ads"
+                            />
+                        </div>
+                    )
+                }
                 {withNavigation && <Navigation
                     title={categoryName}
                     label={categoryName}

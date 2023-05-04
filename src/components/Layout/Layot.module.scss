@@ -17,6 +17,13 @@
         &__wrapper{
             display: flex;
         }
+
+        &__ads{
+            position: relative;
+            max-width: 1200px;
+            width: 100%;
+            height: 120px;
+        }
     }
 }
 

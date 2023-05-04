@@ -10,6 +10,7 @@ import Footer from "components/UI/Footer";
 import Banner from "components/UI/Banner";
 
 import cls from './Layot.module.scss'
+import Image from "next/image";
 
 const Layout = ({ children, categories = [] }) => {
     const router = useRouter()
@@ -24,6 +25,14 @@ const Layout = ({ children, categories = [] }) => {
                     <LeftAside categories={categories} />
                 </div>
                 <div className={cls.layout__main} style={{[windowWidth < 1260 && 'maxWidth']: `calc(100% - ${width}px)`}}>
+                    <div className={cls.layout__main__ads}>
+                        <Image 
+                            src='/ads/avto_lizing_banner.svg'
+                            layout="fill"
+                            objectFit="cover"
+                            alt="reklaman"
+                        />
+                    </div>
                     <div className={cls.layout__main__wrapper}>
                         {children}
                     </div>

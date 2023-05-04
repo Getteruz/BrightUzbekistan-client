@@ -9,4 +9,11 @@
     &::-webkit-scrollbar{
         width: 0;
     }
+
+    &__ads{
+        margin-top: 40px;
+        max-width: 325px;
+        aspect-ratio: 340/453;
+        position: relative;
+    }
 }

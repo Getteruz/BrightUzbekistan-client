@@ -2,6 +2,7 @@ import Navbar from "../../Navbar";
 import Test from "./Test";
 import cls from './RightAside.module.scss'
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 
 const RightAside = ({children}) => {
     const asideRef = useRef()
@@ -34,6 +35,14 @@ const RightAside = ({children}) => {
             <Navbar />
             <Test />
             {children}
+            <div className={cls.aside__ads}>
+                <Image 
+                    src='/ads/avto_lizing.svg'
+                    layout="fill"
+                    objectFit="cover"
+                    alt="reklama"
+                />
+            </div>
         </aside>
     );
 }
