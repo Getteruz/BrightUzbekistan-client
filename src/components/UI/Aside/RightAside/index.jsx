@@ -16,8 +16,9 @@ const RightAside = ({children}) => {
                     top: scrollPos,
                 })
             } else {
+                const scrollPos = asideRef.current.scrollTop + (window.scrollY - prevScrollPos.current)
                 asideRef.current.scrollTo({
-                    top: window.scrollY,
+                    top: scrollPos,
                 })
             }
 
@@ -30,8 +31,12 @@ const RightAside = ({children}) => {
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
 
+    const onScroll = (e) => {
+        e.target.style.overflowY = 'hidden'
+    }
+
     return (
-        <aside className={cls.aside} ref={asideRef}>
+        <aside className={cls.aside} ref={asideRef} onScroll={onScroll}>
             <Navbar />
             <Test />
             {children}
