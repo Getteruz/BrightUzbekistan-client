@@ -35,14 +35,6 @@ const RightAside = ({children}) => {
             <Navbar />
             <Test />
             {children}
-            <div className={cls.aside__ads}>
-                <Image 
-                    src='/ads/avto_lizing.svg'
-                    layout="fill"
-                    objectFit="cover"
-                    alt="reklama"
-                />
-            </div>
         </aside>
     );
 }

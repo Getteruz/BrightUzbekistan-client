@@ -110,7 +110,7 @@ const MobileNavbar = () => {
                             <Link href={`/category/${ctg.id}`} key={ctg.id}>
                                 <a
                                     style={{
-                                        [router.asPath.split('/')?.slice(0, 3)?.join('/') === `/category/${ctg.id}` && 'color']: categoryColor?.[ctg.id]
+                                        [router.asPath.split('/')?.slice(0, 3)?.join('/') === `/category/${ctg.id}` && 'color']: 'rgba(0, 26, 255, 1)'
                                     }}
                                 >
                                     {ctg?.[router?.locale]}
@@ -124,6 +124,20 @@ const MobileNavbar = () => {
                                 [router.asPath.split('/')?.slice(0, 3)?.join('/').includes('/journal') && 'color']: 'rgba(0, 26, 255, 1)'
                             }}
                         >{t('Журнал')}</a>
+                    </Link>
+                    <Link href={'/about-project'}>
+                        <a
+                            style={{
+                                [router.asPath.split('/')?.slice(0, 3)?.join('/').includes('/about-project') && 'color']: 'rgba(0, 26, 255, 1)'
+                            }}
+                        >{t('О проекте')}</a>
+                    </Link>
+                    <Link href={'/contact-us'}>
+                        <a
+                            style={{
+                                [router.asPath.split('/')?.slice(0, 3)?.join('/').includes('/contact-us') && 'color']: 'rgba(0, 26, 255, 1)'
+                            }}
+                        >{t('Связатся с нами')}</a>
                     </Link>
                 </div>
             </div>
