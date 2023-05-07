@@ -9,9 +9,9 @@ const Rate = ({ rate = [] }) => {
     const windowWidth = useGetWindowWidth()
 
     return (
-        windowWidth > 650 ? (
+        windowWidth > 720 ? (
             <div className={cls.rate}>
-                {windowWidth > 800 ? <Link href='/last-news'>
+                {windowWidth > 1104 ? <Link href='/last-news'>
                     <a className={cls.rate__title}>{t('ПОСЛЕДНИЕ НОВОСТИ')}</a>
                 </Link> : <></>}
                 <ul className={cls.rate__list}>
@@ -30,7 +30,7 @@ const Rate = ({ rate = [] }) => {
             </div>
         ) : (
             <marquee direction="left" className={cls.rate}>
-                {windowWidth > 800 ? <Link href='/last-news'>
+                {windowWidth > 1104 ? <Link href='/last-news'>
                     <a className={cls.rate__title}>{t('ПОСЛЕДНИЕ НОВОСТИ')}</a>
                 </Link> : <></>}
                 <ul className={cls.rate__list}>

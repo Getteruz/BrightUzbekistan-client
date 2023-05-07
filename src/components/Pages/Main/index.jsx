@@ -13,11 +13,11 @@ import React from 'react';
 
 const Main = ({ rate = [], news = [], asideNews = [] }) => {
     const router = useRouter()
-    const windowWidth = useGetWindowWidth()
-    useQuery('rate', getRate, {initialData: rate})
+    const windowWidth = useGetWindowWidth() || 1024
+    useQuery('rate', getRate, { initialData: rate })
 
     return (
-        <LayoutChildWrapper asideComponent={<Aside news={asideNews?.slice(0,2)} />}>
+        <LayoutChildWrapper asideComponent={<Aside news={asideNews?.slice(0, 2)} />}>
             <main className={cls.main}>
                 {windowWidth > 670 && <Rate rate={rate} />}
                 <div className={cls.main__cards}>
@@ -38,7 +38,7 @@ const Main = ({ rate = [], news = [], asideNews = [] }) => {
                                             categoryName={news?.ctg?.[router?.locale]}
                                             categoryId={news?.ctg?.id}
                                             withNavigation={index !== 0}
-                                            // grey={index % 2 && windowWidth < 550 ? true : false}
+                                        // grey={index % 2 && windowWidth < 550 ? true : false}
                                         />
                                         {index === 0 && <JournalCarousel />}
                                     </React.Fragment>

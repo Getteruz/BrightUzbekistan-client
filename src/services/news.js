@@ -11,7 +11,7 @@ export const getNewsByMainCtg = async (category, locale = 'ru', limit = 5) => {
 
 export const getNewsById = async (id, locale = '') => {
     try {
-        const {data} = await api.get(`/single-news/${id}?lang=${locale}`)
+        const {data} = await api.get(`/single-news/${id}${locale ? `?lang=${locale}` : ''}`)
         return data
     } catch (error) {
         console.log(error);
