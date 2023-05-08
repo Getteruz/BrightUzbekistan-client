@@ -37,7 +37,7 @@ const SingleNews = ({ news = {}, lastnews = [] }) => {
                     <p className={cls.main__shortDesc}>{news?.shortDescription}</p>
                     <div className={cls.main__image}>
                         <Image
-                            src={news?.file || '/Images/BrightUzbekistan.svg'}
+                            src={news?.file || '/Images/BrightUzbekistan.png'}
                             layout="fill"
                             objectFit="cover"
                             alt={news?.title}

@@ -28,7 +28,7 @@ const NewsImageCard = ({
                     {image && (
                         <div className={cls.card__image}>
                             <Image
-                                src={image || '/Images/BrightUzbekistan.svg'}
+                                src={image || '/Images/BrightUzbekistan.png'}
                                 layout='fill'
                                 objectFit='cover'
                                 alt={title}

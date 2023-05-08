@@ -4,7 +4,7 @@ const settings = {
         title: "Bright Uzbekistan",
         description: "Ozbekiston yangiliklari",
         social: {
-            graphic: "https://buzb.uz/Images/BrightUzbekistan.svg",
+            graphic: "https://buzb.uz/Images/BrightUzbekistan.png",
             twitter: "@brightuzb",
         },
         type: "website",

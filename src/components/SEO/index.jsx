@@ -13,7 +13,7 @@ const SEO = (props) => {
         content="width=device-width, initial-scale=1  maximum-scale=2, user-scalable=0"
       />
       <meta charSet="utf-8" />
-      <title>{title || "SamAuto"}</title>
+      <title>{title || "Bright Uzbekistan"}</title>
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
       <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
@@ -29,8 +29,8 @@ const SEO = (props) => {
       {socialTags(props).map(({ name, content }) => {
         return <meta key={name} property={name} content={content} />;
       })}
-      <meta property="og:image:width" content="1200"/>
-      <meta property="og:image:height" content="630"/>
+      <meta property="og:image:width" content="680"/>
+      <meta property="og:image:height" content="400"/>
     </Head>
   );
 };
