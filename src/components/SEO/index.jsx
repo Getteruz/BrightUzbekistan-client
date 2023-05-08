@@ -29,23 +29,19 @@ const SEO = (props) => {
       {socialTags(props).map(({ name, content }) => {
         return <meta key={name} property={name} content={content} />;
       })}
-      <meta property="og:image:width" content="680"/>
-      <meta property="og:image:height" content="400"/>
+      <meta property="og:image:width" content="1200"/>
+      <meta property="og:image:height" content="630"/>
     </Head>
   );
 };
 
 SEO.defaultProps = {
-  url: settings && settings.meta && settings.meta.url,
-  type: settings && settings.meta && settings.meta.type,
-  title: settings && settings.meta && settings.meta.title,
-  description: settings && settings.meta && settings.meta.description,
-  image:
-    settings &&
-    settings.meta &&
-    settings.meta.social &&
-    settings.meta.social.graphic,
-  keywords: settings && settings.meta && settings.meta.keywords,
+  url: settings?.meta?.url,
+  type: settings?.meta?.type,
+  title: settings?.meta?.title,
+  description: settings?.meta?.description,
+  image:  settings?.meta?.social?.graphic,
+  keywords: settings?.meta?.keywords,
 };
 
 SEO.propTypes = {
