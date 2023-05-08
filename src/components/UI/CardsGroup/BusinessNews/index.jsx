@@ -46,6 +46,7 @@ const BusinessNews = ({
                         title={news?.title}
                         category={news?.mainCategory?.[router?.locale]}
                         date={news?.publishedDate || news?.updated_at}
+                        image={windowWidth < 550 ? news?.file : null}
                     />
                 )}
             </div>

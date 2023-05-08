@@ -24,7 +24,7 @@ const CardsGroup = ({
         return <></>
     } else {
         return (
-            <div className={`${cls.wrapper} ${grey ? cls.grey : ''}`} {...other}>
+            <div className={`${cls.wrapper} ${grey ? cls.grey : ''} ${categoryId == '' ? cls.wrapcard : ''}`} {...other}>
                 {withNavigation && <Navigation
                     title={categoryName}
                     label={categoryName}
