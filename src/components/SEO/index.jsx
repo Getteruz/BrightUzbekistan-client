@@ -25,11 +25,11 @@ const SEO = (props) => {
       <meta name="application-name" content="Bright Uzbekistan" />
       <meta name="msapplication-TileColor" content="#1a6364" />
       <meta name="theme-color" content="#ffffff" />
-      <meta type="image/jpeg" name="link" href={image} rel="image_src"></meta>
 
       {socialTags(props).map(({ name, content }) => {
         return <meta key={name} property={name} content={content} />;
       })}
+      <meta type="image/jpeg" name="link" href={image} rel="image_src"></meta>
       <meta property="og:image:width" content="1200"/>
       <meta property="og:image:height" content="630"/>
     </Head>

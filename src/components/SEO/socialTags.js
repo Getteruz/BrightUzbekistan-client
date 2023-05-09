@@ -19,12 +19,12 @@ const socialTags = ({
         { name: "og:title", content: title },
         { name: "og:type", content: type },
         { name: 'og:url', content: (typeof window !== 'undefined' && window.location.href) || url },
-        { name: "og:image", content: image },
         { name: "og:description", content: description },
         { name: "og:site_name", content: settings?.meta?.title },
         { name: "og:published_time", content: createdAt || new Date().toISOString() },
         { name: "og:modified_time", content: updatedAt || new Date().toISOString() },
-        { name: 'og:site_name', content: 'Buzb.uz'}
+        { name: 'og:site_name', content: 'Buzb.uz'},
+        { name: "og:image", content: image },
     ];
 
     return metaTags;
