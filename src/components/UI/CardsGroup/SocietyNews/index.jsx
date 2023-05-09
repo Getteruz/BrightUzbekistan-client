@@ -1,5 +1,4 @@
 import NewsCard from 'components/UI/Cards/NewsCard';
-import useGetWindowWidth from 'hooks/useGetWindowWidth';
 import { useRouter } from 'next/router';
 import cls from './SocietyNews.module.scss'
 

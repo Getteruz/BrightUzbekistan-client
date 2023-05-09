@@ -7,7 +7,7 @@ const settings = {
             graphic: "https://buzb.uz/Images/BrightUzbekistan.png",
             twitter: "@brightuzb",
         },
-        type: "article",
+        type: "website",
         keywords: "Bright Uzbekistan, ozbekiston yangiliklari, yangiliklar, tezkor yangiliklar",
     },
 };

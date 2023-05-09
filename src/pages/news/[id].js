@@ -6,7 +6,12 @@ import { getLastNews, getNewsById } from "services/news";
 const SingleNewsPage = ({ news = {}, lastnews = []}) => {
     return (
         <>
-            <SEO />
+            <SEO
+              title={news?.title}
+              description={news?.shortDescription}
+              keywords={news?.tags}
+              type={'article'}
+            />
             <SingleNews news={news} lastnews={lastnews} />
         </>
     );
