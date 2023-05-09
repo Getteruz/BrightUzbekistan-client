@@ -24,6 +24,7 @@ const socialTags = ({
         { name: "og:site_name", content: settings?.meta?.title },
         { name: "og:published_time", content: createdAt || new Date().toISOString() },
         { name: "og:modified_time", content: updatedAt || new Date().toISOString() },
+        { name: 'og:site_name', content: 'Buzb.uz'}
     ];
 
     return metaTags;

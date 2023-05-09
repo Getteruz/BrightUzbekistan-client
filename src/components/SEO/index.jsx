@@ -4,7 +4,7 @@ import settings from "./settings";
 import socialTags from "./socialTags";
 
 const SEO = (props) => {
-  const { title, description, keywords } = props;
+  const { title, description, keywords, image } = props;
 
   return (
     <Head>
@@ -25,6 +25,7 @@ const SEO = (props) => {
       <meta name="application-name" content="Bright Uzbekistan" />
       <meta name="msapplication-TileColor" content="#1a6364" />
       <meta name="theme-color" content="#ffffff" />
+      <meta type="image/jpeg" name="link" href={image} rel="image_src"></meta>
 
       {socialTags(props).map(({ name, content }) => {
         return <meta key={name} property={name} content={content} />;
