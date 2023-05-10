@@ -22,7 +22,7 @@ export async function getServerSideProps({ locale }) {
 
   news?.push({
     ctg: '',
-    news: lastNews?.length > 0 ? lastNews?.map(news => {
+    news: lastNews?.length > 0 ? lastNews?.items?.map(news => {
       const dto = { ...news?.[locale], ...news }
       delete dto?.[locale]
       return dto
@@ -35,7 +35,7 @@ export async function getServerSideProps({ locale }) {
     const ctgNews = await getNewsByMainCtg(ctg?.id, locale)
     news.push({
       ctg: ctg,
-      news: ctgNews?.map(news => {
+      news: ctgNews?.items?.map(news => {
         const dto = { ...news?.[locale], ...news }
         delete dto?.[locale]
         return dto
@@ -48,7 +48,7 @@ export async function getServerSideProps({ locale }) {
       ...(await serverSideTranslations(locale, ["common"])),
       rate,
       news,
-      asideNews: asideNews?.map(news => {
+      asideNews: asideNews?.items?.map(news => {
         const dto = { ...news?.[locale], ...news }
         delete dto?.[locale]
         return dto

@@ -16,7 +16,7 @@ const LastNewsPage = ({ news = [] }) => {
 export async function getServerSideProps({ locale }) {
     let news = await getLastNews(locale) || []
 
-    news = news?.map(news => {
+    news = news?.items?.map(news => {
         const dto = { ...news?.[locale], ...news }
         delete dto?.[locale]
         return dto

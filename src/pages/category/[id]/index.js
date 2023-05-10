@@ -15,7 +15,7 @@ const CategoryPage = ({news = []}) => {
 export async function getServerSideProps({ locale, query }) {
     let news = await getNewsByCtg(query?.id, locale) || []
     
-    news = news?.map(news => {
+    news = news?.items?.map(news => {
       const dto = { ...news?.[locale], ...news }
       delete dto?.[locale]
       return dto
