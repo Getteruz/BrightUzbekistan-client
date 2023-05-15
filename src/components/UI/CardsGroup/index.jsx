@@ -28,7 +28,7 @@ const CardsGroup = ({
     } else {
         return (
             <div className={`${cls.wrapper} ${grey ? cls.grey : ''} ${categoryId == '' ? cls.wrapcard : ''}`} {...other}>
-                {router.pathname === '/' && <MiddleAds />}
+                {/* {router.pathname === '/' && <MiddleAds />} */}
                 {withNavigation && <Navigation
                     title={categoryName}
                     label={categoryName}

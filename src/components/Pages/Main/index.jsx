@@ -45,7 +45,7 @@ const Main = ({ rate = [], news = [], asideNews = [] }) => {
                                         {index === 0 && (
                                             <div className={cls.main__ads}>
                                                 <JournalCarousel />
-                                                <AsideAds />
+                                                {/* <AsideAds /> */}
                                             </div>
                                         )}
                                     </div>
