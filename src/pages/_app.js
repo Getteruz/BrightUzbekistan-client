@@ -1,13 +1,13 @@
 import App from 'next/app';
+import { store } from 'store';
 import { Provider } from 'react-redux';
-import { Hydrate, QueryClientProvider } from 'react-query';
+import { queryClient } from 'services/api';
+import { getCategories } from 'services/category';
 import { appWithTranslation } from 'next-i18next';
+import { Hydrate, QueryClientProvider } from 'react-query';
+import Layout from 'components/Layout';
 import NextNProgress from 'nextjs-progressbar';
 import AdsPopup from 'components/UI/Ads/Popup';
-import Layout from 'components/Layout';
-import { getCategories } from 'services/category';
-import { queryClient } from 'services/api';
-import { store } from 'store';
 import '../styles/globals.scss'
 
 function MyApp({ Component, pageProps, categories }) {
@@ -31,9 +31,9 @@ function MyApp({ Component, pageProps, categories }) {
 MyApp.getInitialProps = async (ctx) => {
   const pageProps = await App.getInitialProps(ctx);
   const categories = await getCategories()
-  return { 
-    ...pageProps, 
-    categories 
+  return {
+    ...pageProps,
+    categories
   }
 }
 

@@ -11,11 +11,13 @@ import { useQuery } from 'react-query';
 import { getRate } from 'services/rate';
 import React from 'react';
 import AsideAds from 'components/UI/Ads/Aside';
+import { getCategoryAds } from 'services/ads';
 
 const Main = ({ rate = [], news = [], asideNews = [] }) => {
     const router = useRouter()
     const windowWidth = useGetWindowWidth()
     useQuery('rate', getRate, { initialData: rate })
+    const {data: ads} = useQuery(['ads', 'mid'], getCategoryAds, {placeholderData: []})
 
     return (
         <LayoutChildWrapper asideComponent={<Aside news={asideNews?.slice(0, 2)} />}>
@@ -33,6 +35,7 @@ const Main = ({ rate = [], news = [], asideNews = [] }) => {
                                         categoryId={news?.ctg?.id}
                                         withNavigation={index !== 0}
                                         withAds={index === 0 && windowWidth < 550}
+                                        banner={ads?.find(ad => ad?.categoryId === news?.ctg?.id)}
                                     />) : (
                                     <div style={{display: 'flex', flexDirection: 'column', paddingBottom: index === 0 ? '34px' : 0}} key={index}>
                                         <CardsGroup
@@ -45,13 +48,13 @@ const Main = ({ rate = [], news = [], asideNews = [] }) => {
                                         {index === 0 && (
                                             <div className={cls.main__ads}>
                                                 <JournalCarousel />
-                                                {/* <AsideAds /> */}
+                                                <AsideAds />
                                             </div>
                                         )}
                                     </div>
                                 )
                             ))
-                        }
+                        } 
                     </Flex>
                 </div>
             </main>

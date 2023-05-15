@@ -19,6 +19,7 @@ const CardsGroup = ({
     withNavigation = false,
     grey = false,
     withAds = false,
+    banner = {},
     ...other
 }) => {
     const router = useRouter()
@@ -28,7 +29,14 @@ const CardsGroup = ({
     } else {
         return (
             <div className={`${cls.wrapper} ${grey ? cls.grey : ''} ${categoryId == '' ? cls.wrapcard : ''}`} {...other}>
-                {/* {router.pathname === '/' && <MiddleAds />} */}
+                {router.pathname === '/' && banner?.id && (
+                    <MiddleAds
+                        id={banner?.id}
+                        link={banner?.link}
+                        imgUrl={banner?.imgUrl}
+                        imgMobileUrl={banner?.imgMobileUrl}
+                    />
+                )}
                 {withNavigation && <Navigation
                     title={categoryName}
                     label={categoryName}

@@ -26,3 +26,12 @@ export const adsClicked = async (id = '') => {
         console.log(error);
     }
 }
+
+export const getCategoryAds = async () => {
+    try {
+        const res = await api.get('/advertisement/category')
+        return res?.data
+    } catch (error) {
+        console.log(error);
+    }
+}
