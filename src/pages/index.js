@@ -22,7 +22,7 @@ export async function getServerSideProps({ locale }) {
 
   news?.push({
     ctg: '',
-    news: lastNews?.length > 0 ? lastNews?.items?.map(news => {
+    news: lastNews?.items?.length > 0 ? lastNews?.items?.map(news => {
       const dto = { ...news?.[locale], ...news }
       delete dto?.[locale]
       return dto

@@ -1,3 +1,4 @@
+import TopAds from 'components/UI/Ads/Top';
 import NewsCard from 'components/UI/Cards/NewsCard';
 import NewsImageCard from 'components/UI/Cards/NewsImageCard';
 import useGetWindowWidth from 'hooks/useGetWindowWidth';
@@ -5,7 +6,8 @@ import { useRouter } from 'next/router';
 import cls from './SportNews.module.scss'
 
 const SportNews = ({
-    items = []
+    items = [],
+    withAds = false,
 }) => {
     const router = useRouter()
     const windowWidth = useGetWindowWidth()
@@ -24,6 +26,7 @@ const SportNews = ({
                 direction='column'
                 reverse={true}
             />}
+            {withAds && <TopAds />}
             <div className={cls.wrapper__group}>
                 {
                     otherNews?.length > 0 && otherNews.map((news) => (

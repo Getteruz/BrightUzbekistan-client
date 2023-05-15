@@ -1,3 +1,4 @@
+import TopAds from 'components/UI/Ads/Top';
 import NewsCard from 'components/UI/Cards/NewsCard';
 import NewsImageCard from 'components/UI/Cards/NewsImageCard';
 import useGetWindowWidth from 'hooks/useGetWindowWidth';
@@ -5,7 +6,8 @@ import { useRouter } from 'next/router';
 import cls from './WorldNews.module.scss'
 
 const WorldNews = ({
-    items = []
+    items = [],
+    withAds = false,
 }) => {
     const router = useRouter()
     const windowWidth = useGetWindowWidth()
@@ -28,6 +30,7 @@ const WorldNews = ({
                     ))
                 }
             </div>
+            {withAds && <TopAds />}
             {lastNews?.id && <NewsImageCard
                 id={lastNews?.shortLink || lastNews?.id}
                 title={lastNews?.title}

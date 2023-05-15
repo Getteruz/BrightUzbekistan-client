@@ -22,10 +22,11 @@ const LastNews = ({ news = [] }) => {
                 <GoToBack title={t('Последние новости')} />
                 <Flex direction='column' gap={windowWidth > 550 ? 60 : 0}>
                     {
-                        slicedArr?.length > 0 && slicedArr.map((news) => (
+                        slicedArr?.length > 0 && slicedArr.map((news, index) => (
                             <CardsGroup
                                 key={news?.id}
                                 news={news}
+                                withAds={windowWidth < 550 && index === 0}
                             />
                         ))
                     }

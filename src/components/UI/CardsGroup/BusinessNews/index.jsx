@@ -1,3 +1,4 @@
+import TopAds from 'components/UI/Ads/Top';
 import NewsCard from 'components/UI/Cards/NewsCard';
 import NewsCardWithBorder from 'components/UI/Cards/NewsCardWithBorder';
 import NewsImageCard from 'components/UI/Cards/NewsImageCard';
@@ -6,7 +7,8 @@ import { useRouter } from 'next/router';
 import cls from './BusinessNews.module.scss'
 
 const BusinessNews = ({
-    items = []
+    items = [],
+    withAds = false
 }) => {
     const router = useRouter()
     const windowWidth = useGetWindowWidth()
@@ -28,6 +30,7 @@ const BusinessNews = ({
                     />
                 )}
             </div>
+            {withAds && <TopAds />}
             {thirdNews?.id && <NewsImageCard
                 id={thirdNews?.shortLink || thirdNews?.id}
                 title={thirdNews?.title}

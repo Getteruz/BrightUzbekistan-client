@@ -6,6 +6,7 @@ import { links, rules } from './data';
 import cls from './Footer.module.scss'
 import { useTranslation } from 'next-i18next';
 import useGetWindowWidth from 'hooks/useGetWindowWidth';
+import { GetterLogo } from '../icons';
 
 
 const Footer = () => {
@@ -63,7 +64,7 @@ const Footer = () => {
 
                     <div className={cls.footer__developed}>
                         Developed by:
-                        <a href='https://getter.uz' target='_blank' rel="noreferrer" > Getter</a>
+                        <a href='https://getter.uz' target='_blank' rel="noreferrer" > <GetterLogo /></a>
                     </div>
                 </Flex>
             </Container>

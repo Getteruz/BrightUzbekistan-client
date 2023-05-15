@@ -28,7 +28,7 @@ export async function getServerSideProps({ locale, query }) {
   let news = await getNewsById(query?.id, locale) || {}
   let lastnews = await getLastNews(locale, 6)
 
-  lastnews = lastnews?.map(news => {
+  lastnews = lastnews?.items?.map(news => {
     const dto = { ...news?.[locale], ...news }
     delete dto?.[locale]
     return dto

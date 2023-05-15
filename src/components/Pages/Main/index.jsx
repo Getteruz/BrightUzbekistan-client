@@ -10,10 +10,11 @@ import JournalCarousel from 'components/UI/JournalCarousel';
 import { useQuery } from 'react-query';
 import { getRate } from 'services/rate';
 import React from 'react';
+import AsideAds from 'components/UI/Ads/Aside';
 
 const Main = ({ rate = [], news = [], asideNews = [] }) => {
     const router = useRouter()
-    const windowWidth = useGetWindowWidth() || 1024
+    const windowWidth = useGetWindowWidth()
     useQuery('rate', getRate, { initialData: rate })
 
     return (
@@ -31,17 +32,23 @@ const Main = ({ rate = [], news = [], asideNews = [] }) => {
                                         categoryName={news?.ctg?.[router?.locale]}
                                         categoryId={news?.ctg?.id}
                                         withNavigation={index !== 0}
+                                        withAds={index === 0 && windowWidth < 550}
                                     />) : (
-                                    <React.Fragment key={index}>
+                                    <div style={{display: 'flex', flexDirection: 'column', paddingBottom: index === 0 ? '34px' : 0}} key={index}>
                                         <CardsGroup
                                             news={news?.news}
                                             categoryName={news?.ctg?.[router?.locale]}
                                             categoryId={news?.ctg?.id}
                                             withNavigation={index !== 0}
-                                        // grey={index % 2 && windowWidth < 550 ? true : false}
+                                            withAds={index === 0 && windowWidth < 550}
                                         />
-                                        {index === 0 && <JournalCarousel />}
-                                    </React.Fragment>
+                                        {index === 0 && (
+                                            <div className={cls.main__ads}>
+                                                <JournalCarousel />
+                                                <AsideAds />
+                                            </div>
+                                        )}
+                                    </div>
                                 )
                             ))
                         }

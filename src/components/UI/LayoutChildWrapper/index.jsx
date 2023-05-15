@@ -19,7 +19,7 @@ const LayoutChildWrapper = ({ children, asideComponent }) => {
         <>
             <div className={cls.layout__main__content} id='main'>
                 <div className={cls.layout__main__content__nav}>
-                    <Navbar />
+                    {windowWidth > 550 && <Navbar />}
                 </div>
                 {router.pathname === '/' && windowWidth < 670 && <Rate rate={rate} />}
                 <div className={cls.layout__main__mobile__nav}>

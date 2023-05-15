@@ -8,10 +8,6 @@ const AppStore = (props) => {
             {...props}
         >
             <AppStoreIcon />
-            <div>
-                <p className={cls.btn__desc}>Available on the</p>
-                <p className={cls.btn__name}>App Store</p>
-            </div>
         </button>
     );
 }

@@ -3,11 +3,11 @@ import { Provider } from 'react-redux';
 import { Hydrate, QueryClientProvider } from 'react-query';
 import { appWithTranslation } from 'next-i18next';
 import NextNProgress from 'nextjs-progressbar';
+import AdsPopup from 'components/UI/Ads/Popup';
 import Layout from 'components/Layout';
 import { getCategories } from 'services/category';
 import { queryClient } from 'services/api';
 import { store } from 'store';
-
 import '../styles/globals.scss'
 
 function MyApp({ Component, pageProps, categories }) {
@@ -17,6 +17,7 @@ function MyApp({ Component, pageProps, categories }) {
       <QueryClientProvider client={queryClient}>
         <Hydrate state={pageProps.dehydratedState}>
           <Provider store={store}>
+            <AdsPopup />
             <Layout categories={categories}>
               <Component {...pageProps} />
             </Layout>

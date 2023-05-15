@@ -8,10 +8,6 @@ const GooglePlay = (props) => {
             {...props}
         >
             <GooglePlayIcon />
-            <div>
-                <p className={cls.btn__desc}>Get it on</p>
-                <p className={cls.btn__name}>Google Play</p>
-            </div>
         </button>
     );
 }

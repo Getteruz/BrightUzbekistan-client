@@ -14,14 +14,12 @@
 .wrapcard{
     @media screen and (max-width: 550px) {
         &:first-child{
-            padding-top: 20px;
-    
             & > div > div:nth-child(1) > div > div:nth-child(2){
                 display: none;
             }
     
             & > div > div> div h3{
-                font-family: 'Old Standard TT';
+                font-family: 'Merriweather';
                 font-weight: 700;
                 font-size: 22px;
                 line-height: 25px;
@@ -54,19 +52,6 @@
 
 @media screen and (max-width: 550px) {
     .wrapper {
-        position: relative;
-        padding: 34px 10px;
-        max-width: calc(100% + 40px) !important;
-        left: -20px;
-    }
-
-}
-
-@media screen and (max-width: 470px) {
-    .wrapper {
-        position: relative;
-        padding: 34px 10px;
-        max-width: calc(100% + 20px) !important;
-        left: -10px;
+        padding-bottom: 34px;
     }
 }

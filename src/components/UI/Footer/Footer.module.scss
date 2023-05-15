@@ -29,14 +29,6 @@
         font-size: 13px;
         line-height: 18px;
         color: rgba(255, 255, 255, 0.4);
-
-        & > a {
-            font-family: 'Outfit' !important;
-            font-weight: 800;
-            font-size: 17px;
-            line-height: 21px;
-            color: var(--white-color);
-        }
     }
 
     &__link{
@@ -53,7 +45,7 @@
             align-items: center;
             gap: 15px;
 
-            & > div{
+            & div{
                 justify-content: center;
                 flex-wrap: wrap;
                 gap: 15px;

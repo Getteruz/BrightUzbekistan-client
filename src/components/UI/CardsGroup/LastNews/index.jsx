@@ -1,3 +1,4 @@
+import TopAds from 'components/UI/Ads/Top';
 import NewsCard from 'components/UI/Cards/NewsCard';
 import useGetWindowWidth from 'hooks/useGetWindowWidth';
 import { useRouter } from 'next/router';
@@ -6,6 +7,7 @@ import cls from './LastNews.module.scss'
 
 const LastNews = ({
     items = [],
+    withAds = false
 }) => {
     const router = useRouter()
     const [firtsNews] = items?.slice(0, 1) || []
@@ -22,6 +24,7 @@ const LastNews = ({
                 category={firtsNews?.mainCategory?.[router?.locale]}
                 date={firtsNews?.publishedDate || firtsNews?.updated_at}
             />}
+            {withAds && <TopAds />}
             <div className={cls.wrapper__group}>
                 {
                     otherNews?.length > 0 && otherNews.map((news) => (

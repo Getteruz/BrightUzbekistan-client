@@ -10,6 +10,7 @@ import { CalendarIcon, ClockIcon } from "components/UI/icons";
 import Markup from "components/UI/Markup";
 import { useQuery } from "react-query";
 import { getNewsById } from "services/news";
+import SingleAds from "components/UI/Ads/Single";
 
 
 const SingleNews = ({ news = {}, lastnews = [] }) => {
@@ -22,6 +23,7 @@ const SingleNews = ({ news = {}, lastnews = [] }) => {
         <LayoutChildWrapper asideComponent={<Aside news={lastnews} />}>
             <main className={cls.main}>
                 <GoToBack />
+                <SingleAds />
                 <div className={cls.main__wrapper}>
                     <h2 className={cls.main__title}>{news?.title}</h2>
                     <div className={cls.main__info}>

@@ -29,11 +29,12 @@ const Category = ({ news = [] }) => {
                     gap={windowWidth > 550 ? '60' : '0'}
                 >
                     {
-                        slicedArr?.length > 0 && slicedArr.map(news =>
+                        slicedArr?.length > 0 && slicedArr.map((news, index) =>
                             <CardsGroup
                                 key={news?.id}
                                 news={news}
                                 categoryId={router?.query?.id}
+                                withAds={windowWidth < 550 && index === 0}
                             />
                         )
                     }

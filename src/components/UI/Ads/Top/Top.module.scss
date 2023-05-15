@@ -1,0 +1,29 @@
+
+.ads{
+    max-width: 1125px;
+    width: 100%;
+    aspect-ratio: 75/8;
+    position: relative;
+    margin-left: 35px;
+}
+
+@media screen and (max-width: 1024px) {
+    .ads{
+        margin-left: 20px;
+    }
+}
+
+@media screen and (max-width: 670px) {
+    .ads{
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .ads{
+        width: calc(100% + 20px);
+        position: relative;
+        left: -10px;
+        aspect-ratio: 15/8;
+    }
+}

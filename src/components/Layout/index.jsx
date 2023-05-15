@@ -8,9 +8,8 @@ import LeftAside from "components/UI/Aside/LeftAside";
 import Container from "components/UI/Container";
 import Footer from "components/UI/Footer";
 import Banner from "components/UI/Banner";
-
 import cls from './Layot.module.scss'
-import Image from "next/image";
+import TopAds from "components/UI/Ads/Top";
 
 const Layout = ({ children, categories = [] }) => {
     const router = useRouter()
@@ -25,6 +24,7 @@ const Layout = ({ children, categories = [] }) => {
                     <LeftAside categories={categories} />
                 </div>
                 <div className={cls.layout__main} style={{[windowWidth < 1260 && 'maxWidth']: `calc(100% - ${width}px)`}}>
+                    { (['/category/[id]', '/last-news'].includes(router.pathname) || router.pathname === '/') && windowWidth > 550 && <TopAds /> }
                     <div className={cls.layout__main__wrapper}>
                         {children}
                     </div>
