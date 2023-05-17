@@ -26,62 +26,63 @@ const Aside = ({ categories = [] }) => {
                     />
                 </div>
             </Link>
-
-            <ul className={cls.aside__links}>
-                <li>
-                    <NavLink 
-                        link='/' 
-                        label={t("Главная")} 
-                        isActive={router.asPath.split('/')?.slice(0, 3)?.join('/') === '/'}
-                    />
-                </li>
-                <li>
-                    <NavLink 
-                        link='/last-news' 
-                        label={t("Последние новости")} 
-                        isActive={router.asPath.split('/')?.slice(0, 3)?.join('/').includes('/last-news')}
+            <nav style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flexGrow: 1}}>
+                <ul className={cls.aside__links}>
+                    <li>
+                        <NavLink
+                            link='/'
+                            label={t("Главная")}
+                            isActive={router.asPath.split('/')?.slice(0, 3)?.join('/') === '/'}
+                        />
+                    </li>
+                    <li>
+                        <NavLink
+                            link='/last-news'
+                            label={t("Последние новости")}
+                            isActive={router.asPath.split('/')?.slice(0, 3)?.join('/').includes('/last-news')}
                         // activeColor='rgba(0, 175, 255, 1)'
-                    />
-                </li>
-                {
-                    categories?.length > 0 && categories.map((ctg) => (
-                        <li key={ctg.id}>
-                            <NavLink
-                                link={`/category/${ctg.id}`}
-                                label={ctg?.[router.locale]}
-                                isActive={router.asPath.split('/')?.slice(0, 3)?.join('/') == `/category/${ctg.id}`}
+                        />
+                    </li>
+                    {
+                        categories?.length > 0 && categories.map((ctg) => (
+                            <li key={ctg.id}>
+                                <NavLink
+                                    link={`/category/${ctg.id}`}
+                                    label={ctg?.[router.locale]}
+                                    isActive={router.asPath.split('/')?.slice(0, 3)?.join('/') == `/category/${ctg.id}`}
                                 // activeColor={categoryColor?.[ctg.id]}
-                            />
-                        </li>
-                    ))
-                }
-                <li>
-                    <NavLink 
-                        link='/journal' 
-                        label={t("Журнал")} 
-                        isActive={router.asPath.split('/')?.slice(0, 3)?.join('/').includes('/journal')}
-                    />
-                </li>
-            </ul>
+                                />
+                            </li>
+                        ))
+                    }
+                    <li>
+                        <NavLink
+                            link='/journal'
+                            label={t("Журнал")}
+                            isActive={router.asPath.split('/')?.slice(0, 3)?.join('/').includes('/journal')}
+                        />
+                    </li>
+                </ul>
 
-            <ul
-                className={cls.aside__links}
-                style={{ flexGrow: 0 }}
-            >
-                {
-                    projectLinks?.length > 0 && projectLinks.map(link => (
-                        <li key={link.id}>
-                            <NavLink
-                                link={link.link}
-                                label={t(link.label)}
-                                isActive={router.asPath.split('/')?.slice(0, 3)?.join('/').includes(link.link)}
-                                // activeColor={link.activeColor}
-                                light
-                            />
-                        </li>
-                    ))
-                }
-            </ul>
+                <ul
+                    className={cls.aside__links}
+                    style={{ flexGrow: 0 }}
+                >
+                    {
+                        projectLinks?.length > 0 && projectLinks.map(link => (
+                            <li key={link.id}>
+                                <NavLink
+                                    link={link.link}
+                                    label={t(link.label)}
+                                    isActive={router.asPath.split('/')?.slice(0, 3)?.join('/').includes(link.link)}
+                                    // activeColor={link.activeColor}
+                                    light
+                                />
+                            </li>
+                        ))
+                    }
+                </ul>
+            </nav>
         </aside>
     );
 }
