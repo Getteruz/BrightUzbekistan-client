@@ -38,7 +38,7 @@ export const getNewsByCtg = async (id, locale = 'ru') => {
 
 export const getAllNews = async() => {
     try {
-        const {data} = await api.get(`/news/published`)
+        const {data} = await api.get(`/news/published?limit=60`)
         return data
     } catch (error) {
         console.log(error)
