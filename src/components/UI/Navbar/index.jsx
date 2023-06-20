@@ -46,8 +46,9 @@ const Navbar = () => {
                 )}
                 <li>
                     <Button
-                        label={t('ДЛЯ СЛАБОВИДЯЩИХ')}
-                        icon={GlassesIcon}
+                        label={t('ПОСЛЕДНИЕ НОВОСТИ')}
+                        // icon={GlassesIcon}
+                        onClick={() => router.push('/last-news')}
                     />
                 </li>
                 {windowWidth > 670 && (

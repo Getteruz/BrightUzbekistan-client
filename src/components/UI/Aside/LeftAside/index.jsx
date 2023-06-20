@@ -55,16 +55,16 @@ const Aside = ({ categories = [] }) => {
                             </li>
                         ))
                     }
-                    <li>
+                    {/* <li>
                         <NavLink
                             link='/journal'
                             label={t("Журнал")}
                             isActive={router.asPath.split('/')?.slice(0, 3)?.join('/').includes('/journal')}
                         />
-                    </li>
+                    </li> */}
                 </ul>
 
-                <ul
+                {/* <ul
                     className={cls.aside__links}
                     style={{ flexGrow: 0 }}
                 >
@@ -81,7 +81,7 @@ const Aside = ({ categories = [] }) => {
                             </li>
                         ))
                     }
-                </ul>
+                </ul> */}
             </nav>
         </aside>
     );

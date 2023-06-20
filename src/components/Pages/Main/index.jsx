@@ -20,7 +20,7 @@ const Main = ({ rate = [], news = [], asideNews = [] }) => {
     const {data: ads} = useQuery(['ads', 'mid'], getCategoryAds, {placeholderData: []})
 
     return (
-        <LayoutChildWrapper asideComponent={<Aside news={asideNews?.slice(0, 2)} />}>
+        <LayoutChildWrapper asideComponent={<Aside news={asideNews?.slice(0, 4)} />}>
             <main className={cls.main}>
                 {windowWidth > 670 && <Rate rate={rate} />}
                 <div className={cls.main__cards}>

@@ -4,6 +4,12 @@
     max-height: 692px;
     position: relative;
     filter: drop-shadow(0px 24px 34px rgba(0, 0, 0, 0.12));
+    left: -25%;
+    transition: all 0.3s;
+}
+
+.centerAnimate{
+    left: 0;
 }
 
 @media screen and (max-width: 1260px) {

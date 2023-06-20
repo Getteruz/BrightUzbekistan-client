@@ -27,6 +27,7 @@ const Journal = () => {
 
                 <CJournal
                     setOrder={setOrder}
+                    page={page}
                     order={order}
                     src={`/journals/${router.query.id}.pdf`}
                     ref={journalRef}

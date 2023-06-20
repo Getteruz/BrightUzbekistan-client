@@ -1,6 +1,5 @@
 import useGetWindowWidth from 'hooks/useGetWindowWidth';
 import { useTranslation } from 'next-i18next';
-import Link from 'next/link';
 import cls from './Rate.module.scss'
 import RateItem from './RateItem';
 
@@ -11,9 +10,16 @@ const Rate = ({ rate = [] }) => {
     return (
         windowWidth > 720 ? (
             <div className={cls.rate}>
-                {windowWidth > 1104 ? <Link href='/last-news'>
-                    <a className={cls.rate__title}>{t('ПОСЛЕДНИЕ НОВОСТИ')}</a>
-                </Link> : <></>}
+                {windowWidth > 1104 ? 
+                    <a 
+                        className={cls.rate__title}
+                        href="https://brightuzbekistan.uz"
+                        target='_blank' 
+                        rel="noreferrer"
+                    >
+                        {t('Старая версия сайта')}
+                </a>
+                : <></>}
                 <ul className={cls.rate__list}>
                     {
                         rate?.length > 0 && rate.map(curr => (
@@ -30,9 +36,16 @@ const Rate = ({ rate = [] }) => {
             </div>
         ) : (
             <marquee direction="left" className={cls.rate}>
-                {windowWidth > 1104 ? <Link href='/last-news'>
-                    <a className={cls.rate__title}>{t('ПОСЛЕДНИЕ НОВОСТИ')}</a>
-                </Link> : <></>}
+                {windowWidth > 1104 ? 
+                    <a 
+                        className={cls.rate__title}
+                        href="https://brightuzbekistan.uz"
+                        target='_blank' 
+                        rel="noreferrer"
+                    >
+                            {t('Старая версия сайта')}
+                    </a>
+                : <></>}
                 <ul className={cls.rate__list}>
                     {
                         rate?.length > 0 && rate.map(curr => (

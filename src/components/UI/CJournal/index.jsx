@@ -14,6 +14,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
 
 const CJournal = forwardRef(({
     setOrder = () => {},
+    page,
     order = false,
     onFlip,
     src = ''
@@ -32,7 +33,7 @@ const CJournal = forwardRef(({
     }
 
     return (
-        <div className={cls.wrapper}>
+        <div className={`${cls.wrapper} ${(page || windowWidth < 1260) ? cls.centerAnimate : ''}`}>
             <HTMLFlipBook 
                 showCover
                 width={windowWidth > 550 ? 510 : windowWidth - 20} 

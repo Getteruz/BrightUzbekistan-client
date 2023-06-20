@@ -20,10 +20,30 @@ const Footer = () => {
                 <Flex width='auto' gap='33'>
                     <div className={cls.footer__text}>Copyright: 2023</div>
 
-                    <span>
+                    {/* <span>
                         <Flex gap='46'>
                             {
                                 links?.length > 0 && links.map(options =>
+                                    <Link
+                                        key={options.id}
+                                        href={options.link}
+                                    >
+                                        <a
+                                            className={cls.footer__link}
+                                            style={{ [options.color && 'color']: options.color }}
+                                        >
+                                            {t(options.label)}
+                                        </a>
+                                    </Link>
+                                )
+                            }
+                        </Flex>
+                    </span> */}
+                    <span>
+
+                        <Flex gap='17'>
+                            {
+                                rules?.length > 0 && rules.map(options =>
                                     <Link
                                         key={options.id}
                                         href={options.link}
@@ -43,7 +63,7 @@ const Footer = () => {
 
                 <Flex width={'auto'} gap='46'>
                     <span>
-                        <Flex gap='17'>
+                        {/* <Flex gap='17'>
                             {
                                 rules?.length > 0 && rules.map(options =>
                                     <Link
@@ -59,7 +79,7 @@ const Footer = () => {
                                     </Link>
                                 )
                             }
-                        </Flex>
+                        </Flex> */}
                     </span>
 
                     <div className={cls.footer__developed}>

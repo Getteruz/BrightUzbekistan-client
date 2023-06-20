@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
 import { useQueryClient } from 'react-query';
@@ -5,20 +6,16 @@ import AppStore from '../Buttons/AppStore';
 import GooglePlay from '../Buttons/GooglePlay';
 import Flex from '../Flex';
 import NavLink from '../NavLink';
-
-import { contacts, navlinks } from './data';
+import { contacts, categories } from './data';
 import cls from './Banner.module.scss'
-import { useRouter } from 'next/router';
 
 const Banner = () => {
     const { t } = useTranslation()
     const router = useRouter()
-    const queryClient = useQueryClient()
-    const categories = queryClient.getQueryData('categories')
-
+    // return <></>
     return (
         <div className={cls.banner}>
-            <Flex>
+            {/* <Flex>
                 <div className={cls.banner__block}>
                     <div className={cls.banner__info}>
                         <span className={cls.banner__info__title}>{t('Скоро')}</span>
@@ -43,15 +40,16 @@ const Banner = () => {
                         />
                     </div>
                 </div>
-            </Flex>
+            </Flex> */}
             <div className={cls.banner__footer}>
                 <div className={cls.banner__categories}>
                     {
                         categories?.length > 0 && categories.map(ctg => (
                             <NavLink
                                 key={ctg.id}
-                                label={ctg?.[router.locale]}
-                                link={`/category/${ctg.id}`}
+                                label={t(ctg.label)}
+                                link={ctg.link}
+                                isActive={router.asPath == ctg.link + '/'}
                             />
                         ))
                     }

@@ -1,48 +1,48 @@
-import { FacebookIcon, InstagramIcon, LinkedinIcon, TwitterIcon } from "../icons"
+import { FacebookIcon, InstagramIcon, TwitterIcon, YoutubeIcon } from "../icons"
 
-export const navlinks = [
+export const categories = [
     {
         id: 2,
-        link: '/world-news',
-        label: 'Новости мира',
+        link: '/journal',
+        label: 'Электронный журнал',
         activeColor: ''
     },
     {
         id: 3,
-        link: '/uzbekistan-news',
-        label: 'Узбекистан',
+        link: '/about-project',
+        label: 'О проекте',
         activeColor: ''
     },
     {
         id: 4,
-        link: '/political-news',
-        label: 'Политика',
+        link: '/ads-in-site',
+        label: 'Реклама на сайте',
         activeColor: ''
     },
     {
         id: 5,
-        link: '/economic-news',
-        label: 'Экономика',
+        link: '/contact-us',
+        label: 'Связатся с нами',
         activeColor: ''
     },
-    {
-        id: 8,
-        link: '/sport-news',
-        label: 'Спорт',
-        activeColor: ''
-    },
-    {
-        id: 6,
-        link: '/business-news',
-        label: 'Бизнес',
-        activeColor: ''
-    },
-    {
-        id: 7,
-        link: '/society-news',
-        label: 'Общество',
-        activeColor: ''
-    },
+    // {
+    //     id: 8,
+    //     link: '/sport-news',
+    //     label: 'Спорт',
+    //     activeColor: ''
+    // },
+    // {
+    //     id: 6,
+    //     link: '/business-news',
+    //     label: 'Бизнес',
+    //     activeColor: ''
+    // },
+    // {
+    //     id: 7,
+    //     link: '/society-news',
+    //     label: 'Общество',
+    //     activeColor: ''
+    // },
 ]
 
 export const contacts = [
@@ -51,12 +51,12 @@ export const contacts = [
         link: 'tel:+998900110000',
         label: '+998 90 011 00 00',
     },
-    // {
-    //     id: 11,
-    //     link: '/',
-    //     icon: <LinkedinIcon />,
-    //     ariaLabel: 'Bright Uzbekistan page on Linkedin',
-    // },
+    {
+        id: 11,
+        link: 'https://www.youtube.com/channel/UCqKubJUkz9N36NhO92Pq7-g',
+        icon: <YoutubeIcon />,
+        ariaLabel: 'Bright Uzbekistan page on Youtube',
+    },
     {
         id: 12,
         link: 'https://twitter.com/brightuzb',

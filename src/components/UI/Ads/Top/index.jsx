@@ -5,9 +5,9 @@ import { useRouter } from 'next/router';
 import { useInView } from 'react-intersection-observer';
 import useGetWindowWidth from 'hooks/useGetWindowWidth';
 import { adsClicked, adsViewed, getAds } from 'services/ads';
-import cls from './Top.module.scss'
 import { useDispatch, useSelector } from 'react-redux';
 import { adsActions } from 'store/Ads';
+import cls from './Top.module.scss'
 
 const TopAds = ({ }) => {
     const router = useRouter()
@@ -30,7 +30,7 @@ const TopAds = ({ }) => {
 
     if (!ads?.id) {
         return <></>
-    } else {
+    } else {            
         return (
             <a
                 className={cls.ads}
