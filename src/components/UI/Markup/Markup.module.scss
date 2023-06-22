@@ -8,6 +8,10 @@
     & > p:last-child{
         display: none;
     }
+
+    & a {
+        color: #007bff;
+    }
 }
 
 @media screen and (max-width: 550px) {
