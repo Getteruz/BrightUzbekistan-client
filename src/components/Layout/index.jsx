@@ -28,7 +28,7 @@ const Layout = ({ children, categories = [] }) => {
                     <div className={cls.layout__main__wrapper}>
                         {children}
                     </div>
-                    {router.pathname !== '/journal/[id]' && <Banner />}
+                    {/* {router.pathname !== '/journal/[id]' && <Banner />} */}
                 </div>
             </Container>
             <Footer />

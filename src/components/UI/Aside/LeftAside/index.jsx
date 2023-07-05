@@ -1,10 +1,8 @@
-import { categoryColor } from 'constants/category';
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import NavLink from '../../NavLink';
-import { projectLinks } from './data';
 import cls from './LeftAside.module.scss'
 
 const Aside = ({ categories = [] }) => {
@@ -13,8 +11,6 @@ const Aside = ({ categories = [] }) => {
 
     return (
         <aside className={cls.aside} id='leftAside'>
-            <span className={cls.aside__city}>{t('ТАШКЕНТ')} 2023</span>
-
             <Link href='/'>
                 <div className={cls.aside__logo}>
                     <Image

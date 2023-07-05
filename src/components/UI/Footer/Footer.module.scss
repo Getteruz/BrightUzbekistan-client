@@ -1,4 +1,4 @@
-.footer{
+.footer {
     width: 100%;
     display: flex;
     padding: 27px 0;
@@ -7,8 +7,8 @@
     & * {
         font-family: 'Noto Sans Normal';
     }
-    
-    &__container{
+
+    &__container {
         display: flex;
         justify-content: space-between;
         max-width: 1280px;
@@ -16,13 +16,13 @@
         padding: 0 40px;
     }
 
-    &__text{
+    &__text {
         color: var(--white-color);
         font-size: 13px;
         line-height: 18px;
     }
 
-    &__developed{
+    &__developed {
         display: flex;
         align-items: center;
         gap: 4px;
@@ -31,25 +31,85 @@
         color: rgba(255, 255, 255, 0.4);
     }
 
-    &__link{
+    &__link {
         font-size: 13px;
         line-height: 18px;
         color: var(--white-color);
     }
 }
 
+.banner {
+    &__footer {
+        max-width: 100%;
+        width: 100%;
+        position: relative;
+        z-index: 2;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    &__link {
+        display: flex;
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 18px;
+        color: white;
+        font-family: 'Noto Sans Normal';
+        cursor: pointer;
+    }
+
+    &__categories {
+        max-width: 800px;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 30px;
+
+        &>* {
+            color: white;
+        }
+    }
+}
+
 @media screen and (max-width: 863px) {
-    .footer{
-        &__container{
+    .footer {
+        &__container {
             flex-direction: column;
             align-items: center;
             gap: 15px;
 
-            & div{
+            & div {
                 justify-content: center;
                 flex-wrap: wrap;
                 gap: 15px;
             }
+        }
+    }
+}
+
+@media screen and (max-width: 910px) {
+    .banner__footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
+}
+
+@media screen and (max-width: 625px) {
+    .banner {
+
+        &__footer {
+            padding: 0;
+
+            &>div:nth-child(2) {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        &__categories {
+            justify-content: center;
         }
     }
 }

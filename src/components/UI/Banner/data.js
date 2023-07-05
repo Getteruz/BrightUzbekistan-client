@@ -1,4 +1,4 @@
-import { FacebookIcon, InstagramIcon, TwitterIcon, YoutubeIcon } from "../icons"
+import { FacebookIcon, InstagramIcon, TelegramIcon, TwitterIcon, YoutubeIcon } from "../icons"
 
 export const categories = [
     {
@@ -48,8 +48,9 @@ export const categories = [
 export const contacts = [
     {
         id: 10,
-        link: 'tel:+998900110000',
-        label: '+998 90 011 00 00',
+        link: 'https://t.me/bright_uzbekistan',
+        icon: <TelegramIcon />,
+        ariaLabel: 'Bright Uzbekistan page on Telegram',
     },
     {
         id: 11,
