@@ -2,7 +2,7 @@ const settings = {
     meta: {
         url: "https://buzb.uz/",
         title: "Bright Uzbekistan",
-        description: "Ozbekiston yangiliklari",
+        description: "Международный политико-экономический журнал Bright Uzbekistan",
         social: {
             graphic: "https://buzb.uz/Images/BrightUzbekistan.png",
             twitter: "@brightuzb",
