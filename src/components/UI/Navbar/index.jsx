@@ -65,12 +65,12 @@ const Navbar = () => {
                                 <li className={router.locale === 'en' ? cls.active : ""} onClick={() => changeLocale('en')}>English</li>
                             </ul>
                         </li>
-                        <li>
+                        {/* <li>
                             <Button
                                 label={t('КАБИНЕТ')}
                                 icon={PersonIcon}
                             />
-                        </li>
+                        </li> */}
                     </>
                 )}
             </ul>

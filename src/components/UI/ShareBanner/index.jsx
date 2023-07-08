@@ -36,7 +36,7 @@ const ShareBanner = ({
                         title={title}
                         hashtags={tags}
                     >
-                        <FacebookIcon />
+                        <FacebookIcon color={'#0B212B'} />
                     </FacebookShareButton>
                     <LinkedinShareButton
                         url={link}
@@ -51,14 +51,14 @@ const ShareBanner = ({
                         target='_blank'
                         rel='noopener noreferrer'
                     >
-                        <InstagramIcon />
+                        <InstagramIcon color={'#0B212B'} />
                     </a>
                     <TwitterShareButton
                         url={link}
                         title={title}
                         hashtags={tags}
                     >
-                        <TwitterIcon />
+                        <TwitterIcon color={'#0B212B'} />
                     </TwitterShareButton>
                 </Flex>
             </div>
