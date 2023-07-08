@@ -45,6 +45,7 @@ const SingleNews = ({ news = {}, lastnews = [] }) => {
                             alt={news?.title}
                         />
                     </div>
+                    <span className={cls.main__image__desc}>{news?.photoDesc || ''}</span>
                     <Markup html={news?.description} />
                     <time className={cls.main__time}>{`${data} ${month}, ${year}.  ${hours}:${minutes}`}</time>
                 </div>
